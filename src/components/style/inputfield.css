@@ -1,0 +1,123 @@
+.inputfield-form-container {
+    --form-padding: 0.25rem 0.1rem 0.15rem 0.5rem;
+    --form-border-radius: 0.5rem;
+
+    --submit-button-size: calc(1.6rem + (1.75 - 1.6) * ((100vw - 25em) / (62.5 - 25)));
+    --submit-padding: 0.07rem 0rem;
+    --submit-border-radius: 0.25rem;
+    --submit-button-font-size: calc(0.95em + (1.2 - 0.95) * ((100vw - 25em) / (62.5 - 25)));
+
+    --emoji-button-size: calc(1.5rem + (1.65 - 1.5) * ((100vw - 25em) / (62.5 - 25)));
+
+    --inputfield-min-width: 100px;
+    --inputfield-padding: 0rem 1.5rem;
+    --inputfield-margin: 0rem 10px;
+    --inputfield-font-size: calc(0.9em + (1.05 - 0.9) * ((100vw - 25em) / (62.5 - 25)));
+
+
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: var(--form-padding);
+
+    border-style: none;
+    border-width: 0;
+    border-radius: var(--form-border-radius);
+
+    background: var(--form-bg);
+    box-shadow: 2px 3px 6px var(--form-shadow);
+}
+
+._inputfield {
+    box-sizing: border-box;
+    display: inline-block;
+    max-height: 100%;
+    min-width: var(--inputfield-min-width);
+    width: 100%;
+    height: max-content;
+
+    padding: var(--inputfield-padding);
+    margin: var(--inputfield-margin);
+    
+    outline: none;
+    border-style: none;
+    border-width: 0;
+    
+    font-size: var(--inputfield-font-size);
+    font-family: var(--font-style);
+
+    color: var(--inputfield-fg);
+    background: inherit;
+}
+
+._inputfield::placeholder {
+    color: var(--inputfield-fg);
+    opacity: 0.65;
+}
+
+.button {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%; /*keeps the image centered*/
+    width: auto;
+
+    margin: 0;
+    border-width: 0;
+    outline: none;
+
+    background: transparent;
+}
+
+.img {
+    display: inline-block;
+    max-height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+/*INPUTFIELD_SUBMIT*/
+.submit-btn {
+    font-size: var(--submit-button-font-size);
+
+    padding: var(--submit-padding);
+    border-radius: var(--submit-border-radius);
+
+    filter: invert(0);
+}
+
+.submit-btn:hover {
+    filter: invert(1);
+}
+
+.submit-img {
+    width: var(--submit-button-size);
+    height: var(--submit-button-size);
+}
+/*INPUTFIELD_SUBMIT*/
+
+
+/*EMOJI INPUTFIELD SUBMIT*/
+.emoji-btn {
+    padding: 0;
+    filter: invert(0);
+}
+
+.emoji-btn:hover {
+    filter: invert(1);
+}
+
+.emoji-img {
+    width: var(--emoji-button-size);
+    height: var(--emoji-button-size);
+}
+/*EMOJI INPUTFIELD SUBMIT*/
+

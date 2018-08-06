@@ -1,0 +1,22 @@
+:root {
+  --main-bg: #182c39; /*hsl(204, 40%, 16%);*/
+  --accent-red: #e25454; /*hsl(360, 71%, 61%);*/
+  --accent-red-light: hsl(360, 71%, 45%);
+  
+  --white: #FEFCFC;
+  --white-faded: hsl(0, 50%, 88%);
+
+  /*GENERAL*/
+  --font-style: monospace;
+  /*GENERAL*/
+
+
+  /*INPUTFIELD*/
+  --inputfield-fg: var(--white);
+  --form-bg: var(--accent-red);
+  --form-shadow: var(--accent-red-light);
+  --form-border: var(--main-bg);
+  --inputfield-border: var(--white-faded);
+  /*INPUTFIELD*/
+
+}
