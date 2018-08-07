@@ -1,18 +1,35 @@
 import React, {Component} from 'react';
 import './style/inputfield.css';
 
+function DisplayEmoji({ onEmoji }) {
+    return (
+        <button className='button emoji-btn' type='button' onClick={onEmoji}>
+            <img className='img emoji-img' src='./images/emoji-black.svg' alt='send arrow button failed to load' />            
+        </button>
+    );
+}
+
+/*Plain inputfield. Does not include send button or emojibar */
+function DisplayInputfield({ value, onChange }) {
+    return (
+        <input className='_inputfield' type='text' value={value} onChange={onChange} placeholder='Enter info here...' required autoComplete='false' autoFocus />
+    );
+}
+
+function DisplaySubmit(props) {
+    return (
+        <button className='button submit-btn' type='submit'>
+            <img className='img submit-img' src='./images/send-button-black.svg' alt='send arrow button failed to load' />
+        </button>
+    )
+}
+
 function Emoji_Inputfield_Submit({ value, onChange, onEmoji }) {
     return (
         <React.Fragment>
-            <button className='button emoji-btn' type='button' onClick={onEmoji}>
-                <img className='img emoji-img' src='./images/emoji-black.svg' alt='send arrow button failed to load' />            
-            </button>
-
-            <input className='_inputfield' type='text' value={value} onChange={onChange} placeholder='Enter info here...' required autoComplete='false' autoFocus />
-            
-            <button className='button submit-btn' type='submit'>
-                <img className='img submit-img' src='./images/send-button-black.svg' alt='send arrow button failed to load' />
-            </button>
+            <DisplayEmoji onEmoji={onEmoji} />
+            <DisplayInputfield value={value} onChange={onChange} />
+            <DisplaySubmit />
         </React.Fragment>
     );
 }
@@ -21,28 +38,19 @@ function Emoji_Inputfield_Submit({ value, onChange, onEmoji }) {
 function Inputfield_Submit({ value, onChange }) {
     return (
         <React.Fragment>
-            <input className='_inputfield' type='text' value={value} onChange={onChange} placeholder='Enter info here...' required autoComplete='false' autoFocus />
-            <button className='button submit-btn' type='submit'>
-                <img className='img submit-img' src='./images/send-button-black.svg' alt='send arrow button failed to load' />
-            </button>
+            <DisplayInputfield value={value} onChange={onChange} />
+            <DisplaySubmit />
         </React.Fragment>
     );
 }
 
-/*Plain inputfield. Does not include send button or emojibar */
-function PlainInputfield({ value, onChange }) {
-    return (
-        <input className='_inputfield' type='text' value={value} onChange={onChange} placeholder='Enter info here...' required autoComplete='false' autoFocus />
-    );
-}
-
 /*Selects the inputfield type to be displayed*/
-function InputTypeSelect({ inputType, value, onChange, onEmoji }) {
+function InputTypeSelect({ inputType, value, onChange, onEmoji}) {
     let inputDisplayed = null;
 
     switch(inputType) {
         case 'text':
-            inputDisplayed = (<PlainInputfield value={value} onChange={onChange} />);
+            inputDisplayed = (<DisplayInputfield value={value} onChange={onChange} />);
             break;
 
         case 'submit-only':
@@ -99,10 +107,13 @@ class Inputfield extends Component {
         //toggle emoji display here (may need to keep this in state)
     }
 
+    
+
     render() {
         return (
                 <form className='inputfield-form-container' onSubmit={this.onSubmit}>
-                    <InputTypeSelect inputType={this.props.inputType} value={this.state.value} onChange={this.onChange} onEmoji={this.onEmoji} />
+                    <InputTypeSelect inputType={this.props.inputType} value={this.state.value} 
+                                     onChange={this.onChange} onEmoji={this.onEmoji} />
                 </form>
         );
     }

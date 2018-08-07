@@ -1,7 +1,7 @@
 :root {
   --main-bg: #182c39; /*hsl(204, 40%, 16%);*/
   --accent-red: #e25454; /*hsl(360, 71%, 61%);*/
-  --accent-red-light: hsl(360, 71%, 45%);
+  --accent-red-light: hsl(360, 80%, 25%);
   
   --white: #FEFCFC;
   --white-faded: hsl(0, 50%, 88%);
