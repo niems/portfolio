@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {ThemeContext, themes} from '../theme-context';
 import './style/inputfield.css';
 
 function DisplayEmoji({ onEmoji }) {
@@ -111,10 +112,18 @@ class Inputfield extends Component {
 
     render() {
         return (
+            <React.Fragment>
                 <form className='inputfield-form-container' onSubmit={this.onSubmit}>
                     <InputTypeSelect inputType={this.props.inputType} value={this.state.value} 
-                                     onChange={this.onChange} onEmoji={this.onEmoji} />
+                                    onChange={this.onChange} onEmoji={this.onEmoji} />
                 </form>
+                
+                <ThemeContext.Consumer>
+                {({theme, toggleTheme}) => (
+                    <button type='button' className={`theme-button ${theme}`}  onClick={toggleTheme}>toggle theme</button>
+                )}
+                </ThemeContext.Consumer>
+            </React.Fragment>
         );
     }
 }

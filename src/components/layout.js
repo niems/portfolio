@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import Inputfield from './inputfield';
+import Navbar from './navbar';
+import LandingPage from './landingPage';
+import Experience from './experience';
+import Projects from './projects';
+import Contact from './contact';
 import './style/layout.css';
 
 class Layout extends Component {
@@ -9,8 +13,15 @@ class Layout extends Component {
 
     render() {
         return (
-            <div id='layout-wrapper'>
-                <Inputfield inputType='emoji-and-submit' />
+            <div id='layout-container'>
+                <Navbar />
+
+                <div id='layout-sections'>
+                    <LandingPage />
+                    <Experience />
+                    <Projects />
+                    <Contact />
+                </div>
             </div>
         );
     }

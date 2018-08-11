@@ -1,5 +1,5 @@
 .inputfield-form-container {
-    --form-padding: 0.25rem 0.1rem 0.15rem 0.5rem;
+    --form-padding: 0.25rem 0.5rem 0.15rem 0.5rem;
     --form-border-radius: 0.5rem;
 
     --submit-button-size: calc(1.6rem + (1.75 - 1.6) * ((100vw - 25em) / (62.5 - 25)));
@@ -28,6 +28,7 @@
 
     margin: 0;
     padding: var(--form-padding);
+    z-index: 2;
 
     border-style: none;
     border-width: 0;
@@ -122,3 +123,31 @@
 }
 /*EMOJI INPUTFIELD SUBMIT*/
 
+
+
+/**CONTEXT BUTTON TEST */
+.theme-button {
+    box-sizing: border-box;
+    width: max-content;
+    height: max-content;
+    z-index: 2;
+
+    outline: none;
+    border-style: outset;
+    border-width: 1px;
+    border-color: black;
+
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1em;
+
+}
+
+.theme-button.light {
+    background: var(--accent-red);
+}
+
+.theme-button.dark {
+    background: var(--main-bg);
+}
+/**CONTEXT BUTTON TEST */
