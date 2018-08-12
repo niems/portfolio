@@ -127,6 +127,7 @@
 }
 
 @media only screen and (min-width: 1000px) {
+    /*
     #navbar-container {
         width: max-content;
         height: 100%;
@@ -172,4 +173,5 @@
     
         color: inherit;
     }
+    */
 }

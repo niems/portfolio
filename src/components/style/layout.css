@@ -74,10 +74,5 @@ svg circle {
 }
 
 @media only screen and (min-width: 1000px) {
-    #layout-container {    
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-    }
+    
 }
