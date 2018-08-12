@@ -1,7 +1,8 @@
+/*
 :root {
-  --main-bg: #182c39; /*hsl(204, 40%, 16%);*/
+  --main-bg: #182c39;
   --main-bg-light: rgb(45, 82, 107);
-  --accent-red: rgb(226, 84, 84); /*hsl(360, 71%, 61%);*/
+  --accent-red: rgb(226, 84, 84); 
   --accent-red-light: hsl(360, 80%, 25%);
 
   --accent-blue: hsl(216, 100%, 60%);  
@@ -17,17 +18,18 @@
   --white: #FEFCFC;
   --white-faded: hsl(0, 50%, 88%);
 
-  /*GENERAL*/
+  
   --font-style: monospace;
-  /*GENERAL*/
+  
 
 
-  /*INPUTFIELD*/
+  
   --inputfield-fg: var(--white);
   --form-bg: var(--mixed-gradient);
   --form-shadow: var(--accent-red-light);
   --form-border: var(--main-bg);
   --inputfield-border: var(--white-faded);
-  /*INPUTFIELD*/
+  
 
 }
+*/

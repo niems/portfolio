@@ -9,8 +9,8 @@ class App extends Component {
     
     this.state = {
       theme: {
-        name: 'dark-theme',
-        path: './themes/dark-theme.css'
+        name: 'light-theme',
+        path: './themes/light-theme.css'
       }
     };
     
@@ -19,26 +19,27 @@ class App extends Component {
   }
 
   toggleTheme() {
-    console.log(`old theme: ${this.state.theme.name}\n`);
-    const theme = this.state.themes.name === themes.dark.name //new theme
+    console.log(`old theme: ${this.state.theme.name}`);
+    const theme = this.state.theme.name === themes.dark.name //new theme
                      ? themes.light
                      : themes.dark;
 
     this.themeRef.href = theme.path; //updates the path for the new theme
     this.setState({ theme }); 
 
-    console.log(`new theme: ${theme.name}\n`);
+    console.log(`new theme: ${theme.name}\n\n`);
   }
 
   render() {
     return (
       <ThemeContext.Provider value={{
-        theme: this.theme,
+        theme: this.state.theme,
         toggleTheme: this.toggleTheme
-        }
-      }>
+        }}>
+
         <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
         <Layout />
+
       </ThemeContext.Provider>
     );
   }

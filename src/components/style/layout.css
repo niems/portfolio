@@ -66,11 +66,11 @@ svg circle {
     justify-content: center;
     align-items: center;
 
-    background: var(--accent-blue-light);
+    background: var(--section-container-bg);
 }
 
-.section-container:nth-child(2n+1) {
-    background: var(--accent-white);       
+.section-container:nth-child(2n) {
+    background: var(--section-container-alt-bg);
 }
 
 @media only screen and (min-width: 1000px) {

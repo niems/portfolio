@@ -6,28 +6,21 @@ import Projects from './projects';
 import Contact from './contact';
 import './style/layout.css';
 
-//returns the new scroll index. If scroll index falls out of range (< 0 or > # of pages to display)
-//it resets to the last page or first page, respectively
+//returns the new scroll index: determines the current page to display.
 function calcScrollIndex(delta, scrollIndex, display) {
     if ( delta === 0) { 
         console.log('onWheel() registered a deltaY value of zero...');
-        return scrollIndex; 
     }
 
-    else if ( delta > 0 ) { //scroll down
-        scrollIndex++; //scrolls to the next page
-
-        if ( scrollIndex > (display.length  - 1) ) {
-            scrollIndex = 0; //reset values - starts at home page
+   else if ( delta > 0 ) { //scroll down
+        if ( (scrollIndex + 1) < display.length ) { //only updates if the page range still valid: ex. If at bottom of page and user scrolls down,
+            scrollIndex++;                          //it will stay on that page instead of looping back to the homepage
         }
-        
-    }   
-    
+    } 
+
     else { //scroll up
-        scrollIndex--; //scrolls to the previous page
-        
-        if ( scrollIndex < 0 ) {
-            scrollIndex = display.length - 1;
+        if ( (scrollIndex - 1) >= 0 ) { //only updates if the page range still valid: ex. If at top of page and user scrolls up,
+            scrollIndex--;              //it will stay on that page instead of looping back to the last page
         } 
     }
 
@@ -46,6 +39,7 @@ class Layout extends Component {
         this.navbarSelect = this.navbarSelect.bind(this); //selected a navbar section
         this.setRef = this.setRef.bind(this); 
 
+        this.acceptScrollData = true; //if set to false: user has just scrolled; new scroll data not accepted for 500ms
         this.onWheel = this.onWheel.bind(this);
         this.scrollIntoView = this.scrollIntoView.bind(this);
         this.scrollOptions = {
@@ -67,8 +61,16 @@ class Layout extends Component {
     onWheel(e) {
         e.preventDefault();  
 
-        this.scrollIndex = calcScrollIndex( e.deltaY, this.scrollIndex, this.display ); //returns index of new page to scroll to
-        this.scrollIntoView( this.scrollIndex ); 
+        if ( this.acceptScrollData ) { //user hasn't scrolled in at least 500ms
+            this.acceptScrollData = false; //doesn't accept user scrolling again for 500ms
+
+            this.scrollIndex = calcScrollIndex( e.deltaY, this.scrollIndex, this.display ); //returns index of new page to scroll to
+            this.scrollIntoView( this.scrollIndex ); 
+
+            setTimeout(() => {
+                this.acceptScrollData = true; //now accepting more scroll data from user
+            }, 500);
+        }
     }
 
     scrollIntoView(viewName) {
@@ -97,7 +99,7 @@ class Layout extends Component {
 
     navbarSelect(e) {
         e.preventDefault();
-        
+
         const id = e.currentTarget.id.replace('-link', ''); //removes -link from the navbar selection
         this.scrollIndex = this.display.indexOf(id); //scroll index for new page
 

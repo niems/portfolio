@@ -13,6 +13,6 @@ export const themes = {
 };
 
 export const ThemeContext = React.createContext({
-    theme: themes.dark, 
+    theme: themes.light, 
     toggleTheme: () => {},
 });
