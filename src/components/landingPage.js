@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import './style/landingPage.css';
 
 class LandingPage extends Component {
     constructor(props) {
         super(props);
+
+        this.setRef = element => {
+            this.props.setRef('landing-page', element);
+        }
     }
 
     render() {
         return (
-            <div className='section-container' id='landing-page'>
+            <section className='section-container' id='landing-page' ref={this.setRef}>
                 landing
-            </div>
+            </section>
         );
     }
 }

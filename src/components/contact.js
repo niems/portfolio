@@ -3,13 +3,17 @@ import React, {Component} from 'react';
 class Contact extends Component {
     constructor(props) {
         super(props);
+
+        this.setRef = element => {
+            this.props.setRef('contact', element);
+        }
     }
 
     render() {
         return (
-            <div className='section-container' id='contact'>
+            <section className='section-container' id='contact' ref={this.setRef}>
                 contact me
-            </div>
+            </section>
         );
     }
 }

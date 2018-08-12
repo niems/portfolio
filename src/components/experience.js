@@ -3,13 +3,17 @@ import React, {Component} from 'react';
 class Experience extends Component {
     constructor(props) {
         super(props);
+
+        this.setRef = element => {
+            this.props.setRef('experience', element);
+        }
     }
 
     render() {
         return (
-            <div className='section-container' id='experience'>
+            <section className='section-container' id='experience' ref={this.setRef}>
                 experience
-            </div>
+            </section>
         );
     }
 }

@@ -1,32 +1,58 @@
 #layout-container {
+    box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     
     overflow: hidden;
     padding: 0;
     margin: 0;
 
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 'navbar'
-                         'profile-sections';
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-#layout-sections {
-    grid-area: profile-sections;
+svg {
+    --svg-circle-size: 80;
 
-    width: 100%;
-    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: -6rem;
+    right: -7rem;
+    z-index: 1;
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: visible;
+
+    width: max-content;
+    height: max-content;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+svg circle {
+    box-sizing: border-box;
+    r: 150;
+    cx: 50%;
+    cy: 50%;
+
+    margin: 0;
+    padding: 0;
+
+    stroke: black;
+    stroke-width: 0px;
+    fill: var(--accent-blue);
+    opacity: 0.5;
 }
 
 .section-container {
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     padding: 0;
     margin: 0;
@@ -36,22 +62,22 @@
     border-color: white;
 
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 
-    background: var(--mixed-gradient);
+    background: var(--accent-blue-light);
 }
 
-.section-container:nth-child(2n) {
-    background: var(--main-bg);       
+.section-container:nth-child(2n+1) {
+    background: var(--accent-white);       
 }
 
-@media only screen and (min-width: 768px) {
-    #layout-container {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: 100%;
-        grid-template-areas: 'navbar profile-sections';
+@media only screen and (min-width: 1000px) {
+    #layout-container {    
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
     }
 }

@@ -4,7 +4,14 @@
   --accent-red: rgb(226, 84, 84); /*hsl(360, 71%, 61%);*/
   --accent-red-light: hsl(360, 80%, 25%);
 
-  --mixed-gradient: linear-gradient(45deg, var(--main-bg-light), var(--accent-red) );
+  --accent-blue: hsl(216, 100%, 60%);  
+  --accent-blue-light: hsl(216, 100%, 85%);
+
+  --accent-white: #FFFFFF;
+
+  --accent-gradient: linear-gradient(45deg, var(--accent-red-light), var(--accent-right) );
+  --accent-gradient-rev: linear-gradient(135deg, var(--accent-red), var(--accent-right-light) );
+  --mixed-gradient: linear-gradient(135deg, var(--main-bg-light), var(--accent-red) );
   --mixed-gradient-rev: linear-gradient(135deg, var(--main-bg-light), var(--accent-red) );
   
   --white: #FEFCFC;
