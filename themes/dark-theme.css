@@ -1,0 +1,33 @@
+:root {
+    --accent-red: #FE1A27;
+    --main-dark: #1E2C39;
+    --main: #485A6C;
+
+    --secondary: #9599A2;
+
+    /*GENERAL*/
+  --font-style: monospace;
+  /*GENERAL*/
+
+
+  /*INPUTFIELD*/
+  --inputfield-fg: var(--secondary);
+  --form-bg: green;
+  --form-shadow: blue;
+  --form-border: black;
+  --inputfield-border: black;
+  /*INPUTFIELD*/
+
+  /*NAVBAR*/
+  --navbar-bg: var(--main-dark);
+  --navbar-border: white;
+  --navbar-item-hover: var(--secondary);
+  /*NAVBAR*/
+
+
+  /*PAGES*/
+  --section-container-bg: var(--main);
+  --section-container-alt-bg: var(--secondary);
+  /*PAGES*/
+
+}
