@@ -5,13 +5,13 @@ class LandingPage extends Component {
         super(props);
 
         this.setRef = element => {
-            this.props.setRef('landing-page', element);
+            this.props.setRef('home', element);
         }
     }
 
     render() {
         return (
-            <section className='section-container' id='landing-page' ref={this.setRef}>
+            <section className='section-container' id='home' ref={this.setRef}>
                 landing
             </section>
         );

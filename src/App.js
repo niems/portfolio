@@ -6,28 +6,38 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.toggleTheme = () => {
-      this.setState({
-        theme: this.state.theme === themes.dark 
-        ? themes.light
-        : themes.dark
-      });
-    };
-
+    
     this.state = {
-      theme: themes.dark,
-      toggleTheme: this.toggleTheme,
+      theme: {
+        name: 'dark-theme',
+        path: './themes/dark-theme.css'
+      }
     };
+    
+    this.themeRef = undefined; 
+    this.toggleTheme = this.toggleTheme.bind(this);
+  }
+
+  toggleTheme() {
+    console.log(`old theme: ${this.state.theme.name}\n`);
+    const theme = this.state.themes.name === themes.dark.name //new theme
+                     ? themes.light
+                     : themes.dark;
+
+    this.themeRef.href = theme.path; //updates the path for the new theme
+    this.setState({ theme }); 
+
+    console.log(`new theme: ${theme.name}\n`);
   }
 
   render() {
     return (
       <ThemeContext.Provider value={{
-        theme: this.state.theme,
-        toggleTheme: this.state.toggleTheme
+        theme: this.theme,
+        toggleTheme: this.toggleTheme
         }
       }>
+        <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
         <Layout />
       </ThemeContext.Provider>
     );

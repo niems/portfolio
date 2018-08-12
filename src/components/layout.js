@@ -6,10 +6,12 @@ import Projects from './projects';
 import Contact from './contact';
 import './style/layout.css';
 
-function scrollIntoView(delta, scrollIndex, display) {
+//returns the new scroll index. If scroll index falls out of range (< 0 or > # of pages to display)
+//it resets to the last page or first page, respectively
+function calcScrollIndex(delta, scrollIndex, display) {
     if ( delta === 0) { 
         console.log('onWheel() registered a deltaY value of zero...');
-        return undefined; 
+        return scrollIndex; 
     }
 
     else if ( delta > 0 ) { //scroll down
@@ -53,48 +55,37 @@ class Layout extends Component {
         };
 
         this.scrollIndex = 0; //index of the current page displayed
-        this.display = [
+        this.display = [ //all pages to display
             'home',
             'experience',
             'projects',
             'contact'
         ];
+        
     }
 
     onWheel(e) {
-        console.log('onWheel():');
-        console.log(`\t delta mode: ${e.deltaMode}`);
-        console.log(`\t delta x: ${e.deltaX}`);
-        console.log(`\t delta y: ${e.deltaY}`);        
-        console.log(`\t delta z: ${e.deltaZ}`);
+        e.preventDefault();  
 
-        //console.log( `page index: ${this.display[this.currentPage.name]['index']}` );
-        this.scrollIndex = scrollIntoView( e.deltaY, this.scrollIndex, this.display ); //returns index of new page to scroll to
-
-        this.scrollIntoView( this.display[this.scrollIndex] ); 
+        this.scrollIndex = calcScrollIndex( e.deltaY, this.scrollIndex, this.display ); //returns index of new page to scroll to
+        this.scrollIntoView( this.scrollIndex ); 
     }
 
     scrollIntoView(viewName) {
-        console.log(`scrollIntoView(): ${viewName}`);
-
         switch(viewName) {
-            case 'navbar-home-section':
-            case 'home':
+            case 0:
                 this.homeRef.scrollIntoView( this.scrollOptions );
                 break;
             
-            case 'navbar-experience-section':
-            case 'experience':
+            case 1:
                 this.experienceRef.scrollIntoView( this.scrollOptions );
                 break;
 
-            case 'navbar-projects-section':
-            case 'projects':
+            case 2:
                 this.projectsRef.scrollIntoView( this.scrollOptions );
                 break;
             
-            case 'navbar-contact-section':
-            case 'contact':
+            case 3:
                 this.contactRef.scrollIntoView( this.scrollOptions );
                 break;
             
@@ -106,13 +97,16 @@ class Layout extends Component {
 
     navbarSelect(e) {
         e.preventDefault();
+        
+        const id = e.currentTarget.id.replace('-link', ''); //removes -link from the navbar selection
+        this.scrollIndex = this.display.indexOf(id); //scroll index for new page
 
-       this.scrollIntoView( e.currentTarget.id ); 
+        this.scrollIntoView( this.scrollIndex ); //scrolls to new page
     }
 
     setRef(type, element) {
         switch(type) {
-            case 'landing-page':
+            case 'home':
                 this.homeRef = element;
                 break;
             
@@ -136,7 +130,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <div id='layout-container' onScroll={this.onScroll} onWheel={this.onWheel}>
+            <div id='layout-container' onWheel={this.onWheel}>
                 <Navbar selection={this.navbarSelect} />
                 <svg>
                     <circle />
