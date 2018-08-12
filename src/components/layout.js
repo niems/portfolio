@@ -134,10 +134,6 @@ class Layout extends Component {
         return (
             <div id='layout-container' onWheel={this.onWheel}>
                 <Navbar selection={this.navbarSelect} />
-                <svg>
-                    <circle />
-                    Sorry, your browser does not support SVG.  
-                </svg> 
 
                 <LandingPage setRef={this.setRef} />
                 <Experience setRef={this.setRef} />
@@ -149,3 +145,10 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+/*
+<svg>
+    <circle />
+    Sorry, your browser does not support SVG.  
+</svg> 
+*/
