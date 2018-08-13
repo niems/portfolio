@@ -1,0 +1,36 @@
+.auto-text-container {
+    box-sizing: border-box;
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.5em;
+    font-weight: bold;
+
+    opacity: 0.7;
+}
+
+
+@keyframes cursor-blink {
+    to {
+        opacity: 1;
+    }
+}
+
+.auto-text-cursor {
+    opacity: 0;
+
+    font-size: 1.5em;
+
+    animation-name: cursor-blink;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

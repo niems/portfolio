@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   toggleTheme() {
-    console.log(`old theme: ${this.state.theme.name}`);
+    //console.log(`old theme: ${this.state.theme.name}`);
     const theme = this.state.theme.name === themes.dark.name //new theme
                      ? themes.light
                      : themes.dark;
@@ -27,7 +27,7 @@ class App extends Component {
     this.themeRef.href = theme.path; //updates the path for the new theme
     this.setState({ theme }); 
 
-    console.log(`new theme: ${theme.name}\n\n`);
+    //console.log(`new theme: ${theme.name}\n\n`);
   }
 
   render() {
