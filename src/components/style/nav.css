@@ -2,6 +2,7 @@
     width: 90%;
     max-height: 3.5rem;
     height: 3.5rem;
+    order: 1;
 
     margin-top: 0.25rem;
     padding: 0;
@@ -63,14 +64,14 @@
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 
     margin: 0;
     padding: 0;
     text-decoration-line: none;
 
-    transform: translateY(1rem);
+    transform: translateY(-1rem);
 }
 
 .nav-icon {
@@ -98,7 +99,7 @@
 }
 
 .nav-link-container:hover .nav-icon{
-    transform: translateY(1.1rem);
+    transform: translateY(-1.1rem);
 }
 .nav-link-container:hover .icon-text {
     opacity: 1;

@@ -1,7 +1,8 @@
 :root {
+    --main-dark: #1E1E1E;
+    --main: #2A2A2B;
+
     --accent-red: #FE1A27;
-    --main-dark: #1E2C39;
-    --main: #485A6C;
 
     --secondary: #9599A2;
 
@@ -27,7 +28,7 @@
 
   /*PAGES*/
   --section-container-bg: var(--main);
-  --section-container-alt-bg: var(--secondary);
+  --section-container-alt-bg: var(--main);
   /*PAGES*/
 
 }

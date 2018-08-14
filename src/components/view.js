@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-//import Navbar from './navbar';
-import Nav from './nav';
+import Navbar from './navbar';
+//import Nav from './nav';
 import LandingPage from './landingPage';
 import Experience from './experience';
 import Projects from './projects';
@@ -11,25 +11,14 @@ class View extends Component {
     constructor(props) {
         super(props);
         
-        
-        this.navbarSelect = this.navbarSelect.bind(this); //selected a navbar section
-
-        this.acceptScrollData = true; //if set to false: user has just scrolled; new scroll data not accepted for 500ms
-        this.onWheel = this.onWheel.bind(this);
-        this.scrollOptions = {
-            block: 'start',
-            inline: 'nearest',
-            behavior: 'smooth'
+        this.state = {
+            displayed: {
+                name: 'home',
+                component: <LandingPage />
+            }
         };
 
-        this.scrollIndex = 0; //index of the current page displayed
-        this.display = [ //all pages to display
-            'home',
-            'experience',
-            'projects',
-            'contact'
-        ];
-        
+        this.navbarSelect = this.navbarSelect.bind(this); //selected a navbar section
     }
 
     onWheel(e) {
@@ -41,9 +30,7 @@ class View extends Component {
 
     navbarSelect(e) {
         e.preventDefault();
-
         const id = e.currentTarget.id.replace('-link', ''); //removes -link from the navbar selection
-        this.scrollIndex = this.display.indexOf(id); //scroll index for new page
 
     }
 
@@ -51,11 +38,11 @@ class View extends Component {
 
     render() {
         return (
-            <div id='view-container' onWheel={this.onWheel}>
-                <Nav selection={this.navbarSelect} />
+            <div id='view-container'>
+                <Navbar selection={this.navbarSelect} />
 
                 <div id='sections-container'>
-                    
+                    {this.state.displayed.component}
                 </div>
             </div>
         );
@@ -63,11 +50,3 @@ class View extends Component {
 }
 
 export default View;
-
-/*
-<Navbar selection={this.navbarSelect} />
-<svg>
-    <circle />
-    Sorry, your browser does not support SVG.  
-</svg> 
-*/

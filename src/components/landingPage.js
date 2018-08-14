@@ -16,16 +16,13 @@ class LandingPage extends Component {
             ],
         };
 
-        this.setRef = element => {
-            this.props.setRef('home', element);
-        }
     }
 
     render() {
         return (
-            <section className='section-container' id='home' ref={this.setRef}>
+            <div className='page-container' id='home'>
                 <AutoText setup={this.autoTextSetup} />
-            </section>
+            </div>
         );
     }
 }

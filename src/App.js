@@ -10,8 +10,8 @@ class App extends Component {
     
     this.state = {
       theme: {
-        name: 'light-theme',
-        path: './themes/light-theme.css'
+        name: 'dark-theme',
+        path: './themes/dark-theme.css'
       }
     };
     
