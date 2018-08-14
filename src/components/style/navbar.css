@@ -10,9 +10,13 @@
     display: block;
     margin: 0;
     padding: 0;
+
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: var(--navbar-border);
   
     color: white;
-    background: var(--navbar-bg);        
+    background-color: var(--navbar-bg);
 }
 
 .navbar-container ul {
@@ -90,6 +94,8 @@
         height: 100%;
         width: var(--navbar-width);
         min-width: var(--navbar-width);
+
+        border-style: none solid none none;
     }
 
     .navbar-container ul {

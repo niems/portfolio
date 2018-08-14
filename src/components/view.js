@@ -21,13 +21,6 @@ class View extends Component {
         this.navbarSelect = this.navbarSelect.bind(this); //selected a navbar section
     }
 
-    onWheel(e) {
-        e.preventDefault();  
-        console.log('onWheel()');
-        
-        //
-    } 
-
     navbarSelect(e) {
         e.preventDefault();
         const id = e.currentTarget.id.replace('-link', ''); //removes -link from the navbar selection
