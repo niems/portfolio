@@ -6,8 +6,10 @@
     padding: 0;
     margin: 0;
 
+    /*
     position: fixed;
     top: 0;
+    */
     z-index: 2;
 
     overflow: hidden;
@@ -80,6 +82,16 @@
     background: var(--navbar-item-hover);
 }
 
+@keyframes icon-enter {
+    from {
+        top: -200px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
 .navbar-link-container {
     box-sizing: border-box;
     width: 100%;
@@ -89,13 +101,30 @@
     text-decoration-line: none;
 
     position: relative;
-
+    
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 
     color: inherit;
+
+    animation-name: icon-enter;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  
+}
+
+#experience-link {
+    animation-duration: 1.3s;
+}
+
+#projects-link {
+    animation-duration: 1.6s;
+}
+
+#contact-link {
+    animation-duration: 1.9s;
 }
 
 .navbar-icon {

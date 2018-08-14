@@ -60,7 +60,8 @@ class Layout extends Component {
 
     onWheel(e) {
         e.preventDefault();  
-
+        console.log('onWheel()');
+        
         if ( this.acceptScrollData ) { //user hasn't scrolled in at least 500ms
             this.acceptScrollData = false; //doesn't accept user scrolling again for 500ms
 

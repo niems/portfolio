@@ -5,14 +5,6 @@ class LandingPage extends Component {
     constructor(props) {
         super(props);
 
-        /*
-        this.autoTextSetup = {
-            static: 'This is the landing page auto text...', 
-            duration: 100,
-            loop: true,
-        };
-        */
-
        this.autoTextSetup = {
             loop: true,
             duration: 100,

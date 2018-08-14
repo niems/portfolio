@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Layout from './components/layout';
+//import Layout from './components/layout';
+import View from './components/view';
 import { ThemeContext, themes } from './theme-context';
 import './App.css';
 
@@ -38,7 +39,7 @@ class App extends Component {
         }}>
 
         <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
-        <Layout />
+        <View />
 
       </ThemeContext.Provider>
     );
