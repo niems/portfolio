@@ -17,6 +17,13 @@ class View extends Component {
             }
         };
 
+        this.displayOrder = [
+            'home',
+            'experience',
+            'projects',
+            'contact'
+        ];
+
         this.navbarSelect = this.navbarSelect.bind(this); //selected a navbar section
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this);
     }
@@ -33,23 +40,29 @@ class View extends Component {
 
         if (id !== this.state.displayed.name) {
             let component = null;
+            let direction = 'forward';
+
+            if ( this.displayOrder.indexOf(this.state.displayed.name) > this.displayOrder.indexOf(id) ) {
+                direction = 'backward';
+            }
+
+            console.log(`direction: ${direction}`);
 
             switch(id) {
                 case 'home':
-                    component = (<LandingPage />);
+                    component = (<LandingPage direction={direction} />);
                     break;
                 
                 case 'experience':
-                    console.log('experience');
-                    component = (<Experience />);
+                    component = (<Experience direction={direction} />);
                     break;
 
                 case 'projects':
-                    component = (<Projects />);
+                    component = (<Projects direction={direction} />);
                     break;
 
                 case 'contact':
-                    component = (<Contact />);
+                    component = (<Contact direction={direction} />);
                     break;
             }
 

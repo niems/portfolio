@@ -7,7 +7,7 @@ class Experience extends Component {
 
     render() {
         return (
-            <div className='page-container' id='experience-container'>
+            <div className={`page-container ${this.props.direction}`} id='experience-container'>
                 experience
             </div>
         );

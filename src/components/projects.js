@@ -7,7 +7,7 @@ class Projects extends Component {
 
     render() {
         return (
-            <div className='page-container' id='projects-container'>
+            <div className={`page-container ${this.props.direction}`} id='projects-container'>
                 projects
             </div>
         );
