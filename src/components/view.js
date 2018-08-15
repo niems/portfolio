@@ -30,10 +30,10 @@ class View extends Component {
     updateDisplayedPage(id) {
         if (id !== this.state.displayed.name) {
             let component = null;
-            let direction = 'forward';
+            let direction = 'top';
 
             if ( this.displayOrder.indexOf(this.state.displayed.name) > this.displayOrder.indexOf(id) ) {
-                direction = 'backward';
+                direction = 'bottom';
             }
 
             switch(id) {

@@ -18,23 +18,23 @@
     background: var(--section-container-bg);
 }
 
-@keyframes forward-enter {
+@keyframes top-enter {
     from {
-        margin-left: 100%;
+        margin-top: 100%;
     }
 
     to {
-        margin-left: 0px;
+        margin-top: 0px;
     }
 }
 
-@keyframes backward-enter {
+@keyframes bottom-enter {
     from {
-        margin-right: 100%;
+        margin-top: -100%;
     }
 
     to {
-        margin-right: 0px;
+        margin-top: 0px;
     }
 }
 
@@ -51,13 +51,13 @@
     color: white;
 }
 
-.page-container.forward {
-    animation-name: forward-enter;
+.page-container.bottom {
+    animation-name: bottom-enter;
     animation-duration: 0.8s;
 }
 
-.page-container.backward {
-    animation-name: backward-enter;
+.page-container.top {
+    animation-name: top-enter;
     animation-duration: 0.8s;
 }
 
