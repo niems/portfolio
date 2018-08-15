@@ -59,7 +59,7 @@
     padding: 0.25rem;
 
     filter: invert(1);
-    transition: all 0.4s;
+    transition: opacity 0.4s;
 }
 
 .icon-text {
@@ -76,7 +76,7 @@
     position: absolute;
     top: 3.5rem;
     
-    transition: all 0.4s;
+    transition: opacity 0.4s;
 }
 
 .navbar-item:hover .navbar-icon {
@@ -85,6 +85,10 @@
 
 .navbar-item:hover .icon-text {
     opacity: 1;
+}
+
+.navbar-item.selected .navbar-icon {
+    filter: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 }
 
 

@@ -11,10 +11,6 @@
     margin: 0;
     padding: 0;
 
-<<<<<<< HEAD
-    font-size: 1.5em;
-=======
->>>>>>> layout
     font-size: calc(0.85em + (1.5 - 0.85) * ((100vw - 25em) / (75 - 25)));
     font-weight: bold;
 

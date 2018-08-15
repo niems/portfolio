@@ -15,7 +15,6 @@ class LandingPage extends Component {
                 'the last one :D'
             ],
         };
-
     }
 
     render() {

@@ -24,20 +24,10 @@ class View extends Component {
             'contact'
         ];
 
-        this.navbarSelect = this.navbarSelect.bind(this); //selected a navbar section
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this);
     }
 
-    navbarSelect(e) {
-        e.preventDefault();
-        this.updateDisplayedPage( e.currentTarget.id );
-    }
-
     updateDisplayedPage(id) {
-        console.log('updateDisplayedPage():');
-        console.log(`\tid: ${id}`);
-        console.log(`\tcurrent: ${this.state.displayed.name}\n\n`);
-
         if (id !== this.state.displayed.name) {
             let component = null;
             let direction = 'forward';
@@ -45,8 +35,6 @@ class View extends Component {
             if ( this.displayOrder.indexOf(this.state.displayed.name) > this.displayOrder.indexOf(id) ) {
                 direction = 'backward';
             }
-
-            console.log(`direction: ${direction}`);
 
             switch(id) {
                 case 'home':
@@ -67,7 +55,6 @@ class View extends Component {
             }
 
             if ( component !== null ) {
-                console.log('updating component');
                 this.setState({
                     displayed: {
                         name: id,
@@ -81,7 +68,7 @@ class View extends Component {
     render() {
         return (
             <div id='view-container'>
-                <Navbar selection={this.navbarSelect} />
+                <Navbar selection={this.updateDisplayedPage} />
 
                 <div id='sections-container'>
                     {this.state.displayed.component}

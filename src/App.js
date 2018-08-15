@@ -26,8 +26,6 @@ class App extends Component {
 
     this.themeRef.href = theme.path; //updates the path for the new theme
     this.setState({ theme }); 
-
-    //console.log(`new theme: ${theme.name}\n\n`);
   }
 
   render() {
