@@ -12,6 +12,7 @@
     padding: 0;
 
     font-size: 1.5em;
+    font-size: calc(0.85em + (1.5 - 0.85) * ((100vw - 25em) / (75 - 25)));
     font-weight: bold;
 
     opacity: 0.7;

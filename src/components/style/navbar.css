@@ -1,5 +1,5 @@
 .navbar-container {
-    --navbar-height: 3.5rem;
+    --navbar-height: 3rem;
     --navbar-width: 4.5rem;
 
     box-sizing: border-box;
@@ -51,7 +51,7 @@
 
 .navbar-icon {
     box-sizing: border-box;
-    width: 2.6rem;
+    width: 2.25rem;
     height: auto;
     
     display: block;
@@ -70,7 +70,7 @@
     align-items: center;
     
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1em;
 
     opacity: 0;
     position: absolute;
