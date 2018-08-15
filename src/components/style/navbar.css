@@ -1,6 +1,6 @@
 .navbar-container {
     --navbar-height: 3.5rem;
-    --navbar-width: 4rem;
+    --navbar-width: 4.5rem;
 
     box-sizing: border-box;
     width: 100%;
@@ -51,7 +51,7 @@
 
 .navbar-icon {
     box-sizing: border-box;
-    width: 2.5rem;
+    width: 2.6rem;
     height: auto;
     
     display: block;
@@ -109,8 +109,14 @@
         margin: 2rem 0;
     }
 
+    .navbar-icon {
+        width: 2.8rem;
+    }
+
     .icon-text {
         top: initial;
         left: var(--navbar-width);
+
+        font-size: 1.25em;
     }
 }

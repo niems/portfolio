@@ -20,7 +20,7 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <div className='page-container' id='home'>
+            <div className='page-container' id='home-container'>
                 <AutoText setup={this.autoTextSetup} />
             </div>
         );
