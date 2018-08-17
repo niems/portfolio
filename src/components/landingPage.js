@@ -19,9 +19,9 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <div className={`page-container ${this.props.direction}`} id='home-container'>
-                <AutoText setup={this.autoTextSetup} />
-            </div>
+                <div className={`page-container ${this.props.direction}`} id='home-container'>
+                    <AutoText setup={this.autoTextSetup} />
+                </div>                
         );
     }
 }

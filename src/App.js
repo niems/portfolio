@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   toggleTheme() {
-    //console.log(`old theme: ${this.state.theme.name}`);
     const theme = this.state.theme.name === themes.dark.name //new theme
                      ? themes.light
                      : themes.dark;
@@ -36,8 +35,8 @@ class App extends Component {
         }}>
 
         <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
-        <View />
 
+        <View />
       </ThemeContext.Provider>
     );
   }
