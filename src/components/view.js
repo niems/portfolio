@@ -7,12 +7,6 @@ import Contact from './contact';
 
 import './style/view.css';
 
-function newArrowNav(callback) {
-    this.name = null,
-    this.component = null
-    this.callback = callback;
-}
-
 class View extends Component {
     constructor(props) {
         super(props);

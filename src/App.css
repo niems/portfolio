@@ -1,35 +1,9 @@
-/*
-:root {
-  --main-bg: #182c39;
-  --main-bg-light: rgb(45, 82, 107);
-  --accent-red: rgb(226, 84, 84); 
-  --accent-red-light: hsl(360, 80%, 25%);
+#particles-js {
+  box-sizing: border-box;
+  overflow: hidden;
 
-  --accent-blue: hsl(216, 100%, 60%);  
-  --accent-blue-light: hsl(216, 100%, 85%);
-
-  --accent-white: #FFFFFF;
-
-  --accent-gradient: linear-gradient(45deg, var(--accent-red-light), var(--accent-right) );
-  --accent-gradient-rev: linear-gradient(135deg, var(--accent-red), var(--accent-right-light) );
-  --mixed-gradient: linear-gradient(135deg, var(--main-bg-light), var(--accent-red) );
-  --mixed-gradient-rev: linear-gradient(135deg, var(--main-bg-light), var(--accent-red) );
-  
-  --white: #FEFCFC;
-  --white-faded: hsl(0, 50%, 88%);
-
-  
-  --font-style: monospace;
-  
-
-
-  
-  --inputfield-fg: var(--white);
-  --form-bg: var(--mixed-gradient);
-  --form-shadow: var(--accent-red-light);
-  --form-border: var(--main-bg);
-  --inputfield-border: var(--white-faded);
-  
-
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
 }
-*/

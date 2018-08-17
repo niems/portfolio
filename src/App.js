@@ -3,6 +3,9 @@ import View from './components/view';
 import { ThemeContext, themes } from './theme-context';
 import './App.css';
 
+import 'particles.js/particles';  
+const particlesJS = window.particlesJS;  
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +21,10 @@ class App extends Component {
     this.toggleTheme = this.toggleTheme.bind(this);
   }
 
+  componentDidMount(){
+    particlesJS.load("particles-js", './particles.json');
+  }
+
   toggleTheme() {
     const theme = this.state.theme.name === themes.dark.name //new theme
                      ? themes.light
@@ -28,15 +35,16 @@ class App extends Component {
   }
 
   render() {
-    return (
+   return (
       <ThemeContext.Provider value={{
         theme: this.state.theme,
         toggleTheme: this.toggleTheme
         }}>
 
-        <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
-
-        <View />
+          <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
+          <div id="particles-js"></div>
+          <View />
+        
       </ThemeContext.Provider>
     );
   }

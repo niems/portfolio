@@ -20,6 +20,7 @@ class LandingPage extends Component {
     render() {
         return (
                 <div className={`page-container ${this.props.direction}`} id='home-container'>
+                    <img src='./images/test-transparent.png' alt='no background img D:' />
                     <AutoText setup={this.autoTextSetup} />
                 </div>                
         );
