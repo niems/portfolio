@@ -5,5 +5,5 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #0C1A28;
+  background: var(--accent-dark);
 }

@@ -14,7 +14,7 @@ class AutoText extends Component {
         this.playDirection = 'FORWARD'; //determines which direction to animate - only changes if 'loop' is true
 
         this.dramaticPause = false; //set to TRUE once the forward update finishes until the backward update beings(if loop is TRUE)
-        this.dramaticPauseDuration = 800; //duration to pause before starting the backward update(if loop is TRUE) in miliseconds
+        this.dramaticPauseDuration = 1500; //duration to pause before starting the backward update(if loop is TRUE) in miliseconds
 
         this.state = {
             dynamicText: '' //
