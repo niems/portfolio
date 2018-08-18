@@ -2,6 +2,7 @@
     --main-dark: #1E1E1E;
     --main: #2A2A2B;
 
+    --accent-dark: #0C1A28;
     --accent-blue: #05C0FA;
     --accent-green: #00FFBC;
 
@@ -25,8 +26,9 @@
 
   /*NAVBAR*/
   --navbar-bg: var(--main-dark);
-  --navbar-border: white;
+  --navbar-border: black;
   --navbar-item-hover: var(--secondary);
+  --navbar-item-hover-filter: invert(1);
   --navbar-icon: var(--filter-blue);
   /*NAVBAR*/
 
@@ -35,5 +37,9 @@
   --section-container-bg: var(--main);
   --section-container-alt-bg: var(--main);
   /*PAGES*/
+
+  /*AUTOTEXT*/
+  --auto-text-highlight: var(--accent-blue);
+  /*AUTOTEXT*/
 
 }
