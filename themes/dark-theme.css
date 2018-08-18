@@ -3,6 +3,10 @@
     --main: #2A2A2B;
 
     --accent-blue: #05C0FA;
+    --accent-green: #00FFBC;
+
+    --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
+    --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 
     --secondary: #9599A2;
 
@@ -21,8 +25,9 @@
 
   /*NAVBAR*/
   --navbar-bg: var(--main-dark);
-  --navbar-border: black;
+  --navbar-border: white;
   --navbar-item-hover: var(--secondary);
+  --navbar-icon: var(--filter-blue);
   /*NAVBAR*/
 
 
