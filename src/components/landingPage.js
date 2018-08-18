@@ -20,7 +20,6 @@ class LandingPage extends Component {
     render() {
         return (
                 <div className={`page-container ${this.props.direction}`} id='home-container'>
-                    <img src='./images/test-transparent.png' alt='no background img D:' />
                     <AutoText setup={this.autoTextSetup} />
                 </div>                
         );
@@ -28,3 +27,4 @@ class LandingPage extends Component {
 }
 
 export default LandingPage;
+/*<img src='./images/test-transparent.png' alt='no background img D:' />*/

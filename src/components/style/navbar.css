@@ -7,16 +7,18 @@
     min-height: var(--navbar-height);
     height: var(--navbar-height);
 
+    z-index: 1;
+
     display: block;
     margin: 0;
     padding: 0;
 
     border-style: none none solid none;
-    border-width: 2px;
+    border-width: 1px;
     border-color: var(--navbar-border);
   
     color: white;
-    background-color: var(--navbar-bg);
+    background-color: transparent;
 }
 
 .navbar-container ul {
@@ -58,8 +60,9 @@
     margin: 0;
     padding: 0.25rem;
 
-    filter: invert(1);
+    filter: var(--filter-blue);
     transition: opacity 0.4s;
+    opacity: 0.5;
 }
 
 .icon-text {
@@ -80,7 +83,7 @@
 }
 
 .navbar-item:hover .navbar-icon {
-    opacity: 0.1;
+    opacity: 0.25;
 }
 
 .navbar-item:hover .icon-text {
@@ -88,7 +91,8 @@
 }
 
 .navbar-item.selected .navbar-icon {
-    filter: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
+    filter: var(--navbar-icon);
+    opacity: 1;
 }
 
 
