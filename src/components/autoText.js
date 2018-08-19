@@ -1,24 +1,56 @@
 import React, {Component} from 'react';
 import './style/autoText.css';
 
+function ToList({ classList, sentence }) {
+    const arr = Array.from(sentence);
+
+    console.log(`sentence: ${arr}\n`);
+    const items = Array.from(sentence).map(char => (
+        char == ' ' ? ' ' : (<span className={classList}>{`${char}`}</span>)
+    ));
+
+    return items;
+}
+
+function TextEffects({ effect, staticText, dynamicText }) {
+    let output = '';
+    switch(effect) {
+        case 'spring':
+        case 'stand-up':
+            output = (<ToList classList={`auto-text ${effect}`} sentence={`${staticText}${dynamicText}`} />);
+            break;
+        
+        default:
+            output = `${staticText}${dynamicText}`;
+            break;
+    }
+
+    return output;
+}
+
 class AutoText extends Component {
     constructor(props) {
         super(props);
 
-        this.staticText = this.props.setup.staticText; //unchanging text (immediately renders)
-        this.dynamicStrings = this.props.setup.dynamicStrings; //all strings that are cycled as output
-        this.dynamicIndex = 0; //index of current dynamic string being displayed
-
-        this.duration = this.props.setup.duration; //number of miliseconds it pauses before updating the output
-        this.loop = this.props.setup.loop; //determines if the text reverses after being fully output
-        this.playDirection = 'FORWARD'; //determines which direction to animate - only changes if 'loop' is true
-
-        this.dramaticPause = false; //set to TRUE once the forward update finishes until the backward update beings(if loop is TRUE)
-        this.dramaticPauseDuration = 1500; //duration to pause before starting the backward update(if loop is TRUE) in miliseconds
-
         this.state = {
             dynamicText: '' //
         };
+       
+        this.loop = this.props.setup.loop === undefined ? false : this.props.setup.loop; //determines if the text reverses after being fully output
+        this.effect = this.props.setup.effect;
+        //this.springEffect = this.props.setup.springEffect === undefined ? false : this.props.setup.springEffect; //if true, letters spring when hovered over
+
+        
+        this.dynamicIndex = 0; //index of current dynamic string being displayed
+        this.staticText = this.props.setup.staticText === undefined ? '' : this.props.setup.staticText; //unchanging text (immediately renders)
+        this.dynamicStrings = this.props.setup.dynamicStrings === undefined ? [''] : this.props.setup.dynamicStrings; //all strings that are cycled as output
+       
+        this.characterDuration = this.props.setup.characterDuration === undefined ? 100 : this.props.setup.characterDuration; //number of miliseconds it pauses before updating the output
+        this.sentencePauseDuration = this.props.setup.sentencePauseDuration === undefined ? 1500 : this.props.setup.sentencePauseDuration; //miliseconds to pause once the current dynamic string is output
+        this.sentencePause = false; //set to TRUE once the forward update finishes until the backward update beings(if loop is TRUE)
+       
+        this.playDirection = 'FORWARD'; //determines which direction to animate - only changes if 'loop' is true
+        
 
         this.update = this.update.bind(this);
         this.updateForward = this.updateForward.bind(this); //updates the text by adding characters
@@ -28,7 +60,9 @@ class AutoText extends Component {
     }
 
     componentDidMount() {
-        this.timerID = setInterval(this.update, this.duration);
+        setTimeout(() => {
+            this.timerID = setInterval(this.update, this.characterDuration);
+        }, 500);
     }
 
     componentWillUnmount() {
@@ -55,14 +89,16 @@ class AutoText extends Component {
            }
     
            else {
-               if ( this.loop ) { 
-                   if ( !this.dramaticPause ) {
-                       this.dramaticPause = true;
+               //if ( this.loop ) { 
+                //if looping is enabled OR it hasn't finished going through all the strings.
+                if ( this.loop || (this.dynamicIndex + 1) < this.dynamicStrings.length ) {
+                   if ( !this.sentencePause ) {
+                       this.sentencePause = true;
 
                        setTimeout(() => {
                            this.playDirection = 'BACKWARD';
-                           this.dramaticPause = false;
-                       }, this.dramaticPauseDuration);
+                           this.sentencePause = false;
+                       }, this.sentencePauseDuration);
                    }
                }
     
@@ -103,11 +139,12 @@ class AutoText extends Component {
     render() {
         return (
             <span className='auto-text-container'>
-                {`${this.staticText}${this.state.dynamicText}`}
-                <span className='auto-text-cursor'>|</span>
+                <TextEffects effect={this.effect} staticText={this.staticText} dynamicText={this.state.dynamicText} />
+                <span className={`auto-text-cursor ${this.effect}`}>|</span>
             </span>
         );
     }
 }
 
 export default AutoText;
+/*{`${this.staticText}${this.state.dynamicText}`}*/

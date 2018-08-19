@@ -8,12 +8,10 @@ class Experience extends Component {
 
         this.autoTextSetup = {
             loop: true,
-            duration: 100,
-            staticText: 'This is ', 
             dynamicStrings: [
-                'the blank experience page D:',
-                'not a test...',
-                'all your fault.'
+                'This is the blank experience page D:',
+                'This is not a test...',
+                'This is all your fault.'
             ],
         };
     }

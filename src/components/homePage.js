@@ -6,18 +6,18 @@ class HomePage extends Component {
         super(props);
 
        this.autoTextSetup = {
-            loop: true,
-            duration: 100,
-            staticText: '', 
+            effect: 'spring',
             dynamicStrings: [
                 'Hello.',
+                'I pressed keys on my keyboard to create this :o'
             ],
         };
     }
 
     render() {
         return (
-                <div className={`page-container  ${this.props.direction}`} id='home-page-container'>
+                <div className={`page-container  ${this.props.direction}`} id='home-container'>
+                    <AutoText setup={this.autoTextSetup} />
                     <AutoText setup={this.autoTextSetup} />
                 </div>                
         );

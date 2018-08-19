@@ -7,7 +7,6 @@ class LandingPage extends Component {
 
        this.autoTextSetup = {
             loop: true,
-            duration: 100,
             staticText: 'This is ', 
             dynamicStrings: [
                 'the landing page of success :P',

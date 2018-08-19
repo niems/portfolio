@@ -29,7 +29,8 @@
   --navbar-border: black;
   --navbar-item-hover: var(--secondary);
   --navbar-item-hover-filter: invert(1);
-  --navbar-icon: var(--filter-blue);
+  --navbar-icon-filter: invert(1);
+  --navbar-icon-filter-hover: var(--filter-blue);
   /*NAVBAR*/
 
 

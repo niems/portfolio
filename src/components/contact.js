@@ -7,8 +7,6 @@ class Contact extends Component {
         super(props);
 
         this.autoTextSetup = {
-            loop: false,
-            duration: 100,
             staticText: '', 
             dynamicStrings: [
                 'A contact page with no contact info...',

@@ -8,8 +8,6 @@ class Projects extends Component {
 
         this.autoTextSetup = {
             loop: true,
-            duration: 100,
-            staticText: '', 
             dynamicStrings: [
                 'An empty project page D:',
                 'What a surprise :o',

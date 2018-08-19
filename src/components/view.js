@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navbar from './navbar';
 import LandingPage from './landingPage';
+import HomePage from './homePage';
 import Experience from './experience';
 import Projects from './projects';
 import Contact from './contact';
@@ -14,7 +15,7 @@ class View extends Component {
         this.state = {
             displayed: {
                 name: 'home',
-                component: <LandingPage />
+                component: <HomePage />
             },
         };
 
@@ -38,7 +39,8 @@ class View extends Component {
 
             switch(id) {
                 case 'home':
-                    component = (<LandingPage direction={direction} />);
+                    //component = (<LandingPage direction={direction} />);
+                    component = (<HomePage direction={direction} />);
                     break;
                 
                 case 'experience':
