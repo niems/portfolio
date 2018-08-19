@@ -1,0 +1,26 @@
+.distort-text-container {
+    --font-size: 2.5em; 
+    --line-height: 1.5em;
+
+    box-sizing: border-box;
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+
+    display: inline-block;
+
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+
+    font-size: var(--font-size);
+    font-weight: bold;
+    font-family: monospace;
+    line-height: var(--line-height);
+
+    overflow-wrap: break-word;
+
+    opacity: 0.85;
+
+    background: white;
+    color: black;
+}

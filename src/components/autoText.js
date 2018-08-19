@@ -15,6 +15,7 @@ function ToList({ classList, sentence }) {
 
 function TextEffects({ effect, staticText, dynamicText }) {
     let output = '';
+
     switch(effect) {
         case 'spring':
         case 'stand-up':
@@ -138,6 +139,11 @@ class AutoText extends Component {
     }
 
     render() {
+
+        /*
+        change TextEffects line - tries to forceUpdate on an unmounted component
+        */
+
         return (
             <span className='auto-text-container'>
                 <TextEffects effect={this.effect} staticText={this.staticText} dynamicText={this.state.dynamicText} />
