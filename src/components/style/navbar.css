@@ -113,6 +113,10 @@
         width: var(--navbar-width);
         min-width: var(--navbar-width);
 
+        position: fixed;
+        top: 0;
+        left: 0;
+
         border-style: none solid none none;
     }
 
