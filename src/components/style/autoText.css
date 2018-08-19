@@ -1,25 +1,38 @@
 .auto-text-container {
+    --font-size: 1.8em; /*calc(1.5em + (2 - 1.5) * ((100vw - 25em) / (75 - 25)));*/
+    --line-height: 1.5em;
+    --cursor-size: var(--font-size);
+    --cursor-spring-size: var(--font-size);
+    --cursor-stand-up-size: var(--font-size);
+
     box-sizing: border-box;
+    max-width: 100%;
     width: max-content;
     height: max-content;
 
-    margin: 0;
-    padding: 0.25rem 1rem;
+    display: inline-block;
 
-    font-size: calc(1.5em + (2 - 1.5) * ((100vw - 25em) / (75 - 25)));
+    margin: 0;
+    padding: 0.5rem 1rem;
+
+    font-size: var(--font-size);
     font-weight: bold;
     font-family: monospace;
+    line-height: var(--line-height);
+
+    overflow-wrap: break-word;
 
     opacity: 0.85;
     background: transparent;
+    background: gray;
 }
 
-
+.auto-text {
+    display: inline-block;
+}
 
 .auto-text.spring {
-    display: inline-block;
     color: var(--accent-green);
-
     transition: transform 0.35s;
 }
 
@@ -58,7 +71,7 @@
 
 .auto-text-cursor {
     opacity: 0;
-    font-size: 1.5em;
+    font-size: var(--cursor-size);
 
     animation-name: cursor-blink;
     animation-duration: 0.6s;
@@ -68,5 +81,9 @@
 
 .auto-text-cursor.spring {
     color: var(--accent-green);
-    font-size: 2.3em;
+    font-size: var(--cursor-spring-size);
+}
+
+.auto-text-cursor.stand-up {
+    font-size: var(--cursor-stand-up-size);
 }

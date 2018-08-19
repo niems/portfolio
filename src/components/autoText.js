@@ -6,7 +6,8 @@ function ToList({ classList, sentence }) {
 
     console.log(`sentence: ${arr}\n`);
     const items = Array.from(sentence).map(char => (
-        char == ' ' ? ' ' : (<span className={classList}>{`${char}`}</span>)
+        char == ' ' ? (<span className={classList}>&#8195;</span>)
+                    : (<span className={classList}>{`${char}`}</span>)
     ));
 
     return items;

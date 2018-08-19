@@ -19,9 +19,10 @@
 
 #sections-container {
     box-sizing: border-box;
+    max-width: 100%;
     width: max-content;
     height: max-content;
-    
+
     position: relative;
     display: flex;
     flex-flow: column nowrap;
