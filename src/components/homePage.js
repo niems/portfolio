@@ -18,7 +18,6 @@ class HomePage extends Component {
         return (
                 <div className={`page-container  ${this.props.direction}`} id='home-container'>
                     <AutoText setup={this.autoTextSetup} />
-                    <AutoText setup={this.autoTextSetup} />
                 </div>                
         );
     }
