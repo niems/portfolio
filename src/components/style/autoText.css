@@ -24,7 +24,8 @@
 
     opacity: 0.85;
     background: transparent;
-    background: gray;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--accent-blue);
 }
 
 .auto-text {

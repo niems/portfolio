@@ -19,8 +19,6 @@
 
     overflow-wrap: break-word;
 
-    opacity: 0.85;
-
-    background: white;
-    color: black;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--accent-blue);
 }

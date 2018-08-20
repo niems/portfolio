@@ -14,20 +14,29 @@ class HomePage extends Component {
             ],
         };
 
+        this.noEffect = {
+            target: 'distorted text no-effect'
+        };
+
         this.distortTextSetup = {
-            target: 'distorted text spaced out',
-            effect: 'spaced-out'
+            target: 'spaced-out effect',
+            effect: 'spaced-out',
+            delay: 3000
         };
 
         this.moreDistortedTextSetup = {
-            target: 'distorted text without spacing',
-            delay: 3000
+            target: 'single-output effect',
+            effect: 'single-output',
+            pauseBetweenDistortion: 40,
+            delay: 6000
         };
+
     }
 
     render() {
         return (
                 <div className={`page-container  ${this.props.direction}`} id='home-container'>
+                    <DistortText setup={this.noEffect} />
                     <DistortText setup={this.distortTextSetup} />
                     <DistortText setup={this.moreDistortedTextSetup} />
                 </div>                

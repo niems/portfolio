@@ -2,7 +2,12 @@ import React, {Component} from 'react';
 import './style/distortText.css';
 
 /*
-    pass options as object under 'setup'. ex. this.props.setup
+    pass options as object under 'setup'.
+    ex. this.props.setup = {
+        target: '',
+        delay: 500,
+        etc...
+    }
 
     **REQUIRED:
         target (string): the final text displayed once the distortion effect is finished
@@ -47,6 +52,7 @@ class DistortText extends Component {
         this.destroyTimer = this.destroyTimer.bind(this); //clears interval timer
         
         this.update = this.update.bind(this); //updates the distorted text
+        this.singleOutputEffect = this.singleOutputEffect.bind(this); //only one character is distorted at a time, displaying a new scrambled character after the previous is unscrambled
         this.getDistortions = this.getDistortions.bind(this); //returns array of distorted characters
         this.getRand = this.getRand.bind(this); //returns a random number between a min/max range
     }
@@ -83,32 +89,69 @@ class DistortText extends Component {
     }
 
     update() {
-        let distortedOutput = ''; //updated text displayed
-        let finalCharsUnset = 0; //number of final characters that haven't been set yet (still displaying distortion)
-
-        this.target.forEach(letter => {
-            if (letter.distortionsRemaining.length > 0) { //more distortion characters to use
-                finalCharsUnset++; //another final character not set
-
-                if ( this.effect === 'spaced-out' ) {
-                    distortedOutput += (letter.distortionsRemaining.pop() + ' ');
-                }
-
-                else {
-                    distortedOutput += letter.distortionsRemaining.pop();
+        try {
+            let distortedOutput = ''; //updated text displayed
+            let finalCharsUnset = 0; //number of final characters that haven't been set yet (still displaying distortion)
+    
+            if ( this.effect === 'single-output' ) {
+                let output = this.singleOutputEffect();
+                distortedOutput = output.distortedOutput;
+                finalCharsUnset = output.finalCharsUnset;
+            }
+    
+            else {
+                this.target.forEach(letter => {
+                    if (letter.distortionsRemaining.length > 0) { //more distortion characters to use
+                        finalCharsUnset++; //another final character not set
+        
+                        if ( this.effect === 'spaced-out' ) {
+                            distortedOutput += (letter.distortionsRemaining.pop() + ' ');
+                        }
+        
+                        else {
+                            distortedOutput += letter.distortionsRemaining.pop();
+                        }
+                    }
+        
+                    else { //no more distortion characters to display
+                        distortedOutput += letter.final;
+                    }
+                });
+        
+                if ( finalCharsUnset === 0 ) { //all final characters have been set
+                    this.destroyTimer(); //removes update timer
                 }
             }
+    
+            this.setState({ text: distortedOutput });
+        }
+        catch(err) {
+            this.destroyTimer();
+            console.log(`err: ${err.message}\n`);
+        }
+    }
 
-            else { //no more distortion characters to display
-                distortedOutput += letter.final;
-            }
-        });
+    singleOutputEffect() {
+        let distortedOutput = Array.from(this.state.text); //updated text displayed
 
-        if ( finalCharsUnset === 0 ) { //all final characters have been set
-            this.destroyTimer(); //removes update timer
+        //subtracting an additional unit b/c the current character isn't initially counted
+        let finalCharsUnset = this.target.length - this.state.text.length - 1; //number of final characters that haven't been set yet (still displaying distortion)
+        let outputLen = this.state.text.length > 0 ? this.state.text.length - 1 : 0;
+
+        if ( this.target[ outputLen ].distortionsRemaining.length > 0 ) { //more distortions to use before unscrambled
+            distortedOutput[ outputLen ] = this.target[ outputLen ].distortionsRemaining.pop();
         }
 
-        this.setState({ text: distortedOutput });
+        else { //finally the character is unscrambled
+            distortedOutput[ outputLen ] = this.target[ outputLen ].final;
+            outputLen++; //current character counted since it's in final form
+
+            if ( this.target.length > outputLen ) { //more characters to unscramble
+                distortedOutput.push( this.target[ outputLen ].distortionsRemaining.pop() );
+            }
+        }
+
+        return {distortedOutput: distortedOutput.join(''), finalCharsUnset: finalCharsUnset};
     }
 
     getDistortions() {
