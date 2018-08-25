@@ -11,6 +11,8 @@ class Navbar extends Component {
         this.projectsRef = null;
         this.contactRef = null;
 
+        this.menuRef = null;
+
         this.state = {
             displayed: 'home'
         };
@@ -57,6 +59,10 @@ class Navbar extends Component {
             case 'contact':
                 this.contactRef.classList.remove('selected');
                 break;
+            
+            case 'menu':
+                this.menuRef.classList.remove('selected');
+                break;
         }
     }
 
@@ -77,6 +83,10 @@ class Navbar extends Component {
             case 'contact':
                 this.contactRef.classList.add('selected');
                 break;
+
+            case 'menu':
+                this.menuRef.classList.add('selected');
+                break;
         }
     }
 
@@ -86,24 +96,34 @@ class Navbar extends Component {
                 {({ theme }) => (
                     <nav className={`navbar-container ${theme.name}`} >
                         <ul>
-                            <li className='navbar-item selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>
+                            <li className='logo'>
+                                <img className={`navbar-icon ${theme.name}`} src='./images/logo/z.svg' alt='failed to load logo D:' />
+                            </li>
+
+                            <li className='navbar-item desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>
                                 <img className={`navbar-icon ${theme.name}`} src='./images/home-icon.svg' alt='failed to load home icon D:' />
                                 <span className={`icon-text ${theme.name}`}>Home</span>
                             </li>
 
-                            <li className='navbar-item' id='projects' onClick={this.updateSelection} ref={element => {this.projectsRef = element;} }>
+                            <li className='navbar-item desktop-only' id='projects' onClick={this.updateSelection} ref={element => {this.projectsRef = element;} }>
                                 <img className={`navbar-icon ${theme.name}`} src='./images/code-icon.svg' alt='failed to load code icon D:' />
                                 <span className={`icon-text ${theme.name}`}>Portfolio</span>
                             </li>
 
-                            <li className='navbar-item' id='experience' onClick={this.updateSelection} ref={element => {this.experienceRef = element;} }>
+                            <li className='navbar-item desktop-only' id='experience' onClick={this.updateSelection} ref={element => {this.experienceRef = element;} }>
                                 <img className={`navbar-icon ${theme.name}`} src='./images/flask.svg' alt='failed to load build icon D:' />
                                 <span className={`icon-text ${theme.name}`}>Experiments</span>
                             </li>
 
-                            <li className='navbar-item' id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>
+                            <li className='navbar-item desktop-only' id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>
                                 <img className={`navbar-icon ${theme.name}`} src='./images/chat-icon.svg' alt='failed to load chat icon D:' />
                                 <span className={`icon-text ${theme.name}`}>Contact</span>
+                            </li>
+
+
+                            <li className='navbar-item mobile-only' id='menu' onClick={this.updateSelection} ref={element => {this.menuRef = element;} }>
+                                <img className={`navbar-icon ${theme.name}`} src='./images/menu-black.svg' alt='failed to load menu icon D:' />
+                                <span className={`icon-text ${theme.name}`}>Menu</span>
                             </li>
                         </ul>
                     </nav>

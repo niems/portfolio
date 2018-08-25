@@ -92,6 +92,10 @@ class View extends Component {
                 case 'contact':
                     component = (<Contact direction={direction} />);
                     break;
+
+                case 'menu':
+                    component = null;
+                    break;
             }
 
             if ( component !== null ) {
