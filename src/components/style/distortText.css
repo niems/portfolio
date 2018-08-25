@@ -1,5 +1,4 @@
 .distort-text-container {
-    --font-size: 2.5em; 
     --line-height: 1.5em;
 
     box-sizing: border-box;
@@ -8,17 +7,26 @@
     height: max-content;
 
     display: inline-block;
+    z-index: 1;
 
     margin: 1rem 0;
     padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
 
-    font-size: var(--font-size);
     font-weight: bold;
-    font-family: monospace;
+    font-family: var(--font-family);
     line-height: var(--line-height);
 
     overflow-wrap: break-word;
 
-    background: rgba(0, 0, 0, 0.2);
     color: var(--accent-blue);
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.distort-text-container.large {
+    font-size: var(--large-font);
+}
+
+.distort-text-container.medium {
+    font-size: var(--medium-font);
 }

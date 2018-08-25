@@ -37,6 +37,8 @@ class DistortText extends Component {
             }
             */
         ];
+
+        this.fontClass = this.props.font === undefined ? '' : this.props.font; //determines font class to use
         
         this.delay = this.props.setup.delay === undefined ? 500 : this.props.setup.delay;
         this.effect = this.props.setup.effect === undefined ? '' : this.props.setup.effect
@@ -171,7 +173,7 @@ class DistortText extends Component {
 
     render() {
         return (
-            <span className='distort-text-container'>
+            <span className={`distort-text-container ${this.fontClass}`}>
                 {this.state.text}
             </span>
         );

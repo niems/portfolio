@@ -7,7 +7,7 @@
     min-height: var(--navbar-height);
     height: var(--navbar-height);
 
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
 
@@ -21,7 +21,7 @@
     box-shadow: 0px 0px 6px black;
   
     color: black;
-    background-color: transparent;
+    background-color: var(--navbar-bg);
 }
 
 .navbar-container ul {
@@ -87,7 +87,7 @@
     font-family: 'Courier New', Courier, monospace;
     
     transition: opacity 0.4s;
-    color: white;
+    color: var(--navbar-text);
 }
 
 .navbar-item:hover .navbar-icon {

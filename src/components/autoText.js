@@ -2,12 +2,9 @@ import React, {Component} from 'react';
 import './style/autoText.css';
 
 function ToList({ classList, sentence }) {
-    const arr = Array.from(sentence);
-
-    console.log(`sentence: ${arr}\n`);
-    const items = Array.from(sentence).map(char => (
-        char == ' ' ? (<span className={classList}>&#8195;</span>)
-                    : (<span className={classList}>{`${char}`}</span>)
+    const items = Array.from(sentence).map((char, index) => (
+        char == ' ' ? (<span key={index} className={classList}>&#8195;</span>)
+                    : (<span key={index} className={classList}>{`${char}`}</span>)
     ));
 
     return items;
@@ -42,6 +39,7 @@ class AutoText extends Component {
         this.effect = this.props.setup.effect;
         //this.springEffect = this.props.setup.springEffect === undefined ? false : this.props.setup.springEffect; //if true, letters spring when hovered over
 
+        this.fontClass = this.props.font === undefined ? '' : this.props.font; //determines font class to use
         
         this.dynamicIndex = 0; //index of current dynamic string being displayed
         this.staticText = this.props.setup.staticText === undefined ? '' : this.props.setup.staticText; //unchanging text (immediately renders)
@@ -145,7 +143,7 @@ class AutoText extends Component {
         */
 
         return (
-            <span className='auto-text-container'>
+            <span className={`auto-text-container ${this.fontClass}`}>
                 <TextEffects effect={this.effect} staticText={this.staticText} dynamicText={this.state.dynamicText} />
                 <span className={`auto-text-cursor ${this.effect}`}>|</span>
             </span>

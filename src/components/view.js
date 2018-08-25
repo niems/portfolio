@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Navbar from './navbar';
-import LandingPage from './landingPage';
 import HomePage from './homePage';
 import Experience from './experience';
 import Projects from './projects';
 import Contact from './contact';
+
+import Testing from './testing';
 
 import './style/view.css';
 
@@ -15,7 +16,7 @@ class View extends Component {
         this.state = {
             displayed: {
                 name: 'home',
-                component: <HomePage />
+                component: null
             },
         };
 
@@ -27,6 +28,43 @@ class View extends Component {
         ];
 
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
+
+        //TESTING ONLY
+        this.testing = false;
+        this.testLoop = this.testLoop.bind(this);
+    }
+
+    componentDidMount() {
+        if ( this.testing )
+            this.testLoop();
+    }
+
+    componentWillUnmount() {
+        if ( this.testing )
+            clearInterval( this.testTimerId );
+    }
+
+    testLoop() {
+        console.log('testLoop()');
+        //cycles through pages below over interval given
+        const pageDuration = 15000; //miliseconds
+        //create callback for when the animation is finished to avoid using page duration...
+        //callback can be triggered once the timer is removed.
+
+        const pageCycle = [
+            'projects',
+            'home',
+            'contact',
+            'home'
+        ];
+
+        let currentPageIndex = 0;
+        this.testTimerId = setInterval(() => {
+            this.updateDisplayedPage( pageCycle[currentPageIndex] );
+
+            currentPageIndex = (currentPageIndex + 1) === pageCycle.length
+                             ? 0 : currentPageIndex + 1;
+        }, pageDuration);
     }
 
     updateDisplayedPage(id) {

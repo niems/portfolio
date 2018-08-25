@@ -19,7 +19,7 @@ class Projects extends Component {
     render() {
         return (
             <div className={`page-container ${this.props.direction}`} id='projects-container'>
-                <AutoText setup={this.autoTextSetup} />
+                <AutoText font='medium' setup={this.autoTextSetup} />
             </div>
         );
     }
