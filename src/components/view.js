@@ -17,7 +17,7 @@ class View extends Component {
         this.state = {
             displayed: {
                 name: 'home',
-                component: null
+                component: <HomePage />
             },
 
             displayMenu: null
