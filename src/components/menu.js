@@ -23,8 +23,13 @@ class Menu extends Component {
                 </div>
 
                 <div id='nav-social-links'>
-                    <span className='social-link-container'>Github</span>
-                    <span className='social-link-container'>Codepen</span>
+                    <a className='social-link-container' href='https://github.com/niems/' target='_blank'>
+                        <img className='social-link-img' src='./images/social/github.svg' />
+                    </a>
+
+                    <a className='social-link-container' href='https://codepen.io/niems/' target='_blank'>
+                        <img className='social-link-img' src='./images/social/codepen.svg' />
+                    </a>
                 </div>
             </div>
         );
