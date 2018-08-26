@@ -4,6 +4,7 @@ import HomePage from './homePage';
 import Experience from './experience';
 import Projects from './projects';
 import Contact from './contact';
+import Menu from './menu';
 
 import Testing from './testing';
 
@@ -18,6 +19,8 @@ class View extends Component {
                 name: 'home',
                 component: null
             },
+
+            displayMenu: null
         };
 
         this.displayOrder = [
@@ -27,6 +30,7 @@ class View extends Component {
             'contact'
         ];
 
+        this.onMenuToggle = this.onMenuToggle.bind(this); //toggles the menu on/off
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
 
         //TESTING ONLY
@@ -42,6 +46,14 @@ class View extends Component {
     componentWillUnmount() {
         if ( this.testing )
             clearInterval( this.testTimerId );
+    }
+
+    onMenuToggle(e) {
+        e.preventDefault();
+
+        this.setState({
+            displayMenu: this.state.displayMenu === null ? (<Menu onClose={this.onMenuToggle} />) : null
+        });
     }
 
     testLoop() {
@@ -113,7 +125,8 @@ class View extends Component {
     render() {
         return (
             <div id='view-container'>
-                <Navbar selection={this.updateDisplayedPage} />
+                <Navbar selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
+                {this.state.displayMenu}
 
                 <div id='sections-container'>                    
                     {this.state.displayed.component}

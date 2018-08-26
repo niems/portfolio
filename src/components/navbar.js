@@ -121,7 +121,7 @@ class Navbar extends Component {
                             </li>
 
 
-                            <li className='navbar-item mobile-only' id='menu' onClick={this.updateSelection} ref={element => {this.menuRef = element;} }>
+                            <li className='navbar-item mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
                                 <img className={`navbar-icon ${theme.name}`} src='./images/menu-black.svg' alt='failed to load menu icon D:' />
                                 <span className={`icon-text ${theme.name}`}>Menu</span>
                             </li>
