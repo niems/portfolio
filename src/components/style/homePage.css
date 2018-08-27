@@ -1,17 +1,64 @@
 #home-container {
     box-sizing: border-box;
-    width: max-content;
+    max-width: 500px;
+    width: 100%;
     height: max-content;
 
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     flex: 0 1 auto;
 
     padding: 1rem 0;
     
-    z-index: 1;
     background-image: url('../backgrounds/z.svg');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
+
+    color: var(--home-text-fg);
+}
+
+.home-info {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: max-content;
+
+    
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+span[id='name'] {
+    font-size: 3em;
+    font-weight: bold;
+    
+}
+
+span[id='dev-title'] {
+    font-size: 1.4em;
+    
+    font-style: italic;
+    
+    margin: 0;
+}
+
+#about-me-btn {
+    box-sizing: border-box;
+    align-self: flex-start;
+
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    margin-top: 1rem;
+    font-size: 1em;
+
+    outline: none;
+}
+
+
+.distort-text-container.homepage {
+    color: red;
+    font-size: 1.4em;
 }

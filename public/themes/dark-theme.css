@@ -1,46 +1,48 @@
 :root {
-    --main-dark: #1E1E1E;
-    --main: #2A2A2B;
+  --main: #EBF1EF;
+  --accent-blue: #3090B6;
+  
+  --main-dark: #1E1E1E;
+  
+  --accent-dark: #0C1A28;
+  --accent-green: #00FFBC;
 
-    --accent-dark: #0C1A28;
-    --accent-blue: #05C0FA;
-    --accent-green: #00FFBC;
+  --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
+  --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 
-    --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
-    --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
-
-    --secondary: #9599A2;
-
-    /*GENERAL*/
-  --font-style: monospace;
   /*GENERAL*/
+--font-family: 'Courier New', Courier, monospace;
+--large-font: calc(1.6em + (3 - 1.6) * ((100vw - 21em) / (75 - 21)));
+--medium-font: calc(1.2em + (2 - 1.2) * ((100vw - 21em) / (75 - 21)));
+/*GENERAL*/
+
+/*NAVBAR*/
+--navbar-bg: var(--main-dark);
+--navbar-text: white;
+--navbar-border: none;
+--navbar-item-hover: inherit;
+--navbar-item-hover-filter: invert(1);
+--navbar-icon-filter: invert(1);
+--navbar-icon-filter-hover: var(--filter-blue);
+/*NAVBAR*/
+
+/*MENU*/
+--menu-nav-bg: var(--main-dark);
+--menu-main-bg: linear-gradient(45deg, rgba(12, 26, 40, 0.65), rgba(37, 116, 148, 1) );
+--menu-main-fg: black;
+--menu-footer-bg: var(--main-dark);
+/*MENU*/
 
 
-  /*INPUTFIELD*/
-  --inputfield-fg: var(--secondary);
-  --form-bg: green;
-  --form-shadow: blue;
-  --form-border: black;
-  --inputfield-border: black;
-  /*INPUTFIELD*/
+/*PAGES*/
+--section-container-bg: none;
+--section-container-alt-bg: var(--accent-blue);
 
-  /*NAVBAR*/
-  --navbar-bg: var(--main-dark);
-  --navbar-border: black;
-  --navbar-item-hover: var(--secondary);
-  --navbar-item-hover-filter: invert(1);
-  --navbar-icon-filter: invert(1);
-  --navbar-icon-filter-hover: var(--filter-blue);
-  /*NAVBAR*/
+--home-text-fg: var(--main);
+/*PAGES*/
 
-
-  /*PAGES*/
-  --section-container-bg: var(--main);
-  --section-container-alt-bg: var(--main);
-  /*PAGES*/
-
-  /*AUTOTEXT*/
-  --auto-text-highlight: var(--accent-blue);
-  /*AUTOTEXT*/
+/*AUTOTEXT*/
+--auto-text-highlight: var(--accent-blue);
+/*AUTOTEXT*/
 
 }

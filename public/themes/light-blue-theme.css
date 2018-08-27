@@ -26,8 +26,8 @@
   /*INPUTFIELD*/
 
   /*NAVBAR*/
-  --navbar-bg: rgba(0, 0, 0, 0.75);
-  --navbar-text: black;
+  --navbar-bg: var(--main-dark);
+  --navbar-text: white;
   --navbar-border: none;
   --navbar-item-hover: inherit;
   --navbar-item-hover-filter: invert(1);
@@ -37,8 +37,8 @@
 
 
   /*PAGES*/
-  --section-container-bg: var(--main);
-  --section-container-alt-bg: var(--main);
+  --section-container-bg: none;
+  --section-container-alt-bg: var(--accent-blue);
   /*PAGES*/
 
   /*AUTOTEXT*/

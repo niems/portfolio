@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import AutoText from './autoText';
+import './style/contact.css';
 
 
 class Contact extends Component {
@@ -16,7 +17,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <div className={`page-container ${this.props.direction}`} id='contact-container'>
+            <div className={`page-container`} id='contact-container'>
                 <AutoText font='medium' setup={this.autoTextSetup} />
             </div>
         );

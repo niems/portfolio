@@ -28,7 +28,7 @@
     justify-content: flex-end;
     align-items: center;
 
-    background: #252525; 
+    background: var(--menu-nav-bg);
 }
 
 #navbar-close-container {
@@ -63,7 +63,8 @@
     align-items: center;
     flex: 1 1 auto;
 
-    background: white;
+    color: var(--menu-main-fg);
+    background: var(--menu-main-bg);
 }
 
 .page-item-container {
@@ -79,6 +80,7 @@
 
 .page-item-container:hover {
     transform: scale(1.1, 1.1);
+    filter: invert(1);
 }
 
 
@@ -92,7 +94,7 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.65);
+    background: var(--menu-footer-bg);
 }
 
 .social-link-container {

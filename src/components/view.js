@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Navbar from './navbar';
 import HomePage from './homePage';
-import Experience from './experience';
-import Projects from './projects';
+import Experiments from './experiments';
+import Portfolio from './portfolio';
 import Contact from './contact';
 import Menu from './menu';
 
@@ -25,8 +25,8 @@ class View extends Component {
 
         this.displayOrder = [
             'home',
-            'experience',
-            'projects',
+            'portfolio',
+            'experiments',
             'contact'
         ];
 
@@ -64,7 +64,7 @@ class View extends Component {
         //callback can be triggered once the timer is removed.
 
         const pageCycle = [
-            'projects',
+            'portfolio',
             'home',
             'contact',
             'home'
@@ -79,6 +79,45 @@ class View extends Component {
         }, pageDuration);
     }
 
+    updateDisplayedPage(id) {
+        if (id !== this.state.displayed.name) {
+            let component = null; //current page displayed
+
+            switch(id) {
+                case 'home':
+                    //component = (<LandingPage direction={direction} />);
+                    component = (<HomePage />);
+                    break;
+                
+                case 'experience':
+                    component = (<Experiments />);
+                    break;
+
+                case 'portfolio':
+                    component = (<Portfolio />);
+                    break;
+
+                case 'contact':
+                    component = (<Contact />);
+                    break;
+
+                case 'menu':
+                    component = null;
+                    break;
+            }
+
+            if ( component !== null ) {
+                this.setState({
+                    displayed: {
+                        name: id,
+                        component: component
+                    }
+                });
+            }
+        }
+    }
+
+    /*
     updateDisplayedPage(id) {
         if (id !== this.state.displayed.name) {
             let component = null; //current page displayed
@@ -121,6 +160,8 @@ class View extends Component {
             }
         }
     }
+    */
+   
 
     render() {
         return (
@@ -129,7 +170,10 @@ class View extends Component {
                 {this.state.displayMenu}
 
                 <div id='sections-container'>                    
-                    {this.state.displayed.component}
+                    <HomePage />
+                    <Portfolio />
+                    <Experiments />
+                    <Contact />
                 </div>
             </div>
         );

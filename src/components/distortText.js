@@ -39,7 +39,8 @@ class DistortText extends Component {
         ];
 
         this.fontClass = this.props.font === undefined ? '' : this.props.font; //determines font class to use
-        
+        this.styleClass = this.props.setup.styleClass === undefined ? '' : this.props.styleClass;
+
         this.delay = this.props.setup.delay === undefined ? 500 : this.props.setup.delay;
         this.effect = this.props.setup.effect === undefined ? '' : this.props.setup.effect
         this.minDistortion = this.props.setup.minDistortion === undefined ? 5 : this.props.setup.minDistortion; 
@@ -61,6 +62,7 @@ class DistortText extends Component {
 
     componentDidMount() {
         this.setupDistortions();
+        console.log(`style class: ${this.styleClass}`);
 
         setTimeout(() => {
             this.setupTimer();
@@ -173,7 +175,7 @@ class DistortText extends Component {
 
     render() {
         return (
-            <span className={`distort-text-container ${this.fontClass}`}>
+            <span className={`distort-text-container ${this.styleClass}`}>
                 {this.state.text}
             </span>
         );

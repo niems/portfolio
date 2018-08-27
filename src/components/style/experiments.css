@@ -1,0 +1,10 @@
+#experiments-container {
+    box-sizing: border-box;
+    height: 1500px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}

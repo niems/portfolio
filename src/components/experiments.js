@@ -1,28 +1,28 @@
 import React, {Component} from 'react';
 import AutoText from './autoText';
+import './style/experiments.css';
 
-
-class Projects extends Component {
+class Experiments extends Component {
     constructor(props) {
         super(props);
 
         this.autoTextSetup = {
             loop: true,
             dynamicStrings: [
-                'An empty project page D:',
-                'What a surprise :o',
-                'Maybe put projects here instead...'
+                'This is the blank experiments page D:',
+                'This is not a test...',
+                'This is all your fault.'
             ],
         };
     }
 
     render() {
         return (
-            <div className={`page-container ${this.props.direction}`} id='projects-container'>
+            <div className={`page-container`} id='experiments-container'>
                 <AutoText font='medium' setup={this.autoTextSetup} />
             </div>
         );
     }
 }
 
-export default Projects;
+export default Experiments;
