@@ -7,7 +7,7 @@ class Navbar extends Component {
         super(props);
 
         this.homeRef = null;
-        this.experienceRef = null;
+        this.experimentsRef = null;
         this.portfolioRef = null;
         this.contactRef = null;
 

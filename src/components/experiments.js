@@ -18,7 +18,7 @@ class Experiments extends Component {
 
     render() {
         return (
-            <div className={`page-container`} id='experiments-container'>
+            <div className={`page-container`} id='experiments-container' ref={this.props.setRef}>
                 <AutoText font='medium' setup={this.autoTextSetup} />
             </div>
         );

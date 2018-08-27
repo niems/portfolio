@@ -17,7 +17,7 @@ class View extends Component {
         this.state = {
             displayed: {
                 name: 'home',
-                component: <HomePage />
+                component: <HomePage setRef={el => this.homeRef = el} />
             },
 
             displayMenu: null
@@ -29,6 +29,11 @@ class View extends Component {
             'experiments',
             'contact'
         ];
+
+        this.homeRef = null;
+        this.portfolioRef = null;
+        this.experimentsRef = null;
+        this.contactRef = null;
 
         this.onMenuToggle = this.onMenuToggle.bind(this); //toggles the menu on/off
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
@@ -81,88 +86,38 @@ class View extends Component {
 
     updateDisplayedPage(id) {
         console.log(`updateDisplayedPage() id: ${id}\n`);
+        const scrollOptions = {behavior: 'smooth', block: 'start', inline: 'nearest'};
+        //console.log(`type: ${typeof(this.ref[id])}\n`);
         
-        if (id !== this.state.displayed.name) {
-            let component = null; //current page displayed
+        switch(id) {
+            case 'home':
+                this.homeRef.scrollIntoView(scrollOptions);
+                break;
 
-            switch(id) {
-                case 'home':
-                    component = (<HomePage />);
-                    break;
-                
-                case 'experience':
-                    component = (<Experiments />);
-                    break;
+            case 'portfolio':
+                this.portfolioRef.scrollIntoView(scrollOptions);
+                break;
 
-                case 'portfolio':
-                    component = (<Portfolio />);
-                    break;
+            case 'experiments':
+                this.experimentsRef.scrollIntoView(scrollOptions);
+                break;
 
-                case 'contact':
-                    component = (<Contact />);
-                    break;
-
-                case 'menu':
-                    component = null;
-                    break;
-            }
-
-            if ( component !== null ) {
-                this.setState({
-                    displayed: {
-                        name: id,
-                        component: component
-                    }
-                });
-            }
+            case 'contact':
+                this.contactRef.scrollIntoView(scrollOptions);
+                break;
+            
+            default:
+                console.log(`updateDisplayedPage() "${id}" undefined - no action taken`);
+                break;
         }
-    }
-
-    /*
-    updateDisplayedPage(id) {
-        if (id !== this.state.displayed.name) {
-            let component = null; //current page displayed
-
-            //determines the direction the page animates in
-            let direction = ( this.displayOrder.indexOf(this.state.displayed.name) > this.displayOrder.indexOf(id) )
-                            ? 'bottom' : 'top';
-
-            switch(id) {
-                case 'home':
-                    //component = (<LandingPage direction={direction} />);
-                    component = (<HomePage direction={direction} />);
-                    break;
-                
-                case 'experience':
-                    component = (<Experience direction={direction} />);
-                    break;
-
-                case 'projects':
-                    component = (<Projects direction={direction} />);
-                    break;
-
-                case 'contact':
-                    component = (<Contact direction={direction} />);
-                    break;
-
-                case 'menu':
-                    component = null;
-                    break;
-            }
-
-            if ( component !== null ) {
-                this.setState({
-                    displayed: {
-                        name: id,
-                        component: component
-                    }
-
-                }, this.arrowNavUpdate);
-            }
+        
+        //closes menu since a page was selected
+        if ( this.state.displayMenu !== null ) {
+            this.setState ({
+                displayMenu: null
+            });
         }
-    }
-    */
-   
+    }   
 
     render() {
         return (
@@ -171,10 +126,10 @@ class View extends Component {
                 {this.state.displayMenu}
 
                 <div id='sections-container'>                    
-                    <HomePage />
-                    <Portfolio />
-                    <Experiments />
-                    <Contact />
+                    <HomePage setRef={el => this.homeRef = el} />
+                    <Portfolio setRef={el => this.portfolioRef = el} />
+                    <Experiments setRef={el => this.experimentsRef = el} />
+                    <Contact setRef={el => this.contactRef = el} />
                 </div>
             </div>
         );

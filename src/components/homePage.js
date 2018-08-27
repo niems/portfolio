@@ -23,7 +23,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className={`page-container`}>
+            <div className={`page-container`} id='home' ref={this.props.setRef}>
                 <div id='home-container'>
                     <span className='home-info' id='name'>Zach Niemann</span>
                     <DistortText setup={this.distortTextSetup} />

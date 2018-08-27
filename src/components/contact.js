@@ -17,7 +17,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <div className={`page-container`} id='contact-container'>
+            <div className={`page-container`} id='contact-container' ref={this.props.setRef}>
                 <AutoText font='medium' setup={this.autoTextSetup} />
             </div>
         );

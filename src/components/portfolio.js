@@ -19,7 +19,7 @@ class Portfolio extends Component {
 
     render() {
         return (
-            <div className={`page-container`} id='portfolio-container'>
+            <div className={`page-container`} id='portfolio-container' ref={this.props.setRef}>
                 <AutoText font='medium' setup={this.autoTextSetup} />
             </div>
         );
