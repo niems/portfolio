@@ -1,6 +1,7 @@
 :root {
   --main: #EBF1EF;
   --accent-blue: #3090B6;
+  --dark-blue: #13202C;
   
   --main-dark: #1E1E1E;
   
@@ -15,6 +16,8 @@
 --large-font: calc(1.6em + (3 - 1.6) * ((100vw - 21em) / (75 - 21)));
 --medium-font: calc(1.2em + (2 - 1.2) * ((100vw - 21em) / (75 - 21)));
 /*GENERAL*/
+
+--app-bg: var(--dark-blue);
 
 /*NAVBAR*/
 --navbar-bg: var(--main-dark);
