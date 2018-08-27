@@ -52,7 +52,7 @@ class View extends Component {
         e.preventDefault();
 
         this.setState({
-            displayMenu: this.state.displayMenu === null ? (<Menu onClose={this.onMenuToggle} />) : null
+            displayMenu: this.state.displayMenu === null ? (<Menu onSelect={this.updateDisplayedPage} onClose={this.onMenuToggle} />) : null
         });
     }
 
@@ -80,12 +80,13 @@ class View extends Component {
     }
 
     updateDisplayedPage(id) {
+        console.log(`updateDisplayedPage() id: ${id}\n`);
+        
         if (id !== this.state.displayed.name) {
             let component = null; //current page displayed
 
             switch(id) {
                 case 'home':
-                    //component = (<LandingPage direction={direction} />);
                     component = (<HomePage />);
                     break;
                 

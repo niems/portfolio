@@ -4,6 +4,15 @@ import './style/menu.css';
 class Menu extends Component {
     constructor(props) {
         super(props);
+
+        this.updateSelection = this.updateSelection.bind(this);
+    }
+
+    updateSelection(e) {
+        e.preventDefault();
+        const id = e.currentTarget.id;
+
+        this.props.onSelect(id);
     }
 
     render() {
@@ -16,10 +25,10 @@ class Menu extends Component {
                 </div>
 
                 <div id='page-list-container'>
-                    <span className='page-item-container'>Home</span>
-                    <span className='page-item-container'>Portfolio</span>
-                    <span className='page-item-container'>Experiments</span>
-                    <span className='page-item-container'>Contact</span>
+                    <span className='page-item-container' id='home' onClick={this.updateSelection}>Home</span>
+                    <span className='page-item-container' id='portfolio' onClick={this.updateSelection}>Portfolio</span>
+                    <span className='page-item-container' id='experiments' onClick={this.updateSelection}>Experiments</span>
+                    <span className='page-item-container' id='contact' onClick={this.updateSelection}>Contact</span>
                 </div>
 
                 <div id='nav-social-links'>
