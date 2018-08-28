@@ -137,7 +137,7 @@ class Navbar extends Component {
                 {({ theme }) => (
                     <nav className={`navbar-container ${theme.name}`} >
                         <div className='logo-container'>
-                            <img className={`navbar-logo ${theme.name}`} src='./images/logo/z.svg' alt='failed to load logo D:' />
+                            <img className={`navbar-logo ${theme.name}`} src='./images/logo/z-logo.svg' alt='failed to load logo D:' />
                         </div>
 
                         <div className='icon-text desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>Home</div>
