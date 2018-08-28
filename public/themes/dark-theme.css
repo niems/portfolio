@@ -39,7 +39,7 @@
 
 /*PAGES*/
 --section-container-bg: none;
---section-container-alt-bg: var(--accent-blue);
+--section-container-alt-bg: linear-gradient(45deg, var(--dark-blue), var(--accent-blue));
 
 --home-text-fg: var(--main);
 /*PAGES*/
