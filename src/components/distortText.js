@@ -40,8 +40,10 @@ class DistortText extends Component {
 
         this.fontClass = this.props.font === undefined ? '' : this.props.font; //determines font class to use
         this.styleClass = this.props.setup.styleClass === undefined ? '' : this.props.styleClass;
+        this.afterEffect = this.props.setup.afterEffect === undefined ? false : this.props.setup.afterEffect;
 
-        this.delay = this.props.setup.delay === undefined ? 500 : this.props.setup.delay;
+        this.delay = this.props.setup.delay === undefined ? 500 : this.props.setup.delay; //delay in miliseconds before starting initial effect
+        this.afterEffectDelay = this.props.setup.afterEffectDelay === undefined ? 6000 : this.props.setup.afterEffectDelay; //pause in ms before creating a new after effect
         this.effect = this.props.setup.effect === undefined ? '' : this.props.setup.effect
         this.minDistortion = this.props.setup.minDistortion === undefined ? 5 : this.props.setup.minDistortion; 
         this.maxDistortion = this.props.setup.maxDistortion === undefined ? 20 : this.props.setup.maxDistortion;
@@ -50,8 +52,10 @@ class DistortText extends Component {
                                                               ? ['!', '#', '%', '&', '*', '+', '-', '/', '>', '<', '?', '^', '_', '{', '}']
                                                               : this.props.setup.distortionList;
 
+        this.setupAfterEffect = this.setupAfterEffect.bind(this); 
         this.setupDistortions = this.setupDistortions.bind(this); //setup for distortion text
         this.setupTimer = this.setupTimer.bind(this); //setup interval timer
+        this.setupAfterEffectTimer = this.setupAfterEffectTimer.bind(this); //timer that distorts text after full effect has elapsed
         this.destroyTimer = this.destroyTimer.bind(this); //clears interval timer
         
         this.update = this.update.bind(this); //updates the distorted text
@@ -73,6 +77,16 @@ class DistortText extends Component {
         this.destroyTimer();
     }
 
+    setupAfterEffect() {
+        this.target.forEach(item => {
+            item.distortionsRemaining = this.getRand(0, 5) === 1 ? this.getDistortions() : [];
+            //console.log(`item ${item.final} distortions: ${item.distortionsRemaining}\n\n`);
+        });
+
+
+        this.setupAfterEffectTimer(); //timer created once effect is setup
+    }
+
     setupDistortions() {
         Array.from(this.props.setup.target).forEach(letter => {
             this.target.push({
@@ -82,15 +96,24 @@ class DistortText extends Component {
         });
     }
 
+
+    
     setupTimer() {
         this.timerId = setInterval(() => {
             this.update(); //updates text
         }, this.pauseBetweenDistortion);
     }
 
+    setupAfterEffectTimer() {
+        this.afterEffectTimerId = setInterval(() => {
+            this.update(); //updates text
+        }, this.pauseBetweenDistortion);
+    }
+
     destroyTimer() {
         clearInterval( this.timerId );
-    }
+        clearInterval( this.afterEffectTimerId );
+    } 
 
     update() {
         try {
@@ -124,6 +147,11 @@ class DistortText extends Component {
         
                 if ( finalCharsUnset === 0 ) { //all final characters have been set
                     this.destroyTimer(); //removes update timer
+
+                    //start new distort-after-effect timer here
+                    setTimeout(() => {
+                        this.setupAfterEffect();
+                    }, this.afterEffectDelay);
                 }
             }
     
