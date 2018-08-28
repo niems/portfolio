@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 100 100" style='fill: none; stroke: #FFFFFF; stroke-width: 1; stroke-opacity: 1; border-radius: 0%;'>
+    <path id='top-main' className='grid-design'  d='M10 10 L90 10' style='fill: none; stroke: #FFFFFF; stroke-width: 1;'/>
+    <circle className='grid-node' r='1.5' cx='8.5' cy='10' style='stroke-width: 0.5;'/>
+    <circle className='grid-node' r='1.5' cx='91.5' cy='10' style='stroke-width: 0.5;'/>                        
+
+    <path id='top-secondary' className='grid-design'  d='M20 15 L70 15' style='stroke-width: 0.5;'/>
+    <circle className='grid-node small' r='1' cx='19' cy='15' style='fill: white; stroke-width: 0;'/>
+    <circle className='grid-node small' r='1' cx='71' cy='15' style='fill: white; stroke-width: 0;'/>
+
+
+
+    <path id='mid-main' className='grid-design' d='M80 20 L60 40' style='fill: none; stroke: #FFFFFF; stroke-width: 1;' />
+    <circle className='grid-node' r='1.5' cx='81.5' cy='18.5' style='stroke-width: 0.5;'/>
+    <circle className='grid-node' r='1.5' cx='58.5' cy='41.5' style='stroke-width: 0.5;'/>
+
+    <path id='mid-main' className='grid-design' d='M50 50 L20 80' style='fill: none; stroke: #FFFFFF; stroke-width: 1;' />
+    <circle className='grid-node' r='1.5' cx='51.5' cy='48.5' style='stroke-width: 0.5;'/>
+    <circle className='grid-node' r='1.5' cx='18.5' cy='81.5' style='stroke-width: 0.5;'/>
+
+    <path id='mid-secondary' className='grid-design' d='M80 30 L40 70' style='stroke-width: 0.5;'/>
+    <circle className='grid-node small' r='1' cx='81' cy='29' style='fill: white; stroke-width: 0;'/>
+    <circle className='grid-node small' r='1' cx='39' cy='71' style='fill: white; stroke-width: 0;'/>
+
+
+
+    <path id='bottom-main' className='grid-design' d='M10 90 L90 90' style='fill: none; stroke: #FFFFFF; stroke-width: 1;' />
+    <circle className='grid-node' r='1.5' cx='8.5' cy='90' style='stroke-width: 0.5;'/>
+    <circle className='grid-node' r='1.5' cx='91.5' cy='90' style='stroke-width: 0.5;'/>
+
+    <path id='bottom-secondary' className='grid-design' d='M25 86 h15' style='stroke-width: 0.5;'/>
+    <circle className='grid-node small' r='1' cx='24' cy='86' style='fill: white; stroke-width: 0;'/>
+    <circle className='grid-node small' r='1' cx='41' cy='86' style='fill: white; stroke-width: 0;'/>
+
+    <path id='bottom-secondary' className='grid-design' d='M52 86 L86 86' style='stroke-width: 0.5;'/>
+    <circle className='grid-node small' r='1' cx='51' cy='86' style='fill: white; stroke-width: 0;'/>
+    <circle className='grid-node small' r='1' cx='87' cy='86' style='fill: white; stroke-width: 0;'/>
+</svg>
+

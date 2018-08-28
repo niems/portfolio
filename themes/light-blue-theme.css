@@ -1,0 +1,48 @@
+:root {
+    --main: #EBF1EF;
+    --accent-blue: #3090B6;
+    
+    --main-dark: #1E1E1E;
+    
+    --accent-dark: #0C1A28;
+    --accent-green: #00FFBC;
+
+    --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
+    --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
+
+    /*GENERAL*/
+  --font-family: 'Courier New', Courier, monospace;
+  --large-font: calc(1.6em + (3 - 1.6) * ((100vw - 21em) / (75 - 21)));
+  --medium-font: calc(1.2em + (2 - 1.2) * ((100vw - 21em) / (75 - 21)));
+  /*GENERAL*/
+
+
+  /*INPUTFIELD*/
+  --inputfield-fg: var(--accent-blue);
+  --form-bg: green;
+  --form-shadow: blue;
+  --form-border: black;
+  --inputfield-border: black;
+  /*INPUTFIELD*/
+
+  /*NAVBAR*/
+  --navbar-bg: var(--main-dark);
+  --navbar-text: white;
+  --navbar-border: none;
+  --navbar-item-hover: inherit;
+  --navbar-item-hover-filter: invert(1);
+  --navbar-icon-filter: invert(1);
+  --navbar-icon-filter-hover: var(--filter-blue);
+  /*NAVBAR*/
+
+
+  /*PAGES*/
+  --section-container-bg: none;
+  --section-container-alt-bg: var(--accent-blue);
+  /*PAGES*/
+
+  /*AUTOTEXT*/
+  --auto-text-highlight: var(--accent-blue);
+  /*AUTOTEXT*/
+
+}
