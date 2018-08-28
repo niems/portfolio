@@ -1,7 +1,8 @@
 #home-container {
     box-sizing: border-box;
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
+    min-height: 400px;
     height: max-content;
 
     display: flex;
@@ -10,9 +11,9 @@
     align-items: center;
     flex: 0 1 auto;
 
-    padding: 1rem 0;
+    padding: 2rem 0;
     
-    background-image: url('../backgrounds/z.svg');
+    background-image: url('../backgrounds/z-logo.svg');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
@@ -35,14 +36,6 @@ span[id='name'] {
     font-size: 3em;
     font-weight: bold;
     
-}
-
-span[id='dev-title'] {
-    font-size: 1.4em;
-    
-    font-style: italic;
-    
-    margin: 0;
 }
 
 #about-me-btn {

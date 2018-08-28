@@ -97,7 +97,7 @@ class Navbar extends Component {
                     <nav className={`navbar-container ${theme.name}`} >
                         <ul>
                             <li className='logo'>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/logo/z.svg' alt='failed to load logo D:' />
+                                <img className={`navbar-icon ${theme.name}`} src='./images/logo/z-logo.svg' alt='failed to load logo D:' />
                             </li>
 
                             <li className='navbar-item desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>

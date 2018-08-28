@@ -27,6 +27,17 @@
     height: 100%;
 }
 
+.grid-node {
+    fill: none;
+    stroke-width: 0.35;
+    stroke: red;
+}
+
+.grid-node.small {
+    stroke-width: 0.25;
+    fill: red;
+}
+
 .grid-design {
     fill: none;
     stroke: green;

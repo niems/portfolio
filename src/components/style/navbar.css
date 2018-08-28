@@ -86,6 +86,10 @@
     transition: transform 0.5s;
 }
 
+.logo .navbar-icon {
+    width: 3.5rem;
+}
+
 .icon-text {
     box-sizing: border-box;
     

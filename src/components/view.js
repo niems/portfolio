@@ -120,6 +120,19 @@ class View extends Component {
     }   
 
     render() {
+        /*
+        return (
+            <div id='view-container'>
+                <Navbar selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
+                {this.state.displayMenu}
+
+                <div id='sections-container'>                    
+                    <Testing />
+                </div>
+            </div>
+        );
+        */
+        
         return (
             <div id='view-container'>
                 <Navbar selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
@@ -133,6 +146,7 @@ class View extends Component {
                 </div>
             </div>
         );
+        
     }
 }
 
