@@ -1,5 +1,5 @@
-<svg stroke="#000000" stroke-width='3' fill='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0 h100" />
-    <path d="M33 33 h66" />
-    <path d="M66 66 h33" />
+<svg stroke="#000000" stroke-width='3' fill='none' viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 5 h30" />
+    <path d="M10 15 h20" />
+    <path d="M20 25 h10" />
 </svg>
