@@ -91,6 +91,7 @@ class Navbar extends Component {
     }
 
     render() {
+        /*
         return (
             <ThemeContext.Consumer>
                 {({ theme }) => (
@@ -126,6 +127,27 @@ class Navbar extends Component {
                                 <span className={`icon-text ${theme.name}`}>Menu</span>
                             </li>
                         </ul>
+                    </nav>
+                )}
+            </ThemeContext.Consumer>
+        );
+        */
+        return (
+            <ThemeContext.Consumer>
+                {({ theme }) => (
+                    <nav className={`navbar-container ${theme.name}`} >
+                        <div className='logo-container'>
+                            <img className={`navbar-logo ${theme.name}`} src='./images/logo/z.svg' alt='failed to load logo D:' />
+                        </div>
+
+                        <div className='icon-text desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>Home</div>
+                        <div className='icon-text desktop-only' id='portfolio' onClick={this.updateSelection} ref={element => {this.portfolioRef = element;} }>Portfolio</div>
+                        <div className='icon-text desktop-only' id='experiments' onClick={this.updateSelection} ref={element => {this.experimentsRef = element;} }>Experiments</div>
+                        <div className='icon-text desktop-only' id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>Contact</div>                        
+                        
+                        <div className='icon-text mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
+                            <img className={`navbar-icon ${theme.name}`} src='./images/menu.svg' alt='failed to load menu icon D:' />
+                        </div>
                     </nav>
                 )}
             </ThemeContext.Consumer>
