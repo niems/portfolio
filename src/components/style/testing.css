@@ -29,8 +29,9 @@
 
 .grid-node {
     fill: none;
-    stroke-width: 0.35;
-    stroke: red;
+    stroke-width: 0.5;
+    stroke: red; 
+    stroke-opacity: 1;
 }
 
 .grid-node.small {
@@ -41,7 +42,8 @@
 .grid-design {
     fill: none;
     stroke: green;
-    stroke-width: 0.5;
+    stroke-opacity: 0.45;
+    stroke-width: 0.8;
 }
 
 .grid-design.test {

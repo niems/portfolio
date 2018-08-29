@@ -120,7 +120,7 @@ class View extends Component {
     }   
 
     render() {
-        /*
+        
         return (
             <div id='view-container'>
                 <Navbar selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
@@ -131,8 +131,9 @@ class View extends Component {
                 </div>
             </div>
         );
-        */
         
+        
+        /*
         return (
             <div id='view-container'>
                 <Navbar selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
@@ -146,7 +147,7 @@ class View extends Component {
                 </div>
             </div>
         );
-        
+        */
     }
 }
 

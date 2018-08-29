@@ -108,6 +108,7 @@
 
 #menu-img {
     width: 2.6rem;
+    filter: var(--filter-blue-light);
 }
 
 #menu-img:hover {
