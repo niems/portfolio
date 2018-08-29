@@ -1,6 +1,7 @@
 :root {
   --main: #EBF1EF;
   --accent-blue: #3090B6;
+  --accent-blue-light: #05C0FA;
   --dark-blue: #13202C;
   
   --main-dark: #1E1E1E;
@@ -10,6 +11,7 @@
 
   --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
   --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
+  --filter-blue-light: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 
   /*GENERAL*/
 --font-family: 'Courier New', Courier, monospace;
@@ -39,7 +41,7 @@
 
 /*PAGES*/
 --section-container-bg: none;
---section-container-alt-bg: var(--accent-blue);
+--section-container-alt-bg: linear-gradient(45deg, var(--dark-blue), var(--accent-blue));
 
 --home-text-fg: var(--main);
 /*PAGES*/
