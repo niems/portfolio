@@ -146,7 +146,7 @@ class Navbar extends Component {
                         <div className='icon-text desktop-only' id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>Contact</div>                        
                         
                         <div className='icon-text mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
-                            <img className={`navbar-icon ${theme.name}`} src='./images/menu.svg' alt='failed to load menu icon D:' />
+                            <img className={`navbar-icon ${theme.name}`} id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
                         </div>
                     </nav>
                 )}

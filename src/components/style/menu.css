@@ -47,6 +47,9 @@
     transform: scale(1.2, 1.2);
 }
 
+#navbar-close-container:hover #navbar-close-img {
+    filter: invert(0.65) sepia(1) saturate(500%) hue-rotate(305deg);
+}
 #navbar-close-img {
     box-sizing: border-box;
     height: 2.25rem;
