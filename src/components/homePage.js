@@ -31,27 +31,6 @@ class HomePage extends Component {
                 </div>
             </div>           
         );
-        /*
-        return (
-            <div className={`page-container`}>
-                <div id='home-container'>
-                    <span className='home-info' id='name'>Zach Niemann</span>
-                    <span className='home-info' id='dev-title'>Full-stack developer</span>
-                    <button type='button' id='about-me-btn'>About me</button>
-                </div>
-            </div>           
-        );
-        */
-        /*
-        return (
-            <div className={`page-container  ${this.props.direction}`}>
-                <div id='home-container'>
-                    <AutoText font='large' setup={this.autoTextSetup} />
-                    <DistortText font='medium' setup={this.distortTextSetup} />
-                </div>
-            </div>           
-        );
-        */
     }
 }
 
