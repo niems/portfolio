@@ -47,7 +47,9 @@
 /*PAGES*/
 
 /*EXPERIMENTS*/
-
+--experiments-page-bg: var(--main);
+--experiments-header-size: 2em;
+--experiments-desc-size: 1.5em;
 /*EXPERIMENTS*/
 
 

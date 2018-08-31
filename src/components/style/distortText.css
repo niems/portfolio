@@ -7,11 +7,9 @@
     height: max-content;
 
     display: inline-block;
-    z-index: 1;
 
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    margin: 0;
+    padding: 0;
 
     
     overflow-wrap: break-word;

@@ -1,17 +1,17 @@
 #experiments-container {
-    box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
     align-items: center;
     flex: 1 auto;
 
-    padding: 0;
+    padding: 2rem 0;
     margin: 0;
 
+    background: var(--experiments-page-bg);
 }
 
 #experiments-header {
@@ -23,16 +23,26 @@
     margin: 0;
     padding: 0;
 
-    font-size: 2em;
+    font-size: var(--experiments-header-size);
     text-align: center;
+}
+
+#experiments-page-desc {
+    font-size: var(--experiments-desc-size);
 }
 
 .effect-container {
     box-sizing: border-box;
     display: block;
-    width: max-content;
+    width: 100%;
     height: max-content;
 
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+}
+
+#experiments-autotext {
+    text-align: center;
     font-weight: bold;
     font-size: var(--auto-text-font-size);
     font-family: var(--font-family);
@@ -40,4 +50,49 @@
     
     color: var(--auto-text-fg);
     background: none;
+}
+
+#all-experiments {
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-experiment-container {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 300px;
+    height: 300px;
+
+    padding: 1rem 0.5rem;
+    margin: 1rem;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+    background: white;
+}
+
+.experiment-img {
+    box-sizing: border-box;
+    display: inline-block;
+    object-fit: contain;
+
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+
 }
