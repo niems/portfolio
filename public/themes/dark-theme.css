@@ -46,11 +46,17 @@
 --home-text-fg: var(--main);
 /*PAGES*/
 
-/*EXPERIMENTS*/
+/*PORTFOLIO PAGE*/
+--portfolio-page-bg: var(--main);
+--portfolio-desc-size: 1.8em;
+/*PORTFOLIO PAGE*/
+
+
+/*EXPERIMENTS PAGE*/
 --experiments-page-bg: var(--main);
 --experiments-header-size: 2em;
 --experiments-desc-size: 1.5em;
-/*EXPERIMENTS*/
+/*EXPERIMENTS PAGE*/
 
 
 /*AUTOTEXT*/
