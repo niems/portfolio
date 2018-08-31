@@ -53,6 +53,10 @@
 
 /*AUTOTEXT*/
 --auto-text-highlight: var(--accent-blue);
+--auto-text-font-size: var(--medium-font);
+--auto-text-fg: var(--accent-blue);
+--auto-text-cursor-size: 1.3em;
+--auto-text-line-height: 1.5em;
 /*AUTOTEXT*/
 
 }

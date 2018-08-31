@@ -26,7 +26,9 @@ class Experiments extends Component {
         return (
             <div className={`page-container`} id='experiments-container' ref={this.props.setRef}>
                 <h2 id='experiments-header'>Experiments & Tinkering</h2>
-                <AutoText font='medium' setup={this.autoTextSetup} />
+                <div className='effect-container' id='experiments-autotext'>
+                    <AutoText font='medium' setup={this.autoTextSetup} />
+                </div>
             </div>
         );
     }

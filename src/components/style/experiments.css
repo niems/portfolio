@@ -12,7 +12,6 @@
     padding: 0;
     margin: 0;
 
-    background: gray;
 }
 
 #experiments-header {
@@ -26,4 +25,19 @@
 
     font-size: 2em;
     text-align: center;
+}
+
+.effect-container {
+    box-sizing: border-box;
+    display: block;
+    width: max-content;
+    height: max-content;
+
+    font-weight: bold;
+    font-size: var(--auto-text-font-size);
+    font-family: var(--font-family);
+    line-height: var(--auto-text-line-height);
+    
+    color: var(--auto-text-fg);
+    background: none;
 }

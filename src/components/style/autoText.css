@@ -1,35 +1,16 @@
 .auto-text-container {
-    --line-height: 1.5em;
-    --cursor-size: 1.3em;
-
     box-sizing: border-box;
     max-width: 100%;
     width: max-content;
     height: max-content;
 
     display: inline-block;
-    z-index: 1;
 
     margin: 0;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-
-    font-weight: bold;
-    font-family: var(--font-family);
-    line-height: var(--line-height);
+    padding: 0;
 
     overflow-wrap: break-word;
-
-    background: rgba(0, 0, 0, 0.75);
-    color: var(--accent-blue);
-}
-
-.auto-text-container.large {
-    font-size: var(--large-font);
-}
-
-.auto-text-container.medium {
-    font-size: var(--medium-font);
+    background: none;
 }
 
 .auto-text {
@@ -56,16 +37,11 @@
 }
 .auto-text.stand-up {
     display: inline-block;
-    color: var(--accent-blue);
-
-    
 
     animation-name: stand-up;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 }
-
-
 
 @keyframes cursor-blink {
     to {
@@ -75,7 +51,6 @@
 
 .auto-text-cursor {
     opacity: 0;
-    font-size: var(--cursor-size);
 
     animation-name: cursor-blink;
     animation-duration: 0.6s;
