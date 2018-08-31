@@ -10,7 +10,7 @@ class Menu extends Component {
 
     updateSelection(e) {
         e.preventDefault();
-        const id = e.currentTarget.id;
+        const id = e.currentTarget.id.replace('-menu', '');
 
         this.props.onSelect(id);
     }
@@ -25,10 +25,10 @@ class Menu extends Component {
                 </div>
 
                 <div id='page-list-container'>
-                    <span className='page-item-container' id='home' onClick={this.updateSelection}>Home</span>
-                    <span className='page-item-container' id='portfolio' onClick={this.updateSelection}>Portfolio</span>
-                    <span className='page-item-container' id='experiments' onClick={this.updateSelection}>Experiments</span>
-                    <span className='page-item-container' id='contact' onClick={this.updateSelection}>Contact</span>
+                    <span className='page-item-container' id='home-menu' onClick={this.updateSelection}>Home</span>
+                    <span className='page-item-container' id='portfolio-menu' onClick={this.updateSelection}>Portfolio</span>
+                    <span className='page-item-container' id='experiments-menu' onClick={this.updateSelection}>Experiments</span>
+                    <span className='page-item-container' id='contact-menu' onClick={this.updateSelection}>Contact</span>
                 </div>
 
                 <div id='nav-social-links'>
