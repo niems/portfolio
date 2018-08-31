@@ -1,25 +1,19 @@
 import React, {Component} from 'react';
-import AutoText from './autoText';
 import DistortText from './distortText';
 import './style/experiments.css';
 
-function DisplayExperiment(props) {
+function DisplayExperiment({ imgPath, desc }) {
     return (
-        null
+        <div className='single-experiment-container'>
+            <img className='experiment-img' src={imgPath} />
+            <p className='experiment-description'>{desc}</p>
+        </div>
     );
 }
 
 class Experiments extends Component {
     constructor(props) {
         super(props);
-
-        this.autoTextSetup = {
-            loop: false,
-            characterDuration: 80,
-            dynamicStrings: [
-                "Below are a few of the animations I've coded in CSS3 & SVG for fun :)"
-            ],
-        };
 
         this.distortTextSetup = {
             target: 'Experiments & Tinkering',
@@ -34,38 +28,14 @@ class Experiments extends Component {
                     <DistortText setup={this.distortTextSetup} />
                 </h2>
 
-                <p id='experiments-page-desc'>Below are a few animation I've coded for fun :D</p>
+                <p id='experiments-page-desc'>Below are the results of late-night fiddling :D</p>
 
                 <div id='all-experiments'>
-                    <div className='single-experiment-container'>
-                        <img className='experiment-img' src='./images/experiments/spinner pre-loader.gif' />
-                        <p className='single-experiment-description'>CSS3 spinner preloader</p>
-                    </div>
+                    <DisplayExperiment imgPath='./images/experiments/spinner pre-loader.gif'
+                                       desc='CSS3 spinner preloader' />
 
-                    <div className='single-experiment-container'>
-                        <img className='experiment-img' src='./images/experiments/inner-square.gif' />
-                        <p className='single-experiment-description'>CSS3 "Squarcle"</p>
-                    </div>
-
-                    <div className='single-experiment-container'>
-                        <img className='experiment-img' src='./images/experiments/spinner pre-loader.gif' />
-                        <p className='single-experiment-description'>CSS3 spinner preloader</p>
-                    </div>
-
-                    <div className='single-experiment-container'>
-                        <img className='experiment-img' src='./images/experiments/spinner pre-loader.gif' />
-                        <p className='single-experiment-description'>CSS3 spinner preloader</p>
-                    </div>
-
-                    <div className='single-experiment-container'>
-                        <img className='experiment-img' src='./images/experiments/inner-square.gif' />
-                        <p className='single-experiment-description'>CSS3 "Squarcle"</p>
-                    </div>
-
-                    <div className='single-experiment-container'>
-                        <img className='experiment-img' src='./images/experiments/spinner pre-loader.gif' />
-                        <p className='single-experiment-description'>CSS3 spinner preloader</p>
-                    </div>
+                    <DisplayExperiment imgPath='./images/experiments/inner-square.gif'
+                                       desc='CSS3 "Squarcle"' />                              
                 </div>
             </div>
         );
