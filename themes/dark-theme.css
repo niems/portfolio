@@ -46,8 +46,32 @@
 --home-text-fg: var(--main);
 /*PAGES*/
 
+/*PORTFOLIO PAGE*/
+--portfolio-page-bg: var(--main);
+--portfolio-desc-size: 1.8em;
+/*PORTFOLIO PAGE*/
+
+
+/*EXPERIMENTS PAGE*/
+--experiments-page-bg: var(--main);
+--experiments-header-size: var(--large-font);
+--experiments-desc-size: var(--medium-font);
+/*EXPERIMENTS PAGE*/
+
+
+/*CONTACT PAGE*/
+--contact-page-bg: none;
+--contact-desc-fg: white;
+--contact-desc-size: var(--medium-font);
+/*CONTACT PAGE*/
+
+
 /*AUTOTEXT*/
 --auto-text-highlight: var(--accent-blue);
+--auto-text-font-size: var(--medium-font);
+--auto-text-fg: var(--accent-blue);
+--auto-text-cursor-size: 1.3em;
+--auto-text-line-height: 1.5em;
 /*AUTOTEXT*/
 
 }
