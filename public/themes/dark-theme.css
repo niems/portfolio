@@ -54,9 +54,16 @@
 
 /*EXPERIMENTS PAGE*/
 --experiments-page-bg: var(--main);
---experiments-header-size: 2em;
---experiments-desc-size: 1.5em;
+--experiments-header-size: var(--large-font);
+--experiments-desc-size: var(--medium-font);
 /*EXPERIMENTS PAGE*/
+
+
+/*CONTACT PAGE*/
+--contact-page-bg: none;
+--contact-desc-fg: white;
+--contact-desc-size: var(--medium-font);
+/*CONTACT PAGE*/
 
 
 /*AUTOTEXT*/

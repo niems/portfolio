@@ -1,10 +1,18 @@
 #contact-container {
     box-sizing: border-box;
-    height: 1500px;
+    min-height: 100vh;
+    height: max-content;
     width: 100%;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
+    background: var(--contact-page-bg);
+}
+
+#contact-effect {
+    font-size: var(--contact-desc-size);
+    color: var(--contact-desc-fg);
 }
