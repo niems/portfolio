@@ -1,18 +1,83 @@
 #contact-container {
     box-sizing: border-box;
     min-height: 100vh;
-    height: max-content;
+    height: 100%;
     width: 100%;
 
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    flex: 1 auto;
 
+    font-family: 'Archivo Black', sans-serif;
     background: var(--contact-page-bg);
 }
 
 #contact-effect {
     font-size: var(--contact-desc-size);
     color: var(--contact-desc-fg);
+}
+
+.contact-section, .about-me-section {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 auto;
+
+}
+
+.contact-background-layer {
+    font-size: 11em;
+    opacity: 0.15;
+}
+
+.contact-section {
+    background: var(--contact-section-bg);
+    color: var(--contact-section-fg);
+}
+
+.contact-section .contact-background-layer {
+    position: absolute;
+    bottom: 0%;
+    left: 18%;
+}
+
+.about-me-section {
+    background: var(--about-section-bg);
+    color: var(--about-section-fg);
+}
+
+.about-me-section .contact-background-layer {
+    position: absolute;
+    top: 0%;
+    left: 25%;
+    color: black;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    #contact-container {
+        /*max-width: 1200px;*/
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-section, .about-me-section {
+        max-width: 625px;
+        max-height: 750px;
+        width: 50%;
+        height: 90%;
+    }
 }

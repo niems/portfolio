@@ -18,8 +18,14 @@ class Contact extends Component {
     render() {
         return (
             <div className={`page-container`} id='contact-container' ref={this.props.setRef}>
-                <div className='effect-container' id='contact-effect'>
-                    <AutoText font='medium' setup={this.autoTextSetup} />
+                <div className='about-me-section'>
+                    <span className='contact-background-layer'>About</span>
+                    about me
+                </div>
+
+                <div className='contact-section'>
+                    <span className='contact-background-layer'>Contact</span>
+                    contact section
                 </div>
             </div>
         );
