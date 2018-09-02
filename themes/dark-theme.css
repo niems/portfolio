@@ -60,9 +60,15 @@
 
 
 /*CONTACT PAGE*/
---contact-page-bg: none;
+--contact-page-bg: var(--accent-blue);
 --contact-desc-fg: white;
 --contact-desc-size: var(--medium-font);
+
+--contact-section-bg: var(--dark-blue);
+--contact-section-fg: white;
+
+--about-section-bg: white;
+--about-section-fg: black;
 /*CONTACT PAGE*/
 
 
