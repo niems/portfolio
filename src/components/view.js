@@ -126,7 +126,7 @@ class View extends Component {
                 {this.state.displayMenu}
 
                 <div id='sections-container'>                    
-                    <HomePage setRef={el => this.homeRef = el} />
+                    <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
                     <Contact setRef={el => this.contactRef = el} />

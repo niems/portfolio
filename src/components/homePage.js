@@ -7,18 +7,18 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
 
-       this.autoTextSetup = {
-            effect: 'spring',
-            dynamicStrings: [
-                "Ayyy, I'm Zach.",
-            ],
-        };
-
         this.distortTextSetup = {
             target: 'Full-stack developer.',
             delay: 1500,
             styleClass: 'homepage'
         };
+
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick(e) {
+        e.preventDefault();
+        this.props.selection('contact');
     }
 
     render() {
@@ -27,7 +27,7 @@ class HomePage extends Component {
                 <div id='home-container'>
                     <span className='home-info' id='name'>Zach Niemann</span>
                     <DistortText setup={this.distortTextSetup} />
-                    <button type='button' id='about-me-btn'>About me</button>
+                    <button type='button' id='about-me-btn' onClick={this.onClick}>About me</button>
                 </div>
             </div>           
         );
