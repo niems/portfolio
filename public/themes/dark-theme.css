@@ -43,8 +43,21 @@
 --section-container-bg: none;
 --section-container-alt-bg: linear-gradient(45deg, var(--dark-blue), var(--accent-blue));
 
---home-text-fg: var(--main);
 /*PAGES*/
+
+/*HOMEPAGE*/
+--home-text-fg: var(--main);
+--home-effect-size: var(--medium-font);
+
+--home-about-btn-fg: white;
+--home-about-btn-bg: none;
+--home-about-btn-border: white;
+--home-about-btn-hover-fg: black;
+--home-about-btn-hover-bg: white;
+--home-about-btn-hover-border: black;
+
+/*HOMEPAGE*/
+
 
 /*PORTFOLIO PAGE*/
 --portfolio-page-bg: var(--main);

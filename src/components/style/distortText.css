@@ -1,37 +1,13 @@
 .distort-text-container {
-    --line-height: 1.5em;
-
     box-sizing: border-box;
+    display: inline-block;
+
     max-width: 100%;
     width: max-content;
     height: max-content;
 
-    display: inline-block;
-
     margin: 0;
     padding: 0;
 
-    
     overflow-wrap: break-word;
-    font-size: 1.5em;
-    font-family: 'Nunito', sans-serif;
-    font-family: 'Space Mono', monospace;
-    
-    /*
-    font-weight: bold;
-    line-height: var(--line-height);
-    font-family: var(--font-family);
-    color: var(--accent-blue);
-    background: rgba(0, 0, 0, 0.75);
-    */
 }
-
-/*
-.distort-text-container.large {
-    font-size: var(--large-font);
-}
-
-.distort-text-container.medium {
-    font-size: var(--medium-font);
-}
-*/

@@ -11,6 +11,7 @@
     align-items: center;
     flex: 0 1 auto;
 
+    position: relative;
     padding: 2rem 0;
     
     background-image: url('../backgrounds/z-logo.svg');
@@ -26,7 +27,6 @@
     display: block;
     width: 100%;
     height: max-content;
-
     
     margin: 0.5rem 0;
     padding: 0;
@@ -35,23 +35,37 @@
 span[id='name'] {
     font-size: 3em;
     font-weight: bold;
-    
+}
+
+#homepage-effect {
+    font-size: var(--home-effect-size);
 }
 
 #about-me-btn {
     box-sizing: border-box;
-    align-self: flex-start;
-
     display: inline-block;
-    padding: 0.25rem 1rem;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 0.5rem 1rem;
     margin-top: 1rem;
-    font-size: 1em;
+    font-size: 1.2em;
+    border-radius: 6px;
 
     outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--home-about-btn-border);
+
+    background: black;
+    background: var(--home-about-btn-bg);
+    color: var(--home-about-btn-fg);
 }
 
-
-.distort-text-container.homepage {
-    color: red;
-    font-size: 1.4em;
+#about-me-btn:hover {
+    border-color: var(--home-about-btn-hover-border);
+    background: var(--home-about-btn-hover-bg);
+    color: var(--home-about-btn-hover-fg);
 }

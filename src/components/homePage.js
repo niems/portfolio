@@ -26,7 +26,9 @@ class HomePage extends Component {
             <div className={`page-container`} id='home' ref={this.props.setRef}>
                 <div id='home-container'>
                     <span className='home-info' id='name'>Zach Niemann</span>
-                    <DistortText setup={this.distortTextSetup} />
+                    <div className='effect-container' id='homepage-effect'>
+                        <DistortText setup={this.distortTextSetup} />
+                    </div>
                     <button type='button' id='about-me-btn' onClick={this.onClick}>About me</button>
                 </div>
             </div>           
