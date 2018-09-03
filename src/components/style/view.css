@@ -36,6 +36,16 @@
     padding: 0;
 }
 
+.effect-container {
+    box-sizing: border-box;
+    display: inline-block;
+    width: max-content; 
+    height: max-content;
+
+    margin: 0;
+    padding: 0;
+}
+
 @keyframes top-enter {
     from {
         margin-top: 500%;
