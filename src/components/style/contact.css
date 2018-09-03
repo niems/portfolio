@@ -1,7 +1,15 @@
 #contact-container {
+    --mobile-bg-layer-size: 9em;
+    --desktop-bg-layer-size: 10em;
+    --page-min-height: 800px;
+    --page-height: 800px;
+
+    --about-opacity: 0.25;
+    --contact-opacity: 0.25;
+
     box-sizing: border-box;
     min-height: 100vh;
-    height: 100%;
+    height: var(--page-height);
     width: 100%;
 
     display: flex;
@@ -9,6 +17,9 @@
     justify-content: center;
     align-items: center;
     flex: 1 auto;
+
+    margin: 0;
+    padding: 0;
 
     font-family: 'Archivo Black', sans-serif;
     background: var(--contact-page-bg);
@@ -32,33 +43,42 @@
 }
 
 .contact-background-layer {
-    font-size: 11em;
-    opacity: 0.15;
+    font-size: var(--mobile-bg-layer-size);
+    margin: 0 0.5rem;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
 }
 
 .contact-section {
     background: var(--contact-section-bg);
     color: var(--contact-section-fg);
-    border-radius: 0 1rem 1rem 0;
 }
 
 .about-me-section {
     background: var(--about-section-bg);
     color: var(--about-section-fg);
-    border-radius: 1rem 0 0 1rem;
+}
+
+.about-me-section .contact-background-layer {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+
+    transform: translateX(-25%);
+    opacity: var(--about-opacity);
+    color: var(--dark-blue);
 }
 
 .contact-section .contact-background-layer {
     position: absolute;
-    top: 0%;
-    left: 18%;
+    top: 10%;
+    right: 0%;
+    
+    transform: translateX(25%);
+    opacity: var(--contact-opacity);
+    color: var(--accent-blue-light);
 }
-.about-me-section .contact-background-layer {
-    position: absolute;
-    bottom: 0%;
-    left: -5%;
-}
-
 
 @media only screen and (min-width: 1000px) {
     #contact-container {
@@ -68,23 +88,44 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
+
+        padding: 0 1rem;
     }
 
     .contact-section, .about-me-section {
-        max-width: 625px;
+        max-width: 650px;
         max-height: 750px;
         width: 50%;
         height: 90%;
     }
 
+    .contact-section {
+        border-radius: 0 1rem 1rem 0;
+    }
+
+    .about-me-section {
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    .contact-background-layer {
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        font-size: var(--desktop-bg-layer-size);
+        
+        margin: 0;
+        padding: 0;
+    }
+
+    .about-me-section .contact-background-layer {
+        top: 0%;
+        left: 50%;
+        transform: translateX(-35%);
+    }
+
     .contact-section .contact-background-layer {
         position: absolute;
-        top: 0%;
-        left: 18%;
-    }
-    .about-me-section .contact-background-layer {
-        position: absolute;
-        bottom: 0%;
-        left: 25%;
+        top: 100%;
+        left: 50%;
+        transform: translate(-85%, -85%);
     }
 }
