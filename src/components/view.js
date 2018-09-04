@@ -10,6 +10,28 @@ import Testing from './testing';
 
 import './style/view.css';
 
+function updateToNextView( sectionEndHeight, currentHeight, halfTotalView ) {
+    if ( sectionEndHeight - currentHeight < halfTotalView ) {
+        console.log('updateToNextView() data:');
+        console.log(`\t${sectionEndHeight}(end height) - ${currentHeight}(current height) < ${halfTotalView}(half view)\n\n`);
+
+        return true;
+    }
+
+    return false;
+}
+
+function updateToPreviousView( sectionStartHeight, currentHeight, halfTotalView ) {
+    if ( currentHeight - sectionStartHeight < halfTotalView ) {
+        console.log('updateToPreviousView() data:');
+        console.log(`\t${currentHeight}(current height) - ${sectionStartHeight}(start height) < ${halfTotalView}(half view)\n\n`);
+
+        return true;
+    }
+
+    return false;
+}
+
 class View extends Component {
     constructor(props) {
         super(props);
@@ -20,6 +42,10 @@ class View extends Component {
         };
 
         this.displayInfo = {
+            view: {
+                height: -1,
+                half: -1,
+            },
             home: {
                 startHeight: -1,
                 endHeight: -1
@@ -106,7 +132,7 @@ class View extends Component {
     }
 
     updateDisplayedPage(id) {
-        console.log(`updateDisplayedPage() id: ${id}\n`);
+        //console.log(`updateDisplayedPage() id: ${id}\n`);
         const scrollOptions = {behavior: 'smooth', block: 'start', inline: 'nearest'};
         //console.log(`type: ${typeof(this.ref[id])}\n`);
         
@@ -148,26 +174,64 @@ class View extends Component {
 
         if ( csh >= this.displayInfo.contact.startHeight ) {
             currentSection = 'contact';
+            console.log('section: contact');
+
+            if ( updateToPreviousView(this.displayInfo.contact.startHeight, csh, this.displayInfo.view.half) ) {
+                currentSection = 'experiments';
+                console.log('\tsection change: contact ---> experiments');
+            }
         }
 
         else if ( csh >= this.displayInfo.experiments.startHeight ) {
             currentSection = 'experiments';
+            console.log('section: experiments');
+
+            if ( updateToPreviousView(this.displayInfo.experiments.startHeight, csh, this.displayInfo.view.half) ) {
+                currentSection = 'portfolio';
+                console.log('\tsection change: experiments ---> portfolio');
+            }
+
+            else if ( updateToNextView(this.displayInfo.experiments.endHeight, csh, this.displayInfo.view.half) ) {
+                currentSection = 'contact';
+                console.log('\tsection change: experiments ---> contact');
+            }
         }
 
         else if ( csh >= this.displayInfo.portfolio.startHeight ) {
             currentSection = 'portfolio';
+            console.log('section: portfolio');
+
+            if ( updateToPreviousView(this.displayInfo.portfolio.startHeight, csh, this.displayInfo.view.half) ) {
+                currentSection = 'home';
+                console.log('\tsection change: portfolio ---> home');
+            }
+
+            else if ( updateToNextView(this.displayInfo.portfolio.endHeight, csh, this.displayInfo.view.half) ) {
+                currentSection = 'experiments';
+                console.log('\tsection change: portfolio ---> experiments');
+            }
         }
 
         else {
             currentSection = 'home';
+            console.log('section: home');
+
+            if ( updateToNextView(this.displayInfo.home.endHeight, csh, this.displayInfo.view.half) ) {
+                currentSection = 'portfolio';
+                console.log('\tsection change: portfolio');
+            }
         }
 
         if ( currentSection !== this.state.currentSection ) {
             this.setState({ currentSection });
+            //console.log(`onScroll() new section: ${currentSection}`);
         }
     }
 
     getSectionHeights() {        
+        this.displayInfo.view.height = this.viewRef.clientHeight;
+        this.displayInfo.view.half = this.viewRef.clientHeight / 2;
+
         let currentHeight = this.homeRef.scrollHeight;
         this.displayInfo.home.startHeight = 0;
         this.displayInfo.home.endHeight = currentHeight;
