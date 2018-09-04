@@ -18,6 +18,8 @@ class Navbar extends Component {
         };
 
         this.updateSelection = this.updateSelection.bind(this);
+
+        //remove these
         this.removeActiveStatus = this.removeActiveStatus.bind(this);
         this.addActiveStatus = this.addActiveStatus.bind(this);
     }
@@ -43,6 +45,7 @@ class Navbar extends Component {
     }
 
     removeActiveStatus() {
+        /*
         switch(this.state.displayed) {
             case 'home':
                 this.homeRef.classList.remove('selected');
@@ -64,9 +67,11 @@ class Navbar extends Component {
                 this.menuRef.classList.remove('selected');
                 break;
         }
+        */
     }
 
     addActiveStatus(id) {
+        /*
         switch(id) {
             case 'home':
                 this.homeRef.classList.add('selected');
@@ -87,18 +92,24 @@ class Navbar extends Component {
             case 'menu':
                 this.menuRef.classList.add('selected');
                 break;
-        }
+            }
+       */
     }
 
     render() {
+        const homeClasses = this.props.section === 'home' ? 'icon-text desktop-only selected' : 'icon-text desktop-only';
+        const portfolioClasses = this.props.section === 'portfolio' ? 'icon-text desktop-only selected' : 'icon-text desktop-only';
+        const experimentsClasses = this.props.section === 'experiments' ? 'icon-text desktop-only selected' : 'icon-text desktop-only';
+        const contactClasses = this.props.section === 'contact' ? 'icon-text desktop-only selected' : 'icon-text desktop-only';
+
         return (
             <ThemeContext.Consumer>
                 {({ theme }) => (
                     <nav className={`navbar-container ${theme.name}`} >
-                        <div className='icon-text desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>Home</div>
-                        <div className='icon-text desktop-only' id='portfolio' onClick={this.updateSelection} ref={element => {this.portfolioRef = element;} }>Portfolio</div>
-                        <div className='icon-text desktop-only' id='experiments' onClick={this.updateSelection} ref={element => {this.experimentsRef = element;} }>Experiments</div>
-                        <div className='icon-text desktop-only' id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>Contact</div>                        
+                        <div className={homeClasses} id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>Home</div>
+                        <div className={portfolioClasses} id='portfolio' onClick={this.updateSelection} ref={element => {this.portfolioRef = element;} }>Portfolio</div>
+                        <div className={experimentsClasses} id='experiments' onClick={this.updateSelection} ref={element => {this.experimentsRef = element;} }>Experiments</div>
+                        <div className={contactClasses} id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>Contact</div>                        
                         
                         <div className='icon-text mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
                             <img className={`navbar-icon ${theme.name}`} id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
