@@ -19,13 +19,6 @@ class View extends Component {
             displayMenu: null
         };
 
-        this.displayOrder = [
-            'home',
-            'portfolio',
-            'experiments',
-            'contact'
-        ];
-
         this.displayInfo = {
             home: {
                 startHeight: -1,
@@ -61,10 +54,12 @@ class View extends Component {
 
         this.viewRef = null;
         this.onScroll = this.onScroll.bind(this);
+        this.onResize = this.onResize.bind(this); //gets the new section heights if the screen is resized
     }
 
     componentDidMount() {
         this.getSectionHeights();
+        window.addEventListener('resize', this.onResize);
 
         if ( this.testing )
             this.testLoop();
@@ -73,6 +68,10 @@ class View extends Component {
     componentWillUnmount() {
         if ( this.testing )
             clearInterval( this.testTimerId );
+    }
+
+    onResize() {
+        this.getSectionHeights();
     }
 
     onMenuToggle(e) {
@@ -163,16 +162,12 @@ class View extends Component {
             currentSection = 'home';
         }
 
-        console.log(`current section: ${currentSection}\n`);
-
         if ( currentSection !== this.state.currentSection ) {
             this.setState({ currentSection });
         }
     }
 
-    getSectionHeights() {
-        console.log(`section: ${this.displayInfo['home'].startHeight}`);
-        
+    getSectionHeights() {        
         let currentHeight = this.homeRef.scrollHeight;
         this.displayInfo.home.startHeight = 0;
         this.displayInfo.home.endHeight = currentHeight;
@@ -190,6 +185,8 @@ class View extends Component {
         currentHeight += this.contactRef.scrollHeight;
         this.displayInfo.contact.startHeight = this.displayInfo.experiments.endHeight;
         this.displayInfo.contact.endHeight = currentHeight;
+
+        console.log('new section heights: ', this.displayInfo);
     }
 
     render() {
