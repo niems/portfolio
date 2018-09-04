@@ -91,55 +91,10 @@ class Navbar extends Component {
     }
 
     render() {
-        /*
         return (
             <ThemeContext.Consumer>
                 {({ theme }) => (
                     <nav className={`navbar-container ${theme.name}`} >
-                        <ul>
-                            <li className='logo'>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/logo/z-logo.svg' alt='failed to load logo D:' />
-                            </li>
-
-                            <li className='navbar-item desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/home-icon.svg' alt='failed to load home icon D:' />
-                                <span className={`icon-text ${theme.name}`}>Home</span>
-                            </li>
-
-                            <li className='navbar-item desktop-only' id='portfolio' onClick={this.updateSelection} ref={element => {this.portfolioRef = element;} }>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/code-icon.svg' alt='failed to load code icon D:' />
-                                <span className={`icon-text ${theme.name}`}>Portfolio</span>
-                            </li>
-
-                            <li className='navbar-item desktop-only' id='experiments' onClick={this.updateSelection} ref={element => {this.experimentsRef = element;} }>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/flask.svg' alt='failed to load build icon D:' />
-                                <span className={`icon-text ${theme.name}`}>Experiments</span>
-                            </li>
-
-                            <li className='navbar-item desktop-only' id='contact' onClick={this.updateSelection} ref={element => {this.contactRef = element;} }>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/chat-icon.svg' alt='failed to load chat icon D:' />
-                                <span className={`icon-text ${theme.name}`}>Contact</span>
-                            </li>
-
-
-                            <li className='navbar-item mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
-                                <img className={`navbar-icon ${theme.name}`} src='./images/menu-black.svg' alt='failed to load menu icon D:' />
-                                <span className={`icon-text ${theme.name}`}>Menu</span>
-                            </li>
-                        </ul>
-                    </nav>
-                )}
-            </ThemeContext.Consumer>
-        );
-        */
-        return (
-            <ThemeContext.Consumer>
-                {({ theme }) => (
-                    <nav className={`navbar-container ${theme.name}`} >
-                        <div className='logo-container'>
-                            <img className={`navbar-logo ${theme.name}`} src='./images/logo/z-logo.svg' alt='failed to load logo D:' />
-                        </div>
-
                         <div className='icon-text desktop-only selected' id='home' onClick={this.updateSelection} ref={element => {this.homeRef = element;} }>Home</div>
                         <div className='icon-text desktop-only' id='portfolio' onClick={this.updateSelection} ref={element => {this.portfolioRef = element;} }>Portfolio</div>
                         <div className='icon-text desktop-only' id='experiments' onClick={this.updateSelection} ref={element => {this.experimentsRef = element;} }>Experiments</div>
