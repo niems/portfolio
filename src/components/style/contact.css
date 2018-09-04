@@ -1,11 +1,35 @@
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
 #contact-container {
     --mobile-bg-layer-size: 9em;
-    --desktop-bg-layer-size: 10em;
-    --page-min-height: 800px;
-    --page-height: 800px;
+    --mobile-header-size: 1.4em;
+    --mobile-subheader-size: 1em;
+    --mobile-desc-size: 1em;
 
-    --about-opacity: 0.25;
-    --contact-opacity: 0.25;
+    --mobile-contact-header-font: bold 1.4em 'Montserrat', sans-serif;
+    --mobile-contact-subheader-font: normal 1.1em 'Montserrat', sans-serif;
+    --mobile-contact-desc-font: normal 0.9em 'Montserrat', sans-serif;
+
+    --desktop-bg-layer-size: 10em;
+    --desktop-header-size: 1.4em;
+    --desktop-subheader-size: 1em;
+    --desktop-desc-size: 1em;
+    
+    --desktop-contact-header-font: bold 1.8em 'Montserrat', sans-serif;
+    --desktop-contact-subheader-font: normal 1.25em 'Montserrat', sans-serif;
+    --desktop-contact-desc-font: normal 0.5em 1.35em 'Montserrat', sans-serif;
+
+    --contact-bg-layer-fg: gray;
+    --about-bg-layer-fg: black;
+
+    --page-min-height: 800px;
+    --page-height: 850px;
+
+    --about-opacity: 0.15;
+    --contact-opacity: 0.15;
 
     box-sizing: border-box;
     min-height: 100vh;
@@ -21,8 +45,8 @@
     margin: 0;
     padding: 0;
 
-    font-family: 'Archivo Black', sans-serif;
-    background: var(--contact-page-bg);
+    
+    background: none;
 }
 
 
@@ -32,23 +56,53 @@
     width: 100%;
     height: 50%;
 
+    margin: 0;
+    padding: 0 1.5rem;            
+
     position: relative;
     overflow: hidden;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex: 1 auto;
 }
 
 .contact-background-layer {
     font-size: var(--mobile-bg-layer-size);
-    margin: 0 0.5rem;
+    margin: 0 1rem;
 
+    
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    
+    font-family: var(--contact-bg-layer-font-family);
 }
+
+.contact-header {
+    display: block;
+
+    font: var(--mobile-contact-header-font);
+    margin: 2rem 0 0 0;
+    padding: 0;
+}
+
+ .contact-subheader {
+    display: block;
+
+    font: var(--mobile-contact-subheader-font);
+    margin: 1rem 0;
+    padding: 0;
+ }
+
+ .contact-desc {
+    margin: 0.5rem 0;
+    padding: 0;
+
+    font: var(--mobile-contact-desc-font);
+    overflow-wrap: break-word;
+ }
 
 .contact-section {
     background: var(--contact-section-bg);
@@ -60,36 +114,37 @@
     color: var(--about-section-fg);
 }
 
+
 .about-me-section .contact-background-layer {
     position: absolute;
     top: 10%;
-    left: 0%;
+    right: 0%;
 
-    transform: translateX(-25%);
+    transform: translateX(25%);
     opacity: var(--about-opacity);
-    color: var(--dark-blue);
+    color: var(--about-bg-layer-fg);
 }
 
 .contact-section .contact-background-layer {
     position: absolute;
     top: 10%;
-    right: 0%;
+    left: 0%;
     
-    transform: translateX(25%);
+    transform: translateX(-25%);
     opacity: var(--contact-opacity);
-    color: var(--accent-blue-light);
+    color: var(--contact-bg-layer-fg);
 }
+
 
 @media only screen and (min-width: 1000px) {
     #contact-container {
-        /*max-width: 1200px;*/
-
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
 
         padding: 0 1rem;
+        opacity: 0.8;
     }
 
     .contact-section, .about-me-section {
@@ -97,15 +152,33 @@
         max-height: 750px;
         width: 50%;
         height: 90%;
+
+        padding: 0 2rem;        
+        box-shadow: 4px 2px 4px black;
+    }
+
+    .about-me-section {
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    .contact-header {    
+        font: var(--desktop-contact-header-font);
+    }
+    
+    .contact-subheader {
+        font: var(--desktop-contact-subheader-font);
+    }
+     
+
+    .contact-desc {
+        font: var(--desktop-contact-desc-font);
     }
 
     .contact-section {
         border-radius: 0 1rem 1rem 0;
     }
 
-    .about-me-section {
-        border-radius: 1rem 0 0 1rem;
-    }
+    
 
     .contact-background-layer {
         writing-mode: horizontal-tb;
@@ -117,8 +190,9 @@
     }
 
     .about-me-section .contact-background-layer {
+        position: absolute;
         top: 0%;
-        left: 50%;
+        left: 45%;
         transform: translateX(-35%);
     }
 
@@ -126,6 +200,6 @@
         position: absolute;
         top: 100%;
         left: 50%;
-        transform: translate(-85%, -85%);
+        transform: translate(-35%, -85%);
     }
 }
