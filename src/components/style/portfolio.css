@@ -1,16 +1,61 @@
 #portfolio-container {
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
+    height: max-content;
     width: 100%;
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+
+    padding: 3rem 0 0 0;
 
     background: var(--portfolio-page-bg);
 }
 
 #portfolio-auto-effect {
     font-size: var(--portfolio-desc-size);
+}
+
+.portfolio-header {
+    display: block;
+    
+    padding: 0;
+
+    font-size: 4em;
+    font-variant: small-caps;
+    
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: black;
+}
+
+#portfolio-projects {
+    box-sizing: border-box;
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    background: gray;
+}
+
+.portfolio-project-container {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+
+    margin: 1rem;
+    padding: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background: cornflowerblue;
 }

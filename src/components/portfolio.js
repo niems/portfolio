@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 import AutoText from './autoText';
 import './style/portfolio.css';
 
+function DisplayProject(props) {
+    return (
+        <div className='portfolio-project-container'>
+
+        </div>
+    );
+}
+
 
 class Portfolio extends Component {
     constructor(props) {
@@ -20,8 +28,13 @@ class Portfolio extends Component {
     render() {
         return (
             <div className={`page-container`} id='portfolio-container' ref={this.props.setRef}>
-                <div className='effect-container' id='portfolio-auto-effect'>
-                    <AutoText setup={this.autoTextSetup} />
+                <h2 className='portfolio-header'>Projects</h2>
+                
+                <div id='portfolio-projects'>
+                    <DisplayProject />
+                    <DisplayProject />
+                    <DisplayProject />
+
                 </div>
             </div>
         );
@@ -29,3 +42,9 @@ class Portfolio extends Component {
 }
 
 export default Portfolio;
+
+/*
+<div className='effect-container' id='portfolio-auto-effect'>
+                    <AutoText setup={this.autoTextSetup} />
+                </div>
+*/
