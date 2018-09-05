@@ -52,10 +52,38 @@
     margin: 1rem;
     padding: 0;
 
+    display: block;
+
+    background: var(--light-blue);
+    background-image: url('../backgrounds/placeholder-project.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.portfolio-project-hover-info {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    background: white;
+}
+
+.portfolio-project-container:hover .portfolio-project-hover-info {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+}
 
-    background: cornflowerblue;
+
+.portfolio-project-img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-project-container:hover .portfolio-project-img {
+    display: none;
 }
