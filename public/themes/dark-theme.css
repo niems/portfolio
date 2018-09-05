@@ -79,13 +79,14 @@
 --contact-desc-fg: white;
 --contact-desc-size: var(--medium-font);
 
---contact-section-bg: var(--dark-blue);
+--contact-section-bg: var(--light-blue);
 --contact-section-fg: white;
 
 --about-section-bg: white;
 --about-section-fg: black;
 
 --contact-bg-layer-font-family: 'Archivo Black', sans-serif;
+
 /*CONTACT PAGE*/
 
 
