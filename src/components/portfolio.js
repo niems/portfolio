@@ -6,15 +6,19 @@ import './style/portfolio.css';
 <img className='portfolio-project-img' src='./images/projects/placeholder-project.png' alt='' />
 
 */
-function DisplayProject(props) {
+function DisplayProject({ name, frameworks }) {
     return (
         <div className='portfolio-project-container'>
 
             <div className='portfolio-project-hover-info'>
-                <h3 className='portfolio-project-name'>Project name 1</h3>
-                <h4 className='portfolio-project-frameworks'>Electron + Node + React</h4>
+                <span className='portfolio-project-header'>
+                    <h3 className='portfolio-project-name'>{name}</h3>
+                    <h4 className='portfolio-project-frameworks'>{frameworks}</h4>
+                </span>
+
                 <button className='portfolio-project-btn'>learn more</button>
             </div>
+
         </div>
     );
 }
@@ -40,9 +44,9 @@ class Portfolio extends Component {
                 <h2 className='portfolio-header'>Projects</h2>
                 
                 <div id='portfolio-projects'>
-                    <DisplayProject />
-                    <DisplayProject />
-                    <DisplayProject />
+                    <DisplayProject name='Project name 1' frameworks='Node + React' />
+                    <DisplayProject name='Project name 1' frameworks='Node + React' />
+                    <DisplayProject name='Project name 1' frameworks='Node + React' />
 
                 </div>
             </div>
