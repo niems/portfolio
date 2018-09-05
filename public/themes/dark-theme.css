@@ -2,10 +2,12 @@
   --main: #EBF1EF;
   --accent-blue: #3090B6;
   --accent-blue-light: #05C0FA;
+  
   --dark-blue: #13202C;
+  --light-blue: #394855;
+
   
   --main-dark: #1E1E1E;
-  
   --accent-dark: #0C1A28;
   --accent-green: #00FFBC;
 
@@ -66,7 +68,7 @@
 
 
 /*EXPERIMENTS PAGE*/
---experiments-page-bg: var(--main);
+--experiments-page-bg: var(--light-blue);
 --experiments-header-size: var(--large-font);
 --experiments-desc-size: var(--medium-font);
 /*EXPERIMENTS PAGE*/
