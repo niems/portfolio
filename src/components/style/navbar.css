@@ -44,10 +44,8 @@
     box-sizing: border-box;
     position: fixed;
     top: 0;
-    left: 50%;
     width: 100%;
 
-    transform: translateX(-50%);
 
     animation-name: nav-stretch-in;
     animation-duration: 0.75s;
