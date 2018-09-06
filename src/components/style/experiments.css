@@ -14,7 +14,7 @@
     margin: 0;
     
     text-align: center;
-    background: var(--accent-green);
+    background: var(--experiments-page-bg);
 }
 
 #experiments-header {

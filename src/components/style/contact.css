@@ -22,7 +22,7 @@ font-family: 'Montserrat', sans-serif;
     --desktop-contact-subheader-font: normal 1.25em 'Montserrat', sans-serif;
     --desktop-contact-desc-font: normal 0.5em 1.35em 'Montserrat', sans-serif;
 
-    --contact-bg-layer-fg: gray;
+    --contact-bg-layer-fg: white;
     --about-bg-layer-fg: black;
 
     --page-min-height: 800px;
