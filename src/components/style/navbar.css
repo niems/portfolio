@@ -1,12 +1,15 @@
 .navbar-container {
     --navbar-height: 4rem;
-
     box-sizing: border-box;
+    
     width: 100%;
     min-height: var(--navbar-height);
     height: var(--navbar-height);
 
     z-index: 2;
+
+    position: absolute;
+    bottom: -4rem;
 
     margin: 0;
     padding: 0 2rem;
@@ -28,6 +31,7 @@
 .navbar-container.sticky {
     position: fixed;
     top: 0;
+    width: 100%;
 }
 
 .icon-text {

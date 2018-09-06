@@ -208,22 +208,8 @@ class View extends Component {
                 {this.state.displayMenu}
 
                 <div id='sections-container' ref={el => this.viewRef = el}>                    
-                    <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
                     <Navbar setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
-                    <Portfolio setRef={el => this.portfolioRef = el} />
-                    <Experiments setRef={el => this.experimentsRef = el} />
-                    <Contact setRef={el => this.contactRef = el} />
-                </div>
-            </div>
-        );
-        
-        /*
-        return (
-            <div id='view-container' onScroll={this.onScroll}>
-                <Navbar section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
-                {this.state.displayMenu}
 
-                <div id='sections-container' ref={el => this.viewRef = el}>                    
                     <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
@@ -231,7 +217,6 @@ class View extends Component {
                 </div>
             </div>
         );
-        */
     }
 }
 
