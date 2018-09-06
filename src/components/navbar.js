@@ -55,7 +55,7 @@ class Navbar extends Component {
         return (
             <ThemeContext.Consumer>
                 {({ theme }) => (
-                    <nav className={`navbar-container ${theme.name}`} >
+                    <nav className={`navbar-container ${theme.name}`} ref={this.props.setRef} >
                         <div className={this.classes.home} id='home' onClick={this.updateSelection}>Home</div>
                         <div className={this.classes.portfolio} id='portfolio' onClick={this.updateSelection}>Portfolio</div>
                         <div className={this.classes.experiments} id='experiments' onClick={this.updateSelection}>Experiments</div>

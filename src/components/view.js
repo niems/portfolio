@@ -66,6 +66,8 @@ class View extends Component {
         this.experimentsRef = null;
         this.contactRef = null;
 
+        this.navbarRef = null;
+
         this.onMenuToggle = this.onMenuToggle.bind(this); //toggles the menu on/off
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
 
@@ -165,9 +167,17 @@ class View extends Component {
 
     onScroll(e) {
         e.preventDefault();
-        
+        const scrollTop = this.viewRef.scrollTop;
         //returns the current section the user is viewing
-        let currentSection = updateViewSelection( this.viewRef.scrollTop, this.displayInfo );
+        let currentSection = updateViewSelection( scrollTop, this.displayInfo );
+
+        if ( scrollTop >= this.displayInfo.home.endHeight ) {
+            this.navbarRef.classList.add('sticky');
+        }
+
+        else {
+            this.navbarRef.classList.remove('sticky');                
+        }
 
         if ( currentSection !== this.state.currentSection ) { 
             this.setState({ currentSection });
@@ -195,6 +205,21 @@ class View extends Component {
     render() {
         return (
             <div id='view-container' onScroll={this.onScroll}>
+                {this.state.displayMenu}
+
+                <div id='sections-container' ref={el => this.viewRef = el}>                    
+                    <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
+                    <Navbar setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
+                    <Portfolio setRef={el => this.portfolioRef = el} />
+                    <Experiments setRef={el => this.experimentsRef = el} />
+                    <Contact setRef={el => this.contactRef = el} />
+                </div>
+            </div>
+        );
+        
+        /*
+        return (
+            <div id='view-container' onScroll={this.onScroll}>
                 <Navbar section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
                 {this.state.displayMenu}
 
@@ -206,7 +231,7 @@ class View extends Component {
                 </div>
             </div>
         );
-        
+        */
     }
 }
 
