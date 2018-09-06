@@ -92,18 +92,11 @@
     margin: 0;
     padding: 0;
 
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
-
-    background: var(--section-container-bg);
-}
-
-.page-container:nth-child(2n) {
-    background: var(--section-container-alt-bg);    
 }
 
 .page-container.bottom {
