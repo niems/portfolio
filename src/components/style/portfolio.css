@@ -4,6 +4,8 @@
     height: max-content;
     width: 100%;
 
+    overflow: hidden;
+
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
