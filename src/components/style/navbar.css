@@ -27,37 +27,6 @@
     background: rgba(0, 0, 0, 0.65);    
 }
 
-.logo-container {
-    box-sizing: border-box;
-    width: max-content;
-    height: max-content;
-    
-    position: absolute;
-    left: 0%;
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 0 0 2rem;
-    padding: 0;
-
-    
-}
-
-.navbar-logo {
-    box-sizing: border-box;
-    width: 4.25rem;
-    height: auto;
-    
-    display: block;
-    margin: 0;
-    padding: 0.1rem;
-
-    filter: var(--filter-blue-light);
-}
-
 .icon-text {
     box-sizing: border-box;
     height: max-content;
