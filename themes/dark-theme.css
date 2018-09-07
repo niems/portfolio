@@ -2,12 +2,15 @@
   --main: #EBF1EF;
   --accent-blue: #3090B6;
   --accent-blue-light: #05C0FA;
+  
   --dark-blue: #13202C;
+  --light-blue: #394855;
+
   
   --main-dark: #1E1E1E;
-  
   --accent-dark: #0C1A28;
   --accent-green: #00FFBC;
+  --accent-green-two: #03DAC6;
 
   --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
   --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
@@ -17,9 +20,29 @@
 --font-family: 'Courier New', Courier, monospace;
 --large-font: calc(1.6em + (3 - 1.6) * ((100vw - 21em) / (75 - 21)));
 --medium-font: calc(1.2em + (2 - 1.2) * ((100vw - 21em) / (75 - 21)));
-/*GENERAL*/
 
 --app-bg: var(--dark-blue);
+
+--section-header-size: var(--large-font);
+--section-header-fg: black;
+
+--btn-bg: inherit;
+--btn-fg: var(--main);
+--btn-border: var(--accent-green-two);
+--btn-hover-bg: var(--accent-green-two);
+--btn-hover-fg: black;
+/*GENERAL*/
+
+/*
+--portfolio-green: #03DAC6;
+    --portfolio-blue: var(--light-blue);
+
+    --project-btn-bg: inherit;
+    --project-btn-fg: var(--main);
+    --project-btn-border: var(--portfolio-green);
+    --project-btn-hover-bg: var(--portfolio-green);
+    --project-btn-hover-fg: black;
+    */
 
 /*NAVBAR*/
 --navbar-bg: var(--main-dark);
@@ -61,12 +84,12 @@
 
 /*PORTFOLIO PAGE*/
 --portfolio-page-bg: var(--main);
---portfolio-desc-size: 1.8em;
+--portfolio-header-size: var(--large-font);
 /*PORTFOLIO PAGE*/
 
 
 /*EXPERIMENTS PAGE*/
---experiments-page-bg: var(--main);
+--experiments-page-bg: var(--light-blue);
 --experiments-header-size: var(--large-font);
 --experiments-desc-size: var(--medium-font);
 /*EXPERIMENTS PAGE*/
@@ -77,13 +100,14 @@
 --contact-desc-fg: white;
 --contact-desc-size: var(--medium-font);
 
---contact-section-bg: var(--dark-blue);
+--contact-section-bg: var(--light-blue);
 --contact-section-fg: white;
 
 --about-section-bg: white;
 --about-section-fg: black;
 
 --contact-bg-layer-font-family: 'Archivo Black', sans-serif;
+
 /*CONTACT PAGE*/
 
 
