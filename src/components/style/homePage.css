@@ -41,31 +41,8 @@ span[id='name'] {
     font-size: var(--home-effect-size);
 }
 
-#about-me-btn {
-    box-sizing: border-box;
-    display: inline-block;
-    
+#about-me-btn {    
     position: absolute;
     bottom: 0;
     left: 0;
-
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    font-size: 1.2em;
-    border-radius: 6px;
-
-    outline: none;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--home-about-btn-border);
-
-    background: black;
-    background: var(--home-about-btn-bg);
-    color: var(--home-about-btn-fg);
-}
-
-#about-me-btn:hover {
-    border-color: var(--home-about-btn-hover-border);
-    background: var(--home-about-btn-hover-bg);
-    color: var(--home-about-btn-hover-fg);
 }
