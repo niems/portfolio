@@ -23,13 +23,17 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className={`page-container`} id='home' ref={this.props.setRef}>
+            <div className={`page-container`} id='homepage' ref={this.props.setRef}>
                 <div id='home-container'>
                     <span className='home-info' id='name'>Zach Niemann</span>
                     <div className='effect-container' id='homepage-effect'>
                         <DistortText setup={this.distortTextSetup} />
                     </div>
                     <button type='button' className='btn' id='about-me-btn' onClick={this.onClick}>About me</button>
+                </div>
+
+                <div className='vertical-pointer-container'>
+                    <span className='vertical-pointer'></span>
                 </div>
             </div>           
         );
