@@ -43,6 +43,6 @@ span[id='name'] {
 
 #about-me-btn {    
     position: absolute;
-    bottom: 0;
+    bottom: -1.5rem;
     left: 0;
 }
