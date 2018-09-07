@@ -88,11 +88,38 @@
 }
 
 .icon-text.selected {
+    position: relative;
+
+    color: var(--accent-green-two);
+}
+
+@keyframes selected-underline-grow {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.icon-text.selected::after {
+    content: '';
+    display: inline-block;
+
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    background: none;
     border-style: none none solid none;
     border-width: 1px;
     border-color: var(--accent-green-two);
-    
-    color: var(--accent-green-two);
+
+    animation-name: selected-underline-grow;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
 }
 
 .icon-text.desktop-only {
