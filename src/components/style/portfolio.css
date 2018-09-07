@@ -62,10 +62,17 @@
     box-shadow: 2px 2px 4px black;
 
     background: inherit;
-    background-image: url('../backgrounds/projects/roulette.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.portfolio-project-container.Roulette {
+    background-image: url('../backgrounds/projects/roulette.png');
+}
+
+.portfolio-project-container.Whisper {
+    
 }
 
 @keyframes test-anim{
@@ -180,4 +187,11 @@
 
 .portfolio-project-container:hover .portfolio-project-img {
     display: none;
+}
+
+@media only screen and (min-width: 850px) {
+    .portfolio-project-container {
+        width: 400px;
+        height: 400px;
+    }
 }

@@ -4,7 +4,7 @@ import './style/portfolio.css';
 
 function DisplayProject({ name, frameworks }) {
     return (
-        <div className='portfolio-project-container'>
+        <div className={`portfolio-project-container ${name}`}>
 
             <div className='portfolio-project-hover-info'>
                 <span className='portfolio-project-header'>
@@ -41,7 +41,7 @@ class Portfolio extends Component {
                 
                 <div id='portfolio-projects'>
                     <DisplayProject name='Roulette' frameworks='Node + React + Socket.IO + WebRTC' />
-                    <DisplayProject name='placeholder project' frameworks='...' />
+                    <DisplayProject name='Whisper' frameworks='Electron + Node + React + Socket.IO' />
                     <DisplayProject name='placeholder project' frameworks='...' />
 
                 </div>
