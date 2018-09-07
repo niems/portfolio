@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import AutoText from './autoText';
 import './style/portfolio.css';
 
-/*
-<img className='portfolio-project-img' src='./images/projects/placeholder-project.png' alt='' />
-
-*/
 function DisplayProject({ name, frameworks }) {
     return (
         <div className='portfolio-project-container'>
@@ -16,7 +12,7 @@ function DisplayProject({ name, frameworks }) {
                     <h4 className='portfolio-project-frameworks'>{frameworks}</h4>
                 </span>
 
-                <button className='btn'>learn more</button>
+                <button className='btn learn-more'>learn more</button>
             </div>
 
         </div>
@@ -41,7 +37,7 @@ class Portfolio extends Component {
     render() {
         return (
             <div className={`page-container`} id='portfolio-container' ref={this.props.setRef}>
-                <h2 className='portfolio-header'>Projects</h2>
+                <h2 className='portfolio-header section-header'>Projects</h2>
                 
                 <div id='portfolio-projects'>
                     <DisplayProject name='Roulette' frameworks='Node + React + Socket.IO + WebRTC' />
@@ -55,9 +51,3 @@ class Portfolio extends Component {
 }
 
 export default Portfolio;
-
-/*
-<div className='effect-container' id='portfolio-auto-effect'>
-                    <AutoText setup={this.autoTextSetup} />
-                </div>
-*/

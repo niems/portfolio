@@ -20,15 +20,18 @@
 --font-family: 'Courier New', Courier, monospace;
 --large-font: calc(1.6em + (3 - 1.6) * ((100vw - 21em) / (75 - 21)));
 --medium-font: calc(1.2em + (2 - 1.2) * ((100vw - 21em) / (75 - 21)));
-/*GENERAL*/
 
 --app-bg: var(--dark-blue);
+
+--section-header-size: var(--large-font);
+--section-header-fg: black;
 
 --btn-bg: inherit;
 --btn-fg: var(--main);
 --btn-border: var(--accent-green-two);
 --btn-hover-bg: var(--accent-green-two);
 --btn-hover-fg: black;
+/*GENERAL*/
 
 /*
 --portfolio-green: #03DAC6;
@@ -81,7 +84,7 @@
 
 /*PORTFOLIO PAGE*/
 --portfolio-page-bg: var(--main);
---portfolio-desc-size: 1.8em;
+--portfolio-header-size: var(--large-font);
 /*PORTFOLIO PAGE*/
 
 

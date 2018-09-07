@@ -47,6 +47,36 @@
     padding: 0;
 }
 
+.section-header {
+    display: block;
+    
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+
+    font-size: var(--section-header-size);
+    font-variant: small-caps;
+    
+    border-style: none;
+    color: var(--section-header-fg);
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 22.5%;
+
+    width: 55%;
+    height: max-content;
+
+    background: none;
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+}
+
 .btn {
     box-sizing: border-box;
     display: inline-block;
