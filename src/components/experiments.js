@@ -16,7 +16,7 @@ class Experiments extends Component {
         super(props);
 
         this.distortTextSetup = {
-            target: 'Experiments & Tinkering',
+            target: 'Experiments',
             delay: 1500,
         };
     }
@@ -24,7 +24,7 @@ class Experiments extends Component {
     render() {
         return (
             <div className={`page-container`} id='experiments-container' ref={this.props.setRef}>
-                <h2 id='experiments-header'>
+                <h2 className='section-header' id='experiments-header'>
                     <DistortText setup={this.distortTextSetup} />
                 </h2>
 

@@ -54,9 +54,7 @@
     margin: 0;
 
     position: relative;
-
     font-size: var(--section-header-size);
-    font-variant: small-caps;
     
     border-style: none;
     color: var(--section-header-fg);
@@ -65,15 +63,15 @@
 .section-header::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 22.5%;
+    bottom: -5px;
+    left: 25%;
 
-    width: 55%;
+    width: 50%;
     height: max-content;
 
     background: none;
     border-style: none none solid none;
-    border-width: 2px;
+    border-width: 3px;
     border-color: black;
 }
 
