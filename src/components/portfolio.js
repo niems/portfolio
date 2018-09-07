@@ -16,7 +16,7 @@ function DisplayProject({ name, frameworks }) {
                     <h4 className='portfolio-project-frameworks'>{frameworks}</h4>
                 </span>
 
-                <button className='portfolio-project-btn'>learn more</button>
+                <button className='btn'>learn more</button>
             </div>
 
         </div>
@@ -44,9 +44,9 @@ class Portfolio extends Component {
                 <h2 className='portfolio-header'>Projects</h2>
                 
                 <div id='portfolio-projects'>
-                    <DisplayProject name='Project name 1' frameworks='Node + React' />
-                    <DisplayProject name='Project name 1' frameworks='Node + React' />
-                    <DisplayProject name='Project name 1' frameworks='Node + React' />
+                    <DisplayProject name='Roulette' frameworks='Node + React + Socket.IO + WebRTC' />
+                    <DisplayProject name='placeholder project' frameworks='...' />
+                    <DisplayProject name='placeholder project' frameworks='...' />
 
                 </div>
             </div>

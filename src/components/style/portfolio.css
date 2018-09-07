@@ -1,4 +1,15 @@
 #portfolio-container {
+    --portfolio-green: #03DAC6;
+    --portfolio-blue: var(--light-blue);
+
+    --project-btn-bg: inherit;
+    --project-btn-fg: var(--main);
+    --project-btn-border: var(--portfolio-green);
+    --project-btn-hover-bg: var(--portfolio-green);
+    --project-btn-hover-fg: black;
+
+    --project-frameworks-fg: var(--portfolio-green);
+
     box-sizing: border-box;
     min-height: 100vh;
     height: max-content;
@@ -24,12 +35,28 @@
     display: block;
     
     padding: 0;
+    margin: 0 0 1rem 0;
+
+    position: relative;
 
     font-size: 4em;
     font-variant: small-caps;
     
-    border-style: none none solid none;
-    border-width: 1px;
+    border-style: none;
+}
+
+.portfolio-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 22.5%;
+
+    width: 55%;
+    height: max-content;
+
+    background: none;
+    border-style: solid none solid none;
+    border-width: 2px;
     border-color: black;
 }
 
@@ -43,21 +70,24 @@
     justify-content: center;
     align-items: center;
 
-    background: gray;
 }
 
 .portfolio-project-container {
     box-sizing: border-box;
+    
     width: 300px;
     height: 300px;
 
-    margin: 1rem;
+    margin: 0.5rem;
     padding: 0;
 
     display: block;
 
-    background: var(--light-blue);
-    background-image: url('../backgrounds/placeholder-project.png');
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 4px black;
+
+    background: inherit;
+    background-image: url('../backgrounds/projects/roulette.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -73,24 +103,50 @@
     }
 }
 
+@keyframes header-slide-top {
+    from {
+        transform: translateY(-200%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes btn-slide-bottom {
+    from {
+        transform: translateY(200%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
 .portfolio-project-hover-info {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    /*opacity: 0;*/
+    opacity: 0;
+    overflow: hidden;
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
-    transform: rotateY(90deg);
+    border-radius: 0.25rem;
+
 
     background: white;
-    transition: all 0.5s;
+    background: var(--main);
+    background: var(--portfolio-blue);
+    transition: all 0.4s;
 }
 
 .portfolio-project-container:hover .portfolio-project-hover-info {
-    transform: rotateY(0deg);
+    opacity: 1;
 }
 
 .portfolio-project-header {
@@ -101,8 +157,11 @@
 
     margin: 0;
     padding: 0;
+}
 
-    background: red;
+.portfolio-project-container:hover .portfolio-project-header {
+    animation-name: header-slide-top;
+    animation-duration: 0.4s;
 }
 
 .portfolio-project-name, .portfolio-project-frameworks {
@@ -114,11 +173,49 @@
     padding: 0;
 }
 
+.portfolio-project-name {
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+    
+    color: var(--main);
+    text-shadow: 1px 1px 5px black;
+}
+
+.portfolio-project-frameworks {
+    color: var(--project-frameworks-fg);
+    font-size: 1.05em;
+    font-weight: normal;
+}
+
 .portfolio-project-btn {
     box-sizing: border-box;
     display: inline-block;
 
-    margin: 1rem 0 0 0;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-size: 1.3em;
+    font-variant: small-caps;
+
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+
+    color: var(--project-btn-fg);
+    background: var(--project-btn-bg);
+    border-color: var(--project-btn-border);
+
+    transition: background 0.4s;
+}
+
+.portfolio-project-btn:hover {
+    color: var(--project-btn-hover-fg);
+    background: var(--project-btn-hover-bg);
+}
+
+.portfolio-project-container:hover .portfolio-project-btn {
+    animation-name: btn-slide-bottom;
+    animation-duration: 0.4s;
 }
 
 
