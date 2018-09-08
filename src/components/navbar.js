@@ -20,7 +20,7 @@ class Navbar extends Component {
 
     updateSelection(e) {
         e.preventDefault();
-        this.props.selection(e.currentTarget.id);
+        this.props.selection( e.currentTarget.id.replace('-link', '') );
     }
 
     updateHighlight() {
@@ -56,10 +56,10 @@ class Navbar extends Component {
             <ThemeContext.Consumer>
                 {({ theme }) => (
                     <nav className={`navbar-container ${theme.name}`} ref={this.props.setRef} >
-                        <div className={this.classes.home} id='home' onClick={this.updateSelection}>Home</div>
-                        <div className={this.classes.portfolio} id='portfolio' onClick={this.updateSelection}>Portfolio</div>
-                        <div className={this.classes.experiments} id='experiments' onClick={this.updateSelection}>Experiments</div>
-                        <div className={this.classes.contact} id='contact' onClick={this.updateSelection}>Contact</div>                        
+                        <div className={this.classes.home} id='home-link' onClick={this.updateSelection}>Home</div>
+                        <div className={this.classes.portfolio} id='portfolio-link' onClick={this.updateSelection}>Portfolio</div>
+                        <div className={this.classes.experiments} id='experiments-link' onClick={this.updateSelection}>Experiments</div>
+                        <div className={this.classes.contact} id='contact-link' onClick={this.updateSelection}>Contact</div>                        
                         
                         <div className='icon-text mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
                             <img className={`navbar-icon ${theme.name}`} id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
