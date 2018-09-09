@@ -18,6 +18,7 @@ class Contact extends Component {
     render() {
         return (
             <div className={`page-container`} id='contact-container' ref={this.props.setRef}>
+
                 <div className='about-me-section'>
                     <span className='contact-background-layer'>About</span>
                     <h2 className='contact-header'>About me.</h2>

@@ -3,9 +3,6 @@ import View from './components/view';
 import { ThemeContext, themes } from './theme-context';
 import './App.css';
 
-import 'particles.js/particles';  
-const particlesJS = window.particlesJS;  
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,10 +16,6 @@ class App extends Component {
     
     this.themeRef = undefined; 
     this.toggleTheme = this.toggleTheme.bind(this);
-  }
-
-  componentDidMount(){
-    particlesJS.load("particles-js", './particles.json');
   }
 
   toggleTheme() {
@@ -42,7 +35,6 @@ class App extends Component {
         }}>
 
           <link rel="stylesheet" href={this.state.theme.path} ref={e => {this.themeRef = e;} } />
-          <div id="particles-js"></div>
           <View />
         
       </ThemeContext.Provider>

@@ -96,6 +96,7 @@
 
 
 /*CONTACT PAGE*/
+--contact-full-bg: var(--dark-blue);
 --contact-page-bg: var(--accent-blue);
 --contact-desc-fg: white;
 --contact-desc-size: var(--medium-font);
@@ -104,7 +105,7 @@
 --contact-section-fg: white;
 
 --about-section-bg: white;
---about-section-fg: black;
+--about-section-fg: var(--light-blue);
 
 --contact-bg-layer-font-family: 'Archivo Black', sans-serif;
 

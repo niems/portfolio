@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AutoText from './autoText';
 import DistortText from './distortText';
+import ParticleLayer from './particleLayer';
 import './style/homePage.css';
 
 class HomePage extends Component {
@@ -24,6 +25,8 @@ class HomePage extends Component {
     render() {
         return (
             <div className={`page-container`} id='homepage' ref={this.props.setRef}>
+                <ParticleLayer />
+                
                 <div id='home-container'>
                     <span className='home-info' id='name'>Zach Niemann</span>
                     <div className='effect-container' id='homepage-effect'>
