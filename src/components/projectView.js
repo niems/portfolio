@@ -8,6 +8,34 @@ class ProjectView extends Component {
         this.state = {
             selectedIndex: 0
         }
+
+        this.onChangeImg = this.onChangeImg.bind(this); //user clicked one of the image arrows to go to the previous/next image
+    }
+
+    onChangeImg(e) {
+        e.preventDefault();
+        const id = e.currentTarget.id;
+        let selectedIndex = this.state.selectedIndex;
+        
+        if ( id === 'left-img-arrow' ) {
+            selectedIndex--;
+            
+            if ( selectedIndex < 0 ) {
+                selectedIndex = this.props.project.images.length - 1;
+            }
+        }
+        
+        else if ( id === 'right-img-arrow' ) {
+            selectedIndex++;
+            
+            if ( selectedIndex >= this.props.project.images.length ) {
+                selectedIndex = 0;
+            }
+        }
+        
+        console.log(id);
+        console.log('selected index: ', selectedIndex);
+        this.setState({ selectedIndex });
     }
 
     render() {
@@ -18,9 +46,15 @@ class ProjectView extends Component {
 
                     <h2 id='project-view-header'>{this.props.project.title}</h2>
 
+                    <span className='project-img-arrow-container' id='left-img-arrow' onClick={this.onChangeImg}>
+                        <img src='./images/arrow-left.svg' className='project-img-arrow' />
+                    </span>
                     <div id='project-img-container'>
                         <img src={this.props.project.images[this.state.selectedIndex]} id='project-img' alt='failed to load selected project image'/>
                     </div>
+                    <span className='project-img-arrow-container' id='right-img-arrow' onClick={this.onChangeImg}>
+                        <img src='./images/arrow-right.svg' className='project-img-arrow' />
+                    </span>
 
                     <p id='project-view-description'>{this.props.project.description}</p>
                 </div>
