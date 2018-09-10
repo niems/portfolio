@@ -14,6 +14,23 @@ class ProjectView extends Component {
         return (
             <div id='portfolio-fullview-container'>
                 <div id='portfolio-fullview'>
+                    <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
+
+                    <h2 id='project-view-header'>{this.props.project.title}</h2>
+
+                    <div id='project-img-container'>
+                        <img src={this.props.project.images[this.state.selectedIndex]} id='project-img' alt='failed to load selected project image'/>
+                    </div>
+
+                    <p id='project-view-description'>{this.props.project.description}</p>
+                </div>
+            </div>
+        );
+
+        /*
+        return (
+            <div id='portfolio-fullview-container'>
+                <div id='portfolio-fullview'>
                     <button id='portfolio-fullview-close-btn' className='btn round' onClick={this.props.onClose}>X</button>
 
                     <div id='project-img-container'>
@@ -22,6 +39,7 @@ class ProjectView extends Component {
                 </div>
             </div>
         );
+        */
     }
 }
 

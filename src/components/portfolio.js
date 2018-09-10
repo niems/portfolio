@@ -3,38 +3,6 @@ import ProjectView from './projectView';
 import AutoText from './autoText';
 import './style/portfolio.css';
 
-
-function DisplayFullView({ onClose }) {
-    const propImages = [
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-    ];
-
-    const selectedImg = propImages[0];
-    const projectImages = propImages.map((path, index) => <span className='project-collection-item'>{index + 1}</span>);
-    //const projectImages = propImages.map(imgPath => <img src={imgPath} className='project-collection-img' alt='failed to load project collection img'/>);
-    
-    return (
-        <div id='portfolio-fullview-container'>
-            <div id='portfolio-fullview'>
-                <button id='portfolio-fullview-close-btn' className='btn round' onClick={onClose}>X</button>
-
-                <div id='project-img-container'>
-                    <img src={selectedImg} id='project-img' alt='failed to load selected project image'/>
-
-                    <div id='project-collection-all-items'>{projectImages}</div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 function DisplayProject({ name, tech, onClick }) {
     return (
         <div className={`portfolio-project-container ${name}`}>
@@ -61,17 +29,21 @@ class Portfolio extends Component {
             projectFullView: null //displays a single project as the fullview - user clicked "learn more"
         };
 
-        this.projectImages = {
-            roulette: [
-                './images/projects/roulette/roulette.png',
-                './images/projects/placeholder-project.png',
-                './images/projects/roulette/roulette.png',
-                './images/projects/placeholder-project.png',
-                './images/projects/roulette/roulette.png',
-                './images/projects/placeholder-project.png',
-                './images/projects/roulette/roulette.png',
-                './images/projects/placeholder-project.png',
-            ]
+        this.projects = {
+            roulette: {
+                title: 'Roulette',
+                description: 'Roulette placeholder description',
+                images: [
+                    './images/projects/roulette/roulette.png',
+                    './images/projects/placeholder-project.png',
+                    './images/projects/roulette/roulette.png',
+                    './images/projects/placeholder-project.png',
+                    './images/projects/roulette/roulette.png',
+                    './images/projects/placeholder-project.png',
+                    './images/projects/roulette/roulette.png',
+                    './images/projects/placeholder-project.png',
+                ]
+            }            
         };
 
         this.onFullscreenProject = this.onFullscreenProject.bind(this);
@@ -82,15 +54,16 @@ class Portfolio extends Component {
         e.preventDefault();
         console.log('onFullscreenProject() project selected: ', project);
         
-        let projectImages = [];
+        let projectInfo;
 
         if (project === 'Roulette') {
-            projectImages = [...this.projectImages.roulette];
+            projectInfo = {...this.projects.roulette};
         }
 
         this.setState({
             //projectFullView: (<DisplayFullView onClose={this.onCloseFullscreen} />)
-            projectFullView: (<ProjectView images={projectImages} onClose={this.onCloseFullscreen} />)            
+            //projectFullView: (<ProjectView images={projects} onClose={this.onCloseFullscreen} />)            
+            projectFullView: (<ProjectView project={projectInfo} onClose={this.onCloseFullscreen} />)            
         });
     }
 
