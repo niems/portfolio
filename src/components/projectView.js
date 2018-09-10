@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import projects from './projectInfo';
 import './style/projectView.css';
 
 class ProjectView extends Component {
@@ -6,36 +7,55 @@ class ProjectView extends Component {
         super(props);
 
         this.state = {
-            selectedIndex: 0
-        }
+            selectedIndex: 0,
+            selectedImgPath: '',
+            name: '',
+            description: '',
+        };
 
         this.onChangeImg = this.onChangeImg.bind(this); //user clicked one of the image arrows to go to the previous/next image
+    }
+
+    componentDidMount() {
+        console.log(projects);
+        
+        if ( this.props.projectName === 'Roulette' ) {
+            console.log('componentDidMount roulette');
+
+            this.setState({
+                selectedImgPath: projects.roulette.images[0],
+                name: projects.roulette.name,
+                description: projects.roulette.description
+            });
+        }        
     }
 
     onChangeImg(e) {
         e.preventDefault();
         const id = e.currentTarget.id;
-        let selectedIndex = this.state.selectedIndex;
-        
-        if ( id === 'left-img-arrow' ) {
-            selectedIndex--;
-            
+        let selectedIndex = id === 'left-img-arrow' ? (this.state.selectedIndex - 1) : (this.state.selectedIndex + 1);
+        let totalImages;
+
+        if ( this.state.name === 'Roulette' ) {
+            totalImages = projects.roulette.images.length;
+
             if ( selectedIndex < 0 ) {
-                selectedIndex = this.props.project.images.length - 1;
+                selectedIndex = totalImages - 1;
             }
-        }
-        
-        else if ( id === 'right-img-arrow' ) {
-            selectedIndex++;
-            
-            if ( selectedIndex >= this.props.project.images.length ) {
+
+            else if ( selectedIndex >= totalImages ) {
                 selectedIndex = 0;
             }
+
+            this.setState({
+                selectedIndex: selectedIndex,
+                selectedImgPath: projects.roulette.images[selectedIndex]
+            });
         }
         
         console.log(id);
         console.log('selected index: ', selectedIndex);
-        this.setState({ selectedIndex });
+        //this.setState({ selectedIndex });
     }
 
     render() {
@@ -44,19 +64,22 @@ class ProjectView extends Component {
                 <div id='portfolio-fullview'>
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
 
-                    <h2 id='project-view-header'>{this.props.project.title}</h2>
+                    <h2 id='project-view-header'>{this.state.name}</h2>
 
                     <span className='project-img-arrow-container' id='left-img-arrow' onClick={this.onChangeImg}>
                         <img src='./images/arrow-left.svg' className='project-img-arrow' />
                     </span>
                     <div id='project-img-container'>
-                        <img src={this.props.project.images[this.state.selectedIndex]} id='project-img' alt='failed to load selected project image'/>
+                        <img src={this.state.selectedImgPath} id='project-img' alt=''/>
                     </div>
                     <span className='project-img-arrow-container' id='right-img-arrow' onClick={this.onChangeImg}>
                         <img src='./images/arrow-right.svg' className='project-img-arrow' />
                     </span>
 
-                    <p id='project-view-description'>{this.props.project.description}</p>
+                    <h3 id='project-about-header'>About this project</h3>
+                    <p id='project-view-description'>{this.state.description}</p>
+
+                    
                 </div>
             </div>
         );
