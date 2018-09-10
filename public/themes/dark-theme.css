@@ -14,7 +14,6 @@
 
   --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
   --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
-  --filter-blue-light: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 
   /*GENERAL*/
 --font-family: 'Courier New', Courier, monospace;

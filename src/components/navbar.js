@@ -44,7 +44,7 @@ class Navbar extends Component {
             case 'contact':
                 classes.contact += ' selected';
                 break;
-        }
+        }  
 
         this.classes = classes;
     }
@@ -61,8 +61,8 @@ class Navbar extends Component {
                         <div className={this.classes.experiments} id='experiments-link' onClick={this.updateSelection}>Experiments</div>
                         <div className={this.classes.contact} id='contact-link' onClick={this.updateSelection}>Contact</div>                        
                         
-                        <div className='icon-text mobile-only' id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
-                            <img className={`navbar-icon ${theme.name}`} id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
+                        <div id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
+                            <img className={theme.name} id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
                         </div>
                     </nav>
                 )}
