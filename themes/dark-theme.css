@@ -14,7 +14,6 @@
 
   --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
   --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
-  --filter-blue-light: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 
   /*GENERAL*/
 --font-family: 'Courier New', Courier, monospace;
@@ -96,6 +95,7 @@
 
 
 /*CONTACT PAGE*/
+--contact-full-bg: var(--dark-blue);
 --contact-page-bg: var(--accent-blue);
 --contact-desc-fg: white;
 --contact-desc-size: var(--medium-font);
@@ -104,7 +104,7 @@
 --contact-section-fg: white;
 
 --about-section-bg: white;
---about-section-fg: black;
+--about-section-fg: var(--light-blue);
 
 --contact-bg-layer-font-family: 'Archivo Black', sans-serif;
 
