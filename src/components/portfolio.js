@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ProjectView from './projectView';
 import AutoText from './autoText';
 import './style/portfolio.css';
 
@@ -60,13 +61,17 @@ class Portfolio extends Component {
             projectFullView: null //displays a single project as the fullview - user clicked "learn more"
         };
 
-        this.autoTextSetup = {
-            loop: true,
-            dynamicStrings: [
-                'An empty portfolio page D:',
-                'What a surprise :o',
-                'Maybe put projects here instead...'
-            ],
+        this.projectImages = {
+            roulette: [
+                './images/projects/roulette/roulette.png',
+                './images/projects/placeholder-project.png',
+                './images/projects/roulette/roulette.png',
+                './images/projects/placeholder-project.png',
+                './images/projects/roulette/roulette.png',
+                './images/projects/placeholder-project.png',
+                './images/projects/roulette/roulette.png',
+                './images/projects/placeholder-project.png',
+            ]
         };
 
         this.onFullscreenProject = this.onFullscreenProject.bind(this);
@@ -75,11 +80,17 @@ class Portfolio extends Component {
 
     onFullscreenProject(e, project) {
         e.preventDefault();
-        
         console.log('onFullscreenProject() project selected: ', project);
+        
+        let projectImages = [];
+
+        if (project === 'Roulette') {
+            projectImages = [...this.projectImages.roulette];
+        }
 
         this.setState({
-            projectFullView: (<DisplayFullView onClose={this.onCloseFullscreen} />)
+            //projectFullView: (<DisplayFullView onClose={this.onCloseFullscreen} />)
+            projectFullView: (<ProjectView images={projectImages} onClose={this.onCloseFullscreen} />)            
         });
     }
 
