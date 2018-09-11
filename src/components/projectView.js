@@ -64,7 +64,7 @@ class ProjectView extends Component {
                 <div id='portfolio-fullview'>
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
 
-                    <h2 id='project-view-header'>{this.state.name}</h2>
+                    <h2 className='project-header' id='project-view-header'>{this.state.name}</h2>
 
                     <span className='project-img-arrow-container' id='left-img-arrow' onClick={this.onChangeImg}>
                         <img src='./images/arrow-left.svg' className='project-img-arrow' />
@@ -76,10 +76,25 @@ class ProjectView extends Component {
                         <img src='./images/arrow-right.svg' className='project-img-arrow' />
                     </span>
 
-                    <h3 id='project-about-header'>About this project</h3>
-                    <p id='project-view-description'>{this.state.description}</p>
+                    <div className='project-info about'>
+                        <h3 className='project-header' id='project-about-header'>About this project</h3>
+                        <p id='project-view-description'>{this.state.description}</p>
+                    </div>
 
-                    
+                    <div className='project-info tech'>
+                        <h3 className='project-header' id='project-tech-stack-header'>Tech Stack</h3>
+                        <ul id='project-tech-stack-list'>
+                            <li className='project-tech-stack-item'>
+                                Electron
+                            </li>
+                            <li className='project-tech-stack-item'>
+                                Node
+                            </li>
+                            <li className='project-tech-stack-item'>
+                                React
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         );

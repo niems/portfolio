@@ -16,6 +16,7 @@
     min-width: 100%;
     min-height: 100%;
 
+
     display: grid;
     grid-row-gap: 0.5rem;
     justify-items: center;
@@ -26,22 +27,42 @@
                          'title title title title title'
                          'left-arrow selected-img selected-img selected-img right-arrow'
                          '. about about about .'
-                         '. description description description .';
+                         '. tech tech tech .';
 
     background: gray;
 }
 
-#project-view-header {
-    grid-area: title;
+.project-header {
     width: max-content;
     height: max-content;
 
-    font-size: 3em;
-    
+    text-align: center;
     margin: 0;
     padding: 0;
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: white;
 
     color: white;
+}
+
+.project-info {
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#project-view-header {
+    grid-area: title;
+    font-size: 3em;
+    border-style: none;
 }
 
 #project-img-container {
@@ -92,27 +113,27 @@
     height: auto;
 }
 
-#project-about-header {
+.project-info.about {
     grid-area: about;
-    width: 70%;
-    height: max-content;
+}
 
+#project-about-header {
     font-size: 1.5em;
-    text-align: center;
-
-    border-style: none none solid none;
-    border-width: 1px;
-    border-color: black;
-
-    margin: 0;
-    padding: 0;
-
-    color: white;
 }
 
 #project-view-description {
-    grid-area: description;
+    max-width: 100%;
+    height: auto;
+    overflow-wrap: break-word;
     color: white;
+}
+
+.project-info.tech {
+    grid-area: tech;
+}
+
+#project-tech-stack-header {
+    font-size: 1.5em;
 }
 
 #portfolio-fullview-close-btn {
