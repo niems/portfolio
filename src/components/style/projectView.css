@@ -24,7 +24,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    background: linear-gradient(0deg, var(--dark-blue), var(--light-blue) );
+    background: rgb(228, 228, 228);
 }
 
 .project-header {
@@ -35,7 +35,7 @@
     margin: 0;
     padding: 0;
 
-    color: white;
+    color: black;
 }
 
 /*DISPLAY PROJECT IMAGE*/
@@ -56,11 +56,11 @@
 
 @keyframes img-slide-out {
     from {
-        transform: translateX(0%);
+        transform: translateX(-100%);
     }
 
     to {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
 }
 
@@ -71,17 +71,14 @@
     height: 300px;
 
     background: gray;
+    animation-name: img-slide-out;
+    animation-duration: 1s;
 }
 
 .project-img-arrow-container {
     display: inline-block;
     width: max-content;
     height: max-content;
-}
-
-.project-img-arrow-container:active #project-img {
-    animation-name: img-slide-out;
-    animation-duration: 1s;
 }
 
 .project-img-arrow {
@@ -91,7 +88,7 @@
     height: auto;
     opacity: 0.25;
 
-    transition: all 0.5s;
+    transition: transform 0.5s;
 }
 
 .project-img-arrow:hover {
@@ -145,8 +142,19 @@
     padding: 0;
 }
 
+.project-info hr {
+    border-width: 1px;
+    border-color: gray;
+}
+
 #project-name-header {
     font-size: 1.5em;
+}
+
+#project-type-header {
+    font-size: 1.25em;
+    font-variant: small-caps;
+    font-weight: normal;
 }
 
 .project-description {
@@ -158,7 +166,7 @@
     padding: 0 0.5rem;
 
     overflow-wrap: break-word;
-    color: white;
+    color: black;
 }
 
 .project-info.tech {
@@ -213,9 +221,12 @@
 
     color: var(--btn-fg);
     background: var(--btn-bg);
-    border-color: var(--btn-border);
 
-    transition: background 0.4s;
+    color: red;
+    background: inherit;
+    border-color: black;
+
+    transition: none;
 }
 
 #portfolio-fullview-close-btn:hover {
