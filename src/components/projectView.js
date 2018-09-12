@@ -27,6 +27,8 @@ class ProjectView extends Component {
                 name: projects.roulette.name,
                 description: projects.roulette.description
             });
+
+            console.log('imagepath setting state: ', projects.roulette.images[0]);
         }        
     }
 
@@ -59,6 +61,29 @@ class ProjectView extends Component {
     }
 
     render() {
+        return (
+            <div id='portfolio-fullview-container'>
+                <div id='portfolio-fullview'>
+                    <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
+                    <h2 className='project-header' id='project-view-header'>{this.state.name}</h2>
+
+                    <div id='project-img-container'>
+                        <span className='project-img-arrow-container' id='left-img-arrow' onClick={this.onChangeImg}>
+                            <img src='./images/arrow-left.svg' className='project-img-arrow' />
+                        </span>
+
+                        <img src={this.state.selectedImgPath} id='project-img' alt=''/>
+
+                        <span className='project-img-arrow-container' id='right-img-arrow' onClick={this.onChangeImg}>
+                            <img src='./images/arrow-right.svg' className='project-img-arrow' />
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+        );
+
+        /*
         return (
             <div id='portfolio-fullview-container'>
                 <div id='portfolio-fullview'>
@@ -98,54 +123,8 @@ class ProjectView extends Component {
                 </div>
             </div>
         );
-
-        /*
-        return (
-            <div id='portfolio-fullview-container'>
-                <div id='portfolio-fullview'>
-                    <button id='portfolio-fullview-close-btn' className='btn round' onClick={this.props.onClose}>X</button>
-
-                    <div id='project-img-container'>
-                        <img src={this.props.images[this.state.selectedIndex]} id='project-img' alt='failed to load selected project image'/>
-                    </div>
-                </div>
-            </div>
-        );
         */
     }
 }
 
 export default ProjectView;
-
-/*
-function DisplayFullView({ onClose }) {
-    const propImages = [
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-        './images/projects/roulette/roulette.png',
-        './images/projects/placeholder-project.png',
-    ];
-
-    const selectedImg = propImages[0];
-    const projectImages = propImages.map((path, index) => <span className='project-collection-item'>{index + 1}</span>);
-    //const projectImages = propImages.map(imgPath => <img src={imgPath} className='project-collection-img' alt='failed to load project collection img'/>);
-    
-    return (
-        <div id='portfolio-fullview-container'>
-            <div id='portfolio-fullview'>
-                <button id='portfolio-fullview-close-btn' className='btn round' onClick={onClose}>X</button>
-
-                <div id='project-img-container'>
-                    <img src={selectedImg} id='project-img' alt='failed to load selected project image'/>
-
-                    <div id='project-collection-all-items'>{projectImages}</div>
-                </div>
-            </div>
-        </div>
-    );
-}
-*/
