@@ -19,7 +19,7 @@
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     background: gray;
@@ -41,6 +41,7 @@
 
 #project-view-header {
     width: 100%;
+    margin-bottom: 1rem;
 
     font-size: 3em;
     border-style: none;
@@ -94,6 +95,18 @@
     right: 0;
 
     transform: translateX(25%);
+}
+
+
+#project-info-container {
+    box-sizing: border-box;
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #portfolio-fullview-close-btn {

@@ -72,11 +72,18 @@ class ProjectView extends Component {
                             <img src='./images/arrow-left.svg' className='project-img-arrow' />
                         </span>
 
-                        <img src={this.state.selectedImgPath} id='project-img' alt=''/>
+                        <img src={this.state.selectedImgPath} id='project-img' alt='' />
 
                         <span className='project-img-arrow-container' id='right-img-arrow' onClick={this.onChangeImg}>
                             <img src='./images/arrow-right.svg' className='project-img-arrow' />
                         </span>
+                    </div>
+
+                    <div id='project-info-container'>
+                        <div className='project-info about'>
+                            <h3 className='project-header' id='project-about-header'>About this project</h3>
+                            <p id='project-view-description'>{this.state.description}</p>
+                        </div>
                     </div>
                     
                 </div>
