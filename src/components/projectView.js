@@ -51,7 +51,7 @@ class ProjectView extends Component {
 
         this.state = {
             selectedIndex: 0,
-            direction: 'forward'
+            direction: ''
         };
 
         this.name = this.props.projectName.toLowerCase();
@@ -109,7 +109,7 @@ class ProjectView extends Component {
                 <div id='portfolio-fullview'>
                     <DisplayProjectImage name={this.name} direction={this.state.direction} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
                     <DisplayProjectInfo name={this.name} />
-                    
+
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
                 </div>
             </div>

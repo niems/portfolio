@@ -87,23 +87,13 @@
     }
 }
 
-@keyframes img-slide-up {
+@keyframes img-zoom-in {
     from {
-        transform: translateY(100%);
+        transform: scale(0.1, 0.1);
     }
 
     to {
-        transform: translateY(0%);
-    }
-}
-
-@keyframes img-slide-down {
-    from {
-        transform: translateY(-100%);
-    }
-
-    to {
-        transform: translateY(0%);
+        transform: scale(1, 1);
     }
 }
 
@@ -114,7 +104,7 @@
     height: 225px;
 
     background: gray;
-    animation-name: img-slide-in;
+    animation-name: img-zoom-in;
     animation-duration: 0.75s;
 }
 
