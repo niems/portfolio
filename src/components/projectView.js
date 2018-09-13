@@ -48,6 +48,10 @@ function DisplayProjectInfo({ name }) {
     );
 }
 
+function DisplayProject({ name, index, onChangeImg }) {
+    
+}
+
 class ProjectView extends Component {
     constructor(props) {
         super(props);

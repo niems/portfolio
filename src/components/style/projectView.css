@@ -1,7 +1,7 @@
 #portfolio-fullview-container {
     box-sizing: border-box;
     max-width: 700px;    
-    width: 100%;
+    width: max-content;
     height: max-content;
     display: block;
 
@@ -18,13 +18,15 @@
     width: 100%;
     height: max-content;
 
+    padding: 0.25rem 1rem;
+
     position: relative; /*for close button positioning*/
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
 
-    background: rgb(228, 228, 228);
+    background: white;
 }
 
 .project-header {
@@ -39,6 +41,7 @@
 }
 
 /*DISPLAY PROJECT IMAGE*/
+/*
 #project-img-container {
     box-sizing: border-box;
     display: inline-block;
@@ -52,6 +55,25 @@
 
     width: max-content;
     height: max-content;
+}
+*/
+#project-img-container {
+    box-sizing: border-box;
+    width: max-content;
+    height: max-content;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    position: relative;
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+
+    overflow: hidden;
 }
 
 @keyframes img-slide-out {
@@ -68,11 +90,11 @@
     display: inline-block;
     max-width: 100%;
     width: 300px;
-    height: 300px;
+    height: 225px;
 
     background: gray;
     animation-name: img-slide-out;
-    animation-duration: 1s;
+    animation-duration: 0.75s;
 }
 
 .project-img-arrow-container {
@@ -83,12 +105,12 @@
 
 .project-img-arrow {
     display: inline-block;
-
-    width: 60px;
+    width: 40px;
     height: auto;
-    opacity: 0.25;
 
+    opacity: 0.45;
     transition: transform 0.5s;
+    filter: invert(1);
 }
 
 .project-img-arrow:hover {
@@ -98,18 +120,22 @@
 
 #left-img-arrow {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 0;
-
-    transform: translateX(-25%);
+    z-index: 1;
+    
+    background: rgba(0, 0, 0, 0.4);
+    /*transform: translateX(-25%);*/
 }
 
 #right-img-arrow {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     right: 0;
+    z-index: 1;
 
-    transform: translateX(25%);
+    background: rgba(0, 0, 0, 0.4);    
+    /*transform: translateX(25%);*/
 }
 /*DISPLAY PROJECT IMAGE*/
 
@@ -135,7 +161,6 @@
     box-sizing: border-box;
     display: inline-block;
     max-width: 100%;
-    width: 300px;
     height: max-content;    
 
     margin: 0;
@@ -174,34 +199,6 @@
 }
 /*DISPLAY PROJECT INFO*/
 
-/*
-#portfolio-fullview-close-btn {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    display: inline-block;
-    width: max-content;
-    height: max-content;
-
-    margin: 1rem 1rem 0 0;
-    padding: 0.5rem 1rem;
-    font-size: 1.3em;
-
-    outline: none;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 4px;
-
-    color: var(--btn-fg);
-    background: var(--btn-bg);
-    border-color: var(--btn-border);
-
-    transition: background 0.4s;
-}
-*/
-
 #portfolio-fullview-close-btn {
     box-sizing: border-box;
     align-self: flex-end;
@@ -232,6 +229,29 @@
 #portfolio-fullview-close-btn:hover {
     color: var(--btn-hover-fg);
     background: var(--btn-hover-bg);
+}
+
+
+@media only screen and (min-width: 500px) {
+    #project-img {
+        width: 400px;
+        height: 300px;
+    }
+
+    .project-img-arrow {
+        width: 50px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    #project-img {
+        width: 600px;
+        height: 450px;
+    }
+
+    .project-img-arrow {
+        width: 60px;
+    }
 }
 
 /*
