@@ -6,37 +6,24 @@ function isProjectValid(name) {
     return projects.hasOwnProperty(name);
 }
 
-function Image({ path, classes }) {
-    return (
-        <img src={path} className={classes} alt='' />
-    )
-}
-
-//pass selectedIndex & name: projects[name].images[selectedIndex]
 function DisplayProjectImage({ name, direction, index, onChangeImg }) {
     const path = isProjectValid(name) ? projects[name].images[index] : '';
-    const imgClasses = `project-img ${direction}`;
 
     return (
-        <React.Fragment>
         <div id='project-img-container'>
             <span className='project-img-arrow-container' id='left-img-arrow' onClick={onChangeImg}>
                 <img src='./images/arrow-left.svg' className='project-img-arrow' />
             </span>
 
-            <Image path={path} classes={imgClasses} />
+            <img src={path} className={`project-img ${direction}`} alt='' />
 
             <span className='project-img-arrow-container' id='right-img-arrow' onClick={onChangeImg}>
                 <img src='./images/arrow-right.svg' className='project-img-arrow' />
             </span>
-
         </div>
-        </React.Fragment>
     );
 }
 
-//pass name: projects[name].name
-//           projects[name].description 
 function DisplayProjectInfo({ name }) {
     let description, projectName, projectType;
 
@@ -122,7 +109,7 @@ class ProjectView extends Component {
                 <div id='portfolio-fullview'>
                     <DisplayProjectImage name={this.name} direction={this.state.direction} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
                     <DisplayProjectInfo name={this.name} />
-
+                    
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
                 </div>
             </div>

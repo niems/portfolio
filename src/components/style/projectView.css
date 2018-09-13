@@ -79,7 +79,7 @@
 
 @keyframes img-slide-out {
     from {
-        transform: translate(100%);
+        transform: translateX(100%);
     }
 
     to {
@@ -87,9 +87,23 @@
     }
 }
 
-@keyframes img-flip-up {
+@keyframes img-slide-up {
     from {
-        
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes img-slide-down {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
     }
 }
 
