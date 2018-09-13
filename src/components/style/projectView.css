@@ -27,6 +27,11 @@
     justify-content: flex-start;
     align-items: center;
 
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+
     background: white;
 }
 
@@ -42,22 +47,6 @@
 }
 
 /*DISPLAY PROJECT IMAGE*/
-/*
-#project-img-container {
-    box-sizing: border-box;
-    display: inline-block;
-
-    position: relative;
-    border-style: none none solid none;
-    border-width: 2px;
-    border-color: black;
-
-    overflow: hidden;
-
-    width: max-content;
-    height: max-content;
-}
-*/
 #project-img-container {
     box-sizing: border-box;
     max-width: 100%;
@@ -78,7 +67,7 @@
     overflow: hidden;
 }
 
-@keyframes img-slide-out {
+@keyframes img-slide-in {
     from {
         transform: translateX(-100%);
     }
@@ -88,13 +77,39 @@
     }
 }
 
-#project-img {
+@keyframes img-slide-out {
+    from {
+        transform: translate(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes img-flip-up {
+    from {
+        
+    }
+}
+
+.project-img {
     display: inline-block;
     max-width: 100%;
     width: 300px;
     height: 225px;
 
     background: gray;
+    animation-name: img-slide-in;
+    animation-duration: 0.75s;
+}
+
+.project-img.forward {
+    animation-name: img-slide-in;
+    animation-duration: 0.75s;
+}
+
+.project-img.backward {
     animation-name: img-slide-out;
     animation-duration: 0.75s;
 }
@@ -174,6 +189,7 @@
 
 .project-info hr {
     border-width: 1px;
+    border-style: none none solid none;
     border-color: gray;
 }
 
@@ -182,9 +198,10 @@
 }
 
 #project-type-header {
-    font-size: 1.25em;
+    font-size: 1.2em;
     font-variant: small-caps;
     font-weight: normal;
+    color: gray;
 }
 
 .project-description {
@@ -199,9 +216,6 @@
     color: black;
 }
 
-.project-info.tech {
-
-}
 /*DISPLAY PROJECT INFO*/
 
 #portfolio-fullview-close-btn {
@@ -217,28 +231,27 @@
     font-size: 1.3em;
 
     outline: none;
-    border-style: solid;
-    border-width: 2px;
+    border-style: none;
     border-radius: 4px;
 
     color: var(--btn-fg);
     background: var(--btn-bg);
 
-    color: red;
+    color: gray;
     background: inherit;
-    border-color: black;
+    box-shadow: 1px 2px 3px black;
 
     transition: none;
 }
 
 #portfolio-fullview-close-btn:hover {
     color: var(--btn-hover-fg);
-    background: var(--btn-hover-bg);
+    background: red;
 }
 
 
 @media only screen and (min-width: 500px) {
-    #project-img {
+    .project-img {
         width: 400px;
         height: 300px;
     }
@@ -258,7 +271,7 @@
         max-width: 750px;
     }
 
-    #project-img {
+    .project-img {
         width: 600px;
         height: 450px;
     }

@@ -6,9 +6,16 @@ function isProjectValid(name) {
     return projects.hasOwnProperty(name);
 }
 
+function Image({ path, classes }) {
+    return (
+        <img src={path} className={classes} alt='' />
+    )
+}
+
 //pass selectedIndex & name: projects[name].images[selectedIndex]
-function DisplayProjectImage({ name, index, onChangeImg }) {
+function DisplayProjectImage({ name, direction, index, onChangeImg }) {
     const path = isProjectValid(name) ? projects[name].images[index] : '';
+    const imgClasses = `project-img ${direction}`;
 
     return (
         <React.Fragment>
@@ -17,14 +24,13 @@ function DisplayProjectImage({ name, index, onChangeImg }) {
                 <img src='./images/arrow-left.svg' className='project-img-arrow' />
             </span>
 
-            <img src={path} id='project-img' alt='' />
+            <Image path={path} classes={imgClasses} />
 
             <span className='project-img-arrow-container' id='right-img-arrow' onClick={onChangeImg}>
                 <img src='./images/arrow-right.svg' className='project-img-arrow' />
             </span>
 
         </div>
-        <DisplayProjectInfo name={name} />
         </React.Fragment>
     );
 }
@@ -52,20 +58,13 @@ function DisplayProjectInfo({ name }) {
     );
 }
 
-function DisplayProject({ name, index, onChangeImg }) {
-    return (
-        <React.Fragment>
-            <DisplayProjectImage name={name} index={index} onChangeImg={onChangeImg} />
-        </React.Fragment>
-    );
-}
-
 class ProjectView extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             selectedIndex: 0,
+            direction: 'forward'
         };
 
         this.name = this.props.projectName.toLowerCase();
@@ -82,8 +81,20 @@ class ProjectView extends Component {
     onChangeImg(e) {
         e.preventDefault();
         const id = e.currentTarget.id;
-        let selectedIndex = id === 'left-img-arrow' ? (this.state.selectedIndex - 1) : (this.state.selectedIndex + 1);
+        //let selectedIndex = id === 'left-img-arrow' ? (this.state.selectedIndex - 1) : (this.state.selectedIndex + 1);
         let totalImages;
+        let direction;
+        let selectedIndex;
+
+        if (id === 'left-img-arrow') {
+            selectedIndex = this.state.selectedIndex - 1;
+            direction = 'backward';
+        }
+
+        else {
+            selectedIndex = this.state.selectedIndex + 1;
+            direction = 'forward';
+        }
 
         if ( isProjectValid(this.name) ) {
             totalImages = projects[this.name].images.length;
@@ -96,7 +107,12 @@ class ProjectView extends Component {
                 selectedIndex = 0;
             }
 
-            this.setState({ selectedIndex });
+            this.setState({ 
+                selectedIndex,
+                direction
+            });
+
+            console.log(`direction: ${direction}`);
         }
     }
 
@@ -104,8 +120,10 @@ class ProjectView extends Component {
         return (
             <div id='portfolio-fullview-container'>
                 <div id='portfolio-fullview'>
+                    <DisplayProjectImage name={this.name} direction={this.state.direction} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
+                    <DisplayProjectInfo name={this.name} />
+
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
-                    <DisplayProject name={this.name} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
                 </div>
             </div>
         );
