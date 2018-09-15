@@ -87,7 +87,7 @@ class Experiments extends Component {
                 <p id='experiments-page-desc'>Below are the results of late-night fiddling :D</p>
 
                 <div id='all-experiments'>
-                    <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/enqNLaVPlp8fItGMSd/giphy.mp4'} desc='Pure SCSS menu'
+                    <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/enqNLaVPlp8fItGMSd/giphy.mp4'} desc='Pure Sass menu'
                                        mouseEnter={this.onHoverEnter} mouseLeave={this.onHoverLeave} setRef={el => this.menuExperimentRef = el} />
 
                     <DisplayExperiment vidId='spinner-experiment' videoPath={'https://media.giphy.com/media/9AIA9Jz1zwJKHvaLeI/giphy.mp4'} desc='CSS3 Spinner Preloader'
