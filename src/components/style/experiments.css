@@ -27,11 +27,17 @@
     padding: 0;
 
     font-size: var(--experiments-header-size);
+    color: white;
     text-align: center;
+}
+
+#experiments-header::after {
+    border-color: white;
 }
 
 #experiments-page-desc {
     font-size: var(--experiments-desc-size);
+    color: white;
 }
 
 #all-experiments {
@@ -47,7 +53,7 @@
     box-sizing: border-box;
     max-width: 100%;
     width: 300px;
-    height: 300px;
+    height: 400px;
 
     padding: 1rem 0.5rem;
     margin: 1rem;
@@ -59,9 +65,16 @@
 
     border-style: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: white;
 
     background: inherit;
+}
+
+.experiment-video {
+    max-width: 100%;
+    max-height: 300px;
+    width: 100% !important;
+    height: auto !important;
 }
 
 .experiment-img {
@@ -82,10 +95,16 @@
 .experiment-description {
     box-sizing: border-box;
     display: inline-block;
+    width: 90%;
+    height: max-content;
 
     font-size: 1.5em;
     text-align: center;
-
     overflow-wrap: break-word;
+
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: white;
+    color: white;
 }
 
