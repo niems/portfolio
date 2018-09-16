@@ -6,7 +6,8 @@ function isProjectValid(name) {
     return projects.hasOwnProperty(name);
 }
 
-function DisplayProjectImage({ name, direction, index, onChangeImg }) {
+function DisplayProjectImage({ name, direction, previousIndex, index, onChangeImg }) {
+    const previousPath = isProjectValid(name) ? projects[name].images[previousIndex] : '';
     const path = isProjectValid(name) ? projects[name].images[index] : '';
 
     return (
@@ -15,6 +16,7 @@ function DisplayProjectImage({ name, direction, index, onChangeImg }) {
                 <img src='./images/arrow-left.svg' className='project-img-arrow' alt='failed to load left nav arrow'/>
             </span>
 
+            <img src={previousPath} className={`project-img offscreen ${direction}`} alt='' />
             <img src={path} className={`project-img ${direction}`} alt='' />
 
             <span className='project-img-arrow-container' id='right-img-arrow' onClick={onChangeImg}>
@@ -50,7 +52,8 @@ class ProjectView extends Component {
         super(props);
 
         this.state = {
-            selectedIndex: 0,
+            previousIndex: 0, //previous project image displayed - slides off screen based on direction
+            selectedIndex: 0, //current project image displayed
             direction: ''
         };
 
@@ -72,6 +75,7 @@ class ProjectView extends Component {
         let totalImages;
         let direction;
         let selectedIndex;
+        let previousIndex = this.state.selectedIndex; //new previous index
 
         if (id === 'left-img-arrow') {
             selectedIndex = this.state.selectedIndex - 1;
@@ -95,11 +99,14 @@ class ProjectView extends Component {
             }
 
             this.setState({ 
+                previousIndex,
                 selectedIndex,
                 direction
             });
 
             console.log(`direction: ${direction}`);
+            console.log(`previousIndex: ${previousIndex}`);
+            console.log(`selectedIndex: ${selectedIndex}\n\n`);
         }
     }
 
@@ -107,7 +114,9 @@ class ProjectView extends Component {
         return (
             <div id='portfolio-fullview-container'>
                 <div id='portfolio-fullview'>
-                    <DisplayProjectImage name={this.name} direction={this.state.direction} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
+                    <DisplayProjectImage name={this.name} direction={this.state.direction}
+                                         previousIndex={this.state.previousIndex} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
+
                     <DisplayProjectInfo name={this.name} />
 
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
