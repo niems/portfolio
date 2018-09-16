@@ -40,7 +40,6 @@ class Experiments extends Component {
     onHoverEnter(e) {
         e.preventDefault();
         const id = e.target.id;
-        console.log(`onHover() enter: ${id}`);
         
         switch(id) {
             case 'menu-experiment':
@@ -60,7 +59,6 @@ class Experiments extends Component {
     onHoverLeave(e) {
         e.preventDefault();
         const id = e.target.id;
-        console.log(`onHover() leave: ${id}`);
 
         switch(id) {
             case 'menu-experiment':
