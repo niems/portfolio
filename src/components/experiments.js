@@ -23,6 +23,7 @@ class Experiments extends Component {
             delay: 1500,
         };
 
+        this.preloaderExperimentRef = null;
         this.menuExperimentRef = null;
         this.spinnerExperimentRef = null;
 
@@ -33,6 +34,7 @@ class Experiments extends Component {
 
     componentDidMount() {
         //pauses all videos until user hovers
+        this.preloaderExperimentRef.pause();
         this.menuExperimentRef.pause();
         this.spinnerExperimentRef.pause();
     }
@@ -42,6 +44,10 @@ class Experiments extends Component {
         const id = e.target.id;
         
         switch(id) {
+            case 'preloader-experiment':
+                this.preloaderExperimentRef.play();
+                break;
+
             case 'menu-experiment':
                 this.menuExperimentRef.play();
                 break;
@@ -61,6 +67,10 @@ class Experiments extends Component {
         const id = e.target.id;
 
         switch(id) {
+            case 'preloader-experiment':
+                this.preloaderExperimentRef.pause();
+                break;
+
             case 'menu-experiment':
                 this.menuExperimentRef.pause();
                 break;
@@ -83,10 +93,13 @@ class Experiments extends Component {
                 </h2>
 
                 <p id='experiments-page-desc'>Below are the results of late-night fiddling :D</p>
-
+                
                 <div id='all-experiments'>
                     <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/enqNLaVPlp8fItGMSd/giphy.mp4'} desc='Pure Sass menu'
                                        mouseEnter={this.onHoverEnter} mouseLeave={this.onHoverLeave} setRef={el => this.menuExperimentRef = el} />
+
+                    <DisplayExperiment vidId='preloader-experiment' videoPath={'https://media.giphy.com/media/5hq1mh1VHvFr1Bv5q5/giphy.mp4'} desc='Sass preloader'
+                                       mouseEnter={this.onHoverEnter} mouseLeave={this.onHoverLeave} setRef={el => this.preloaderExperimentRef = el} />
 
                     <DisplayExperiment vidId='spinner-experiment' videoPath={'https://media.giphy.com/media/9AIA9Jz1zwJKHvaLeI/giphy.mp4'} desc='CSS3 Spinner Preloader'
                                        mouseEnter={this.onHoverEnter} mouseLeave={this.onHoverLeave} setRef={el => this.spinnerExperimentRef = el} />
