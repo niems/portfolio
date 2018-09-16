@@ -6,18 +6,15 @@ function isProjectValid(name) {
     return projects.hasOwnProperty(name);
 }
 
-function DisplayProjectImage({ name, direction, previousIndex, index, onChangeImg }) {
-    const previousPath = isProjectValid(name) ? projects[name].images[previousIndex] : '';
-    const path = isProjectValid(name) ? projects[name].images[index] : '';
-
+function DisplayProjectImage({ previousImg, selectedImg, onChangeImg }) {
     return (
         <div id='project-img-container'>
             <span className='project-img-arrow-container' id='left-img-arrow' onClick={onChangeImg}>
                 <img src='./images/arrow-left.svg' className='project-img-arrow' alt='failed to load left nav arrow'/>
             </span>
 
-            <img src={previousPath} className={`project-img offscreen ${direction}`} alt='' />
-            <img src={path} className={`project-img ${direction}`} alt='' />
+            {previousImg}
+            {selectedImg}
 
             <span className='project-img-arrow-container' id='right-img-arrow' onClick={onChangeImg}>
                 <img src='./images/arrow-right.svg' className='project-img-arrow' alt='failed to load right nav arrow'/>
@@ -52,61 +49,79 @@ class ProjectView extends Component {
         super(props);
 
         this.state = {
-            previousIndex: 0, //previous project image displayed - slides off screen based on direction
-            selectedIndex: 0, //current project image displayed
-            direction: ''
+            previousImg: '',
+            selectedImg: '',
         };
 
-        this.name = this.props.projectName.toLowerCase();
+        this.direction = 'forward'; //direction selected image comes in from
+        this.previousIndex = 0; //previous index of project image displayed - slides off screen based on direction
+        this.selectedIndex = 0; //current index of project image displayed
         this.onChangeImg = this.onChangeImg.bind(this); //user clicked one of the image arrows to go to the previous/next image
     }
 
     componentDidMount() {        
-        if ( this.name !== this.name ) {
-            console.log('updating name');
-            this.name = this.props.projectName.toLowerCase();
+        if ( isProjectValid( this.props.projectName.toLowerCase() ) ) {
+            let selectedPath = projects[this.props.projectName.toLowerCase()].images[0];
+            let selectedImg = (<img src={selectedPath} className={`project-img ${this.direction}`} alt='' />);
+    
+            this.setState({ selectedImg });
         }
     }
 
     onChangeImg(e) {
         e.preventDefault();
         const id = e.currentTarget.id;
-        //let selectedIndex = id === 'left-img-arrow' ? (this.state.selectedIndex - 1) : (this.state.selectedIndex + 1);
+        
         let totalImages;
         let direction;
-        let selectedIndex;
-        let previousIndex = this.state.selectedIndex; //new previous index
+        this.previousIndex = this.selectedIndex; //new previous index
 
         if (id === 'left-img-arrow') {
-            selectedIndex = this.state.selectedIndex - 1;
+            this.selectedIndex -= 1;
             direction = 'backward';
+
+            direction = this.direction === 'backward' ? 'backward active' : 'backward';
+            this.direction = direction; //updates current direction
         }
 
         else {
-            selectedIndex = this.state.selectedIndex + 1;
+            this.selectedIndex += 1;
             direction = 'forward';
+
+            direction = this.direction === 'forward' ? 'forward active' : 'forward';
+            this.direction = direction; //updates current direction
         }
 
-        if ( isProjectValid(this.name) ) {
-            totalImages = projects[this.name].images.length;
+        if ( isProjectValid(this.props.projectName.toLowerCase()) ) {
+            totalImages = projects[this.props.projectName.toLowerCase()].images.length;
 
-            if ( selectedIndex < 0 ) {
-                selectedIndex = totalImages - 1;
+            let previousPath,
+                previousImg,
+                selectedPath,
+                selectedImg;
+
+            if ( this.selectedIndex < 0 ) {
+                this.selectedIndex = totalImages - 1;
             }
 
-            else if ( selectedIndex >= totalImages ) {
-                selectedIndex = 0;
+            else if ( this.selectedIndex >= totalImages ) {
+                this.selectedIndex = 0;
             }
+
+            previousPath = projects[this.props.projectName.toLowerCase()].images[this.previousIndex];
+            previousImg = (<img src={previousPath} className={`project-img offscreen ${direction}`} alt='' />);
+
+            selectedPath = projects[this.props.projectName.toLowerCase()].images[this.selectedIndex];
+            selectedImg = (<img src={selectedPath} className={`project-img ${direction}`} alt='' />);
 
             this.setState({ 
-                previousIndex,
-                selectedIndex,
-                direction
+                previousImg,
+                selectedImg,
             });
 
             console.log(`direction: ${direction}`);
-            console.log(`previousIndex: ${previousIndex}`);
-            console.log(`selectedIndex: ${selectedIndex}\n\n`);
+            console.log(`previousIndex: ${this.previousIndex}`);
+            console.log(`selectedIndex: ${this.selectedIndex}\n\n`);
         }
     }
 
@@ -114,10 +129,8 @@ class ProjectView extends Component {
         return (
             <div id='portfolio-fullview-container'>
                 <div id='portfolio-fullview'>
-                    <DisplayProjectImage name={this.name} direction={this.state.direction}
-                                         previousIndex={this.state.previousIndex} index={this.state.selectedIndex} onChangeImg={this.onChangeImg} />
-
-                    <DisplayProjectInfo name={this.name} />
+                    <DisplayProjectImage previousImg={this.state.previousImg} selectedImg={this.state.selectedImg} onChangeImg={this.onChangeImg} />
+                    <DisplayProjectInfo name={this.props.projectName.toLowerCase()} />
 
                     <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
                 </div>
