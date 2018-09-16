@@ -92,7 +92,7 @@ class Experiments extends Component {
                     <DistortText setup={this.distortTextSetup} />
                 </h2>
 
-                <p id='experiments-page-desc'>Below are the results of late-night fiddling :D</p>
+                <p id='experiments-page-desc'>These are the results of late-night tinkering. Tap/hover over an experiment below to animate it!</p>
                 
                 <div id='all-experiments'>
                     <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/enqNLaVPlp8fItGMSd/giphy.mp4'} desc='Pure Sass menu'
