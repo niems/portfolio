@@ -12,13 +12,13 @@ function DisplayProjectImage({ name, direction, index, onChangeImg }) {
     return (
         <div id='project-img-container'>
             <span className='project-img-arrow-container' id='left-img-arrow' onClick={onChangeImg}>
-                <img src='./images/arrow-left.svg' className='project-img-arrow' />
+                <img src='./images/arrow-left.svg' className='project-img-arrow' alt='failed to load left nav arrow'/>
             </span>
 
             <img src={path} className={`project-img ${direction}`} alt='' />
 
             <span className='project-img-arrow-container' id='right-img-arrow' onClick={onChangeImg}>
-                <img src='./images/arrow-right.svg' className='project-img-arrow' />
+                <img src='./images/arrow-right.svg' className='project-img-arrow' alt='failed to load right nav arrow'/>
             </span>
         </div>
     );
