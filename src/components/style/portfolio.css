@@ -68,12 +68,12 @@
     background-size: contain;
 }
 
-.portfolio-project-container.Roulette {
-    background-image: url('../backgrounds/projects/roulette.png');
+.portfolio-project-container {
+    background-image: url('../backgrounds/projects/placeholder-project.png');
 }
 
-.portfolio-project-container.Whisper {
-    
+.portfolio-project-container.Roulette {
+    background-image: url('../backgrounds/projects/roulette.png');
 }
 
 @keyframes test-anim{

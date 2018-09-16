@@ -8,8 +8,22 @@ const projects = {
             './images/projects/placeholder-project.png',
             './images/projects/roulette/roulette.png',
             './images/projects/placeholder-project.png',
+        ]
+    },
+    "whisper": {
+        name: 'Whisper',
+        type: 'Another web chat app',
+        description: 'Whisper data not here D:',
+        images: [
             './images/projects/roulette/roulette.png',
             './images/projects/placeholder-project.png',
+        ]
+    },
+    "placeholder project": {
+        name: 'Placeholder :D',
+        type: 'Placeholder app',
+        description: 'This is placeholder text until I add another project here...',
+        images: [
             './images/projects/roulette/roulette.png',
             './images/projects/placeholder-project.png',
         ]
