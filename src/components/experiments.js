@@ -95,7 +95,7 @@ class Experiments extends Component {
                 <p id='experiments-page-desc'>These are the results of late-night tinkering. Tap/hover over an experiment below to animate it!</p>
                 
                 <div id='all-experiments'>
-                    <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/enqNLaVPlp8fItGMSd/giphy.mp4'} desc='Pure Sass menu'
+                    <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/5hddPLGLBj5nEZKPZL/giphy.mp4'} desc='Pure Sass menu'
                                        mouseEnter={this.onHoverEnter} mouseLeave={this.onHoverLeave} setRef={el => this.menuExperimentRef = el} />
 
                     <DisplayExperiment vidId='preloader-experiment' videoPath={'https://media.giphy.com/media/5hq1mh1VHvFr1Bv5q5/giphy.mp4'} desc='Sass preloader'
