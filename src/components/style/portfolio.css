@@ -68,12 +68,16 @@
     background-size: contain;
 }
 
-.portfolio-project-container {
-    background-image: url('../backgrounds/projects/placeholder-project.png');
-}
-
 .portfolio-project-container.Roulette {
     background-image: url('../backgrounds/projects/roulette.png');
+}
+
+.portfolio-project-container.Whisper {
+    background-image: url('../backgrounds/projects/whisper.png');
+}
+
+.portfolio-project-container.Word-Connect {
+    background-image: url('../backgrounds/projects/word-connect.png');
 }
 
 @keyframes test-anim{
