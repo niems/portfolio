@@ -1,6 +1,5 @@
 #homepage {
     box-sizing: border-box;
-
     position: relative;
 }
 
@@ -116,6 +115,7 @@ span[id='name'] {
 }
 
 #homepage-effect {
+    padding: 0.5rem 1rem;
     font-size: var(--home-effect-size);
 }
 
