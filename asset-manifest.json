@@ -1,9 +1,10 @@
 {
-  "main.css": "static/css/main.c1cc21dc.css",
-  "main.css.map": "static/css/main.c1cc21dc.css.map",
-  "main.js": "static/js/main.b5ae474b.js",
-  "main.js.map": "static/js/main.b5ae474b.js.map",
-  "static\\media\\placeholder-project.png": "static/media/placeholder-project.adc6dc4e.png",
-  "static\\media\\roulette.png": "static/media/roulette.690df6b4.png",
+  "main.css": "static/css/main.6197d233.css",
+  "main.css.map": "static/css/main.6197d233.css.map",
+  "main.js": "static/js/main.534b0e70.js",
+  "main.js.map": "static/js/main.534b0e70.js.map",
+  "static\\media\\roulette.png": "static/media/roulette.c2ef5d21.png",
+  "static\\media\\whisper.png": "static/media/whisper.14a13332.png",
+  "static\\media\\word-connect.png": "static/media/word-connect.da78e692.png",
   "static\\media\\z-logo.svg": "static/media/z-logo.6788426f.svg"
 }
