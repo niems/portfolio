@@ -2,30 +2,33 @@ const projects = {
     "roulette": {
         name: 'Roulette',
         type: 'Web chat app',
-        description: 'Roulette provides anonymous video/audio chatting using WebRTC, with Node.js and Socket.IO on the back-end.',
+        description: 'Roulette provides anonymous video/audio chatting using WebRTC, with Node.js and Socket.IO on the back-end. The learning curve for this freelance project was up quite a hill: the client wanted a video/audio chatting site, so I set out learning the WebRTC API - no walk in the park...',
         images: [
-            './images/projects/roulette/roulette.png',
-            './images/projects/placeholder-project.png',
-            './images/projects/roulette/roulette.png',
-            './images/projects/placeholder-project.png',
+            './images/projects/roulette/landing.png',
+            './images/projects/roulette/waiting-area.png',
+            './images/projects/roulette/chat-joined.png',
+            './images/projects/roulette/emoji.png',
+            './images/projects/roulette/user-disconnected.png',
         ]
     },
     "whisper": {
         name: 'Whisper',
-        type: 'Another web chat app',
-        description: 'Whisper data not here D:',
+        type: 'Desktop/Web chat app',
+        description: 'Whisper is the first chat app I coded using React! While private messaging and group chat work on the web, I also coded it as a desktop application using Electron (wraps the web app for distribution on Windows/Mac/Linux).',
         images: [
-            './images/projects/roulette/roulette.png',
-            './images/projects/placeholder-project.png',
+            './images/projects/whisper/chatting.png',
+            './images/projects/whisper/landing.png',
+            './images/projects/whisper/sign-in.png',
+            './images/projects/whisper/sign-up.png',
         ]
     },
-    "placeholder project": {
-        name: 'Placeholder :D',
-        type: 'Placeholder app',
-        description: 'This is placeholder text until I add another project here...',
+    "word-connect": {
+        name: 'Word Connect',
+        type: 'Desktop/Web dictionary search app',
+        description: 'Word connect placeholder text...',
         images: [
-            './images/projects/roulette/roulette.png',
-            './images/projects/placeholder-project.png',
+            './images/projects/word-connect/display.png',
+            './images/projects/word-connect/loading.png',
         ]
     }
 };
