@@ -51,7 +51,7 @@
 .portfolio-project-container {
     box-sizing: border-box;
     
-    width: 300px;
+    width: 400px;
     height: 300px;
 
     margin: 0.5rem;
@@ -62,7 +62,7 @@
     border-radius: 0.25rem;
     box-shadow: 2px 2px 4px black;
 
-    background: inherit;
+    background: black;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -196,7 +196,7 @@
 
 @media only screen and (min-width: 850px) {
     .portfolio-project-container {
-        width: 400px;
-        height: 400px;
+        width: 600px;
+        height: 450px;
     }
 }

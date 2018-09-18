@@ -7,7 +7,6 @@ const projects = {
             'https://media.giphy.com/media/pOlr6w3EMOQkeDHhbF/giphy.gif',
             './images/projects/roulette/landing.png',
             './images/projects/roulette/waiting-area.png',
-            './images/projects/roulette/chat-joined.png',
             './images/projects/roulette/emoji.png',
             './images/projects/roulette/user-disconnected.png',
         ]
