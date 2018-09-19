@@ -36,7 +36,7 @@ const projects = {
         name: 'Word Connect',
         type: 'Desktop dictionary search app',
         description: [
-                'Coded this dictionary-lookup app for fun to gain experience with IndexedDB and Electron.js.',
+                'Coded this dictionary-lookup app for fun to gain experience with IndexedDB (NoSQL database) and Electron.js.',
 
                 'The challenge was getting the words - there ended up being 195,275 words after removing duplicates/bad data - used in this project. \
                 I coded a web scraper in Node.js using Cheerio.js for parsing. ',
