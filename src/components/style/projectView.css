@@ -1,6 +1,7 @@
 #portfolio-fullview-container {
     box-sizing: border-box;
     max-width: 100%;    
+    max-height: 100%;
     width: max-content;
     height: max-content;
     display: block;
@@ -11,8 +12,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
+    overflow: auto;
 }
+
+
 
 #portfolio-fullview {
     box-sizing: border-box;
@@ -21,7 +24,8 @@
     height: max-content;
 
     padding: 0.25rem 1rem;
-
+    overflow: hidden;
+    
     position: relative; /*for close button positioning*/
     display: flex;
     flex-flow: column nowrap;
@@ -220,11 +224,13 @@
 #project-info-container {
     box-sizing: border-box;
     max-width: 100%;
+    max-height: 100%;
     width: 300px;
     height: max-content;
 
     margin: 1rem 0 0 0;
     padding: 0;
+    overflow: auto;  
 
     display: flex;
     flex-flow: column nowrap;
