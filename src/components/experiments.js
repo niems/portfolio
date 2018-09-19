@@ -88,12 +88,14 @@ class Experiments extends Component {
     render() {
         return (
             <div className={`page-container`} id='experiments-container' ref={this.props.setRef}>
-                <h2 className='section-header' id='experiments-header'>
-                    <DistortText setup={this.distortTextSetup} />
-                </h2>
+                <div id='experiments-header-container'>
+                    <h2 className='section-header' id='experiments-header'>
+                        <DistortText setup={this.distortTextSetup} />
+                    </h2>
 
-                <p id='experiments-page-desc'>These are the results of late-night tinkering. Tap/hover over an experiment below to animate it!</p>
-                
+                    <p id='experiments-page-desc'>These are the results of late-night tinkering. Tap/hover over an experiment below to animate it!</p>    
+                </div>
+
                 <div id='all-experiments'>
                     <DisplayExperiment vidId='menu-experiment' videoPath={'https://media.giphy.com/media/9DawXEUzWLcN2qzyX2/giphy.mp4'} desc='Pure Sass menu'
                                        mouseEnter={this.onHoverEnter} mouseLeave={this.onHoverLeave} setRef={el => this.menuExperimentRef = el} />

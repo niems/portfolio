@@ -30,6 +30,7 @@
 
 #portfolio-auto-effect {
     font-size: var(--portfolio-desc-size);
+    line-height: var(--portfolio-desc-line-height);
 }
 
 .portfolio-header {
