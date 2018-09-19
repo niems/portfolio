@@ -28,7 +28,7 @@ const projects = {
         type: 'Desktop/Web dictionary search app',
         description: 'Word connect placeholder text...',
         images: [
-            'https://media.giphy.com/media/9AINN6phxeZyg6RIZf/giphy.gif',
+            'https://media.giphy.com/media/4EFfGB2yCxtwQ3jA2L/giphy.gif',
             './images/projects/word-connect/display.png',
             './images/projects/word-connect/loading.png',
         ]
