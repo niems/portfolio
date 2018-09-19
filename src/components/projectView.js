@@ -27,9 +27,12 @@ function DisplayProjectInfo({ name }) {
     let description, projectName, projectType;
 
     if ( isProjectValid(name) ) {
-        description =  projects[name].description;
         projectName = name[0].toUpperCase() + name.slice(1);
         projectType = projects[name].type;
+        
+        description = projects[name].description.map( (paragraph, index) => (
+            <p key={index} className='project-description'>{projects[name].description[index]}</p>
+        ));
     }    
 
     return (
@@ -38,7 +41,8 @@ function DisplayProjectInfo({ name }) {
                 <h2 className='project-header' id='project-name-header'>{projectName}</h2>
                 <h3 className='project-header' id='project-type-header'>{projectType}</h3>
                 <hr />
-                <p className='project-description' id='about-description'>{description}</p>
+
+                {description}
             </div>
         </div>
     );
