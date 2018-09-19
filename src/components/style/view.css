@@ -55,6 +55,7 @@
 
     position: relative;
     font-size: var(--section-header-size);
+    line-height: var(--section-header-line-height);
     
     border-style: none;
     color: var(--section-header-fg);
@@ -77,6 +78,7 @@
 
 .section-subheader {
     box-sizing: border-box;
+    max-width: 1000px;
     width: max-content;
     height: max-content;
 
@@ -84,8 +86,8 @@
     margin: 0;
     overflow-wrap: break-word;
     
-    font-size: var(--medium-font-size);
-    line-height: var(--medium-font-line-height);
+    font-size: var(--section-subheader-size);
+    line-height: var(--section-subheader-line-height);
 }
 
 .btn {

@@ -28,13 +28,13 @@
     background: var(--portfolio-page-bg);
 }
 
-#portfolio-auto-effect {
-    font-size: var(--portfolio-desc-size);
-    line-height: var(--portfolio-desc-line-height);
-}
-
 .portfolio-header {
     margin: 0 0 1rem 0;
+}
+
+.portfolio-subheader {
+    font-size: var(--portfolio-subheader-size);
+    line-height: var(--portfolio-subheader-line-height);
 }
 
 #portfolio-projects {
@@ -46,7 +46,6 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-
 }
 
 .portfolio-project-container {

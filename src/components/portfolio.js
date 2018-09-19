@@ -54,7 +54,8 @@ class Portfolio extends Component {
                 {this.state.projectFullView}
 
                 <h2 className='portfolio-header section-header'>Projects</h2>
-                
+                <p className='portfolio-subheader section-subheader'>Here are a few projects I've recently worked on</p>
+
                 <div id='portfolio-projects'>
                     <DisplayProject name='Roulette' tech='Node + React + Socket.IO + WebRTC' onClick={this.onFullscreenProject} />
                     <DisplayProject name='Whisper' tech='Electron + Node + React + Socket.IO' onClick={this.onFullscreenProject} />
