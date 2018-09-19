@@ -207,7 +207,7 @@ class View extends Component {
             <div id='view-container' onScroll={this.onScroll}>
                 {this.state.displayMenu}
 
-                <div id='sections-container' ref={el => this.viewRef = el}>                    
+                <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>                    
                     <Navbar setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
 
                     <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
