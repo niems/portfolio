@@ -46,16 +46,13 @@
 --btn-hover-fg: black;
 /*GENERAL*/
 
-/*
---portfolio-green: #03DAC6;
-    --portfolio-blue: var(--light-blue);
 
-    --project-btn-bg: inherit;
-    --project-btn-fg: var(--main);
-    --project-btn-border: var(--portfolio-green);
-    --project-btn-hover-bg: var(--portfolio-green);
-    --project-btn-hover-fg: black;
-    */
+/*SCROLLBAR*/
+--scrollbar-bg: var(--main);
+--scrollbar-track: var(--blackish);
+--scrollbar-thumb: var(--accent-green-two);
+/*SCROLLBAR*/
+
 
 /*NAVBAR*/
 --navbar-bg: var(--main-dark);
