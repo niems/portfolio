@@ -73,7 +73,7 @@
     display: block;
 
     border-radius: 0.25rem;
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 2px 3px 4px black;
 
     background: black;
     background-position: center center;
@@ -174,7 +174,7 @@
 }
 
 .portfolio-project-name {
-    font-size: 1.75em;
+    font-size: var(--portfolio-project-header-size);
     margin-bottom: 0.5rem;
     
     color: var(--main);
@@ -183,11 +183,12 @@
 
 .portfolio-project-tech {
     color: var(--project-tech-fg);
-    font-size: 1.05em;
+    font-size: var(--portfolio-project-desc-size);
     font-weight: normal;
 }
 
-.learn-more {
+.btn.learn-more {
+    font-size: var(--portfolio-project-btn-size);
     transition: background 0.4s;
 }
 
@@ -211,5 +212,7 @@
     .portfolio-project-container {
         width: 600px;
         height: 450px;
+
+        margin: 1rem 2rem;
     }
 }
