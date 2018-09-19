@@ -104,6 +104,10 @@
 --portfolio-header-line-height: var(--large-font-line-height);
 --portfolio-subheader-size: var(--medium-font);
 --portfolio-subheader-line-height: var(--medium-font-light-height);
+
+--portfolio-project-header-size: var(--medium-font);
+--portfolio-project-desc-size: var(--small-font);
+--portfolio-project-btn-size: var(--small-font);
 /*PORTFOLIO PAGE*/
 
 
