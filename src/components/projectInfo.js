@@ -42,8 +42,8 @@ const projects = {
                 I coded a web scraper in Node.js using Cheerio.js for parsing. ',
 
                 'The web scraper went through all the categories(A-Z) on dictionary.com. For each category (ex. category "A") it went through \
-                every page ("A" has 54 pages of words alone), collecting the links for each word. It then used the word-links to extract the word, definition, and \
-                example from the page, storing the data in IndexedDB.'
+                every page ("A" has 54 pages of words alone), collecting the links for each word, extracting the word, definition, and \
+                example from each link, storing the data in IndexedDB.'
         ],
         images: [
             'https://media.giphy.com/media/4EFfGB2yCxtwQ3jA2L/giphy.gif',
