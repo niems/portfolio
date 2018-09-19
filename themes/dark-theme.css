@@ -18,13 +18,26 @@
 
   /*GENERAL*/
 --font-family: 'Courier New', Courier, monospace;
---large-font: calc(1.6em + (3 - 1.6) * ((100vw - 21em) / (75 - 21)));
---medium-font: calc(1.2em + (2 - 1.2) * ((100vw - 21em) / (75 - 21)));
+--xlarge-font: calc(1.8em + (2.5 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75))); /* 300px - 1000px*/
+--xlarge-font-line-height: calc(1.8em + (3 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75)));
+
+--large-font: calc(1.6em + (2.2 - 1.6) * ((100vw - 18.75em) / (62.5 - 18.75))); /* 300px - 1000px*/
+--large-font-line-height: calc(1.4em + (2.2 - 1.4) * ((100vw - 18.75em) / (62.5 - 18.75)));
+
+--medium-font: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75))); /* 300px - 1000px*/
+--medium-font-line-height: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
+
+--small-font: calc(1em + (1.3 - 1) * ((100vw - 18.75em) / (62.5 - 18.75))); /* 300px - 1000px*/
+--small-font-line-height: calc(1.1em + (1.5 - 1.1) * ((100vw - 18.75em) / (62.5 - 18.75)));
 
 --app-bg: var(--dark-blue);
 
 --section-header-size: var(--large-font);
+--section-header-light-height: var(--large-font-line-height);
 --section-header-fg: black;
+
+--section-subheader-size: var(--small-font);
+--section-subheader-line-height: var(--small-font-line-height);
 
 --btn-bg: inherit;
 --btn-fg: var(--main);
@@ -70,7 +83,10 @@
 
 /*HOMEPAGE*/
 --home-text-fg: var(--main);
+--home-header-size: var(--xlarge-font);
+--home-header-line-height: var(--xlarge-font-line-height);
 --home-effect-size: var(--medium-font);
+--home-effect-line-height: var(--medium-font-line-height)
 
 --home-about-btn-fg: white;
 --home-about-btn-bg: none;
@@ -85,13 +101,18 @@
 /*PORTFOLIO PAGE*/
 --portfolio-page-bg: var(--main);
 --portfolio-header-size: var(--large-font);
+--portfolio-header-line-height: var(--large-font-line-height);
+--portfolio-subheader-size: var(--medium-font);
+--portfolio-subheader-line-height: var(--medium-font-light-height);
 /*PORTFOLIO PAGE*/
 
 
 /*EXPERIMENTS PAGE*/
 --experiments-page-bg: var(--light-blue);
 --experiments-header-size: var(--large-font);
---experiments-desc-size: var(--medium-font);
+--experiments-header-line-height: var(--large-font-line-height);
+--experiments-desc-size: var(--small-font);
+--experiments-desc-line-height: var(--small-font-line-height);
 /*EXPERIMENTS PAGE*/
 
 
@@ -99,7 +120,7 @@
 --contact-full-bg: var(--dark-blue);
 --contact-page-bg: var(--accent-blue);
 --contact-desc-fg: white;
---contact-desc-size: var(--medium-font);
+--contact-desc-size: var(--small-font);
 
 --contact-section-bg: var(--light-blue);
 --contact-section-fg: white;
@@ -114,7 +135,7 @@
 
 /*AUTOTEXT*/
 --auto-text-highlight: var(--accent-blue);
---auto-text-font-size: var(--medium-font);
+--auto-text-font-size: var(--small-font);
 --auto-text-fg: var(--accent-blue);
 --auto-text-cursor-size: 1.3em;
 --auto-text-line-height: 1.5em;
