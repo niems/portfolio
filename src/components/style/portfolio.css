@@ -11,9 +11,10 @@
     --project-tech-fg: var(--portfolio-green);
 
     box-sizing: border-box;
+    max-width: 100%;
     min-height: 100vh;
-    height: max-content;
     width: 100%;
+    height: max-content;
 
     overflow: hidden;
     position: relative; /*for the modal window when "learn more" is clicked*/
@@ -28,13 +29,25 @@
     background: var(--portfolio-page-bg);
 }
 
-.portfolio-header {
-    margin: 0 0 1rem 0;
+#portfolio-header-container {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.portfolio-subheader {
-    font-size: var(--portfolio-subheader-size);
-    line-height: var(--portfolio-subheader-line-height);
+#portfolio-header {
+    margin: 1rem 0;
+}
+
+.section-subheader.portfolio-subheader {
+    margin-bottom: 2rem;
+    overflow-wrap: break-word;
 }
 
 #portfolio-projects {

@@ -53,8 +53,10 @@ class Portfolio extends Component {
             <div className={`page-container`} id='portfolio-container' ref={this.props.setRef}>
                 {this.state.projectFullView}
 
-                <h2 className='portfolio-header section-header'>Projects</h2>
-                <p className='portfolio-subheader section-subheader'>Here are a few projects I've recently worked on</p>
+                <div id='portfolio-header-container'>
+                    <h2 id='portfolio-header' className='section-header'>Projects</h2>
+                    <p className='section-subheader portfolio-subheader'>From SVG animations using Sass (preprocessed CSS) to using React.js, Node.js, Socket.IO, and WebRTC. Check out a few of my latest projects.</p>
+                </div>
 
                 <div id='portfolio-projects'>
                     <DisplayProject name='Roulette' tech='Node + React + Socket.IO + WebRTC' onClick={this.onFullscreenProject} />
