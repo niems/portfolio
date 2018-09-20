@@ -131,9 +131,7 @@ class View extends Component {
     }
 
     updateDisplayedPage(id) {
-        //console.log(`updateDisplayedPage() id: ${id}\n`);
         const scrollOptions = {behavior: 'smooth', block: 'start', inline: 'nearest'};
-        //console.log(`type: ${typeof(this.ref[id])}\n`);
         
         switch(id) {
             case 'home':
@@ -198,8 +196,6 @@ class View extends Component {
 
         currentHeight += this.contactRef.scrollHeight;
         this.displayInfo.contact.endHeight = currentHeight;
-
-        console.log('new section heights: ', this.displayInfo);
     }
 
     render() {

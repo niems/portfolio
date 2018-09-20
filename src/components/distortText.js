@@ -66,7 +66,6 @@ class DistortText extends Component {
 
     componentDidMount() {
         this.setupDistortions();
-        console.log(`style class: ${this.styleClass}`);
 
         setTimeout(() => {
             this.setupTimer();
@@ -80,7 +79,6 @@ class DistortText extends Component {
     setupAfterEffect() {
         this.target.forEach(item => {
             item.distortionsRemaining = this.getRand(0, 5) === 1 ? this.getDistortions() : [];
-            //console.log(`item ${item.final} distortions: ${item.distortionsRemaining}\n\n`);
         });
 
         this.setupAfterEffectTimer(); //timer created once effect is setup

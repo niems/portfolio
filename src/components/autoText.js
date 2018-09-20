@@ -37,7 +37,6 @@ class AutoText extends Component {
        
         this.loop = this.props.setup.loop === undefined ? false : this.props.setup.loop; //determines if the text reverses after being fully output
         this.effect = this.props.setup.effect;
-        //this.springEffect = this.props.setup.springEffect === undefined ? false : this.props.setup.springEffect; //if true, letters spring when hovered over
 
         this.fontClass = this.props.font === undefined ? '' : this.props.font; //determines font class to use
         
@@ -89,7 +88,6 @@ class AutoText extends Component {
            }
     
            else {
-               //if ( this.loop ) { 
                 //if looping is enabled OR it hasn't finished going through all the strings.
                 if ( this.loop || (this.dynamicIndex + 1) < this.dynamicStrings.length ) {
                    if ( !this.sentencePause ) {
@@ -137,11 +135,6 @@ class AutoText extends Component {
     }
 
     render() {
-
-        /*
-        change TextEffects line - tries to forceUpdate on an unmounted component
-        */
-
         return (
             <span className={`auto-text-container ${this.fontClass}`}>
                 <TextEffects effect={this.effect} staticText={this.staticText} dynamicText={this.state.dynamicText} />
@@ -152,4 +145,3 @@ class AutoText extends Component {
 }
 
 export default AutoText;
-/*{`${this.staticText}${this.state.dynamicText}`}*/
