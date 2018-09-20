@@ -35,7 +35,6 @@ class Portfolio extends Component {
 
     onFullscreenProject(e, project) {
         e.preventDefault();
-        console.log('onFullscreenProject() project selected: ', project);
 
         this.setState({      
             projectFullView: (<ProjectView projectName={project} onClose={this.onCloseFullscreen} />)            
