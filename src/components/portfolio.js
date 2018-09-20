@@ -35,15 +35,28 @@ class Portfolio extends Component {
 
     onFullscreenProject(e, project) {
         e.preventDefault();
+        
+        if ( this.state.projectFullView !== null ) { //project already being displayed
+            this.setState({
+                projectFullView: null
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        projectFullView: (<ProjectView projectName={project} onClose={this.onCloseFullscreen} />)            
+                    });
+                }, 0);
+            })
+        }
 
-        this.setState({      
-            projectFullView: (<ProjectView projectName={project} onClose={this.onCloseFullscreen} />)            
-        });
+        else { //no project currently displayed
+            this.setState({      
+                projectFullView: (<ProjectView projectName={project} onClose={this.onCloseFullscreen} />)            
+            });
+        }
     }
 
     onCloseFullscreen(e) {
         e.preventDefault();
-
         this.setState({ projectFullView: null });
     }
 
