@@ -4,8 +4,6 @@
     height: 100vh;
     overflow: hidden;
 
-    /*z-index: 1;*/
-
     margin: 0;
     padding: 0;
 
@@ -23,14 +21,8 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    
-    /*
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    */
-   position: relative;
+
+    position: relative;
 
     display: block;
     margin: 0;
@@ -178,8 +170,6 @@
     animation-name: top-enter;
     animation-duration: 0.8s;
 }
-
-
 
 .background-layer {
     display: inline-block;
