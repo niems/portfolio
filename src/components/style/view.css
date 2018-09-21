@@ -172,6 +172,21 @@
     transition: all 0.5s;
 }
 
+.btn.slide-in.about-me::before {
+    content: 'About me';
+    z-index: 1;
+    padding-top: 7%;
+
+    transition: all 0.5s;
+    transform: translateX(-101%);
+}
+
+.btn.slide-in.about-me:hover::before {
+    transform: translateX(0%);
+}
+
+
+/*halved effect*/
 .btn.slide-in.halved::before {    
     height: 50%;
     transform: translateX(-101%);
