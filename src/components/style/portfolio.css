@@ -79,6 +79,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 0.4s;
 }
 
 .portfolio-project-container.Roulette {
@@ -144,11 +145,11 @@
     background: white;
     background: var(--main);
     background: var(--portfolio-blue);
-    transition: all 0.4s;
+    transition: all 0.5s;
 }
 
 .portfolio-project-container:hover .portfolio-project-hover-info {
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .portfolio-project-header {
@@ -159,11 +160,13 @@
 
     margin: 0;
     padding: 0;
+
+    transform: translateY(-200%);
+    transition: all 0.5s;
 }
 
 .portfolio-project-container:hover .portfolio-project-header {
-    animation-name: header-slide-top;
-    animation-duration: 0.4s;
+    transform: translateY(0%);
 }
 
 .portfolio-project-name, .portfolio-project-tech {
@@ -191,12 +194,13 @@
 
 .btn.learn-more {
     font-size: var(--portfolio-project-btn-size);
-    transition: background 0.4s;
+    
+    transform: translateY(300%);
+    transition: all 0.4s;
 }
 
 .portfolio-project-container:hover .learn-more {
-    animation-name: btn-slide-bottom;
-    animation-duration: 0.4s;
+    transform: translateY(0%);
 }
 
 
