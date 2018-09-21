@@ -13,7 +13,7 @@ function DisplayProject({ name, tech, onClick }) {
                     <h4 className='portfolio-project-tech'>{tech}</h4>
                 </span>
 
-                <button className='btn learn-more' onClick={e => onClick(e, name)}>learn more</button>
+                <button className='btn learn-more slide-in smush-mid' onClick={e => onClick(e, name)}>learn more</button>
             </div>
 
         </div>

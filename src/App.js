@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import View from './components/view';
 
-class App extends Component {
-  render() {
-    return (
-      <View />
-    );
-  }
+const App = (props) => {
+  return (
+    <View />
+  );
 }
 
 export default App;

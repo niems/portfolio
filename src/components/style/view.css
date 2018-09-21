@@ -204,6 +204,40 @@
 }
 /*top-to-bottom effect*/
 
+/*smush-mid effect */
+.btn.slide-in.smush-mid {
+    background: transparent;
+    transition: all 0.6s;
+}
+.btn.slide-in.smush-mid::before {
+    transform: translateX(-101%);
+    transition: all 0.6s;
+}
+
+.btn.slide-in.smush-mid:hover::before {
+    transform: translateX(0%);
+}
+
+.btn.slide-in.smush-mid::after {
+    content: '';
+    z-index: -2;
+    
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    transform: translateX(101%);
+    transition: all 0.6s;
+    background: var(--accent-green-two);
+}
+
+.btn.slide-in.smush-mid:hover::after {
+    transform: translateX(0%);
+}
+/*smush-mid effect */
 
 
 /*middle expand effect*/
