@@ -12,22 +12,22 @@ import './style/view.css';
 //returns the current section the user is viewing
 //this is based on the section currently in the center of the view
 function updateViewSelection( scrollTop, data ) {
-    const midpoint = scrollTop + data.view.half;
+    const midpoint = scrollTop + data['view'];
     let section = ''; //section in the middle of the viewport - what will be selected in the navbar
 
-    if ( midpoint <= data.home.endHeight ) {
+    if ( midpoint <= data['home'] ) {
         section = 'home';
     }
 
-    else if ( midpoint <= data.portfolio.endHeight ) {
+    else if ( midpoint <= data['portfolio'] ) {
         section = 'portfolio';
     }
 
-    else if ( midpoint <= data.experiments.endHeight ) {
+    else if ( midpoint <= data['experiments'] ) {
         section = 'experiments';
     }
 
-    else if ( midpoint <= data.contact.endHeight ) {
+    else if ( midpoint <= data['contact'] ) {
         section = 'contact';
     }
 
@@ -43,22 +43,12 @@ class View extends Component {
             displayMenu: null
         };
 
-        this.displayInfo = {
-            view: {
-                half: -1,
-            },
-            home: {
-                endHeight: -1
-            },
-            portfolio: {
-                endHeight: -1
-            },
-            experiments: {
-                endHeight: -1
-            },
-            contact: {
-                endHeight: -1
-            },
+        this.pageHeight = {
+            'view': -1,
+            'home': -1,
+            'portfolio': -1,
+            'experiments': -1,
+            'contact': -1
         };
 
         this.homeRef = null;
@@ -73,10 +63,6 @@ class View extends Component {
 
         this.getSectionHeights = this.getSectionHeights.bind(this); //gets the start/end scroll height for each section
 
-        //TESTING ONLY
-        this.testing = false;
-        this.testLoop = this.testLoop.bind(this);
-
         this.viewRef = null;
         this.onScroll = this.onScroll.bind(this);
         this.onResize = this.onResize.bind(this); //gets the new section heights if the screen is resized
@@ -85,14 +71,6 @@ class View extends Component {
     componentDidMount() {
         this.getSectionHeights();
         window.addEventListener('resize', this.onResize);
-
-        if ( this.testing )
-            this.testLoop();
-    }
-
-    componentWillUnmount() {
-        if ( this.testing )
-            clearInterval( this.testTimerId );
     }
 
     onResize() {
@@ -105,29 +83,6 @@ class View extends Component {
         this.setState({
             displayMenu: this.state.displayMenu === null ? (<Menu onSelect={this.updateDisplayedPage} onClose={this.onMenuToggle} />) : null
         });
-    }
-
-    testLoop() {
-        console.log('testLoop()');
-        //cycles through pages below over interval given
-        const pageDuration = 15000; //miliseconds
-        //create callback for when the animation is finished to avoid using page duration...
-        //callback can be triggered once the timer is removed.
-
-        const pageCycle = [
-            'portfolio',
-            'home',
-            'contact',
-            'home'
-        ];
-
-        let currentPageIndex = 0;
-        this.testTimerId = setInterval(() => {
-            this.updateDisplayedPage( pageCycle[currentPageIndex] );
-
-            currentPageIndex = (currentPageIndex + 1) === pageCycle.length
-                             ? 0 : currentPageIndex + 1;
-        }, pageDuration);
     }
 
     updateDisplayedPage(id) {
@@ -166,12 +121,14 @@ class View extends Component {
     onScroll(e) {
         e.preventDefault();
         const scrollTop = this.viewRef.scrollTop;
-        //returns the current section the user is viewing
-        let currentSection = updateViewSelection( scrollTop, this.displayInfo );
 
-        if ( scrollTop >= this.displayInfo.home.endHeight ) {
+        //returns the current section the user is viewing
+        let currentSection = updateViewSelection( scrollTop, this.pageHeight );
+
+
+       if ( scrollTop >= this.pageHeight['home'] ) {
             this.navbarRef.classList.add('sticky');
-        }
+    }
 
         else {
             this.navbarRef.classList.remove('sticky');                
@@ -183,19 +140,21 @@ class View extends Component {
     }
 
     getSectionHeights() {        
-        this.displayInfo.view.half = this.viewRef.clientHeight / 2;
+        this.pageHeight['view'] = this.viewRef.clientHeight / 2;
 
         let currentHeight = this.homeRef.scrollHeight;
-        this.displayInfo.home.endHeight = currentHeight;
+        this.pageHeight['home'] = currentHeight;
 
         currentHeight += this.portfolioRef.scrollHeight;
-        this.displayInfo.portfolio.endHeight = currentHeight;
+        this.pageHeight['portfolio'] = currentHeight;
 
         currentHeight += this.experimentsRef.scrollHeight;
-        this.displayInfo.experiments.endHeight = currentHeight;
+        this.pageHeight['experiments'] = currentHeight;
 
         currentHeight += this.contactRef.scrollHeight;
-        this.displayInfo.contact.endHeight = currentHeight;
+        this.pageHeight['contact'] = currentHeight;
+
+        console.log(this.pageHeight);
     }
 
     render() {
