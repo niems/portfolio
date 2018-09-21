@@ -45,8 +45,8 @@
     text-align: center;
 }
 
-#experiments-header::after {
-    border-color: white;
+#experiments-header::after, #experiments-header::before {
+    background: white;
 }
 
 #experiments-page-desc {
