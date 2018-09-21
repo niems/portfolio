@@ -67,7 +67,12 @@ class Portfolio extends Component {
 
                 <div id='portfolio-header-container'>
                     <h2 id='portfolio-header' className='section-header'>Projects</h2>
-                    <p className='section-subheader portfolio-subheader'>From SVG animations using Sass (preprocessed CSS) to React.js, Node.js, Socket.IO, and WebRTC. Check out a few of my latest projects.</p>
+                    <p className='section-subheader portfolio-subheader'>
+                    From SVG animations using Sass (preprocessed CSS)  
+                    to <a className='text-highlight' href='https://reactjs.org/' target='_blank'>React.js</a>,
+                     <a className='text-highlight' href='https://nodejs.org/about/' target='_blank'>Node.js</a>,
+                     <a className='text-highlight' href='https://socket.io/' target='_blank'>Socket.IO</a>,
+                    and <a className='text-highlight' href='https://webrtc.org/' target='_blank'>WebRTC</a>. Check out a few of my latest projects.</p>
                 </div>
 
                 <div id='portfolio-projects'>
