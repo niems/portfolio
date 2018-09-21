@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {ThemeContext} from '../theme-context';
 import './style/navbar.css';
 
 class Navbar extends Component {
@@ -53,20 +52,16 @@ class Navbar extends Component {
         this.updateHighlight();
 
         return (
-            <ThemeContext.Consumer>
-                {({ theme }) => (
-                    <nav className={`navbar-container ${theme.name}`} ref={this.props.setRef} >
-                        <div className={this.classes.home} id='home-link' onClick={this.updateSelection}>Home</div>
-                        <div className={this.classes.portfolio} id='portfolio-link' onClick={this.updateSelection}>Portfolio</div>
-                        <div className={this.classes.experiments} id='experiments-link' onClick={this.updateSelection}>Experiments</div>
-                        <div className={this.classes.contact} id='contact-link' onClick={this.updateSelection}>Contact</div>                        
-                        
-                        <div id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
-                            <img className={theme.name} id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
-                        </div>
-                    </nav>
-                )}
-            </ThemeContext.Consumer>
+            <nav className='navbar-container' ref={this.props.setRef} >
+                <div className={this.classes.home} id='home-link' onClick={this.updateSelection}>Home</div>
+                <div className={this.classes.portfolio} id='portfolio-link' onClick={this.updateSelection}>Portfolio</div>
+                <div className={this.classes.experiments} id='experiments-link' onClick={this.updateSelection}>Experiments</div>
+                <div className={this.classes.contact} id='contact-link' onClick={this.updateSelection}>Contact</div>                        
+                
+                <div id='menu' onClick={this.props.onMenu} ref={element => {this.menuRef = element;} }>
+                    <img id='menu-img' src='./images/menu.svg' alt='failed to load menu icon D:' />
+                </div>
+            </nav>
         );
     }
 }

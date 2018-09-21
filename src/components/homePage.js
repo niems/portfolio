@@ -32,7 +32,7 @@ class HomePage extends Component {
                     <div className='effect-container' id='homepage-effect'>
                         <DistortText setup={this.distortTextSetup} />
                     </div>
-                    <button type='button' className='btn slide-in mid-expand' id='about-me-btn' onClick={this.onClick}>About me</button>
+                    <button type='button' className='btn slide-in halved' id='about-me-btn' onClick={this.onClick}>About me</button>
                 </div>
 
                 <div className='vertical-pointer-container'>
