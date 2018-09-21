@@ -110,6 +110,97 @@
     background: var(--btn-hover-bg);
 }
 
+.btn.slide-in {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.btn.slide-in:hover {
+    background: initial;
+}
+
+.btn.slide-in::before {
+    content: '';
+    z-index: -1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background: var(--accent-green-two);
+    transition: all 0.5s;
+}
+
+/*top-to-bottom effect*/
+.btn.slide-in.top-to-bottom {
+    background: transparent;
+    background: none;
+}
+
+.btn.slide-in.top-to-bottom:hover {
+    background: none;
+    
+}
+
+.btn.slide-in.top-to-bottom::before {
+    transform: translateY(-101%);
+}
+
+.btn.slide-in.top-to-bottom:hover::before {
+    transform: translateY(101%);
+}
+
+.btn.slide-in.top-to-bottom::after {
+    background: var(--accent-green-two);
+    opacity: 0;
+    transition: opacity 0.25s 0.5s;
+}
+
+.btn.slide-in.top-to-bottom:hover::after {
+    content: '';
+    z-index: -2;
+    opacity: 1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    transition: opacity 0.25s 0.5s;
+}
+/*top-to-bottom effect*/
+
+
+
+/*middle expand effect*/
+.btn.slide-in.mid-expand::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.0, 0.0);
+    transition: all 0.5s, color 0s;
+}
+
+.btn.slide-in.mid-expand:hover::before {
+    transform: translate(-50%, -50%) scale(2.5, 2);
+}
+/*middle expand effect*/
+
+
+/*ltr effect*/
+.btn.slide-in.ltr::before {
+    transform: translateX(-101%);
+}
+
+.btn.slide-in.ltr:hover::before {
+    transform: translateX(0%);
+}
+/*ltr effect*/
+
 
 .text-highlight {
     box-sizing: border-box;
@@ -125,9 +216,9 @@
     margin: 0;
     
     border-style: none;
-    font-weight: bold;
+    font-style: italic;
     text-decoration-line: underline;
-    text-decoration-style: dashed;
+    text-decoration-style: solid;
     text-decoration-color: var(--accent-green-two);
     cursor: pointer;
     
@@ -135,6 +226,7 @@
     background: transparent;
     transform: translateY(30%);
 }
+
 
 .text-highlight::before {
     content: '';
@@ -155,6 +247,30 @@
 
 .text-highlight:hover::before {    
     transform: translateX(0%);
+}
+
+.text-highlight.mid::before {
+    content: '';
+    z-index: -1;
+    height: 100%;
+    width: 0%;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+
+    border-radius: 3px;
+
+    background: var(--accent-green-two);
+
+    transition: width 0.5s;
+    transform: translateX(-50%);
+}
+
+.text-highlight.mid:hover::before {    
+    width: 100%;
 }
 
 @keyframes top-enter {
