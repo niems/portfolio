@@ -99,10 +99,15 @@
     color: var(--home-text-fg);
 }
 
+#home-info-container {
+    display: block;
+    width: 100%;
+}
+
 .home-info {
     box-sizing: border-box;
     display: block;
-    width: 100%;
+    width: max-content;
     height: max-content;
     
     margin: 0;
@@ -116,7 +121,6 @@ span[id='name'] {
 }
 
 #homepage-effect {
-    padding: 0;
     font-size: var(--home-effect-size);
     line-height: var(--home-effect-line-height);
 }

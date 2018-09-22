@@ -28,10 +28,13 @@ class HomePage extends Component {
                 <ParticleLayer />
                 
                 <div id='home-container'>
-                    <span className='home-info' id='name'>Zach Niemann</span>
-                    <div className='effect-container' id='homepage-effect'>
-                        <DistortText setup={this.distortTextSetup} />
+                    <div id='home-info-container'>
+                        <span className='home-info' id='name'>Zach Niemann</span>
+                        <div className='effect-container' id='homepage-effect'>
+                            <DistortText setup={this.distortTextSetup} />
+                        </div>
                     </div>
+                    
                     <button type='button' className='btn slide-in halved' id='about-me-btn' onClick={this.onClick}>About me</button>
                 </div>
 

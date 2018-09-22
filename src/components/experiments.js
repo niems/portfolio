@@ -89,7 +89,7 @@ class Experiments extends Component {
         return (
             <div className={`page-container`} id='experiments-container' ref={this.props.setRef}>
                 <div id='experiments-header-container'>
-                    <h2 className='section-header' id='experiments-header'>
+                    <h2 className='effect-container section-header' id='experiments-header'>
                         <DistortText setup={this.distortTextSetup} />
                     </h2>
 
