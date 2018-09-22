@@ -132,7 +132,7 @@ class ProjectView extends Component {
 
     render() {
         return (
-            <div className='scrollbar' id='portfolio-fullview-container'>
+            <div className='scrollbar secondary' id='portfolio-fullview-container'>
                 <div id='portfolio-fullview'>
                     <DisplayProjectImage previousImg={this.state.previousImg} selectedImg={this.state.selectedImg} onChangeImg={this.onChangeImg} />
                     <DisplayProjectInfo name={this.props.projectName.toLowerCase()} />
