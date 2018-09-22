@@ -21,6 +21,7 @@ function DisplayProjectImage({ previousImg, selectedImg, onChangeImg }) {
             </span>
         </div>
     );
+    
 }
 
 function DisplayProjectInfo({ name }) {
