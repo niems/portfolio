@@ -100,8 +100,12 @@
 }
 
 #home-info-container {
+    box-sizing: border-box;
     display: block;
     width: 100%;
+    height: max-content;
+
+    padding: 2rem 0;
 }
 
 .home-info {
