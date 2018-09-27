@@ -5,6 +5,7 @@ import Experiments from './experiments';
 import Portfolio from './portfolio';
 import Contact from './contact';
 import Menu from './menu';
+import ContactMe from './contactMe';
 
 import Testing from './testing';
 import './style/view.css';
@@ -168,7 +169,7 @@ class View extends Component {
                     <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
-                    <Contact setRef={el => this.contactRef = el} />
+                    <ContactMe setRef={el => this.contactRef = el} />
                 </div>
             </div>
         );
