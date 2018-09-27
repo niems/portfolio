@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import AutoText from './autoText';
 import DistortText from './distortText';
 import ParticleLayer from './particleLayer';
-import './style/homePage.css';
+import './style/homepage.css';
 
 class HomePage extends Component {
     constructor(props) {
