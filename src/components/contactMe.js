@@ -12,8 +12,8 @@ class ContactMe extends Component {
                 <article id='about-me-section'>
                     <h1 id='about-me-header' className='section-header'>About me</h1>
                     <p className='section-description'>
-                        Hi! I'm Zach, a Web Developer with a passion for problem solving, insatiably curious, and a lover of sarcasm.
-                        Experience with both the front-end and back-end sides of the development process, looking for my next opportunity.
+                        Hi! I'm Zach, a Web Developer with a passion for problem solving, insatiably curious, and a lover of code.
+                        Experience with both the front-end and back-end sides of the development process.
                     </p>
     
                     <ProgressBar />
@@ -23,6 +23,9 @@ class ContactMe extends Component {
                     <ContactForm />
     
                     <div id='contact-social-links'>
+                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in ltr-full' target='_blank' rel='noopener noreferrer'>
+                                resume
+                        </a>
                         <a href='https://github.com/niems' className='contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/github.svg' alt='Github profile' />
                         </a>
@@ -33,10 +36,6 @@ class ContactMe extends Component {
     
                         <a href='https://codepen.io/niems/full/MBBWoK/' className='contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/codepen.svg' alt='Codepen profile' />
-                        </a>
-    
-                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='contact-link' target='_blank' rel='noopener noreferrer'>
-                            resume
                         </a>
                     </div>
     
