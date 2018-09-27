@@ -1,0 +1,63 @@
+.form-container {
+  box-sizing: border-box;
+  max-width: 550px;
+  width: 90%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+.form-container fieldset {
+  border-color: #d0e1f9;
+}
+.form-container legend {
+  font-size: 1.4em;
+  background: #2C3037;
+  color: #d0e1f9;
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+}
+.form-container .contact-inputfield, .form-container #contact-message {
+  box-sizing: border-box;
+  width: 100%;
+  outline-color: #d0e1f9;
+  border-style: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background: #d0e1f9;
+  color: #2C3037;
+}
+.form-container .contact-inputfield::placeholder, .form-container #contact-message::placeholder {
+  font-size: 1.2em;
+  color: gray;
+}
+.form-container #contact-message {
+  height: 200px;
+  resize: none;
+}
+.form-container #contact-submit {
+  box-sizing: border-box;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25em;
+  font-variant: small-caps;
+  outline: none;
+  border-width: 2px;
+  border-radius: 0.25rem;
+  background: inherit;
+  color: #d0e1f9;
+  border-color: #d0e1f9;
+  transition: all 0.4s;
+}
+.form-container #contact-submit:hover {
+  color: #2C3037;
+  background: #d0e1f9;
+}
+.form-container #contact-open-mailer {
+  display: none;
+}
+
+/*# sourceMappingURL=contactForm.css.map */
