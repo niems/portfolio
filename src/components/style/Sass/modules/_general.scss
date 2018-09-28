@@ -5,3 +5,9 @@
     bottom: $bottom;
     right: $right;
 }
+
+@mixin color($fg, $bg, $border) {
+    color: $fg;
+    background: $bg;
+    border-color: $border;
+}

@@ -1,6 +1,6 @@
 @import './modules/colors';
 @import './modules/fonts';
-@import './modules/transform';
+@import './modules/general';
 @import './partials/header';
 @import './partials/button';
 
@@ -71,6 +71,20 @@
     @include button-color-pseudo(initial, $accent, initial, initial, initial, initial);
 }
 
+.btn.slide-in.move-away {
+    background: transparent;
+
+    &::before {
+        transform: translateX(0%);
+        transition: transform 1s;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(-101%);
+        }
+    }
+}
 
 /*halved effect*/
 .btn.slide-in.halved {
@@ -169,7 +183,7 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) scale(0.0, 0.0);
-        transition: all 0.5s, color 0s;
+        transition: all 1s, color 0s;
     }
 
     &:hover::before {

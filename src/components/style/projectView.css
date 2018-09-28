@@ -2,6 +2,22 @@
 /* 300px - 1000px*/
 /* 300px - 1000px*/
 /* 300px - 1000px*/
+#portfolio-fullview-close-btn {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1.3em;
+  font-variant: small-caps;
+  text-decoration: none;
+  outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.4s;
+}
+
 #portfolio-fullview-container {
   box-sizing: border-box;
   max-width: 100vw;
@@ -203,9 +219,20 @@
 }
 
 .project-info hr {
+  margin: 0;
+  padding: 0;
   border-width: 1px;
   border-style: none none solid none;
-  border-color: gray;
+  border-color: #25282E;
+}
+
+.project-header-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: max-content;
+  margin: 0;
+  padding: 0;
+  background: inherit;
 }
 
 .project-header {
@@ -218,14 +245,14 @@
 
 #project-name-header {
   font-size: 1.5em;
-  color: black;
+  color: #25282E;
 }
 
 #project-type-header {
   font-size: 1.2em;
   font-variant: small-caps;
   font-weight: normal;
-  color: gray;
+  color: #363A40;
 }
 
 .project-description {
@@ -236,31 +263,26 @@
   font-size: 1em;
   padding: 0 0.5rem;
   overflow-wrap: break-word;
-  color: black;
+  color: #25282E;
 }
 
 /*DISPLAY PROJECT INFO*/
 #portfolio-fullview-close-btn {
-  box-sizing: border-box;
+  color: #363A40;
+  background: inherit;
+  border-color: none;
   align-self: flex-end;
-  display: inline-block;
   width: max-content;
   height: max-content;
-  padding: 0.5rem 1rem;
   margin: 0.5rem;
-  font-size: 1.3em;
-  outline: none;
   border-style: none;
-  border-radius: 4px;
-  color: gray;
-  background: inherit;
   box-shadow: 1px 2px 3px black;
   transition: none;
 }
-
 #portfolio-fullview-close-btn:hover {
   color: #25282E;
   background: red;
+  border-color: none;
 }
 
 @media only screen and (min-width: 500px) {

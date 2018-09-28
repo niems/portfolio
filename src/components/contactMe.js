@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ProgressBar from './progressbar';
 import ContactForm from './contactForm';
-import './style/contact-me.css';
+import './style/contactMe.css';
 
 class ContactMe extends Component {
 
@@ -23,18 +23,18 @@ class ContactMe extends Component {
                     <ContactForm />
     
                     <div id='contact-social-links'>
-                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in ltr-full' target='_blank' rel='noopener noreferrer'>
+                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in mid-expand' id='' target='_blank' rel='noopener noreferrer'>
                                 resume
                         </a>
-                        <a href='https://github.com/niems' className='contact-link' target='_blank' rel='noopener noreferrer'>
+                        <a href='https://github.com/niems' id='github-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/github.svg' alt='Github profile' />
                         </a>
     
-                        <a href='https://dribbble.com/ni3ms' className='contact-link' target='_blank' rel='noopener noreferrer'>
+                        <a href='https://dribbble.com/ni3ms' id='dribbble-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/dribbble-icon.svg' alt='Dribbble profile' />
                         </a>
     
-                        <a href='https://codepen.io/niems/full/MBBWoK/' className='contact-link' target='_blank' rel='noopener noreferrer'>
+                        <a href='https://codepen.io/niems/full/MBBWoK/' id='codepen-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/codepen.svg' alt='Codepen profile' />
                         </a>
                     </div>

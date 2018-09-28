@@ -1,14 +1,16 @@
 @import './modules/colors';
 @import './modules/fonts';
+@import './partials/button';
 
 $project-bg: $lightest;
-$project-name-header-fg: black;
-$project-type-header-fg: gray;
-$project-description-fg: black; 
+$project-header-container: inherit;
+$project-name-header-fg: $darkest;
+$project-type-header-fg: $dark-mid;
+$project-description-fg: $darkest; 
 
-$project-description-separator: gray;
+$project-description-separator: $darkest;
 
-$close-btn-fg: gray;
+$close-btn-fg: $dark-mid;
 $close-btn-hover-fg: $darkest;
 $close-btn-hover-bg: red;
 
@@ -252,9 +254,22 @@ $project-description-font-size: 1em;
 }
 
 .project-info hr {
+    margin: 0;
+    padding: 0;
     border-width: 1px;
     border-style: none none solid none;
     border-color: $project-description-separator;
+}
+
+.project-header-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: max-content;
+
+    margin: 0;
+    padding: 0;
+
+    background: $project-header-container;
 }
 
 .project-header {
@@ -292,32 +307,22 @@ $project-description-font-size: 1em;
 }
 
 /*DISPLAY PROJECT INFO*/
-
 #portfolio-fullview-close-btn {
-    box-sizing: border-box;
+    @include button-color($close-btn-fg, inherit, none);    
+    @extend %button;
     align-self: flex-end;
-
-    display: inline-block;
     width: max-content;
     height: max-content;
 
-    padding: 0.5rem 1rem;
     margin: 0.5rem;
-    font-size: 1.3em;
 
-    outline: none;
     border-style: none;
-    border-radius: 4px;
-
-    color: $close-btn-fg;
-    background: inherit;
     box-shadow: 1px 2px 3px black;
     transition: none;
-}
 
-#portfolio-fullview-close-btn:hover {
-    color: $close-btn-hover-fg;
-    background: $close-btn-hover-bg;
+    &:hover {
+        @include button-color($close-btn-hover-fg, $close-btn-hover-bg, none);        
+    }
 }
 
 
@@ -357,7 +362,6 @@ $project-description-font-size: 1em;
 
     #project-info-container {
         width: 600px;
-
         width: 750px;
     }
 }

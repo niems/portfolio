@@ -38,8 +38,10 @@ function DisplayProjectInfo({ name }) {
     return (
         <div id='project-info-container'>
             <div className='project-info about'>
-                <h2 className='project-header' id='project-name-header'>{projectName}</h2>
-                <h3 className='project-header' id='project-type-header'>{projectType}</h3>
+                <div className='project-header-container'>
+                    <h2 className='project-header' id='project-name-header'>{projectName}</h2>
+                    <h3 className='project-header' id='project-type-header'>{projectType}</h3>
+                </div>
                 <hr />
 
                 {description}
@@ -136,7 +138,7 @@ class ProjectView extends Component {
                     <DisplayProjectImage previousImg={this.state.previousImg} selectedImg={this.state.selectedImg} onChangeImg={this.onChangeImg} />
                     <DisplayProjectInfo name={this.props.projectName.toLowerCase()} />
 
-                    <button className='btn round' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
+                    <button className='btn' id='portfolio-fullview-close-btn' onClick={this.props.onClose}>X</button>
                 </div>
             </div>
         );
