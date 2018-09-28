@@ -35,7 +35,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                     
-                    <button type='button' className='btn' id='about-me-btn' onClick={this.onClick}>About me</button>
+                    <button type='button' className='btn slide-in fall' id='about-me-btn' onClick={this.onClick}>About me</button>
                 </div>
 
                 <div className='vertical-pointer-container'>

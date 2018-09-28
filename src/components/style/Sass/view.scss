@@ -74,20 +74,35 @@
     }
 }
 
-.btn.slide-in.move-away {
-    background: transparent;
+//fall effect
+.btn.slide-in.fall {
+    @include button-pseudo(true, true);
+    background: none;
 
+    @include color($light-main, none, $darkest);
+    
     &::before {
-        transform: translateX(0%);
+        @include color(none, inherit, $darkest);
+        transform-origin: left bottom;
+        transform: rotateZ(-180deg);
         transition: transform 1s;
     }
 
+    &::after {
+        @include color($light-main, $darkest, $darkest);
+    }
+
     &:hover {
+        color: $darkest;
+
         &::before {
-            transform: translateX(-101%);
+            transform: rotateZ(0deg);
+            transition: transform 0.5s;
         }
     }
 }
+//fall effect
+
 
 /*halved effect*/
 .btn.slide-in.halved {
