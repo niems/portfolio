@@ -16,6 +16,15 @@
   --filter-green: invert(0.5) sepia(1) saturate(500%) hue-rotate(110deg);
   --filter-blue: invert(0.5) sepia(1) saturate(500%) hue-rotate(150deg);
 
+
+  --darkest: #25282E;
+  --dark-main: #2C3037;
+  --dark-mid: #363A40;
+  --light-mid: #B8F0FD;
+  --light-main: #58D9FA;
+  --lightest: #d0e1f9; 
+  --accent: #8EA6FC;
+
   /*GENERAL*/
 --font-family: 'Courier New', Courier, monospace;
 --xlarge-font: calc(1.8em + (2.5 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75))); /* 300px - 1000px*/
