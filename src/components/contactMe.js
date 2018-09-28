@@ -26,9 +26,6 @@ class ContactMe extends Component {
                     <ContactForm />
     
                     <div id='contact-social-links'>
-                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in smush-mid' id='resume-link' target='_blank' rel='noopener noreferrer'>
-                                resume
-                        </a>
                         <a href='https://github.com/niems' id='github-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/github.svg' alt='Github profile' />
                         </a>
@@ -52,6 +49,9 @@ class ContactMe extends Component {
 export default ContactMe;
 
 /*
+<a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in smush-mid' id='resume-link' target='_blank' rel='noopener noreferrer'>
+        resume
+</a>
 Hi! I'm Zach, a Web Developer with a passion for problem solving, insatiably curious, and a lover of code.
                         Experience with both the front-end and back-end sides of the development process.
 

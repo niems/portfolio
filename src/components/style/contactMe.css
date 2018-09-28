@@ -2,13 +2,13 @@
 /* 300px - 1000px*/
 /* 300px - 1000px*/
 /* 300px - 1000px*/
-#about-me-section {
+#contact-me-section, #about-me-section {
   box-sizing: border-box;
   max-width: 100%;
   width: 100%;
   height: max-content;
   margin: 0;
-  padding: 0;
+  padding: 2rem 0;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
@@ -32,7 +32,6 @@
 }
 
 #about-me-section {
-  padding-top: 1rem;
   color: #d0e1f9;
   background: #2C3037;
 }
@@ -53,14 +52,7 @@
 }
 
 #contact-me-section {
-  box-sizing: border-box;
-  max-width: 100%;
-  width: 100%;
-  height: max-content;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem 0 0 0;
   background: #25282E;
 }
 #contact-me-section #footer-description {
@@ -68,43 +60,44 @@
   display: inline-block;
   width: 100%;
   height: max-content;
-  padding: 0.5rem;
-  font-size: 1em;
+  font-size: 1.15em;
+  padding: 0.25rem 0;
   border-style: solid none none none;
   border-width: 2px;
   border-color: #8EA6FC;
-  color: #8EA6FC;
-  background: inherit;
+  color: #25282E;
+  background: #8EA6FC;
 }
 
 #contact-social-links {
   box-sizing: border-box;
+  min-width: max-content;
   width: 100%;
   height: max-content;
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-}
-#contact-social-links #resume-link {
-  color: #d0e1f9;
-  background: inherit;
-  border-color: #d0e1f9;
-}
-#contact-social-links #resume-link::before, #contact-social-links #resume-link::after {
-  color: #d0e1f9;
-  background: inherit;
-  border-color: #d0e1f9;
-}
-#contact-social-links #resume-link:hover {
-  color: #25282E;
-  background: #d0e1f9;
-  border-color: #d0e1f9;
-}
-#contact-social-links #resume-link:hover::before, #contact-social-links #resume-link:hover::after {
-  color: #25282E;
-  background: #d0e1f9;
-  border-color: #d0e1f9;
+  /*
+      #resume-link {
+          @include color($resume-fg, $resume-bg, $resume-border);
+          position: absolute;
+          left: 0.5rem;
+  
+          &::before, &::after {
+              @include color($resume-fg, $resume-bg, $resume-border);
+          }
+  
+          &:hover {
+              @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
+  
+              &::before, &::after {
+                  @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
+              }
+          }
+      }
+      */
 }
 #contact-social-links .contact-link {
   box-sizing: border-box;
@@ -113,7 +106,7 @@
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  margin: 1rem 2rem;
+  margin: 1rem 1.5rem;
   border-radius: 0.5rem;
   border-style: solid;
   border-width: 1px;

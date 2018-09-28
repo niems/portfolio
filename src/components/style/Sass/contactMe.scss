@@ -16,8 +16,8 @@ $about-subheader-font-size: $medium-font;
 //style contact section
 $contact-bg: $darkest;
 $contact-footer-border: $accent;
-$contact-footer-bg: inherit;
-$contact-footer-fg: $accent; 
+$contact-footer-bg: $accent;
+$contact-footer-fg: $darkest;
 $social-icon-size: 35px;
 
 $contact-link-bg: none;
@@ -38,7 +38,7 @@ $resume-border: $lightest;
     height: max-content;
 
     margin: 0;
-    padding: 0;
+    padding: 2rem 0;
     text-align: center;
 
     display: flex;
@@ -68,7 +68,6 @@ $resume-border: $lightest;
 #about-me-section {
     @extend %section-setup;
 
-    padding-top: 1rem;
     color: $about-fg;
     background: $about-bg;
 
@@ -94,16 +93,8 @@ $resume-border: $lightest;
 
 
 #contact-me-section {
-    box-sizing: border-box;
-    max-width: 100%;
-    width: 100%;
-    height: max-content;
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    
+    @extend %section-setup;    
+    padding: 2rem 0 0 0;
     background: $contact-bg;
 
     #footer-description {
@@ -112,8 +103,8 @@ $resume-border: $lightest;
         width: 100%;
         height: max-content;
 
-        padding: 0.5rem;
-        font-size: 1em;
+        font-size: 1.15em;
+        padding: 0.25rem 0;
 
         border-style: solid none none none;
         border-width: 2px;
@@ -126,16 +117,22 @@ $resume-border: $lightest;
 
 #contact-social-links {
     box-sizing: border-box;
+    min-width: max-content;
     width: 100%;
     height: max-content;
+
+    position: relative;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
 
+    /*
     #resume-link {
         @include color($resume-fg, $resume-bg, $resume-border);
+        position: absolute;
+        left: 0.5rem;
 
         &::before, &::after {
             @include color($resume-fg, $resume-bg, $resume-border);
@@ -149,6 +146,7 @@ $resume-border: $lightest;
             }
         }
     }
+    */
 
 
     .contact-link {
@@ -160,7 +158,7 @@ $resume-border: $lightest;
         align-items: center;
 
         padding: 0.5rem;
-        margin: 1rem 2rem;
+        margin: 1rem 1.5rem;
 
         border-radius: 0.5rem;
         border-style: solid;
