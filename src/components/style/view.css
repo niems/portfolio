@@ -1,10 +1,13 @@
+/* 300px - 1000px*/
+/* 300px - 1000px*/
+/* 300px - 1000px*/
+/* 300px - 1000px*/
 .section-header::after, .section-header::before {
   content: "";
   position: absolute;
   top: 50%;
   width: 40px;
   height: 2px;
-  background: black;
 }
 
 .section-header {
@@ -15,7 +18,6 @@
   font-size: calc(1.6em + (2.2 - 1.6) * ((100vw - 18.75em) / (62.5 - 18.75)));
   line-height: calc(1.4em + (2.2 - 1.4) * ((100vw - 18.75em) / (62.5 - 18.75)));
   border-style: none;
-  color: white;
 }
 .section-header::before {
   left: 0;
@@ -74,37 +76,6 @@
   padding: 0.5rem 2rem;
 }
 
-/*
-.section-header {
-    display: block;
-    
-    padding: 0;
-    margin: 0;
-
-    position: relative;
-    font-size: var(--section-header-size);
-    line-height: var(--section-header-line-height);
-    
-    border-style: none;
-    color: var(--section-header-fg);
-}
-
-.section-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-
-    width: 50%;
-    height: max-content;
-
-    background: none;
-    border-style: none none solid none;
-    border-width: 3px;
-    border-color: black;
-}
-
-*/
 .btn {
   box-sizing: border-box;
   display: inline-block;

@@ -67,7 +67,7 @@ class Portfolio extends Component {
 
                 <div id='portfolio-header-container'>
                     <h2 id='portfolio-header' className='section-header'>Projects</h2>
-                    <p className='section-subheader portfolio-subheader'>
+                    <p id='portfolio-subheader' className='section-subheader'>
                     From SVG animations using Sass (preprocessed CSS)  
                     to <a className='text-highlight' href='https://reactjs.org/' target='_blank'>React.js</a>,
                      <a className='text-highlight' href='https://nodejs.org/about/' target='_blank'>Node.js</a>,
