@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import AutoText from './autoText';
 import DistortText from './distortText';
 import ParticleLayer from './particleLayer';
 import './style/homepage.css';
@@ -28,6 +27,8 @@ class HomePage extends Component {
                 <ParticleLayer />
                 
                 <div id='home-container'>
+                    <img id='home-background-img' src='./images/logo/z-logo-homepage.svg' alt='background logo' />
+
                     <div id='home-info-container'>
                         <span className='home-info' id='name'>Zach Niemann</span>
                         <div className='effect-container' id='homepage-effect'>

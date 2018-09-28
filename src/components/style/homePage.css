@@ -76,10 +76,13 @@
   flex: 0 1 auto;
   position: relative;
   padding: 2rem 0;
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
   color: #25282E;
+}
+#home-container #home-background-img {
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 #home-info-container {

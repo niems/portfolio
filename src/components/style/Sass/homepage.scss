@@ -5,11 +5,11 @@
 $home-text-fg: $darkest;
 $home-text-effect-fg: $darkest;
 $vertical-pointer-bg: $darkest;
-$name-font-size: calc(1.8em + (2.5 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75)));
-$name-line-height: calc(1.8em + (3 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75)));
+$name-font-size: $xlarge-font;
+$name-line-height: $xlarge-font-line-height;
 
-$effect-font-size: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
-$effect-line-height: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
+$effect-font-size: $medium-font;
+$effect-line-height: $medium-font-line-height;
 
 $about-btn-bg: $darkest;
 $about-btn-fg: $light-main;
@@ -107,13 +107,14 @@ $about-btn-hover-fg: $darkest;
 
     position: relative;
     padding: 2rem 0;
-    
-    //background-image: url('../../../backgrounds/z-logo.svg');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
-
     color: $home-text-fg;
+    
+    #home-background-img {
+        position: absolute;
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 #home-info-container {
@@ -151,7 +152,7 @@ span[id='name'] {
     position: absolute;
     bottom: -1.5rem;
     left: 0;
-    
+
     @include color($about-btn-fg, none, $about-btn-border);
 
     &::after {
