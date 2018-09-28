@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import projects from './projectInfo';
-import './style/projectView.css';
+import './style/projectview.css';
 
 function isProjectValid(name) {
     return projects.hasOwnProperty(name);
@@ -21,7 +21,6 @@ function DisplayProjectImage({ previousImg, selectedImg, onChangeImg }) {
             </span>
         </div>
     );
-    
 }
 
 function DisplayProjectInfo({ name }) {
