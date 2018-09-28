@@ -197,37 +197,57 @@
 /*halved effect*/
 /*top-to-bottom effect*/
 .btn.slide-in.top-to-bottom {
-  background: transparent;
   background: none;
+  transition: all 0.5s;
 }
-
-.btn.slide-in.top-to-bottom:hover {
-  background: none;
-}
-
 .btn.slide-in.top-to-bottom::before {
-  transform: translateY(-101%);
-}
-
-.btn.slide-in.top-to-bottom:hover::before {
-  transform: translateY(101%);
-}
-
-.btn.slide-in.top-to-bottom::after {
-  background: var(--accent-green-two);
-  opacity: 0;
-  transition: opacity 0.25s 0.5s;
-}
-
-.btn.slide-in.top-to-bottom:hover::after {
   content: "";
-  z-index: -2;
-  opacity: 1;
+}
+.btn.slide-in.top-to-bottom::after {
+  content: "";
+}
+.btn.slide-in.top-to-bottom::before, .btn.slide-in.top-to-bottom::after {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  transition: all 0.5s;
+}
+.btn.slide-in.top-to-bottom::after {
+  z-index: -2;
+  opacity: 1;
+}
+.btn.slide-in.top-to-bottom::before {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.top-to-bottom::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.top-to-bottom::before {
+  transform: translateY(-101%);
+}
+.btn.slide-in.top-to-bottom::after {
+  opacity: 0;
+  transform: translateY(101%);
+  transition: opacity 0.25s 0.5s;
+}
+.btn.slide-in.top-to-bottom:hover {
+  background: none;
+}
+.btn.slide-in.top-to-bottom:hover::before {
+  transition: opacity 0.25s 0.5s;
+  transform: translateY(101%);
+}
+.btn.slide-in.top-to-bottom:hover::after {
+  opacity: 1;
   transition: opacity 0.25s 0.5s;
 }
 
@@ -237,30 +257,47 @@
   background: transparent;
   transition: all 0.6s;
 }
-
 .btn.slide-in.smush-mid::before {
-  transform: translateX(-101%);
-  transition: all 0.6s;
+  content: "";
 }
-
-.btn.slide-in.smush-mid:hover::before {
-  transform: translateX(0%);
-}
-
 .btn.slide-in.smush-mid::after {
   content: "";
-  z-index: -2;
+}
+.btn.slide-in.smush-mid::before, .btn.slide-in.smush-mid::after {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  transform: translateX(101%);
-  transition: all 0.6s;
-  background: var(--accent-green-two);
+  transition: all 0.5s;
 }
-
-.btn.slide-in.smush-mid:hover::after {
+.btn.slide-in.smush-mid::after {
+  z-index: -2;
+  opacity: 1;
+}
+.btn.slide-in.smush-mid::before {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.smush-mid::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.smush-mid::before, .btn.slide-in.smush-mid::after {
+  transition: transform 0.6s;
+}
+.btn.slide-in.smush-mid::before {
+  transform: translateX(-101%);
+}
+.btn.slide-in.smush-mid::after {
+  transform: translateX(101%);
+}
+.btn.slide-in.smush-mid:hover::before, .btn.slide-in.smush-mid:hover::after {
   transform: translateX(0%);
 }
 
@@ -272,29 +309,84 @@
   transform: translate(-50%, -50%) scale(0, 0);
   transition: all 0.5s, color 0s;
 }
-
 .btn.slide-in.mid-expand:hover::before {
   transform: translate(-50%, -50%) scale(2.5, 2);
 }
 
 /*middle expand effect*/
 /*ltr effect*/
+.btn.slide-in.ltr {
+  transition: all 0.5s;
+}
 .btn.slide-in.ltr::before {
+  transition: transform 0.5s;
   transform: translateX(-101%);
 }
-
+.btn.slide-in.ltr:hover {
+  background: transparent;
+}
 .btn.slide-in.ltr:hover::before {
   transform: translateX(0%);
 }
 
 /*ltr effect*/
 /*ltr-full effect*/
-.btn.slide-in.ltr-full::before {
-  transform: translateX(-101%);
+.btn.slide-in.ltr-full {
+  background: transparent;
+  transition: all 0.75s;
 }
-
+.btn.slide-in.ltr-full::before {
+  content: "";
+}
+.btn.slide-in.ltr-full::after {
+  content: "";
+}
+.btn.slide-in.ltr-full::before, .btn.slide-in.ltr-full::after {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+.btn.slide-in.ltr-full::after {
+  z-index: -2;
+  opacity: 1;
+}
+.btn.slide-in.ltr-full::before {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.ltr-full::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.ltr-full::before, .btn.slide-in.ltr-full::after {
+  transition: transform 1s;
+  width: 50%;
+}
+.btn.slide-in.ltr-full::before {
+  transform: translateX(-201%);
+}
+.btn.slide-in.ltr-full::after {
+  transform: translateX(201%);
+}
+.btn.slide-in.ltr-full:hover {
+  background: transparent;
+}
+.btn.slide-in.ltr-full:hover::before, .btn.slide-in.ltr-full:hover::after {
+  width: 50%;
+}
 .btn.slide-in.ltr-full:hover::before {
-  transform: translateX(101%);
+  transform: translateX(201%);
+}
+.btn.slide-in.ltr-full:hover::after {
+  transform: translateX(-201%);
 }
 
 /*ltr-full effect*/
@@ -312,13 +404,12 @@
   font-style: italic;
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-color: var(--accent-green-two);
+  text-decoration-color: #58D9FA;
   cursor: pointer;
-  color: black;
+  color: #25282E;
   background: transparent;
   transform: translateY(30%);
 }
-
 .text-highlight::before {
   content: "";
   z-index: -1;
@@ -329,30 +420,20 @@
   right: 0;
   transform: translateX(-101%);
   border-radius: 3px;
-  background: var(--accent-green-two);
+  background: #58D9FA;
   transition: transform 0.5s;
 }
-
 .text-highlight:hover::before {
   transform: translateX(0%);
 }
 
 .text-highlight.mid::before {
-  content: "";
-  z-index: -1;
   height: 100%;
   width: 0%;
-  position: absolute;
-  top: 0;
   left: 50%;
-  bottom: 0;
-  right: 0;
-  border-radius: 3px;
-  background: var(--accent-green-two);
   transition: width 0.5s;
   transform: translateX(-50%);
 }
-
 .text-highlight.mid:hover::before {
   width: 100%;
 }
@@ -420,19 +501,17 @@
 
 .scrollbar::-webkit-scrollbar {
   width: 0.75rem;
-  background: var(--scrollbar-bg);
+  background: #25282E;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background: #2C3037;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #58D9FA;
 }
 
 .scrollbar.secondary::-webkit-scrollbar {
   width: 4px;
-}
-
-.scrollbar::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
 }
 
 @media only screen and (min-width: 960px) {

@@ -1,0 +1,61 @@
+$section-header-font-size: $large-font;
+$section-header-line-height: $large-font-line-height;
+
+$section-subheader-font-size: $small-font;
+$section-subheader-line-height: $small-font-line-height;
+
+
+%section-pseudo-element {
+    content: '';
+    position: absolute;
+    top: 50%;
+
+    width: 40px;
+    height: 2px;
+}
+
+%section-header {
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+    
+    margin: 2rem 0;
+
+    position: relative;
+    font-size: $section-header-font-size;
+    line-height: $section-header-line-height;
+    
+    border-style: none;
+
+    &::before {
+        @extend %section-pseudo-element;
+        left: 0;
+        transform: translate(-140%, -50%);
+    }
+
+    &::after {
+        @extend %section-pseudo-element;
+        right: 0;
+        transform: translate(140%, -50%);
+    }
+}
+
+
+
+
+%section-subheader {
+    box-sizing: border-box;
+    max-width: 1000px;
+    width: 100%;
+    height: max-content;
+
+    padding: 0 0.5rem;
+    margin: 0;
+    overflow-wrap: break-word;
+    text-align: center;
+    
+    font-size: $section-subheader-font-size;
+    line-height: $section-subheader-line-height;
+}

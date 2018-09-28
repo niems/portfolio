@@ -1,0 +1,162 @@
+@import './modules/colors';
+@import './modules/fonts';
+
+$home-text-fg: $lightest;
+$home-text-effect-fg: $lightest;
+$vertical-pointer-bg: $accent;
+$name-font-size: calc(1.8em + (2.5 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75)));
+$name-line-height: calc(1.8em + (3 - 1.8) * ((100vw - 18.75em) / (62.5 - 18.75)));
+
+$effect-font-size: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
+$effect-line-height: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
+
+$about-btn-bg: inherit;
+$about-btn-fg: $lightest;
+$about-btn-border: $accent;
+$about-btn-hover-bg: $accent;
+$about-btn-hover-fg: $darkest;
+
+#homepage {
+    box-sizing: border-box;
+    position: relative;
+}
+
+@keyframes pointer-shrink {
+    0% {
+        height: 150px;
+    }
+
+    50% {
+        height: 20px;
+    }
+
+    75% {
+        height: 10px;
+    }
+
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes pointer-move {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.vertical-pointer-container {
+    width: 10px;
+    height: 150px;
+    overflow: hidden;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+
+    background: none;
+}
+
+.vertical-pointer {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    transform: translateY(-100%);
+    background: none;
+
+    border-style: none solid none solid;
+    border-width: 2px;
+    border-color: $vertical-pointer-bg;
+
+    animation-name: pointer-move;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+#home-container {
+    box-sizing: border-box;
+    max-width: 600px;
+    width: 100%;
+    min-height: 400px;
+    height: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+
+    position: relative;
+    padding: 2rem 0;
+    
+    //background-image: url('../../../backgrounds/z-logo.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+
+    color: $home-text-fg;
+}
+
+#home-info-container {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: max-content;
+
+    padding: 2rem 0;
+}
+
+.home-info {
+    box-sizing: border-box;
+    display: block;
+    width: max-content;
+    height: max-content;
+    
+    margin: 0;
+    padding: 0;
+}
+
+span[id='name'] {
+    font-size: $name-font-size;
+    line-height: $name-line-height;
+    font-weight: bold;
+}
+
+#homepage-effect {
+    color: $home-text-effect-fg;
+    font-size: $effect-font-size;
+    line-height: $effect-line-height;
+}
+
+#about-me-btn {    
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+
+    color: $about-btn-fg;
+    background: $about-btn-bg;
+    border-color: $about-btn-border;
+
+    &:hover {
+        color: $about-btn-hover-fg;
+        background: $about-btn-hover-bg;
+    }
+}

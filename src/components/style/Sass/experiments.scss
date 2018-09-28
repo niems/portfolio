@@ -1,0 +1,110 @@
+@import './modules/colors';
+@import './modules/fonts';
+
+$experiments-bg: $fade;
+$experiments-header-fg: $lightest;
+$experiments-description-fg: $lightest;
+
+$experiment-container-border: $accent;
+$experiment-container-bg: inherit;
+$experiment-description-border: $lightest;
+$experiment-description-fg: $accent;
+
+#experiments-container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+    
+    text-align: center;
+    background: $fade;
+}
+
+#experiments-header-container {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#experiments-header {
+    margin: 2rem 0;
+    color: $experiments-header-fg;
+
+    &::before, &::after {
+        background: $experiments-header-fg;
+    }
+}
+
+#experiments-page-desc {
+    color: $experiments-description-fg;
+}
+
+#all-experiments {
+    box-sizing: border-box;
+    margin: 2rem 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-experiment-container {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 300px;
+    height: 400px;
+
+    padding: 1rem 0.5rem;
+    margin: 1rem 2rem;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: $experiment-container-border;
+
+    background: $experiment-container-bg;
+
+    .experiment-video {
+        max-width: 100%;
+        max-height: 300px;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .experiment-description {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 90%;
+        height: max-content;
+    
+        font-size: 1.5em;
+        text-align: center;
+        overflow-wrap: break-word;
+    
+        border-style: solid none none none;
+        border-width: 1px;
+        border-color: $experiment-description-border;
+        color: $experiment-description-fg;
+    }
+}
+
+

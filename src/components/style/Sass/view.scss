@@ -1,0 +1,408 @@
+@import './modules/colors';
+@import './modules/fonts';
+@import './modules/transform';
+@import './partials/header';
+@import './partials/button';
+
+#view-container {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-family);
+}
+
+#sections-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    position: relative;
+
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.effect-container {
+    box-sizing: border-box;
+    display: inline-block;
+    width: max-content; 
+    height: max-content;
+
+    margin: 0;
+    padding: 0.5rem 2rem;
+}
+
+
+.section-header {
+    @extend %section-header;
+}
+
+.section-subheader {
+    @extend %section-subheader;   
+}
+
+
+.btn {
+    @extend %button;
+    @include button-color($lightest, inherit, $accent);
+    
+    &:hover {
+        @include button-color-hover($darkest, $accent, $accent);
+    }
+}
+
+.btn.slide-in {
+    @extend %button-slide;
+    
+    @include button-pseudo(true, false);
+    @include button-color-pseudo(initial, $accent, initial, initial, initial, initial);
+}
+
+
+/*halved effect*/
+.btn.slide-in.halved {
+    @include button-pseudo(true, true);
+    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);    
+    
+    &::before, &::after {
+        height: 50%;
+    }
+
+    &::before {
+        transform: translateX(-101%);
+    }
+
+    &::after {
+        @include pos(absolute, 50%, 0, 0, 0);
+        transform: translateX(101%);
+    }
+
+    &:hover {
+        &::before, &::after {
+            transform: translateX(0%);
+        }
+    }
+}
+/*halved effect*/
+
+
+/*top-to-bottom effect*/
+.btn.slide-in.top-to-bottom {
+    @include button-pseudo(true, true);
+    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);  
+    
+    background: none;
+    transition: all 0.5s;
+
+    &::before {
+        transform: translateY(-101%);
+    }
+
+    &::after {
+        opacity: 0;
+        transform: translateY(101%);
+
+        transition: opacity 0.25s 0.5s;
+    }
+
+    &:hover {
+        background: none;
+
+        &::before {
+            transition: opacity 0.25s 0.5s;                
+            transform: translateY(101%);
+        }
+
+        &::after {
+            opacity: 1;
+            transition: opacity 0.25s 0.5s;    
+        }
+    }
+}
+/*top-to-bottom effect*/
+
+/*smush-mid effect */
+.btn.slide-in.smush-mid {
+    @include button-pseudo(true, true);
+    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);    
+
+    background: transparent;
+    transition: all 0.6s;
+
+    &::before, &::after {
+        transition: transform 0.6s;
+    }
+
+    &::before {
+        transform: translateX(-101%);
+    }
+
+    &::after {
+        transform: translateX(101%);
+    }
+
+    &:hover {
+        &::before, &::after {
+            transform: translateX(0%);
+        }
+    }
+}
+/*smush-mid effect */
+
+
+/*middle expand effect*/
+.btn.slide-in.mid-expand {
+    &::before {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.0, 0.0);
+        transition: all 0.5s, color 0s;
+    }
+
+    &:hover::before {
+        transform: translate(-50%, -50%) scale(2.5, 2);
+    }
+}
+/*middle expand effect*/
+
+
+/*ltr effect*/
+.btn.slide-in.ltr {
+    transition: all 0.5s;
+
+    &::before {
+        transition: transform 0.5s;
+        transform: translateX(-101%);
+    }
+
+    &:hover {
+        background: transparent;
+
+        &::before {
+            transform: translateX(0%);
+        }
+    }
+}
+/*ltr effect*/
+
+/*ltr-full effect*/
+.btn.slide-in.ltr-full {
+    @include button-pseudo(true, true);
+    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);   
+    background: transparent;  
+    transition: all 0.75s;
+
+    &::before, &::after {
+        transition: transform 1s;
+        width: 50%;
+        //height: 50%;
+    }
+
+    &::before {
+        transform: translateX(-201%);
+    }
+
+    &::after {
+        transform: translateX(201%);
+    }
+
+    &:hover {
+        background: transparent;  
+
+        &::before, &::after {
+            width: 50%;
+        }
+
+        &::before {
+            transform: translateX(201%);
+            
+        }
+
+        &::after {
+            transform: translateX(-201%);
+        }
+    }
+}
+/*ltr-full effect*/
+
+
+.text-highlight {
+    box-sizing: border-box;
+    display: inline-block;
+    width: max-content;
+    height: auto;
+    overflow: hidden;
+
+    position: relative;
+    z-index: 0;
+
+    padding: 0 0.25rem;
+    margin: 0;
+    
+    border-style: none;
+    font-style: italic;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: $light-main;
+    cursor: pointer;
+    
+    color: $darkest;
+    background: transparent;
+    transform: translateY(30%);
+
+    &::before {
+        content: '';
+        z-index: -1;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        transform: translateX(-101%);
+        border-radius: 3px;
+
+        background: $light-main;
+        transition: transform 0.5s;
+    }
+
+    &:hover {
+
+        &::before {
+            transform: translateX(0%);
+        }
+    }
+}
+
+.text-highlight.mid {
+    &::before {
+        height: 100%;
+        width: 0%;
+        left: 50%;
+    
+        transition: width 0.5s;
+        transform: translateX(-50%);
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes top-enter {
+    from {
+        margin-top: 500%;
+    }
+
+    to {
+        margin-top: 0px;
+    }
+}
+
+@keyframes bottom-enter {
+    from {
+        margin-bottom: 500%;
+    }
+
+    to {
+        margin-bottom: 0px;
+    }
+}
+
+.section-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    background: none;
+}
+
+.page-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.page-container.bottom {
+    animation-name: bottom-enter;
+    animation-duration: 0.8s;
+}
+
+.page-container.top {
+    animation-name: top-enter;
+    animation-duration: 0.8s;
+}
+
+.background-layer {
+    display: inline-block;
+    position: absolute;
+    object-fit: fill;
+    object-position: center;
+    height: 100%;
+}
+
+.scrollbar {
+    &::-webkit-scrollbar {
+        width: 0.75rem;
+        background: $darkest;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $dark-main;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $light-main;
+    }
+}
+
+.scrollbar.secondary {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    #view-container {    
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+

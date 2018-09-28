@@ -1,0 +1,104 @@
+@import './modules/colors';
+@import './modules/fonts';
+
+$header-size: 3.25em; 
+$subheader-size: 1.35em; 
+$contact-legend-font-size: 1.4em;
+$input-placeholder-size: 1.2em;
+
+$form-max-width: 550px;
+$social-icon-size: 60px;
+
+$field-select-outline: $lightest;
+$field-bg: $lightest;
+$field-fg: $dark-main;
+$field-placeholder-fg: gray;
+
+$contact-fieldset-border: $lightest;
+$contact-legend-bg: $dark-main;
+$contact-legend-fg: $lightest;
+
+$contact-submit-bg: inherit;
+$contact-submit-fg: $lightest;
+$contact-submit-border: $lightest;
+$contact-submit-hover-fg: $dark-main;
+$contact-submit-hover-bg: $lightest;
+
+.form-container {
+    box-sizing: border-box;
+    max-width: $form-max-width;
+    width: 90%;
+    height: max-content;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin: 2rem 0;
+
+    fieldset {
+        border-color: $contact-fieldset-border;
+    }
+
+    legend {
+        font-size: $contact-legend-font-size;
+        background: $contact-legend-bg;
+        color: $contact-legend-fg;
+        text-align: left;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .contact-inputfield, #contact-message {
+        box-sizing: border-box;
+        width: 100%;
+        outline-color: $field-select-outline;
+        border-style: none;
+        
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        background: $field-bg;
+
+        color: $field-fg;
+
+        &::placeholder {
+            font-size: $input-placeholder-size;
+            color: $field-placeholder-fg;
+        }
+    }
+
+    #contact-message {
+        height: 200px;
+        resize: none;
+    }
+
+    #contact-submit {
+        box-sizing: border-box;
+        align-self: flex-end;
+        cursor: pointer;
+        
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+
+        font-size: 1.25em;
+        font-variant: small-caps;
+        outline: none;
+
+        border-width: 2px;
+        border-radius: 0.25rem;
+
+        background: $contact-submit-bg;
+        color: $contact-submit-fg;
+        border-color: $contact-submit-border;
+
+        transition: all 0.4s;
+
+        &:hover {
+            color: $contact-submit-hover-fg;
+            background: $contact-submit-hover-bg;
+        }
+    }
+
+    #contact-open-mailer {
+        display: none;
+    }
+}
