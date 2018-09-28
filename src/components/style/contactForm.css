@@ -5,6 +5,7 @@
 .form-container {
   box-sizing: border-box;
   max-width: 550px;
+  min-height: max-content;
   width: 90%;
   height: max-content;
   display: flex;
@@ -50,7 +51,7 @@
   color: #25282E;
 }
 .form-container #contact-message {
-  height: 200px;
+  min-height: 150px;
   resize: none;
 }
 .form-container #contact-submit {

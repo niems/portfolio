@@ -85,8 +85,9 @@ class ContactForm extends Component {
                     <input value={this.state.subject} className='contact-inputfield' id='contact-subject' name='subject'
                            type='text' autoComplete='false' required placeholder='Subject line' onChange={this.onChange} />
 
-                    <textarea value={this.state.message} id='contact-message' name='message' spellCheck='false'
-                              placeholder='Enter your message here' required onChange={this.onChange}></textarea>
+                    <textarea value={this.state.message} id='contact-message' name='message' rows='5' cols='20' data-gramm_editor='false'
+                              autoComplete='false' placeholder='Enter your message here' required onChange={this.onChange}></textarea>
+
                 </fieldset>
 
                 <button id='contact-submit' className='btn' type='submit'>submit</button>
