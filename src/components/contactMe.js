@@ -23,7 +23,7 @@ class ContactMe extends Component {
                     <ContactForm />
     
                     <div id='contact-social-links'>
-                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in mid-expand' id='' target='_blank' rel='noopener noreferrer'>
+                        <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='btn slide-in smush-mid' id='resume-link' target='_blank' rel='noopener noreferrer'>
                                 resume
                         </a>
                         <a href='https://github.com/niems' id='github-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>

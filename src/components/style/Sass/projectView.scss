@@ -1,5 +1,6 @@
 @import './modules/colors';
 @import './modules/fonts';
+@import './modules/general';
 @import './partials/button';
 
 $project-bg: $lightest;
@@ -308,7 +309,7 @@ $project-description-font-size: 1em;
 
 /*DISPLAY PROJECT INFO*/
 #portfolio-fullview-close-btn {
-    @include button-color($close-btn-fg, inherit, none);    
+    @include color($close-btn-fg, inherit, none);    
     @extend %button;
     align-self: flex-end;
     width: max-content;
@@ -321,7 +322,7 @@ $project-description-font-size: 1em;
     transition: none;
 
     &:hover {
-        @include button-color($close-btn-hover-fg, $close-btn-hover-bg, none);        
+        @include color($close-btn-hover-fg, $close-btn-hover-bg, none);        
     }
 }
 

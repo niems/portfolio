@@ -14,7 +14,7 @@ $btn-font-size: 1.3em;
     outline: none;
     border-style: solid;
     border-width: 2px;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     cursor: pointer;
 
     transition: background 0.4s;
@@ -63,35 +63,5 @@ $btn-font-size: 1.3em;
     &::after {
         z-index: -2;        
         opacity: 1;
-    }
-}
-
-//colors the basic button - selectors
-@mixin button-color($fg, $bg, $border) {
-    color: $fg;
-    background: $bg;
-    border-color: $border;
-}
-
-//styles the button color on :hover
- @mixin button-color-hover($fg, $bg, $border) {
-     color: $fg;
-     background: $bg;
-     border-color: $border;
- }
-
-
-//applies color style to ::before & ::after
-@mixin button-color-pseudo($before-fg, $before-bg, $before-border, $after-fg, $after-bg, $after-border) {
-    &::before {
-        color: $before-fg;
-        background: $before-bg;
-        border-color: $before-border;
-    }
-
-    &::after {
-        color: $after-fg;
-        background: $after-bg;
-        border-color: $after-border;
     }
 }

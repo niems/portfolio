@@ -89,7 +89,7 @@ class ContactForm extends Component {
                               placeholder='Enter your message here' required onChange={this.onChange}></textarea>
                 </fieldset>
 
-                <button id='contact-submit' type='submit'>submit</button>
+                <button id='contact-submit' className='btn' type='submit'>submit</button>
             </form>
         );
     }

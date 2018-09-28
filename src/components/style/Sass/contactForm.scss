@@ -1,5 +1,7 @@
 @import './modules/colors';
 @import './modules/fonts';
+@import './modules/general';
+@import './partials/button';
 
 $header-size: 3.25em; 
 $subheader-size: 1.35em; 
@@ -9,20 +11,26 @@ $input-placeholder-size: 1.2em;
 $form-max-width: 550px;
 $social-icon-size: 60px;
 
-$field-select-outline: $lightest;
-$field-bg: $lightest;
-$field-fg: $dark-main;
-$field-placeholder-fg: gray;
+//$field-select-outline: $accent;
+$field-fg: $lightest;
+$field-bg: $dark-main;
+$field-border: $lightest;
+$field-placeholder-fg: $accent;
+
+
+$field-focus-fg: $darkest;
+$field-focus-bg: $accent;
+
 
 $contact-fieldset-border: $lightest;
-$contact-legend-bg: $dark-main;
-$contact-legend-fg: $lightest;
+$contact-legend-bg: $accent;
+$contact-legend-fg: $darkest;
 
 $contact-submit-bg: inherit;
 $contact-submit-fg: $lightest;
-$contact-submit-border: $lightest;
-$contact-submit-hover-fg: $dark-main;
-$contact-submit-hover-bg: $lightest;
+$contact-submit-border: $accent;
+$contact-submit-hover-fg: $darkest;
+$contact-submit-hover-bg: $accent;
 
 .form-container {
     box-sizing: border-box;
@@ -36,10 +44,14 @@ $contact-submit-hover-bg: $lightest;
     
     margin: 2rem 0;
 
+    fieldset, legend {
+        border-radius: 0.25rem;
+    }
+
     fieldset {
         border-color: $contact-fieldset-border;
     }
-
+    
     legend {
         font-size: $contact-legend-font-size;
         background: $contact-legend-bg;
@@ -49,20 +61,29 @@ $contact-submit-hover-bg: $lightest;
     }
 
     .contact-inputfield, #contact-message {
+        @include color($field-fg, $field-bg, $field-border);
+
         box-sizing: border-box;
         width: 100%;
-        outline-color: $field-select-outline;
-        border-style: none;
+        border-width: 1px;
+        border-style: solid;
         
         margin: 0.5rem 0;
         padding: 0.5rem 1rem;
-        background: $field-bg;
-
-        color: $field-fg;
-
+        border-radius: 0.25rem;
+        
+        
         &::placeholder {
             font-size: $input-placeholder-size;
             color: $field-placeholder-fg;
+        }
+        
+        &:focus {
+            @include color($field-focus-fg, $field-focus-bg, $field-border);
+
+            &::placeholder {
+                color: $darkest;
+            }
         }
     }
 
@@ -72,29 +93,14 @@ $contact-submit-hover-bg: $lightest;
     }
 
     #contact-submit {
-        box-sizing: border-box;
+        @include color($contact-submit-fg, $contact-submit-bg, $contact-submit-border);
+
         align-self: flex-end;
-        cursor: pointer;
-        
         margin-top: 0.5rem;
-        padding: 0.5rem 1rem;
-
-        font-size: 1.25em;
-        font-variant: small-caps;
-        outline: none;
-
-        border-width: 2px;
-        border-radius: 0.25rem;
-
-        background: $contact-submit-bg;
-        color: $contact-submit-fg;
-        border-color: $contact-submit-border;
-
         transition: all 0.4s;
 
         &:hover {
-            color: $contact-submit-hover-fg;
-            background: $contact-submit-hover-bg;
+            @include color($contact-submit-hover-fg, $contact-submit-hover-bg, $contact-submit-border);
         }
     }
 

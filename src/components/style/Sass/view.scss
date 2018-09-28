@@ -57,10 +57,10 @@
 
 .btn {
     @extend %button;
-    @include button-color($lightest, inherit, $accent);
+    @include color($lightest, inherit, $accent);
     
     &:hover {
-        @include button-color-hover($darkest, $accent, $accent);
+        @include color($darkest, $accent, $accent);
     }
 }
 
@@ -68,7 +68,10 @@
     @extend %button-slide;
     
     @include button-pseudo(true, false);
-    @include button-color-pseudo(initial, $accent, initial, initial, initial, initial);
+    &::before {
+        
+        @include color(initial, $accent, initial);
+    }
 }
 
 .btn.slide-in.move-away {
@@ -89,9 +92,9 @@
 /*halved effect*/
 .btn.slide-in.halved {
     @include button-pseudo(true, true);
-    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);    
     
     &::before, &::after {
+        @include color(initial, $accent, initial);
         height: 50%;
     }
 
@@ -116,10 +119,13 @@
 /*top-to-bottom effect*/
 .btn.slide-in.top-to-bottom {
     @include button-pseudo(true, true);
-    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);  
     
     background: none;
     transition: all 0.5s;
+
+    &::before, &::after {
+        @include color(initial, $accent, initial);
+    }
 
     &::before {
         transform: translateY(-101%);
@@ -151,12 +157,12 @@
 /*smush-mid effect */
 .btn.slide-in.smush-mid {
     @include button-pseudo(true, true);
-    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);    
-
+    
     background: transparent;
     transition: all 0.6s;
-
+    
     &::before, &::after {
+        @include color(initial, $accent, initial);    
         transition: transform 0.6s;
     }
 
@@ -215,11 +221,11 @@
 /*ltr-full effect*/
 .btn.slide-in.ltr-full {
     @include button-pseudo(true, true);
-    @include button-color-pseudo(initial, $accent, initial, initial, $accent, initial);   
     background: transparent;  
     transition: all 0.75s;
-
+    
     &::before, &::after {
+        @include color(initial, $accent, initial);   
         transition: transform 1s;
         width: 50%;
         //height: 50%;

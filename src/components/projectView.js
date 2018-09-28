@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import projects from './projectInfo';
-import './style/projectview.css';
+import './style/projectView.css';
 
 function isProjectValid(name) {
     return projects.hasOwnProperty(name);

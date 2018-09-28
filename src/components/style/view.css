@@ -55,7 +55,7 @@
   outline: none;
   border-style: solid;
   border-width: 2px;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: background 0.4s;
 }
@@ -139,11 +139,6 @@
   background: #8EA6FC;
   border-color: initial;
 }
-.btn.slide-in::after {
-  color: initial;
-  background: initial;
-  border-color: initial;
-}
 
 .btn.slide-in.move-away {
   background: transparent;
@@ -178,17 +173,10 @@
   z-index: -2;
   opacity: 1;
 }
-.btn.slide-in.halved::before {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
-.btn.slide-in.halved::after {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
 .btn.slide-in.halved::before, .btn.slide-in.halved::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
   height: 50%;
 }
 .btn.slide-in.halved::before {
@@ -233,12 +221,7 @@
   z-index: -2;
   opacity: 1;
 }
-.btn.slide-in.top-to-bottom::before {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
-.btn.slide-in.top-to-bottom::after {
+.btn.slide-in.top-to-bottom::before, .btn.slide-in.top-to-bottom::after {
   color: initial;
   background: #8EA6FC;
   border-color: initial;
@@ -290,17 +273,10 @@
   z-index: -2;
   opacity: 1;
 }
-.btn.slide-in.smush-mid::before {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
-.btn.slide-in.smush-mid::after {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
 .btn.slide-in.smush-mid::before, .btn.slide-in.smush-mid::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
   transition: transform 0.6s;
 }
 .btn.slide-in.smush-mid::before {
@@ -368,17 +344,10 @@
   z-index: -2;
   opacity: 1;
 }
-.btn.slide-in.ltr-full::before {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
-.btn.slide-in.ltr-full::after {
-  color: initial;
-  background: #8EA6FC;
-  border-color: initial;
-}
 .btn.slide-in.ltr-full::before, .btn.slide-in.ltr-full::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
   transition: transform 1s;
   width: 50%;
 }

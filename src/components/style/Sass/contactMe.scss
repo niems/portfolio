@@ -15,14 +15,21 @@ $about-subheader-font-size: $medium-font;
 
 //style contact section
 $contact-bg: $darkest;
-$contact-footer-border: $lightest;
+$contact-footer-border: $accent;
 $contact-footer-bg: inherit;
-$contact-footer-fg: $lightest; 
-$social-icon-size: 60px;
+$contact-footer-fg: $accent; 
+$social-icon-size: 35px;
 
 $contact-link-bg: none;
 $contact-link-border: $lightest;
 $contact-link-hover-bg: $lightest;
+
+$resume-fg: $lightest;
+$resume-bg: inherit;
+$resume-border: $lightest;
+$resume-hover-fg: $darkest;
+$resume-hover-bg: $lightest;
+$resume-border: $lightest;
 
 %section-setup {
     box-sizing: border-box;
@@ -126,6 +133,22 @@ $contact-link-hover-bg: $lightest;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+
+    #resume-link {
+        @include color($resume-fg, $resume-bg, $resume-border);
+
+        &::before, &::after {
+            @include color($resume-fg, $resume-bg, $resume-border);
+        }
+
+        &:hover {
+            @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
+
+            &::before, &::after {
+                @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
+            }
+        }
+    }
 
 
     .contact-link {
