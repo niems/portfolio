@@ -89,12 +89,8 @@ $contact-submit-hover-bg: $accent;
         }
     }
 
-    .contact-inputfield {
-    }
-
     #contact-message {
         min-height: 150px;
-        //height: 200px;
         resize: none;
     }
 
@@ -108,9 +104,5 @@ $contact-submit-hover-bg: $accent;
         &:hover {
             @include color($contact-submit-hover-fg, $contact-submit-hover-bg, $contact-submit-border);
         }
-    }
-
-    #contact-open-mailer {
-        display: none;
     }
 }
