@@ -77,7 +77,7 @@ class ContactForm extends Component {
                     <legend>Get in touch</legend>
 
                     <input value={this.state.name} className='contact-inputfield' id='contact-name' name='name' type='text'
-                           autoComplete='false' autoFocus='true' required placeholder='Name' onChange={this.onChange} />
+                           autoComplete='false' required placeholder='Name' onChange={this.onChange} />
 
                     <input value={this.state.email} className='contact-inputfield' id='contact-email' name='email'
                            type='email' autoComplete='false' required placeholder='Email address' onChange={this.onChange} />
