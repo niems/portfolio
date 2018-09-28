@@ -25,6 +25,11 @@ class HomePage extends Component {
         return (
             <div className={`page-container`} id='homepage' ref={this.props.setRef}>
                 <ParticleLayer />
+
+                    <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='' 
+                       target='_blank' rel='noopener noreferrer'>
+                            <button id='resume-link' className='btn slide-in mid-expand'>resume</button>
+                    </a>
                 
                 <div id='home-container'>
                     <img id='home-background-img' src='./images/logo/z-logo-homepage.svg' alt='background logo' />

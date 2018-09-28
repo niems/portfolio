@@ -18,26 +18,40 @@ $about-btn-border: $darkest;
 $about-btn-hover-bg: $light-mid;
 $about-btn-hover-fg: $darkest;
 
+$resume-fg: $accent;
+$resume-bg: $darkest;
+$resume-hover-fg: $darkest;
+$resume-hover-bg: $accent;
+$resume-border: $darkest;
+
 #homepage {
     box-sizing: border-box;
     position: relative;
-}
 
-@keyframes pointer-shrink {
-    0% {
-        height: 150px;
-    }
+    #resume-link {
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+        }
 
-    50% {
-        height: 20px;
-    }
+        @include color($resume-fg, $resume-bg, $resume-border);
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-15%, 30%);
 
-    75% {
-        height: 10px;
-    }
+        &::before, &::after {
+            @include color($resume-fg, $resume-bg, $resume-border);
+        }
 
-    100% {
-        height: 0px;
+        &:hover {
+            @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
+
+            &::before, &::after {
+                @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
+            }
+        }
     }
 }
 
