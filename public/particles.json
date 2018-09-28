@@ -43,9 +43,9 @@
     "line_linked": {
       "enable": true,
       "distance": 160,
-      "color": "#25282E",
-      "opacity": 0.5,
-      "width": 2
+      "color": "#000000",
+      "opacity": 0.35,
+      "width": 1
     },
     "move": {
       "enable": true,

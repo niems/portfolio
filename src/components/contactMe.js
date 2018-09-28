@@ -12,10 +12,13 @@ class ContactMe extends Component {
                 <article id='about-me-section'>
                     <h1 id='about-me-header' className='section-header'>About me</h1>
                     <p className='section-subheader'>
-                        Hi! I'm Zach, a Web Developer with a passion for problem solving, insatiably curious, and a lover of code.
-                        Experience with both the front-end and back-end sides of the development process.
+                        Hi! I'm Zach, a Web Developer with a passion for problem solving, no stranger to sarcasm, and a fan of portals (WUBBA LUBBA DUB DUB!).
                     </p>
-    
+
+                    <p className='section-subheader'>
+                        I started coding about 10 years ago. Ever since I wrote my first 2D platformer in C++ and SFML I was hooked - actually I was already hooked by that
+                        point, I just wanted to mention I've coded games in C++ and SFML :P
+                    </p>
                     <ProgressBar />
                 </article>
     
@@ -47,3 +50,17 @@ class ContactMe extends Component {
 }
 
 export default ContactMe;
+
+/*
+Hi! I'm Zach, a Web Developer with a passion for problem solving, insatiably curious, and a lover of code.
+                        Experience with both the front-end and back-end sides of the development process.
+
+    A Web Developer with a passion for problem solving, no stranger to sarcasm, and a fan of portals (WUBBA LUBBA DUB DUB!). Coding started as a
+    hobby about 10 years ago, quickly turning from a hobby to THE hobby. 
+
+    coding - hobby turned living...
+
+    A Web Developer with a passion for problem solving, no stranger to sarcasm, and a fan of portals (WUBBA LUBBA DUB DUB!). I started coding
+    about 10 years ago, ever since I started coding 2D platformer games in C++ and SFML I've been hooked - I was actually already hooked by that
+    point, I just wanted to mention I've coded games in C++ and SFML :P
+*/

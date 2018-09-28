@@ -522,10 +522,10 @@
   background: #25282E;
 }
 .scrollbar::-webkit-scrollbar-track {
-  background: #2C3037;
+  background: #25282E;
 }
 .scrollbar::-webkit-scrollbar-thumb {
-  background: #58D9FA;
+  background: #d0e1f9;
 }
 
 .scrollbar.secondary::-webkit-scrollbar {

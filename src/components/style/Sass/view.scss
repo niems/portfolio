@@ -417,11 +417,11 @@
     }
 
     &::-webkit-scrollbar-track {
-        background: $dark-main;
+        background: $darkest;
     }
     
     &::-webkit-scrollbar-thumb {
-        background: $light-main;
+        background: $lightest;
     }
 }
 
