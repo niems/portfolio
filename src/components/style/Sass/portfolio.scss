@@ -2,17 +2,21 @@
 @import './modules/fonts';
 
 //styling for main page
-$portfolio-bg: $white;
-$portfolio-header-fg: $dark-main;
-$portfolio-subheader-fg: $dark-main;
+$portfolio-bg: $dark-mid;
+$portfolio-header-fg: $lightest;
+$portfolio-subheader-fg: $lightest;
+
+//styling tech links
+$portfolio-link-fg: $lightest;
+$portfolio-link-hover-fg: $darkest;
 
 //styling for single project
-$project-bg: $darkest;
-$project-name-fg: $lightest;
-$project-tech-fg: $accent;
-$project-header-font-size: $small-font;
+$project-bg: $lightest;
+$project-name-fg: $dark-mid;
+$project-tech-fg: $light-mid;
+$project-header-font-size: $large-font;
 $project-tech-font-size: $small-font;
-$project-btn-font-size: $small-font;
+$project-btn-font-size: $medium-font;
 
 @mixin portfolio-project-container($background) {
     box-sizing: border-box;
@@ -109,6 +113,14 @@ $project-btn-font-size: $small-font;
 #portfolio-subheader {
     margin-bottom: 2rem;
     color: $portfolio-subheader-fg;
+
+    .text-highlight {
+        color: $portfolio-link-fg;
+
+        &:hover {
+            color: $portfolio-link-hover-fg;
+        }
+    }
 }
 
 #portfolio-projects {
