@@ -4,16 +4,30 @@
 /* 300px - 1000px*/
 #homepage {
   box-sizing: border-box;
+  min-height: 100vh;
+  max-width: 100%;
+  width: 100%;
+  height: max-content;
+  margin: 0;
+  padding: 2rem 0.25rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#homepage {
   position: relative;
 }
 #homepage #resume-link {
-  color: #8EA6FC;
+  color: #58D9FA;
   background: #25282E;
   border-color: #25282E;
   position: absolute;
   top: 0;
-  right: 0;
-  transform: translate(-15%, 30%);
+  left: 0;
+  transform: translate(15%, 30%);
 }
 #homepage #resume-link a {
   text-decoration: none;
@@ -21,18 +35,18 @@
   height: 100%;
 }
 #homepage #resume-link::before, #homepage #resume-link::after {
-  color: #8EA6FC;
+  color: #58D9FA;
   background: #25282E;
   border-color: #25282E;
 }
 #homepage #resume-link:hover {
   color: #25282E;
-  background: #8EA6FC;
+  background: #58D9FA;
   border-color: #25282E;
 }
 #homepage #resume-link:hover::before, #homepage #resume-link:hover::after {
   color: #25282E;
-  background: #8EA6FC;
+  background: #58D9FA;
   border-color: #25282E;
 }
 
@@ -132,7 +146,8 @@ span[id=name] {
 #about-me-btn {
   position: absolute;
   bottom: -1.5rem;
-  left: 0;
+  left: 50%;
+  transform: translateX(25%);
   color: #58D9FA;
   background: none;
   border-color: #25282E;

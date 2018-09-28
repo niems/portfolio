@@ -1,6 +1,7 @@
 @import './modules/colors';
 @import './modules/fonts';
 @import './modules/general';
+@import './partials/containers';
 
 
 $home-text-fg: $darkest;
@@ -18,14 +19,14 @@ $about-btn-border: $darkest;
 $about-btn-hover-bg: $light-mid;
 $about-btn-hover-fg: $darkest;
 
-$resume-fg: $accent;
+$resume-fg: $light-main;
 $resume-bg: $darkest;
 $resume-hover-fg: $darkest;
-$resume-hover-bg: $accent;
+$resume-hover-bg: $light-main;
 $resume-border: $darkest;
 
 #homepage {
-    box-sizing: border-box;
+    @extend %section-container;
     position: relative;
 
     #resume-link {
@@ -38,8 +39,8 @@ $resume-border: $darkest;
         @include color($resume-fg, $resume-bg, $resume-border);
         position: absolute;
         top: 0;
-        right: 0;
-        transform: translate(-15%, 30%);
+        left: 0;
+        transform: translate(15%, 30%);
 
         &::before, &::after {
             @include color($resume-fg, $resume-bg, $resume-border);
@@ -166,7 +167,8 @@ span[id='name'] {
 #about-me-btn {    
     position: absolute;
     bottom: -1.5rem;
-    left: 0;
+    left: 50%;
+    transform: translateX(25%);
 
     @include color($about-btn-fg, none, $about-btn-border);
 

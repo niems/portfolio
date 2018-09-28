@@ -23,7 +23,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className={`page-container`} id='homepage' ref={this.props.setRef}>
+            <div id='homepage' ref={this.props.setRef}>
                 <ParticleLayer />
 
                     <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='' 
