@@ -11,9 +11,12 @@
 }
 
 .section-header {
+  box-sizing: border-box;
   display: block;
-  padding: 0;
-  margin: 0;
+  max-width: 100%;
+  width: max-content;
+  height: max-content;
+  margin: 2rem 0;
   position: relative;
   font-size: calc(1.6em + (2.2 - 1.6) * ((100vw - 18.75em) / (62.5 - 18.75)));
   line-height: calc(1.4em + (2.2 - 1.4) * ((100vw - 18.75em) / (62.5 - 18.75)));

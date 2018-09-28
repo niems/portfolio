@@ -48,7 +48,6 @@
 }
 
 #portfolio-header {
-  margin: 2rem 0;
   color: #2C3037;
 }
 #portfolio-header::before, #portfolio-header::after {

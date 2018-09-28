@@ -93,7 +93,7 @@ class Experiments extends Component {
                         <DistortText setup={this.distortTextSetup} />
                     </h2>
 
-                    <p id='experiments-page-desc'>These are the results of late-night tinkering. Tap/hover over an experiment below to animate it!</p>    
+                    <p className='section-subheader' id='experiments-page-desc'>These are the results of late-night tinkering. Tap/hover over an experiment below to animate it!</p>    
                 </div>
 
                 <div id='all-experiments'>
