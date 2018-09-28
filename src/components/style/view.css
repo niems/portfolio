@@ -44,6 +44,31 @@
   line-height: calc(1.1em + (1.5 - 1.1) * ((100vw - 18.75em) / (62.5 - 18.75)));
 }
 
+.btn, .btn.slide-in {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1.3em;
+  font-variant: small-caps;
+  outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.4s;
+}
+
+.btn.slide-in {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.btn.slide-in:hover {
+  background: initial;
+}
+
 #view-container {
   box-sizing: border-box;
   width: 100vw;
@@ -80,75 +105,93 @@
 }
 
 .btn {
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  font-size: 1.3em;
-  font-variant: small-caps;
-  outline: none;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 4px;
-  cursor: pointer;
-  color: var(--btn-fg);
-  background: var(--btn-bg);
-  border-color: var(--btn-border);
-  transition: background 0.4s;
+  color: #d0e1f9;
+  background: inherit;
+  border-color: #8EA6FC;
 }
-
 .btn:hover {
-  color: var(--btn-hover-fg);
-  background: var(--btn-hover-bg);
-}
-
-.btn.slide-in {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-  transition: all 0.5s;
-}
-
-.btn.slide-in:hover {
-  background: initial;
+  color: #25282E;
+  background: #8EA6FC;
+  border-color: #8EA6FC;
 }
 
 .btn.slide-in::before {
   content: "";
+}
+.btn.slide-in::before, .btn.slide-in::after {
   z-index: -1;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: var(--accent-green-two);
   transition: all 0.5s;
+}
+.btn.slide-in::after {
+  z-index: -2;
+  opacity: 1;
+}
+.btn.slide-in::before {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in::after {
+  color: initial;
+  background: initial;
+  border-color: initial;
 }
 
 /*halved effect*/
 .btn.slide-in.halved::before {
-  height: 50%;
-  transform: translateX(-101%);
+  content: "";
 }
-
-.btn.slide-in.halved:hover::before, .btn.slide-in.halved:hover::after {
-  transform: translateX(0%);
-}
-
 .btn.slide-in.halved::after {
   content: "";
+}
+.btn.slide-in.halved::before, .btn.slide-in.halved::after {
   z-index: -1;
   width: 100%;
-  height: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+.btn.slide-in.halved::after {
+  z-index: -2;
   opacity: 1;
+}
+.btn.slide-in.halved::before {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.halved::after {
+  color: initial;
+  background: #8EA6FC;
+  border-color: initial;
+}
+.btn.slide-in.halved::before, .btn.slide-in.halved::after {
+  height: 50%;
+}
+.btn.slide-in.halved::before {
+  transform: translateX(-101%);
+}
+.btn.slide-in.halved::after {
   position: absolute;
   top: 50%;
   left: 0;
   bottom: 0;
   right: 0;
-  transition: all 0.5s;
   transform: translateX(101%);
-  background: var(--accent-green-two);
+}
+.btn.slide-in.halved:hover::before, .btn.slide-in.halved:hover::after {
+  transform: translateX(0%);
 }
 
 /*halved effect*/

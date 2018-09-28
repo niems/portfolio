@@ -1,3 +1,7 @@
+/* 300px - 1000px*/
+/* 300px - 1000px*/
+/* 300px - 1000px*/
+/* 300px - 1000px*/
 #homepage {
   box-sizing: border-box;
   position: relative;
@@ -102,6 +106,7 @@ span[id=name] {
 }
 
 #homepage-effect {
+  color: #d0e1f9;
   font-size: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
   line-height: calc(1.3em + (1.9 - 1.3) * ((100vw - 18.75em) / (62.5 - 18.75)));
 }
@@ -110,6 +115,13 @@ span[id=name] {
   position: absolute;
   bottom: -1.5rem;
   left: 0;
+  color: #d0e1f9;
+  background: inherit;
+  border-color: #8EA6FC;
+}
+#about-me-btn:hover {
+  color: #25282E;
+  background: #8EA6FC;
 }
 
 /*# sourceMappingURL=homepage.css.map */
