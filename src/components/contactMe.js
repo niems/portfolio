@@ -11,7 +11,7 @@ class ContactMe extends Component {
                         
                 <article id='about-me-section'>
                     <h1 id='about-me-header' className='section-header'>About me</h1>
-                    <p className='section-description'>
+                    <p className='section-subheader'>
                         Hi! I'm Zach, a Web Developer with a passion for problem solving, insatiably curious, and a lover of code.
                         Experience with both the front-end and back-end sides of the development process.
                     </p>
