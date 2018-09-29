@@ -13,7 +13,7 @@ function DisplayProject({ name, tech, onClick }) {
                     <h4 className='portfolio-project-tech'>{tech}</h4>
                 </span>
 
-                <button className='btn learn-more slide-in smush-mid' onClick={e => onClick(e, name)}>learn more</button>
+                <button id='learn-more' className='btn slide-in halved' type='button' onClick={e => onClick(e, name)}>learn more</button>
             </div>
 
         </div>
@@ -83,8 +83,8 @@ class Portfolio extends Component {
                 </div>
 
                 <div id='portfolio-projects'>
-                    <DisplayProject name='Roulette' tech='Node + React + Socket.IO + WebRTC' onClick={this.onFullscreenProject} />
-                    <DisplayProject name='Whisper' tech='Electron + Node + React + Socket.IO' onClick={this.onFullscreenProject} />
+                    <DisplayProject name='Roulette' tech='Node.js + React + Socket.IO + WebRTC' onClick={this.onFullscreenProject} />
+                    <DisplayProject name='Whisper' tech='Electron + Node.js + React + Socket.IO' onClick={this.onFullscreenProject} />
                     <DisplayProject name='Word-Connect' tech='Electron + Node + React + IndexedDB' onClick={this.onFullscreenProject} />
 
                 </div>
