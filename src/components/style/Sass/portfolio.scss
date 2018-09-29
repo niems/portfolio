@@ -145,10 +145,19 @@ $project-btn-hover-bg: $accent;
     color: $portfolio-subheader-fg;
 
     .text-highlight {
-        color: $portfolio-link-fg;
+        color: $portfolio-link-fg; 
+        text-decoration-color: $accent;
+
+        &::before {
+            background: $accent;
+        }
 
         &:hover {
             color: $portfolio-link-hover-fg;
+            
+            &::before {
+                background: $accent;
+            }
         }
     }
 }
