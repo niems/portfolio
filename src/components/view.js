@@ -3,11 +3,9 @@ import Navbar from './navbar';
 import HomePage from './homePage';
 import Experiments from './experiments';
 import Portfolio from './portfolio';
-import Contact from './contact';
 import Menu from './menu';
 import ContactMe from './contactMe';
 
-import Testing from './testing';
 import './style/view.css';
 
 //returns the current section the user is viewing

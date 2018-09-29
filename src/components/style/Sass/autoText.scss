@@ -1,0 +1,59 @@
+.auto-text-container {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-wrap: break-word;
+    background: none;
+}
+
+.auto-text {
+    display: inline-block;
+}
+
+.auto-text.spring {
+    transition: transform 0.35s;
+}
+
+.auto-text.spring:hover {
+    transform: scale(1.4, 1.4);
+}
+
+
+@keyframes stand-up {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+    }
+}
+.auto-text.stand-up {
+    display: inline-block;
+
+    animation-name: stand-up;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes cursor-blink {
+    to {
+        opacity: 1;
+    }
+}
+
+.auto-text-cursor {
+    opacity: 0;
+
+    animation-name: cursor-blink;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
