@@ -12,38 +12,53 @@ class HomePage extends Component {
             delay: 1500,
             styleClass: 'homepage'
         };
-
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick(e) {
-        e.preventDefault();
-        this.props.selection('contact');
     }
 
     render() {
         return (
             <div id='homepage' ref={this.props.setRef}>
                 <ParticleLayer />
-
-                    <a href='./resume - Zach Niemann.pdf' download='./resume - Zach Niemann.pdf' className='' 
-                       target='_blank' rel='noopener noreferrer'>
-                            <button id='resume-link' className='btn slide-in mid-expand'>resume</button>
-                    </a>
                 
                 <div id='home-container'>
-                    <img id='home-background-img' src='./images/logo/z-logo-homepage.svg' alt='background logo' />
+                    <span id='home-background-img' >
+                        <svg xmlns="http://www.w3.org/2000/svg" height='100%' width='100%' viewBox="0 0 100 100" style={{fill: '#000000', stroke: '#000000', strokeWidth: 0.2, strokeOpacity: 0.5}}>
 
+                            <path id='top-main' className='grid-design'  d='M10 10 L90 10' style={{strokeOpacity: 0.45, strokeWidth: 0.3}} />
+                            <circle className='grid-node' r='0.8' cx='8.5' cy='10' style={{strokeWidth: 0.1}} />
+                            <circle className='grid-node' r='0.8' cx='91.5' cy='10' style={{strokeWidth: 0.1}} />                     
+
+                            <path id='top-secondary' className='grid-design'  d='M20 15 L70 15' style={{strokeOpacity: 0.6, strokeWidth: 0.15}}/>
+
+
+                            <path id='mid-main' className='grid-design' d='M80 20 L60 40'  style={{strokeOpacity: 0.45, strokeWidth: 0.3}} />
+                            <circle className='grid-node' r='0.8' cx='81.5' cy='18.5' style={{strokeWidth: 0.1}} /> 
+                            <circle className='grid-node' r='0.8' cx='58.5' cy='41.5' style={{strokeWidth: 0.1}} /> 
+
+                            <path id='mid-main' className='grid-design' d='M50 50 L20 80' style={{strokeOpacity: 0.45, strokeWidth: 0.3}} />
+                            <circle className='grid-node' r='0.8' cx='51.5' cy='48.5' style={{strokeWidth: 0.1}} /> 
+                            <circle className='grid-node' r='0.8' cx='18.5' cy='81.5' style={{strokeWidth: 0.1}} /> 
+
+                            <path id='mid-secondary' className='grid-design' d='M80 30 L40 70' style={{strokeOpacity: 0.6, strokeWidth: 0.15}}/>
+
+
+
+                            <path id='bottom-main' className='grid-design' d='M10 90 L90 90' style={{strokeOpacity: 0.45, strokeWidth: 0.3}} />
+                            <circle className='grid-node' r='0.8' cx='8.5' cy='90' style={{strokeWidth: 0.1}} /> 
+                            <circle className='grid-node' r='0.8' cx='91.5' cy='90' style={{strokeWidth: 0.1}} /> 
+
+                            <path id='bottom-secondary' className='grid-design' d='M25 86 h15' style={{strokeOpacity: 0.6, strokeWidth: 0.15}}/>
+                            <path id='bottom-secondary' className='grid-design' d='M52 86 L86 86' style={{strokeOpacity: 0.6, strokeWidth: 0.15}}/>
+                        </svg>
+                    </span>
+                
                     <div id='home-info-container'>
                         <span className='home-info' id='name'>Zach Niemann</span>
                         <div className='effect-container' id='homepage-effect'>
                             <DistortText setup={this.distortTextSetup} />
                         </div>
                     </div>
-                    
-                    <button type='button' className='btn slide-in fall' id='about-me-btn' onClick={this.onClick}>About me</button>
                 </div>
-
+                
                 <div className='vertical-pointer-container'>
                     <span className='vertical-pointer'></span>
                 </div>
@@ -53,3 +68,12 @@ class HomePage extends Component {
 }
 
 export default HomePage;
+
+/*
+<button type='button' className='btn slide-in fall' id='about-me-btn' onClick={this.onClick}>About me</button>
+
+
+<a download href='./resume - Zach Niemann.pdf'>
+<button id='resume-link' className='btn slide-in mid-expand'>resume</button>
+</a>
+*/

@@ -1,16 +1,18 @@
 @import './modules/colors';
 @import './modules/fonts';
+@import './modules/mediaQuery';
 @import './modules/general';
 @import './partials/containers';
 
-
 $home-text-fg: $darkest;
+$home-text-bg: $light-main;
 $home-text-effect-fg: $darkest;
 $vertical-pointer-bg: $darkest;
-$name-font-size: $xlarge-font;
-$name-line-height: $xlarge-font-line-height;
 
-$effect-font-size: $medium-font;
+$name-font-size: $home-name-font;
+$name-line-height: $home-name-font-line-height;
+
+$effect-font-size: $home-title-font;
 $effect-line-height: $medium-font-line-height;
 
 $about-btn-bg: $darkest;
@@ -27,33 +29,7 @@ $resume-border: $darkest;
 
 #homepage {
     @extend %section-container;
-    position: relative;
-
-    #resume-link {
-        a {
-            text-decoration: none;
-            width: 100%;
-            height: 100%;
-        }
-
-        @include color($resume-fg, $resume-bg, $resume-border);
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(15%, 30%);
-
-        &::before, &::after {
-            @include color($resume-fg, $resume-bg, $resume-border);
-        }
-
-        &:hover {
-            @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
-
-            &::before, &::after {
-                @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
-            }
-        }
-    }
+    background: $home-text-bg;
 }
 
 @keyframes pointer-move {
@@ -99,7 +75,7 @@ $resume-border: $darkest;
     background: none;
 
     border-style: none solid none solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: $vertical-pointer-bg;
 
     animation-name: pointer-move;
@@ -110,9 +86,9 @@ $resume-border: $darkest;
 
 #home-container {
     box-sizing: border-box;
-    max-width: 600px;
+    max-width: 300px;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
     height: max-content;
 
     display: flex;
@@ -123,13 +99,20 @@ $resume-border: $darkest;
 
     position: relative;
     padding: 2rem 0;
-    color: $home-text-fg;
-    
+    color: $home-text-fg;    
+
     #home-background-img {
+        display: inline-block;
         position: absolute;
-        max-height: 100%;
         max-width: 100%;
-        height: auto;
+        width: max-content;
+        height: max-content;
+
+        svg {
+            display: block;
+            width: 300px;
+            height: auto;
+        }
     }
 }
 
@@ -161,6 +144,7 @@ span[id='name'] {
 #homepage-effect {
     color: $home-text-effect-fg;
     font-size: $effect-font-size;
+    font-style: italic;
     line-height: $effect-line-height;
 }
 
@@ -184,3 +168,7 @@ span[id='name'] {
         color: $about-btn-hover-fg;
     }
 }
+
+@include homepageMediaQuery(550px, 400px, 1.15);
+@include homepageMediaQuery(750px, 450px, 1.3);
+@include homepageMediaQuery(1000px, 600px, 1.5);
