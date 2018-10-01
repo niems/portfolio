@@ -1,34 +1,118 @@
 @import './modules/colors';
 @import './modules/fonts';
 @import './modules/mediaQuery';
+@import './modules/general';
 
-$contact-footer-border: $accent;
-$contact-footer-bg: $accent;
-$contact-footer-fg: $darkest;
+$footer-bg: $dark-main;
+
+$footer-font-size: 1.1em;
+$footer-description-bg: $accent;
+$footer-description-fg: $darkest;
+
+
+//social link setup
+$social-icon-size: 35px;
+$contact-link-bg: none;
+$contact-link-border: $lightest;
+$contact-link-hover-bg: $lightest;
 
 #footer-container {
+    box-sizing: border-box;
     width: 100%;
     height: max-content;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0 0 0;
     margin: 0;
 
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 
-    border-style: solid none none none;
-    border-width: 2px;
-    border-color: $contact-footer-border;
-    background: $contact-footer-bg;
+    background: $footer-bg;
 }
 
 #footer-description {
     box-sizing: border-box;
-    width: max-content;
+    width: 100%;
     height: max-content;
 
-    font-size: 1.15em;
+    text-align: center;
+    font-size: $footer-font-size;
+    padding: 1rem 0;
+    margin: 0;
 
-    color: $contact-footer-fg;
-    background: none;    
+    color: $footer-description-fg;
+    background: $footer-description-bg;
 }
+
+
+//social link setup 
+#contact-social-links {
+    box-sizing: border-box;
+    min-width: max-content;
+    width: 100%;
+    height: max-content;
+
+    position: relative;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .contact-link {
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0.5rem;
+        margin: 1rem 1.5rem;
+
+        border-radius: 0.5rem;
+        border-style: solid;
+        border-width: 1px;
+
+        background: none;
+
+        @include color(none, $contact-link-bg, $contact-link-border);
+        transition: all 0.5s;
+
+        img {
+            width: $social-icon-size;
+            height: auto;
+            filter: invert(1);
+        }
+
+        &::before, &::after  {
+            @include color(none, inherit, none);
+        }
+
+        &:hover {
+            @include color(none, $contact-link-hover-bg, none);
+            
+            img {
+                filter: invert(0);
+            }
+            
+            &::before, &::after {
+                @include color(none, $contact-link-hover-bg, none);
+            }
+        }
+    }
+
+    #dribbble-link {
+        img {
+            filter: none;
+        }
+
+        &:hover {
+            img {
+                filter: none;
+            }
+        }
+    }
+}
+//^social link setup
