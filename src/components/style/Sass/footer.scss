@@ -1,0 +1,34 @@
+@import './modules/colors';
+@import './modules/fonts';
+@import './modules/mediaQuery';
+
+$contact-footer-border: $accent;
+$contact-footer-bg: $accent;
+$contact-footer-fg: $darkest;
+
+#footer-container {
+    width: 100%;
+    height: max-content;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-style: solid none none none;
+    border-width: 2px;
+    border-color: $contact-footer-border;
+    background: $contact-footer-bg;
+}
+
+#footer-description {
+    box-sizing: border-box;
+    width: max-content;
+    height: max-content;
+
+    font-size: 1.15em;
+
+    color: $contact-footer-fg;
+    background: none;    
+}
