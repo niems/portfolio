@@ -1,38 +1,18 @@
 @import './modules/colors';
 @import './modules/fonts';
 @import './modules/general';
-@import './partials/button';
+@import './partials/header';
 
-//style main background
-$contact-bg: $dark-main;
 
 //style about me section
-$about-bg: $dark-main;
-$about-fg: $lightest;
-$about-header-fg: $lightest;
+$about-bg: $lightest;
+$about-fg: $darkest;
+$about-header-fg: $darkest;
 $about-subheader-first-letter-color: $accent;
-$about-subheader-font-size: $medium-font;
+$about-subheader-font-size: 0.9em;
 
 //style contact section
 $contact-bg: $darkest;
-//$contact-footer-border: $accent;
-//$contact-footer-bg: $accent;
-//$contact-footer-fg: $darkest;
-$social-icon-size: 35px;
-
-
-
-
-$contact-link-bg: none;
-$contact-link-border: $lightest;
-$contact-link-hover-bg: $lightest;
-
-$resume-fg: $lightest;
-$resume-bg: inherit;
-$resume-border: $lightest;
-$resume-hover-fg: $darkest;
-$resume-hover-bg: $lightest;
-$resume-border: $lightest;
 
 %section-setup {
     box-sizing: border-box;
@@ -82,114 +62,18 @@ $resume-border: $lightest;
         }
     }
 
-    .section-subheader {
-        width: 90%;
-        margin-bottom: 2rem;
+    .section-description {
+        @extend %section-subheader;
+        margin: 0.5rem 0;
+        font-size: $about-subheader-font-size;
+    }
 
+    #about-init-description {
         &:first-letter {
             color: $about-subheader-first-letter-color;
-            font-size: $about-subheader-font-size;
+            font-size: $about-subheader-font-size * 1.8;
             font-weight: bold;
         }
     }
 }
-
-
-#contact-me-section {
-    @extend %section-setup;    
-    padding: 2rem 0 0 0;
-    background: $contact-bg;
-}
-
-#contact-social-links {
-    box-sizing: border-box;
-    min-width: max-content;
-    width: 100%;
-    height: max-content;
-
-    position: relative;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-
-    /*
-    #resume-link {
-        @include color($resume-fg, $resume-bg, $resume-border);
-        position: absolute;
-        left: 0.5rem;
-
-        &::before, &::after {
-            @include color($resume-fg, $resume-bg, $resume-border);
-        }
-
-        &:hover {
-            @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
-
-            &::before, &::after {
-                @include color($resume-hover-fg, $resume-hover-bg, $resume-border);
-            }
-        }
-    }
-    */
-
-
-    .contact-link {
-        box-sizing: border-box;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        padding: 0.5rem;
-        margin: 1rem 1.5rem;
-
-        border-radius: 0.5rem;
-        border-style: solid;
-        border-width: 1px;
-
-        background: none;
-
-        @include color(none, $contact-link-bg, $contact-link-border);
-        transition: all 0.5s;
-
-        img {
-            width: $social-icon-size;
-            height: auto;
-            filter: invert(1);
-        }
-
-        &::before, &::after  {
-            @include color(none, inherit, none);
-        }
-
-        &:hover {
-            @include color(none, $contact-link-hover-bg, none);
-            
-            img {
-                filter: invert(0);
-            }
-            
-            &::before, &::after {
-                @include color(none, $contact-link-hover-bg, none);
-            }
-        }
-    }
-
-    #dribbble-link {
-        img {
-            filter: none;
-        }
-
-        &:hover {
-            img {
-                filter: none;
-            }
-        }
-    }
-}
-
-
 

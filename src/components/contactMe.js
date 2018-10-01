@@ -4,11 +4,33 @@ import ContactForm from './contactForm';
 import './style/contactMe.css';
 
 class ContactMe extends Component {
+    render() {
+        return (
+            <article id='about-me-section' ref={this.props.setRef}>
+                <h1 id='about-me-header' className='section-header'>About me</h1>
 
+                <p className='section-description' id='about-init-description'>
+                    Hi! I'm Zach, a versatile Web Developer with experience in both the front-end and back-end of the development process.
+                </p>
+
+                <p className='section-description'>
+                    I'm always looking to grow my skill set, specializing in React and mobile-first responsive design.
+                </p>
+
+                <p className='section-description'>
+                    I started coding about 10 years ago. Ever since I wrote my first 2D platformer in C++ and SFML I was hooked - actually I was hooked by that
+                    point, just wanted to mention I've coded games in C++ and SFML :P
+                </p>
+
+                <ProgressBar />
+            </article>
+        );
+    }
+
+    /*
     render() {
         return (
             <div className='main-section-container scrollbar' id='contact-me-container' ref={this.props.setRef}>
-                        
                 <article id='about-me-section'>
                     <h1 id='about-me-header' className='section-header'>About me</h1>
                     <p className='section-subheader'>
@@ -21,27 +43,10 @@ class ContactMe extends Component {
                     </p>
                     <ProgressBar />
                 </article>
-    
-                <article id='contact-me-section'>
-                    <ContactForm />
-    
-                    <div id='contact-social-links'>
-                        <a href='https://github.com/niems' id='github-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
-                            <img src='./images/social/github.svg' alt='Github profile' />
-                        </a>
-    
-                        <a href='https://dribbble.com/ni3ms' id='dribbble-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
-                            <img src='./images/social/dribbble-icon.svg' alt='Dribbble profile' />
-                        </a>
-    
-                        <a href='https://codepen.io/niems/full/MBBWoK/' id='codepen-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
-                            <img src='./images/social/codepen.svg' alt='Codepen profile' />
-                        </a>
-                    </div>    
-                </article>
             </div>
         );
     }
+    */
 }
 
 export default ContactMe;
