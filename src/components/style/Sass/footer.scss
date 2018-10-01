@@ -5,22 +5,23 @@
 
 $footer-bg: $dark-main;
 
-$footer-font-size: 1.1em;
-$footer-description-bg: $accent;
-$footer-description-fg: $darkest;
-
-
 //social link setup
 $social-icon-size: 35px;
 $contact-link-bg: none;
 $contact-link-border: $lightest;
-$contact-link-hover-bg: $lightest;
+$contact-link-hover-bg: $accent;
+
+//description setup
+$footer-font-size: 0.9em;
+$footer-font-line-height: 1.5em;
+$footer-description-bg: $accent;
+$footer-description-fg: $darkest;
 
 #footer-container {
     box-sizing: border-box;
     width: 100%;
     height: max-content;
-    padding: 0.25rem 0 0 0;
+    padding: 2rem 0 0 0;
     margin: 0;
 
     display: flex;
@@ -31,32 +32,16 @@ $contact-link-hover-bg: $lightest;
     background: $footer-bg;
 }
 
-#footer-description {
-    box-sizing: border-box;
-    width: 100%;
-    height: max-content;
-
-    text-align: center;
-    font-size: $footer-font-size;
-    padding: 1rem 0;
-    margin: 0;
-
-    color: $footer-description-fg;
-    background: $footer-description-bg;
-}
-
-
 //social link setup 
 #contact-social-links {
     box-sizing: border-box;
-    min-width: max-content;
     width: 100%;
     height: max-content;
 
     position: relative;
 
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 
@@ -116,3 +101,28 @@ $contact-link-hover-bg: $lightest;
     }
 }
 //^social link setup
+
+
+//description setup
+#footer-description {
+    box-sizing: border-box;
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0.25rem;
+    margin: 0;
+
+    color: $footer-description-fg;
+    background: $footer-description-bg;
+
+    span {
+        text-align: center;
+        font-size: $footer-font-size;
+        line-height: $footer-font-line-height;
+    }
+}

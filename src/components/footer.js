@@ -26,7 +26,10 @@ const Footer = (props) => {
         <footer id='footer-container'>
             <ContactForm />
             <DisplaySocialLinks />
-            <div id='footer-description'>Designed / Coded using React & Sass by Zach Niemann</div>
+            <div id='footer-description'>
+                <span>Designed/Coded using React & Sass</span>
+                <span>by Zach Niemann</span>
+            </div>
         </footer>
     );
 };
