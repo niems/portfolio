@@ -142,6 +142,8 @@ span[id='name'] {
 }
 
 #homepage-effect {
+    padding: 0;
+    margin: 0;
     color: $home-text-effect-fg;
     font-size: $effect-font-size;
     font-style: italic;

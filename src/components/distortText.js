@@ -198,7 +198,7 @@ class DistortText extends Component {
 
     render() {
         return (
-            <span className={`distort-text-container ${this.styleClass}`}>
+            <span className='distort-text-container'>
                 {this.state.text}
             </span>
         );
