@@ -3,31 +3,22 @@
 
 $progressbar-container-max-width: 720px;
 
-$progressbar-max-width: 225px;
-$progressbar-height: 40px; //all sizes controlled by the progressbar height
+$progressbar-width: 55px;
+$progressbar-height: 55px; //all sizes controlled by the progressbar height
 $progressbar-margin-gap: 0.5rem;
-$progressbar-wrapper-bg: $lightest-fade; //$accent;
 $progressbar-border: $accent;
 
 $progressbar-img-container-width: $progressbar-height;
-$progressbar-icon-width: $progressbar-height * 0.9;
+$progressbar-icon-width: $progressbar-height * 0.8;
 
-//70px was original progressbar-height, this scales based off of that
-$progressbar-name-fg: $lightest;
+//skill section setup
+$progressbar-section-desc-font-size: 1.2em;
+
+//tech name setup
+$progressbar-name-fg: $dark-main;
 $progressbar-name-font-size: 0.75em; //* ($progressbar-height / 70px); 
 $progressbar-name-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-$progressbar-skill-level-fg: $darkest;
-$progressbar-skill-level-font-size: $progressbar-name-font-size; //1em * ($progressbar-height / 70px); 
-
-$progressbar-fade: linear-gradient(-90deg, $lightest, $accent);
-$progressbar-fade: linear-gradient(-90deg, $lightest, $accent);
-
-
-//test
-$progressbar-wrapper-bg: $progressbar-fade;
-$progressbar-full-bg: $dark-main;
-$progressbar-filled-bg: #BAC9FE;
 
 %progress-bar-text-setup {
     display: inline-block;
@@ -36,7 +27,9 @@ $progressbar-filled-bg: #BAC9FE;
     text-decoration: none;
 
     font-style: italic;
-    font-weight: bold;
+
+    margin: 0;
+    padding: 0;
 
     color: $progressbar-name-fg;
 }
@@ -44,28 +37,48 @@ $progressbar-filled-bg: #BAC9FE;
 .all-progress-bars-container {
     box-sizing: border-box;
     max-width: $progressbar-container-max-width;
-    width: 100%;
+    width: 95%;
     height: max-content;
 
     margin: 0;
     padding: 0;
 
     display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressbar-section {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: max-content;
+    height: max-content;
+
+    display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
+
+    margin: 1rem 0;
+
+    .progressbar-section-description {
+        width: 80%;
+        font-size: $progressbar-section-desc-font-size;
+        text-align: center;
+        font-style: italic;
+    }
 }
 
 .progress-bar-wrapper {
     box-sizing: border-box;
-    max-width: $progressbar-max-width;
-    width: 100%;
-    height: max-content;
+    width: $progressbar-width;
+    height: $progressbar-height;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
     text-decoration: none;
     margin: $progressbar-margin-gap 1rem;  
@@ -74,31 +87,6 @@ $progressbar-filled-bg: #BAC9FE;
 .progress-bar-text {
     @extend %progress-bar-text-setup;
     font-size: $progressbar-name-font-size;
-    font-family: $progressbar-name-font-family;
-    margin: 0.25rem 0 0 0;
-}
-
-.progress-text-bar-container {
-    box-sizing: border-box;
-    
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-
-    width: 100%;
-    height: $progressbar-height;
-    overflow: hidden;
-
-    border-radius: 0.5rem;
-
-    margin: 0;
-    padding: 0 0.25rem;
-    box-shadow: 2px 2px 4px $dark-main;
-    
-    background: $progressbar-wrapper-bg;
-    border-style: solid;
-    border-width: 1px;
-    border-color: $progressbar-border;
 }
     
 
@@ -115,12 +103,10 @@ $progressbar-filled-bg: #BAC9FE;
     justify-content: center;
     align-items: center;
 
-    margin-right: 1rem;
     background: none;
     overflow: visible;
 
     .progress-bar-img {
-        //box-sizing: border-box;
         display: inline-block;
         
         max-width: 100%;
@@ -132,55 +118,7 @@ $progressbar-filled-bg: #BAC9FE;
     }
 }
 
-.progress-bar-container {
-    box-sizing: border-box;
-    width: 100%;
-    height: 60%;
-    
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-
-    border-radius: 0.5rem;
-    border-style: none;
-
-    background: $progressbar-full-bg;
-
-    .progress-bar {
-        box-sizing: border-box;
-        display: inline-block;
-        max-width: 100%;
-        width: 50%; //width is set in react
-        height: 100%;
-
-        position: relative;
-    
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        
-        border-radius: 0.5rem;
-        box-shadow: 1px 1px 2px 1px $darkest inset;
-        border-style: none none solid none;
-        border-width: 1px;
-        border-color: $lightest;
-        
-        @extend %progress-bar-text-setup;
-        color: $progressbar-skill-level-fg;
-        background: $progressbar-filled-bg;
-    }
-
-    .progress-bar-skill-level {
-        position: absolute;
-        bottom: 50%;
-        right: 0;
-        transform: translate(-0.5rem, 50%);
-
-        font-size: $progressbar-skill-level-font-size;
-    }
-}
-
+/*
 @media only screen and (min-width: 550px) {
     .progress-bar-wrapper {
         max-width: $progressbar-max-width + 50px;
@@ -232,4 +170,4 @@ $progressbar-filled-bg: #BAC9FE;
         }
     }
 }
-//PROGRESS BAR
+*/
