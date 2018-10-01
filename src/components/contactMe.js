@@ -37,9 +37,7 @@ class ContactMe extends Component {
                         <a href='https://codepen.io/niems/full/MBBWoK/' id='codepen-link' className='btn slide-in smush-mid contact-link' target='_blank' rel='noopener noreferrer'>
                             <img src='./images/social/codepen.svg' alt='Codepen profile' />
                         </a>
-                    </div>
-    
-                    <span id='footer-description'>Designed & Coded by Zach Niemann.</span>
+                    </div>    
                 </article>
             </div>
         );

@@ -15,10 +15,13 @@ $about-subheader-font-size: $medium-font;
 
 //style contact section
 $contact-bg: $darkest;
-$contact-footer-border: $accent;
-$contact-footer-bg: $accent;
-$contact-footer-fg: $darkest;
+//$contact-footer-border: $accent;
+//$contact-footer-bg: $accent;
+//$contact-footer-fg: $darkest;
 $social-icon-size: 35px;
+
+
+
 
 $contact-link-bg: none;
 $contact-link-border: $lightest;
@@ -96,23 +99,6 @@ $resume-border: $lightest;
     @extend %section-setup;    
     padding: 2rem 0 0 0;
     background: $contact-bg;
-
-    #footer-description {
-        box-sizing: border-box;
-        display: inline-block;
-        width: 100%;
-        height: max-content;
-
-        font-size: 1.15em;
-        padding: 0.25rem 0;
-
-        border-style: solid none none none;
-        border-width: 2px;
-        border-color: $contact-footer-border;
-
-        color: $contact-footer-fg;
-        background: $contact-footer-bg;
-    }
 }
 
 #contact-social-links {
