@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Nav from './nav';
 import Navbar from './navbar';
 import HomePage from './homePage';
 import Experiments from './experiments';
@@ -162,8 +163,8 @@ class View extends Component {
             <div id='view-container' onScroll={this.onScroll}>
                 {this.state.displayMenu}
 
-                <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>                    
-                    <Navbar setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
+                <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>    
+                    <Nav setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
 
                     <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
@@ -177,3 +178,5 @@ class View extends Component {
 }
 
 export default View;
+
+//<Navbar setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
