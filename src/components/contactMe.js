@@ -17,11 +17,6 @@ class ContactMe extends Component {
                     I'm always looking to grow my skill set, specializing in React and mobile-first responsive design.
                 </p>
 
-                <p className='section-description'>
-                    I started coding about 10 years ago. Ever since I wrote my first 2D platformer in C++ and SFML I was hooked - actually I was hooked by that
-                    point, just wanted to mention I've coded games in C++ and SFML :P
-                </p>
-
                 <ProgressBar />
             </article>
         );

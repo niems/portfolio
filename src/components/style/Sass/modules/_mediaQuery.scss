@@ -28,6 +28,25 @@
     }
 }
 
+/*
+@mixin headerAndDescriptionMediaQuery($minWidth, ) {
+
+}
+*/
+
+@mixin aboutMeMediaQuery($minWidth, $header-size, $desc-size) {
+    @media only screen and (min-width: $minWidth) {
+        #about-me-section {
+            #about-me-header {
+                font-size: $header-size;
+            }
+            .section-description {
+                font-size: $desc-size;
+            }
+        }
+    }
+}
+
 @mixin progressbarMediaQuery($minWidth, $desc-size, $wrapper-size, $skill-size, $img-container-size, $icon-width) {
 
     @media only screen and (min-width: $minWidth) {
