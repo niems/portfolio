@@ -21,27 +21,6 @@ class ContactMe extends Component {
             </article>
         );
     }
-
-    /*
-    render() {
-        return (
-            <div className='main-section-container scrollbar' id='contact-me-container' ref={this.props.setRef}>
-                <article id='about-me-section'>
-                    <h1 id='about-me-header' className='section-header'>About me</h1>
-                    <p className='section-subheader'>
-                        Hi! I'm Zach, a Web Developer with a passion for problem solving, no stranger to sarcasm, and a fan of portals (WUBBA LUBBA DUB DUB!).
-                    </p>
-
-                    <p className='section-subheader'>
-                        I started coding about 10 years ago. Ever since I wrote my first 2D platformer in C++ and SFML I was hooked - actually I was already hooked by that
-                        point, I just wanted to mention I've coded games in C++ and SFML :P
-                    </p>
-                    <ProgressBar />
-                </article>
-            </div>
-        );
-    }
-    */
 }
 
 export default ContactMe;

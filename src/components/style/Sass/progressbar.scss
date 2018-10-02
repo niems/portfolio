@@ -115,7 +115,7 @@ $progressbar-name-font-size: 0.75em; //* ($progressbar-height / 70px);
         display: inline-block;
         
         max-width: 100%;
-        max-height: $progressbar-icon-width * 0.85;
+        max-height: $progressbar-icon-width; //* 0.85;
         width:  $progressbar-icon-width;
         height: auto;
 
@@ -136,7 +136,7 @@ $progressbar-name-font-size: 0.75em; //* ($progressbar-height / 70px);
                                       $progressbar-icon-width * 1.1 );
 
 @include progressbarMediaQuery(1000px, $progressbar-section-desc-font-size * 1.4,
-                                       $progressbar-width * 1.5,
-                                       $progressbar-name-font-size * 1.4,
-                                       $progressbar-img-container-width * 1.5,
+                                       $progressbar-width * 1.6,
+                                       $progressbar-name-font-size * 1.5,
+                                       $progressbar-img-container-width * 1.4,
                                        $progressbar-icon-width * 1.3 );
