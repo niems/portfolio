@@ -1,6 +1,5 @@
 import React from 'react';
-import './contactForm';
-import './style/footer.css';
+import './style/contact.css';
 import ContactForm from './contactForm';
 
 function DisplaySocialLinks(props) {
@@ -21,17 +20,17 @@ function DisplaySocialLinks(props) {
     );
 }
 
-const Footer = (props) => {
+const Contact = ({ setRef }) => {
     return (
-        <footer id='footer-container'>
+        <article id='contact-container' ref={setRef}>
             <ContactForm />
             <DisplaySocialLinks />
-            <div id='footer-description'>
+            <div id='contact-description'>
                 <span>Designed/Coded using React & Sass</span>
                 <span>by Zach Niemann</span>
             </div>
-        </footer>
+        </article>
     );
 };
 
-export default Footer;
+export default Contact;

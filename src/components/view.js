@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Nav from './nav';
-import Navbar from './navbar';
 import HomePage from './homePage';
 import Experiments from './experiments';
 import Portfolio from './portfolio';
 import Menu from './menu';
-import ContactMe from './contactMe';
-import Footer from './footer';
+import AboutMe from './aboutMe';
+import Contact from './contact';
+//import Footer from './footer';
 
 import './style/view.css';
 
@@ -26,6 +26,10 @@ function updateViewSelection( scrollTop, data ) {
 
     else if ( midpoint <= data['experiments'] ) {
         section = 'experiments';
+    }
+
+    else if ( midpoint <= data['about'] ) {
+        section = 'about';
     }
 
     else if ( midpoint <= data['contact'] ) {
@@ -49,19 +53,19 @@ class View extends Component {
             'home': -1,
             'portfolio': -1,
             'experiments': -1,
+            'about': -1,
             'contact': -1
         };
 
         this.homeRef = null;
         this.portfolioRef = null;
         this.experimentsRef = null;
+        this.aboutRef = null;
         this.contactRef = null;
-
         this.navbarRef = null;
 
         this.onMenuToggle = this.onMenuToggle.bind(this); //toggles the menu on/off
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
-
         this.getSectionHeights = this.getSectionHeights.bind(this); //gets the start/end scroll height for each section
 
         this.viewRef = null;
@@ -100,6 +104,10 @@ class View extends Component {
 
             case 'experiments':
                 this.experimentsRef.scrollIntoView(scrollOptions);
+                break;
+            
+            case 'about-me':
+                this.aboutRef.scrollIntoView(scrollOptions);
                 break;
 
             case 'contact':
@@ -152,13 +160,17 @@ class View extends Component {
         currentHeight += this.experimentsRef.scrollHeight;
         this.pageHeight['experiments'] = currentHeight;
 
-        currentHeight += this.contactRef.scrollHeight;
-        this.pageHeight['contact'] = currentHeight;
+        currentHeight += this.aboutRef.scrollHeight;
+        this.pageHeight['about'] = currentHeight;
+
+        //currentHeight += this.contactRef.scrollHeight;
+        //this.pageHeight['contact'] = currentHeight;
 
         //console.log(this.pageHeight);
     }
 
     render() {
+        //
         return (
             <div id='view-container' onScroll={this.onScroll}>
                 {this.state.displayMenu}
@@ -169,8 +181,8 @@ class View extends Component {
                     <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
-                    <ContactMe setRef={el => this.contactRef = el} />
-                    <Footer />
+                    <AboutMe setRef={el => this.aboutRef = el} />
+                    <Contact setRef={el => this.contactRef = el} />
                 </div>
             </div>
         );

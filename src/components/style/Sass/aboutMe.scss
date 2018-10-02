@@ -10,7 +10,7 @@ $about-bg: $accent;
 $about-fg: $darkest;
 $about-header-fg: $darkest;
 $about-header-font-size: 2em;
-$about-subheader-first-letter-color: $accent;
+$about-subheader-first-letter-color: $darkest;
 $about-subheader-font-size: 0.9em;
 
 //style contact section
@@ -30,24 +30,6 @@ $contact-bg: $darkest;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-}
-
-.main-section-container {
-    box-sizing: border-box;
-    min-height: max-content;
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-    text-align: center;
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    background: $contact-bg;
 }
 
 #about-me-section {

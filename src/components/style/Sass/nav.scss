@@ -9,8 +9,14 @@
     transition: all ease-out $duration $delay, background-color 0.25s;
 }
 
+/*
 @mixin itemTransform($translate) {
     transform: translate3d($translate, -$translate, 0) rotateZ(-135deg);
+}
+*/
+
+@mixin itemTransform($x, $y, $z, $rotateZ) {
+    transform: translate3d($x, $y, $z) rotateZ($rotateZ);
 }
 
 //creates the lines that make up the hamburger menu icon
@@ -26,8 +32,8 @@
     background: $menu-icon-bg;
 }
 
+//main button setup
 $menu-btn-size: 58px;
-//$menu-item-offset: 60px;
 $menu-btn-bg: $lightest;
 $menu-btn-hover-bg: $accent;
 
@@ -42,11 +48,13 @@ $menu-item-size: 55px;
 $menu-item-duration: 0.35s;
 $menu-item-delay: 0.35s; //starting menu item delay
 $menu-item-delay-offset: 0.04; //delays this much longer for each additional item
-$menu-item-transform-offset: 55px; //adds another offset for each additional item
+$menu-item-transform-offset: $menu-item-size + 15px; //adds another offset for each additional item
 $menu-item-bg: white;
-$menu-item-hover-bg: var(--test-color);
-//$menu-item-bg-image: ('../../images/home-icon.svg', '../../images/code-icon.svg', '../../images/flask.svg', '../../images/user.svg', '../../images/chat-icon.svg');
-//$menu-item-text-content: ('Home', 'Portfolio', 'Experiments', 'About', 'Contact');
+$menu-item-hover-bg: $accent;
+
+$menu-item-text-bg: $lightest;
+$menu-item-text-fg: $accent;
+
 
 $menu-items: (
     (
@@ -98,6 +106,7 @@ $menu-items: (
     padding: 0;
 
     background: $menu-item-bg;
+    color: $menu-item-text-fg;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 46%;
@@ -112,7 +121,8 @@ $menu-items: (
     top: 50%;
     left: -50%;
 
-    font-size: 1.1em;
+    font-size: 1.3em;
+    font-weight: bold;
     margin: 0;
     padding: 0;
     opacity: 0;
@@ -148,22 +158,6 @@ $menu-items: (
         }
     }
 }
-
-/*
-#gooey-menu-container {
-    display: inline-block;
-    width: $menu-btn-size;
-    height: $menu-btn-size;
-    z-index: 1;
-
-    position: relative;
-
-    margin: 0;
-    padding: 0;
-    
-    background: red;
-}
-*/
 
 #gooey-menu-container {
     display: inline-block;
@@ -227,6 +221,43 @@ $menu-items: (
 }
 
 .menu-open:checked {
+    +.menu-open-button {
+        width: $menu-btn-size;
+        height: $menu-btn-size;
+        
+        transform: rotateZ(135deg);
+        box-shadow: 1px -4px 5px black;
+        transition: all 0.5s 0.15s, background 0.25s;
+        
+        #hamburger1{
+            transform: translate3d(0, 3px, 0); 
+        }
+
+        #hamburger2{
+            transform: translate3d(0, 0, 0) rotateZ(90deg);
+        }
+
+        #hamburger3{
+            transform: translate3d(0, -3px, 0); 
+        }
+    }
+
+    ~ .menu-item {
+        opacity: 1;
+        box-shadow: 2px 3px 5px black;
+    }
+
+    @for $i from 1 through $total-menu-items {
+        ~ ##{ map-get( nth($menu-items, $i), id)} {
+            @include itemTransition($menu-item-duration, $menu-item-delay + ( $menu-item-delay-offset * ($i - 1) ) );
+            @include itemTransform(0, $menu-item-transform-offset * $i, 0, 0deg);
+
+            &::after {
+                content: map-get( nth($menu-items, $i),  text);
+            }
+        }
+    }
+
     &:hover {
         +.menu-open-button {
             background: red;
@@ -248,47 +279,6 @@ $menu-items: (
     }
 }
 
-.menu-open:checked+.menu-open-button {
-    width: $menu-btn-size;
-    height: $menu-btn-size;
-    
-    transform: rotateZ(135deg);
-    box-shadow: 1px -4px 5px black;
-    transition: all 0.5s 0.15s, background 0.25s;
-    //border-radius: 1rem;
-    
-    #hamburger1{
-        transform: translate3d(0, 3px, 0); 
-    }
-
-    #hamburger2{
-        transform: translate3d(0, 0, 0) rotateZ(90deg);
-    }
-
-    #hamburger3{
-        transform: translate3d(0, -3px, 0); 
-    }
-
-    .menu-item {
-        opacity: 1;
-        box-shadow: 1px 3px 4px black;
-        box-shadow: 2px 3px 5px black;
-    }
-
-    @for $i from 1 through $total-menu-items {
-        //#menu-item#{$i} {
-        ##{ map-get( nth($menu-items, $i), id)} {
-            @include itemTransition($menu-item-duration, $menu-item-delay + ( $menu-item-delay-offset * ($i - 1) ) );
-            @include itemTransform( $menu-item-transform-offset * $i );
-
-            &::after {
-                //content: nth($menu-item-text-content, $i);
-                content: map-get( nth($menu-items, $i),  text);
-            }
-        }
-    }
-}
-
 .menu-item {
     @extend %menu-item;
 
@@ -301,11 +291,11 @@ $menu-items: (
 
         position: absolute;
         top: 50%;
-        transform: translate(-130%, -50%);
+        //transform: translate(-130%, -50%);
+        transform: translate(0%, 50%);
 
         opacity: 0;
         font-size: 1.3em;
-        background: red;
 
         transition: all 0.5s;
     }
@@ -326,7 +316,32 @@ $menu-items: (
         background: none;
 
         transition: all 0.5s;
-    } 
+    }
+    
+    .menu-item-description {
+        @extend %menu-item-description;
+        padding: 0.2rem 0.5rem;
+    
+        &::before {
+            content: '';
+            box-sizing: border-box;
+            display: inline-block;
+            width: 0%;
+            height: 100%;
+            opacity: 0;
+    
+            border-radius: 3px;
+    
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+    
+            background: $menu-item-text-bg;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s;     
+        }
+    }
 
     &:hover {
         background-color: $menu-item-hover-bg;
@@ -356,35 +371,8 @@ $menu-items: (
     transition: all ease-out 0.25s 0s;
 }
 
-@for $i from 1 through $total-menu-items {
-    #menu-item#{$i} {
-        //background-image: url( nth($menu-item-bg-image, $i) );
-    }
-}
 
-.menu-item-description {
-    @extend %menu-item-description;
-    padding: 0.2rem 0.5rem;
 
-    &::before {
-        content: '';
-        box-sizing: border-box;
-        display: inline-block;
-        width: 0%;
-        height: 100%;
-        opacity: 0;
 
-        border-radius: 3px;
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: -1;
-
-        background: var(--test-color);
-        transform: translate(-50%, -50%);
-        transition: all 0.6s;     
-    }
-}
 
 //GOOEY MENU
