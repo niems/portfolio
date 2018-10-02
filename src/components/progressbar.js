@@ -13,14 +13,13 @@ function ProgressBarIcon({ name, img, link }) {
     );
 }
 
-function ProgressBarsSection({ title, skills }) {
+function ProgressBarsSection({ skills }) {
     const displaySkills = skills.map(skill => (
         <ProgressBarIcon key={skill.name} name={skill.name} img={skill.imgPath} link={skill.link} />
     ));
 
     return (
         <div className='progressbar-section'>
-            <div className='progressbar-section-description'>{title}</div>
             {displaySkills}
         </div>
     );
@@ -77,8 +76,11 @@ export default function Progressbar(props) {
 
     return (
         <div className='all-progress-bars-container'>
-            <ProgressBarsSection title='Day-to-day:' skills={dailySkills} />
-            <ProgressBarsSection title='Familiar with:' skills={familiarSkills} />
+            <div className='progressbar-section-description'>Day-to-day:</div>
+            <ProgressBarsSection skills={dailySkills} />
+
+            <div className='progressbar-section-description'>Additional Experience with:</div>
+            <ProgressBarsSection skills={familiarSkills} />
         </div>
     );
 }

@@ -27,3 +27,35 @@
         }
     }
 }
+
+@mixin progressbarMediaQuery($minWidth, $desc-size, $wrapper-size, $skill-size, $img-container-size, $icon-width) {
+
+    @media only screen and (min-width: $minWidth) {
+        .all-progress-bars-container {
+            .progressbar-section-description {
+                font-size: $desc-size;
+            }
+        }
+    
+        .progress-bar-wrapper {
+            width: $wrapper-size;
+            height: $wrapper-size;
+        }
+    
+        .progress-bar-text {
+            font-size: $skill-size;
+        }
+            
+        
+        .progress-bar-img-container {
+            width: $img-container-size;
+        
+            .progress-bar-img {
+                display: inline-block;
+                
+                max-height: $icon-width;
+                height: auto;
+            }
+        }
+    }
+}
