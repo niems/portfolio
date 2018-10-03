@@ -14,6 +14,8 @@ $about-header-font-size: 2em;
 $about-subheader-first-letter-color: $darkest;
 $about-subheader-font-size: 0.9em;
 
+$resume-font-size: 0.95em;
+
 //style contact section
 $contact-bg: $darkest;
 
@@ -29,7 +31,7 @@ $contact-bg: $darkest;
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -62,15 +64,30 @@ $contact-bg: $darkest;
             font-weight: bold;
         }
     }
+
+    #resume-link {
+        align-self: flex-end;
+
+        margin: 3rem 1rem 0 0;
+        border-radius: 0.25rem;
+        background: none;
+        
+        button {
+            @include color($darkest, none, $darkest);
+            font-size: $resume-font-size;
+
+            &::before {
+                @include color(none, $darkest, none);
+            }
+    
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
 }
 
-@include aboutMeMediaQuery(600px, $about-header-font-size * 1.3, $about-subheader-font-size * 1.15);
-@include aboutMeMediaQuery(800px, $about-header-font-size * 1.5, $about-subheader-font-size * 1.35);
-@include aboutMeMediaQuery(1000px, $about-header-font-size * 1.7, $about-subheader-font-size * 1.5);
-
-//@include progressbarMediaQuery(600px, );
-
-//@include progressbarMediaQuery(800px, );
-
-//@include progressbarMediaQuery(1000px, );
+@include aboutMeMediaQuery(600px, $about-header-font-size * 1.3, $about-subheader-font-size * 1.15, $resume-font-size + 0.15em);
+@include aboutMeMediaQuery(800px, $about-header-font-size * 1.5, $about-subheader-font-size * 1.35, $resume-font-size + 0.3em);
+@include aboutMeMediaQuery(1000px, $about-header-font-size * 1.7, $about-subheader-font-size * 1.5, $resume-font-size + 0.45em);
 

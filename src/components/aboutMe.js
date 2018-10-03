@@ -6,8 +6,8 @@ class AboutMe extends Component {
     render() {
         return (
             <article id='about-me-section' ref={this.props.setRef}>
-                <h1 id='about-me-header' className='section-header'>About me</h1>
 
+                <h1 id='about-me-header' className='section-header'>About me</h1>
                 <p className='section-description' id='about-init-description'>
                     Hi! I'm Zach, a versatile Web Developer with experience in both the front-end and back-end of the development process.
                 </p>
@@ -17,6 +17,10 @@ class AboutMe extends Component {
                 </p>
 
                 <ProgressBar />
+
+                <a id='resume-link' href='./resume - Zach Niemann.pdf' download>
+                    <button className='btn slide-in mid-expand'>resume</button>
+                </a>
             </article>
         );
     }

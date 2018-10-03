@@ -77,24 +77,20 @@
 
 //fall effect
 .btn.slide-in.fall {
-    @include button-pseudo(true, true);
+    //@include button-pseudo(true, false);
     background: none;
 
-    @include color($light-main, none, $darkest);
+    //@include color($light-main, none, $darkest);
     
     &::before {
-        @include color(none, inherit, $darkest);
+        //@include color(black, red, $darkest);
         transform-origin: left bottom;
         transform: rotateZ(-180deg);
         transition: transform 1s;
     }
 
-    &::after {
-        @include color($light-main, $darkest, $darkest);
-    }
-
     &:hover {
-        color: $darkest;
+        //color: $darkest;
 
         &::before {
             transform: rotateZ(0deg);
