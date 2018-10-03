@@ -66,10 +66,6 @@ class Portfolio extends Component {
                 {this.state.projectFullView}
 
                 <div id='portfolio-header-container'>
-                    <a id='resume-link' href='./resume - Zach Niemann.pdf' download>
-                        <button className='btn slide-in mid-expand'>resume</button>
-                    </a>
-
                     <h2 id='portfolio-header' className='section-header'>Projects</h2>
                     <p id='portfolio-subheader' className='section-subheader'>
                         {`From SVG animations using `}

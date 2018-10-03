@@ -111,19 +111,7 @@ $project-btn-hover-bg: $accent;
     position: relative; /*for the modal window when "learn more" is clicked*/
     justify-content: space-evenly;
 
-    padding-top: 6rem;
     background: $portfolio-bg;
-
-    #resume-link {
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 0.25rem;
-
-        position: absolute;
-        left: 0;
-        top: 4.5rem;
-        transform: translate(10%, -25%);
-    }
 }
 
 #portfolio-header-container {
