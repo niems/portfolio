@@ -1,32 +1,24 @@
 @import './modules/colors';
-@import './modules/fonts';
 @import './modules/mediaQuery';
 @import './modules/general';
 @import './partials/containers';
-
 
 $home-text-fg: $darkest;
 $home-text-bg: $light-main;
 $home-text-effect-fg: $darkest;
 $vertical-pointer-bg: $darkest;
 
-$name-font-size: $home-name-font;
-$name-line-height: $home-name-font-line-height;
+$name-font-size: 2em;
+$name-line-height: 1.8em;
 
-$effect-font-size: $home-title-font;
-$effect-line-height: $medium-font-line-height;
+$effect-font-size: 1.3em;
+$effect-line-height: 1.3em;
 
 $about-btn-bg: $darkest;
 $about-btn-fg: $light-main;
 $about-btn-border: $darkest;
 $about-btn-hover-bg: $light-mid;
 $about-btn-hover-fg: $darkest;
-
-$resume-fg: $light-main;
-$resume-bg: $darkest;
-$resume-hover-fg: $darkest;
-$resume-hover-bg: $light-main;
-$resume-border: $darkest;
 
 #homepage {
     @extend %section-container;
@@ -62,7 +54,6 @@ $resume-border: $darkest;
     justify-content: center;
     align-items: center;
 
-
     background: none;
 }
 
@@ -77,7 +68,8 @@ $resume-border: $darkest;
 
     border-style: none solid none solid;
     border-width: 1px;
-    border-color: $vertical-pointer-bg;
+    border-color: black;
+    box-shadow: none;
 
     animation-name: pointer-move;
     animation-duration: 1.5s;
@@ -149,27 +141,6 @@ span[id='name'] {
     font-size: $effect-font-size;
     font-style: italic;
     line-height: $effect-line-height;
-}
-
-#about-me-btn {    
-    position: absolute;
-    bottom: -1.5rem;
-    left: 50%;
-    transform: translateX(25%);
-
-    @include color($about-btn-fg, none, $about-btn-border);
-
-    &::after {
-        @include color($about-btn-fg, $about-btn-bg, $about-btn-border);
-    }
-
-    &::before {
-        @include color($about-btn-hover-fg, $about-btn-hover-bg, $about-btn-border);
-    }
-
-    &:hover {
-        color: $about-btn-hover-fg;
-    }
 }
 
 @include homepageMediaQuery(550px, 400px, 1.15);
