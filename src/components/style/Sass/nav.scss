@@ -1,4 +1,5 @@
 @import './modules/colors';
+@import './modules/mediaQuery';
 
 //GOOEY MENU
 @function translationAmount($i, $offset) {
@@ -8,12 +9,6 @@
 @mixin itemTransition($duration, $delay) {
     transition: all ease-out $duration $delay, background-color 0.25s;
 }
-
-/*
-@mixin itemTransform($translate) {
-    transform: translate3d($translate, -$translate, 0) rotateZ(-135deg);
-}
-*/
 
 @mixin itemTransform($x, $y, $z, $rotateZ) {
     transform: translate3d($x, $y, $z) rotateZ($rotateZ);
@@ -33,27 +28,44 @@
 }
 
 //main button setup
-$menu-btn-size: 58px;
-$menu-btn-bg: $lightest;
-$menu-btn-hover-bg: $accent;
 
-$menu-icon-bg: $darkest; //color of "hamburger" - menu lines
-$menu-icon-width: $menu-btn-size * 0.48;
-$menu-icon-height: 3px;
+/*
+$menu-btn-size: 45px;
+$menu-item-size: 42px;
+$menu-item-description-font-size: 1em;
+
+$menu-icon-width: $menu-btn-size * 0.5;
+$menu-icon-height: 2px;
+$menu-icon-spacing: 4px;
+*/
+
+$menu-btn-size: 45px;
+$menu-btn-bg: $darkest;
+$menu-btn-shadow: light-main;
+$menu-icon-bg: $light-main; //color of "hamburger" - menu lines
+
+$menu-icon-hover-bg: $darkest; //hamburger lines
+$menu-btn-hover-bg: $light-main;
+
+
+$menu-icon-width: $menu-btn-size * 0.5;
+$menu-icon-height: 2px;
 $menu-icon-spacing: 4px;
 
 $total-menu-items: 5;
-$menu-item-size: 55px;
+$menu-item-size: 42px;
 
-$menu-item-duration: 0.35s;
-$menu-item-delay: 0.35s; //starting menu item delay
+$menu-item-duration: 0.5s;
+$menu-item-delay: 0.25s; //starting menu item delay
 $menu-item-delay-offset: 0.04; //delays this much longer for each additional item
 $menu-item-transform-offset: $menu-item-size + 15px; //adds another offset for each additional item
-$menu-item-bg: white;
+//$menu-item-transform-offset: 15px; //adds another offset for each additional item
+$menu-item-bg: $light-main;
 $menu-item-hover-bg: $accent;
 
-$menu-item-text-bg: $lightest;
-$menu-item-text-fg: $accent;
+$menu-item-description-font-size: 1em;
+$menu-item-text-bg: $light-main;
+$menu-item-text-fg: $darkest;
 
 
 $menu-items: (
@@ -81,20 +93,20 @@ $menu-items: (
 
 %menuIconLine {
     display: inline-block;
-    width: $menu-icon-width;
-    height: $menu-icon-height;
 
     padding: 0;
     margin: 0;
 
     transition: transform 0.5s;
     background: $menu-icon-bg;
+
+    &:hover {
+        background: $menu-icon-hover-bg;
+    }
 }
 
 %menu-item {
     display: inline-block;
-    width: $menu-item-size;
-    height: $menu-item-size;
     border-radius: 50%;
 
     position: absolute; //if changing the description output, the position can be removed here
@@ -107,9 +119,6 @@ $menu-items: (
 
     background: $menu-item-bg;
     color: $menu-item-text-fg;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 46%;
 }
 
 %menu-item-description {
@@ -121,7 +130,7 @@ $menu-items: (
     top: 50%;
     left: -50%;
 
-    font-size: 1.3em;
+    //font-size: $menu-item-description-font-size;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -148,12 +157,16 @@ $menu-items: (
         ~.menu-open-button {
             background-color: $menu-btn-hover-bg;
 
+            .hamburger {
+                background: $menu-icon-hover-bg;
+            }
+
             #hamburger1 {
-                transform: translate3d(0, -$menu-icon-spacing * 1.75, 0);
+                transform: translate3d(0, -$menu-icon-spacing * 1.35, 0);
             }
 
             #hamburger3 {
-                transform: translate3d(0, $menu-icon-spacing * 1.75, 0);
+                transform: translate3d(0, $menu-icon-spacing * 1.35, 0);
             }
         }
     }
@@ -167,23 +180,22 @@ $menu-items: (
 
     position: absolute;
     bottom: -$menu-btn-size - 10px;
-    right: 1rem;
+    right: 0;
+    transform: translateX(-20%);
+    border-radius: 50%;  
+
 
     margin: 0;
     padding: 0;
+    box-shadow: 1px 2px 4px $light-main;
 }
 
 #gooey-menu-container.sticky {
     box-sizing: border-box;
     position: fixed;
     top: 1rem;
-    right: 1.75rem;
-
-    //margin: 0 0.75rem 0 0;
-    padding: 0;
-
-    width: $menu-btn-size;
-    height: $menu-btn-size;
+    right: 0rem;
+    transform: translateX(-50%);
 }
 
 .menu-open-button {
@@ -200,11 +212,12 @@ $menu-items: (
     border-radius: 50%;  
 
     background: $menu-btn-bg;
-    box-shadow: 1px 2px 4px black;
     transition: all 0.5s 0.15s, background 0s;
 
     .hamburger {
         @extend %menuIconLine;
+        width: $menu-icon-width;
+        height: $menu-icon-height;
     }
 
     #hamburger1 {
@@ -222,15 +235,15 @@ $menu-items: (
 
 .menu-open:checked {
     +.menu-open-button {
-        width: $menu-btn-size;
-        height: $menu-btn-size;
+        //width: $menu-btn-size;
+        //height: $menu-btn-size;
         
         transform: rotateZ(135deg);
-        box-shadow: 1px -4px 5px black;
+        //box-shadow: 1px -2px 4px $light-main;
         transition: all 0.5s 0.15s, background 0.25s;
         
         #hamburger1{
-            transform: translate3d(0, 3px, 0); 
+            transform: translate3d(0, $menu-icon-height, 0); 
         }
 
         #hamburger2{
@@ -238,7 +251,7 @@ $menu-items: (
         }
 
         #hamburger3{
-            transform: translate3d(0, -3px, 0); 
+            transform: translate3d(0, -$menu-icon-height, 0); 
         }
     }
 
@@ -250,7 +263,7 @@ $menu-items: (
     @for $i from 1 through $total-menu-items {
         ~ ##{ map-get( nth($menu-items, $i), id)} {
             @include itemTransition($menu-item-duration, $menu-item-delay + ( $menu-item-delay-offset * ($i - 1) ) );
-            @include itemTransform(0, $menu-item-transform-offset * $i, 0, 0deg);
+            @include itemTransform(0, ($menu-item-transform-offset * $i), 0, 0deg);
 
             &::after {
                 content: map-get( nth($menu-items, $i),  text);
@@ -273,14 +286,14 @@ $menu-items: (
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
-            background: blue;
         }
     }
 }
 
 .menu-item {
     @extend %menu-item;
+    width: $menu-item-size;
+    height: $menu-item-size;
 
     &::before {
         content: '';
@@ -321,6 +334,7 @@ $menu-items: (
     .menu-item-description {
         @extend %menu-item-description;
         padding: 0.2rem 0.5rem;
+        font-size: $menu-item-description-font-size;
     
         &::before {
             content: '';
@@ -364,7 +378,7 @@ $menu-items: (
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 50%;
+        width: 45%;
         height: auto;
     }
 
@@ -374,5 +388,16 @@ $menu-items: (
 
 
 
+@include navbarMediaQuery(800px, $menu-btn-size + 5px,
+                                 $menu-item-size + 5px,
+                                 $menu-item-description-font-size + 0.15em,
+                                 $total-menu-items, $menu-items, $menu-item-transform-offset + 10px,
+                                 $menu-icon-height, $menu-icon-spacing + 1px);
+
+@include navbarMediaQuery(1000px, $menu-btn-size + 10px,
+                                 $menu-item-size + 10px,
+                                 $menu-item-description-font-size + 0.3em,
+                                 $total-menu-items, $menu-items, $menu-item-transform-offset + 20px,
+                                 $menu-icon-height, $menu-icon-spacing + 1px);
 
 //GOOEY MENU

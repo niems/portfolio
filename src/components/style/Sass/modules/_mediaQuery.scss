@@ -91,3 +91,66 @@
         }
     }
 }
+
+@mixin navbarMediaQuery($minWidth, $menu-btn-size, $menu-item-size, $item-description-font-size,
+                        $total-menu-items, $menu-items, $menu-item-transform-offset,
+                        $menu-icon-height, $menu-icon-spacing) {
+
+    @media only screen and (min-width: $minWidth) {
+        #gooey-menu-container {
+            width: $menu-btn-size;
+            height: $menu-btn-size;
+            bottom: -$menu-btn-size - 10px;
+        }
+
+        .menu-open {
+            &:checked {
+                @for $i from 1 through $total-menu-items {
+                    ~ ##{ map-get( nth($menu-items, $i), id)} {
+                        @include itemTransform(0, ($menu-item-transform-offset * $i), 0, 0deg);
+                    }
+                }
+            }
+
+            &:not(:checked):hover {
+                ~.menu-open-button {
+                    #hamburger1 {
+                        transform: translate3d(0, -$menu-icon-spacing * 1.5, 0);
+                    }
+        
+                    #hamburger3 {
+                        transform: translate3d(0, $menu-icon-spacing * 1.5, 0);
+                    }
+                }
+            }
+        }
+
+        .menu-open-button {
+            width: $menu-btn-size;
+            height: $menu-btn-size;
+
+            .hamburger {
+                width: $menu-btn-size * 0.5; //$menu-icon-width;
+                height: $menu-icon-height;
+            }
+
+            #hamburger1 {
+                transform: translate3d(0, -$menu-icon-spacing, 0);
+            }
+
+            #hamburger3 {
+                transform: translate3d(0, $menu-icon-spacing, 0);
+            }
+        }
+
+        .menu-item {
+            width: $menu-item-size;
+            height: $menu-item-size;
+
+            .menu-item-description {
+                font-size: $item-description-font-size;
+            }
+        }
+        
+    }
+}
