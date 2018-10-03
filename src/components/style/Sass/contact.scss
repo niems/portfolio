@@ -114,7 +114,7 @@ $footer-description-fg: $darkest;
     justify-content: center;
     align-items: center;
     
-    padding: 0.25rem;
+    padding: 0.5rem;
     margin: 0;
 
     color: $footer-description-fg;
@@ -126,3 +126,5 @@ $footer-description-fg: $darkest;
         line-height: $footer-font-line-height;
     }
 }
+
+@include contactMediaQuery(800px, $footer-font-size * 1.2, $social-icon-size * 1.2);

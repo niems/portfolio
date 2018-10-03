@@ -26,8 +26,7 @@ const Contact = ({ setRef }) => {
             <ContactForm />
             <DisplaySocialLinks />
             <div id='contact-description'>
-                <span>Designed/Coded using React & Sass</span>
-                <span>by Zach Niemann</span>
+                <span>Designed & Coded by Zach Niemann</span>
             </div>
         </article>
     );

@@ -1,4 +1,5 @@
 
+
 //media queries for the homepage
 @mixin homepageMediaQuery($minWidth, $containerSize, $font-scale) {
     @media only screen and (min-width: $minWidth) {
@@ -35,6 +36,24 @@
                 font-size: $header-size;
             }
             .section-description {
+                font-size: $desc-size;
+            }
+        }
+    }
+}
+
+@mixin contactMediaQuery($minWidth, $desc-size, $icon-size) {
+    @media only screen and (min-width: $minWidth) {
+        #contact-social-links {
+            .contact-link {
+                img {
+                    width: $icon-size;
+                }
+            }
+        }
+
+        #contact-description {
+            span {
                 font-size: $desc-size;
             }
         }
