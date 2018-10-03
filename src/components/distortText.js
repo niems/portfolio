@@ -47,7 +47,7 @@ class DistortText extends Component {
         this.effect = this.props.setup.effect === undefined ? '' : this.props.setup.effect
         this.minDistortion = this.props.setup.minDistortion === undefined ? 5 : this.props.setup.minDistortion; 
         this.maxDistortion = this.props.setup.maxDistortion === undefined ? 20 : this.props.setup.maxDistortion;
-        this.pauseBetweenDistortion = this.props.setup.pauseBetweenDistortion === undefined ? 50 : this.props.setup.pauseBetweenDistortion;
+        this.pauseBetweenDistortion = this.props.setup.pauseBetweenDistortion === undefined ? 60 : this.props.setup.pauseBetweenDistortion;
         this.distortionList = this.props.setup.distortionList === undefined
                                                               ? ['!', '#', '%', '&', '*', '+', '░', '/', '>', '<', '?', '^', '_', '▒', '▓']
                                                               : this.props.setup.distortionList;
@@ -78,7 +78,7 @@ class DistortText extends Component {
 
     setupAfterEffect() {
         this.target.forEach(item => {
-            item.distortionsRemaining = this.getRand(0, 5) === 1 ? this.getDistortions() : [];
+            item.distortionsRemaining = this.getRand(0, 3) === 1 ? this.getDistortions() : [];
         });
 
         this.setupAfterEffectTimer(); //timer created once effect is setup
