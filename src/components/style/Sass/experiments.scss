@@ -7,9 +7,9 @@ $experiments-header-fg: $light-main;
 $experiments-description-fg: $light-mid;
 
 $experiment-container-border: $darkest;
-$experiment-description-fg: $lightest;
+$experiment-description-fg: $light-main;
 $experiment-container-bg: $darkest;
-$experiment-description-border: $lightest;
+$experiment-description-border: $light-mid;
 $experiment-shadow: $light-main;
 
 #experiments-container {
@@ -74,7 +74,7 @@ $experiment-shadow: $light-main;
 
     padding: 1rem 0.5rem;
     margin: 1rem 2rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
     
     display: flex;
     flex-flow: column nowrap;
@@ -86,12 +86,13 @@ $experiment-shadow: $light-main;
     border-color: $experiment-container-border;
 
     background: $experiment-container-bg;
-    box-shadow: 1px 2px 1px $experiment-shadow;
+    box-shadow: 1px 1px 5px $experiment-shadow;
     opacity: 0.8;
 
     .experiment-video {
         max-width: 100%;
         max-height: 300px;
+        
         width: 100% !important;
         height: auto !important;
     }
