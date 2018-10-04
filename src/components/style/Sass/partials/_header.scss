@@ -59,3 +59,15 @@ $section-subheader-line-height: $small-font-line-height;
     font-size: $section-subheader-font-size;
     line-height: $section-subheader-line-height;
 }
+
+%section-description {
+    box-sizing: border-box;
+    max-width: 1000px;
+    width: 100%;
+    height: max-content;
+
+    padding: 0 1rem;
+    margin: 0;
+    overflow-wrap: break-word;
+    text-align: center;
+}
