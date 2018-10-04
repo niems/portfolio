@@ -6,7 +6,7 @@
 
 //styling for main page
 $portfolio-bg: $dark-main;
-$portfolio-header-fg: $accent;
+$portfolio-header-fg: $light-main;
 $portfolio-header-font-size: 1.7em;
 $portfolio-header-line-height: 1em;
 
@@ -15,15 +15,17 @@ $portfolio-description-font-size: 0.9em;
 $portfolio-description-line-height: 1.35em;
 
 //styling tech links
-$portfolio-link-fg: $accent;
+$portfolio-link-fg: $light-main;
+$portfolio-link-underline: $light-main;
 $portfolio-link-hover-fg: $darkest;
+$portfolio-link-hover-bg: $light-main;
 
 //styling for single project
 $portfolio-project-width: 300px;
 $portfolio-project-height: 225px;
 
-$project-bg: $dark-main;
-$project-name-fg: $accent;
+$project-bg: $darkest;
+$project-name-fg: $light-main;
 $project-tech-fg: $lightest;
 $project-tech-bg: $darkest-fade;
 
@@ -34,11 +36,11 @@ $project-btn-font-size: 1em;
 $project-btn-width: 8.5rem;
 $project-btn-height: 2.7rem;
 
-$project-btn-fg: $lightest;
+$project-btn-fg: $light-main;
 $project-btn-bg: inherit;
-$project-btn-border: $accent;
+$project-btn-border: $light-main;
 $project-btn-hover-fg: $darkest;
-$project-btn-hover-bg: $accent;
+$project-btn-hover-bg: $light-main;
 
 %portfolio-project-container {
     box-sizing: border-box;
@@ -55,11 +57,10 @@ $project-btn-hover-bg: $accent;
     box-shadow: 2px 3px 4px black;
 
     background: $portfolio-bg;
-    //background-image: url($background);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    transition: all 0.4s;
+    transition: all 0s;
 
     #learn-more {
         @include color($project-btn-fg, $project-btn-bg, $project-btn-border);
@@ -68,7 +69,11 @@ $project-btn-hover-bg: $accent;
         //height:$project-btn-height;
     
         transform: translateY(300%);
-        transition: all 0.4s;
+        transition: all 0.8, transform 0.5s;
+
+        &::before, &::after {
+            background: $project-btn-hover-bg;
+        }
         
         &:hover {
             color: $project-btn-hover-fg;
@@ -156,17 +161,17 @@ $project-btn-hover-bg: $accent;
         font-size: inherit;
         line-height: inherit;
         color: $portfolio-link-fg; 
-        text-decoration-color: $accent;
+        text-decoration-color: $portfolio-link-underline;
 
         &::before {
-            background: $accent;
+            background: $portfolio-link-hover-bg;
         }
 
         &:hover {
             color: $portfolio-link-hover-fg;
             
             &::before {
-                background: $accent;
+                background: $portfolio-link-hover-bg;
             }
         }
     }
