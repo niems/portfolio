@@ -43,6 +43,7 @@ $experiment-description-fg: $accent;
 
 #experiments-header {
     margin: 2rem 0;
+    padding: 0;
     color: $experiments-header-fg;
 
     &::before, &::after {
