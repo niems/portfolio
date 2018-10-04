@@ -7,7 +7,9 @@
 //styling for main page
 $portfolio-bg: $dark-mid;
 $portfolio-header-fg: $lightest;
-//$portfolio-header-font-size: 2em;
+$portfolio-header-font-size: 1.7em;
+$portfolio-header-line-height: 1em;
+
 $portfolio-description-fg: $lightest;
 $portfolio-description-font-size: 0.9em;
 $portfolio-description-line-height: 1.35em;
@@ -132,7 +134,9 @@ $project-btn-hover-bg: $accent;
     align-items: center;
 }
 
-#portfolio-header {
+.section-header {
+    font-size: $portfolio-header-font-size;
+    line-height: $portfolio-header-line-height;
     color: $portfolio-header-fg;
 
     &::before, &::after {
@@ -232,14 +236,16 @@ $project-btn-hover-bg: $accent;
 
 
 
+@include headerMediaQuery(600px, $portfolio-header-font-size + 0.75em, $portfolio-header-line-height);
+@include headerMediaQuery(800px, $portfolio-header-font-size + 1.3em, $portfolio-header-line-height + 0.5em);
+@include headerMediaQuery(1000px, $portfolio-header-font-size + 1.6em, $portfolio-header-line-height + 1em);
+
 
 @include pageDescriptionMediaQuery(600px, $portfolio-description-font-size + 0.15em,
                                           $portfolio-description-line-height + 0.2em);
 
-
-@include pageDescriptionMediaQuery(850px, $portfolio-description-font-size + 0.3em,
+@include pageDescriptionMediaQuery(800px, $portfolio-description-font-size + 0.3em,
                                           $portfolio-description-line-height + 0.25em);
-
 
 @include pageDescriptionMediaQuery(1000px, $portfolio-description-font-size + 0.5em,
                                            $portfolio-description-line-height + 0.3em);

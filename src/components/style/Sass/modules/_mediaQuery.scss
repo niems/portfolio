@@ -161,6 +161,16 @@
     }
 }
 
+
+@mixin headerMediaQuery($minWidth, $font-size, $line-height) {
+    @media only screen and (min-width: $minWidth) {
+        .section-header {
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }   
+}
+
 @mixin pageDescriptionMediaQuery($minWidth, $font-size, $line-height) {
     @media only screen and (min-width: $minWidth) {
         .section-description {
