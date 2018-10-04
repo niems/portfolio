@@ -49,6 +49,7 @@
 
 .section-header {
     @extend %section-header;
+    transition: all 0.5s;
 }
 
 .section-subheader {
@@ -57,6 +58,7 @@
 
 .section-description {
     @extend %section-description;
+    transition: all 0.5s;
 }
 
 .btn {
