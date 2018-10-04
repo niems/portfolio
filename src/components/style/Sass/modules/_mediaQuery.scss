@@ -29,6 +29,29 @@
     }
 }
 
+@mixin portfolioMediaQuery($minWidth, $project-width, $project-height, $project-name-font-size,
+                           $project-tech-font-size, $btn-font-size) {
+                               
+    @media only screen and (min-width: $minWidth) {
+        .portfolio-project-container {
+            width: $project-width;
+            height: $project-height;
+
+            .portfolio-project-name {
+                font-size: $project-name-font-size;
+            }
+
+            .portfolio-project-tech {
+                font-size: $project-tech-font-size;
+            }
+
+            #learn-more {
+                font-size: $btn-font-size;
+            }
+        }
+    }
+}
+
 @mixin aboutMeMediaQuery($minWidth, $btn-font-size) {
     @media only screen and (min-width: $minWidth) {
         #about-me-section {

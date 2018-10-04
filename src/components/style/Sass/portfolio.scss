@@ -19,6 +19,9 @@ $portfolio-link-fg: $lightest;
 $portfolio-link-hover-fg: $darkest;
 
 //styling for single project
+$portfolio-project-width: 300px;
+$portfolio-project-height: 225px;
+
 $project-bg: $dark-main;
 $project-name-fg: $accent;
 $project-tech-fg: $lightest;
@@ -37,13 +40,13 @@ $project-btn-border: $accent;
 $project-btn-hover-fg: $darkest;
 $project-btn-hover-bg: $accent;
 
-@mixin portfolio-project-container($background) {
+%portfolio-project-container {
     box-sizing: border-box;
     
-    width: 400px;
-    height: 300px;
+    //width: 400px;
+    //height: 300px;
 
-    margin: 1rem;
+    margin: 0.5rem;
     padding: 0;
 
     display: block;
@@ -52,7 +55,7 @@ $project-btn-hover-bg: $accent;
     box-shadow: 2px 3px 4px black;
 
     background: $portfolio-bg;
-    background-image: url($background);
+    //background-image: url($background);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -61,8 +64,8 @@ $project-btn-hover-bg: $accent;
     #learn-more {
         @include color($project-btn-fg, $project-btn-bg, $project-btn-border);
         font-size: $project-btn-font-size;
-        width: $project-btn-width;
-        height:$project-btn-height;
+        //width: $project-btn-width;
+        //height:$project-btn-height;
     
         transform: translateY(300%);
         transition: all 0.4s;
@@ -180,16 +183,22 @@ $project-btn-hover-bg: $accent;
     align-items: center;
 }
 
+.portfolio-project-container {
+    @extend %portfolio-project-container;
+    width: $portfolio-project-width;
+    height: $portfolio-project-height;
+}
+
 .Roulette {
-    @include portfolio-project-container('../backgrounds/projects/roulette.png');
+    background-image: url('../backgrounds/projects/roulette.png');    
 }
 
 .Whisper {
-    @include portfolio-project-container('../backgrounds/projects/whisper.png');
+    background-image: url('../backgrounds/projects/whisper.png');
 }
 
 .Word-Connect {
-    @include portfolio-project-container('../backgrounds/projects/word-connect.png');
+    background-image: url('../backgrounds/projects/word-connect.png');
 }
 
 .portfolio-project-hover-info {
@@ -232,7 +241,14 @@ $project-btn-hover-bg: $accent;
     color: $project-tech-fg;
     font-weight: normal;
     font-style: italic;
-}                                           
+}
+
+
+$px450: (
+    project-header-size: $project-header-font-size,
+);
+
+//@include portfolioMediaQuery(450px, px450);
 
 @media only screen and (min-width: 850px) {
     .portfolio-project-container {
