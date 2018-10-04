@@ -390,7 +390,10 @@ $general-description-line-height: 1.35em;
     }
     
     &::-webkit-scrollbar-thumb {
-        background: $lightest;
+        background: inherit;
+        border-style: solid solid solid solid;
+        border-width: 1px;
+        border-color: $light-main;
     }
 }
 
