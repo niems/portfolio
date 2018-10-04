@@ -2,14 +2,15 @@
 @import './modules/fonts';
 @import './partials/button';
 
-$experiments-bg: $fade;
-$experiments-header-fg: $lightest;
-$experiments-description-fg: $lightest;
+$experiments-bg: $darkest;
+$experiments-header-fg: $light-main;
+$experiments-description-fg: $light-mid;
 
-$experiment-container-border: $accent;
-$experiment-container-bg: inherit;
+$experiment-container-border: $darkest;
+$experiment-description-fg: $lightest;
+$experiment-container-bg: $darkest;
 $experiment-description-border: $lightest;
-$experiment-description-fg: $accent;
+$experiment-shadow: $light-main;
 
 #experiments-container {
     box-sizing: border-box;
@@ -26,7 +27,7 @@ $experiment-description-fg: $accent;
     margin: 0;
     
     text-align: center;
-    background: $fade;
+    background: $experiments-bg;
 }
 
 #experiments-header-container {
@@ -73,6 +74,7 @@ $experiment-description-fg: $accent;
 
     padding: 1rem 0.5rem;
     margin: 1rem 2rem;
+    border-radius: 1rem;
     
     display: flex;
     flex-flow: column nowrap;
@@ -84,6 +86,8 @@ $experiment-description-fg: $accent;
     border-color: $experiment-container-border;
 
     background: $experiment-container-bg;
+    box-shadow: 1px 2px 1px $experiment-shadow;
+    opacity: 0.8;
 
     .experiment-video {
         max-width: 100%;
@@ -99,6 +103,7 @@ $experiment-description-fg: $accent;
         height: max-content;
     
         font-size: 1.5em;
+        font-weight: bold;
         text-align: center;
         overflow-wrap: break-word;
     
