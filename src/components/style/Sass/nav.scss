@@ -61,10 +61,10 @@ $menu-item-delay-offset: 0.04; //delays this much longer for each additional ite
 $menu-item-transform-offset: $menu-item-size + 15px; //adds another offset for each additional item
 //$menu-item-transform-offset: 15px; //adds another offset for each additional item
 $menu-item-bg: $light-main;
-$menu-item-hover-bg: $accent;
+$menu-item-hover-bg: $light-mid;
 
 $menu-item-description-font-size: 1em;
-$menu-item-text-bg: $light-main;
+$menu-item-text-bg: $light-mid;
 $menu-item-text-fg: $darkest;
 
 
@@ -141,6 +141,50 @@ $menu-items: (
     transition: all 0.6s;     
 }
 
+#gooey-menu-container {
+    display: inline-block;
+    width: $menu-btn-size;
+    height: $menu-btn-size;
+    z-index: 1;
+
+    position: absolute;
+    bottom: -$menu-btn-size - 10px;
+    right: 0;
+    transform: translateX(-20%);
+    border-radius: 50%;  
+    background: inherit;
+
+    margin: 0;
+    padding: 0;
+    box-shadow: 1px 2px 4px $light-main;
+}
+
+#gooey-menu-container.sticky {
+    box-sizing: border-box;
+    position: fixed;
+    top: 1rem;
+    right: 0rem;
+    transform: translateX(-50%);
+}
+
+#gooey-menu-container:not(.sticky) {
+    ~ .menu-item {
+        opacity: 1;
+        box-shadow: 2px 3px 5px black;
+    }
+
+    @for $i from 1 through $total-menu-items {
+        ~ ##{ map-get( nth($menu-items, $i), id)} {
+            @include itemTransition($menu-item-duration, $menu-item-delay + ( $menu-item-delay-offset * ($i - 1) ) );
+            @include itemTransform(0, ($menu-item-transform-offset * $i), 0, 0deg);
+
+            &::after {
+                content: map-get( nth($menu-items, $i),  text);
+            }
+        }
+    }
+}
+
 .menu-open { //doesn't display checkbox
     opacity: 0;
     width: 100%;
@@ -170,32 +214,6 @@ $menu-items: (
             }
         }
     }
-}
-
-#gooey-menu-container {
-    display: inline-block;
-    width: $menu-btn-size;
-    height: $menu-btn-size;
-    z-index: 1;
-
-    position: absolute;
-    bottom: -$menu-btn-size - 10px;
-    right: 0;
-    transform: translateX(-20%);
-    border-radius: 50%;  
-
-
-    margin: 0;
-    padding: 0;
-    box-shadow: 1px 2px 4px $light-main;
-}
-
-#gooey-menu-container.sticky {
-    box-sizing: border-box;
-    position: fixed;
-    top: 1rem;
-    right: 0rem;
-    transform: translateX(-50%);
 }
 
 .menu-open-button {
