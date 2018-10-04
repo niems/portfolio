@@ -10,9 +10,8 @@ $about-bg: $accent;
 
 $about-fg: $darkest;
 $about-header-fg: $darkest;
-$about-header-font-size: 2em;
-$about-subheader-first-letter-color: $darkest;
-$about-subheader-font-size: 0.9em;
+$about-description-fg: $darkest;
+$about-description-first-letter-color: $darkest;
 
 $resume-font-size: 0.95em;
 
@@ -43,7 +42,6 @@ $contact-bg: $darkest;
 
     #about-me-header {
         color: $about-header-fg;
-        font-size: $about-header-font-size;
 
         &::before, &::after {
             background-color: $about-header-fg;
@@ -51,16 +49,16 @@ $contact-bg: $darkest;
     }
 
     .section-description {
-        @extend %section-subheader;
-        width: 85%;
         margin: 0 0 1rem 0;
-        font-size: $about-subheader-font-size;
+    }
+
+    .section-description {
+        color: $about-description-fg;
     }
 
     #about-init-description {
         &:first-letter {
-            color: $about-subheader-first-letter-color;
-            font-size: $about-subheader-font-size * 1.8;
+            color: $about-description-first-letter-color;
             font-weight: bold;
         }
     }
@@ -87,7 +85,7 @@ $contact-bg: $darkest;
     }
 }
 
-@include aboutMeMediaQuery(600px, $about-header-font-size * 1.3, $about-subheader-font-size * 1.15, $resume-font-size + 0.15em);
-@include aboutMeMediaQuery(800px, $about-header-font-size * 1.5, $about-subheader-font-size * 1.35, $resume-font-size + 0.3em);
-@include aboutMeMediaQuery(1000px, $about-header-font-size * 1.7, $about-subheader-font-size * 1.5, $resume-font-size + 0.45em);
+@include aboutMeMediaQuery(600px, $resume-font-size + 0.15em);
+@include aboutMeMediaQuery(800px, $resume-font-size + 0.3em);
+@include aboutMeMediaQuery(1000px, $resume-font-size + 0.45em);
 

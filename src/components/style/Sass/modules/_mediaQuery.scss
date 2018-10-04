@@ -29,16 +29,9 @@
     }
 }
 
-@mixin aboutMeMediaQuery($minWidth, $header-size, $desc-size, $btn-font-size) {
+@mixin aboutMeMediaQuery($minWidth, $btn-font-size) {
     @media only screen and (min-width: $minWidth) {
         #about-me-section {
-            #about-me-header {
-                font-size: $header-size;
-            }
-            .section-description {
-                font-size: $desc-size;
-            }
-
             #resume-link {
                 button {
                     font-size: $btn-font-size;
