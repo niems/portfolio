@@ -2,13 +2,13 @@
 @import './modules/fonts';
 @import './partials/button';
 
-$experiments-bg: $dark-fade;
+$experiments-bg: $darkest;
 $experiments-header-fg: $light-main;
 $experiments-description-fg: $light-mid;
 
 $experiment-container-border: $darkest;
 $experiment-description-fg: $lightest;
-$experiment-container-bg: inherit;
+$experiment-container-bg: $darkest;
 $experiment-description-border: $lightest;
 $experiment-shadow: $light-main;
 
