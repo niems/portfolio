@@ -1,31 +1,30 @@
 @import './modules/colors';
-@import './modules/fonts';
 @import './modules/general';
-@import './partials/button';
+@import './modules/mediaQuery';
 
-$header-size: 3.25em; 
-$subheader-size: 1.35em; 
-$contact-legend-font-size: 1.4em;
-$input-placeholder-size: 1.2em;
+$contact-legend-font-size: 1.1em;
+$input-font-size: 0.95em;
+$contact-msg-min-height: 150px;
 
-$form-max-width: 550px;
-$social-icon-size: 60px;
+$form-max-width: 300px;
 
 //$field-select-outline: $accent;
 $field-fg: $lightest;
-$field-bg: $dark-main;
-$field-border: $lightest;
-$field-placeholder-fg: $accent;
+$field-bg: $darkest;
+$field-border: $accent;
+$field-placeholder-fg: $lightest;
 
 
-$field-focus-fg: $darkest;
-$field-focus-bg: $accent;
+$field-focus-fg: $accent;
+$field-focus-bg: $darkest;
 
 
-$contact-fieldset-border: $lightest;
+$contact-fieldset-border: $accent;
+$contact-fieldset-bg: $dark-main;
 $contact-legend-bg: $accent;
 $contact-legend-fg: $darkest;
 
+$contact-submit-font-size: 0.95em;
 $contact-submit-bg: inherit;
 $contact-submit-fg: $lightest;
 $contact-submit-border: $accent;
@@ -44,6 +43,7 @@ $contact-submit-hover-bg: $accent;
     align-items: center;
     
     margin: 2rem 0;
+    transition: all 0.5s;
 
     fieldset, legend {
         border-radius: 0.25rem;
@@ -51,10 +51,13 @@ $contact-submit-hover-bg: $accent;
 
     fieldset {
         border-color: $contact-fieldset-border;
+        background: $contact-fieldset-bg;
     }
     
     legend {
         font-size: $contact-legend-font-size;
+        font-weight: bold;
+
         background: $contact-legend-bg;
         color: $contact-legend-fg;
         text-align: left;
@@ -67,8 +70,10 @@ $contact-submit-hover-bg: $accent;
         box-sizing: border-box;
         width: 100%;
         
+        font-size: $input-font-size;
         border-width: 1px;
         border-style: solid;
+        outline: none;
         
         margin: 0.5rem 0;
         padding: 0.5rem 1rem;
@@ -76,7 +81,6 @@ $contact-submit-hover-bg: $accent;
         
         
         &::placeholder {
-            font-size: $input-placeholder-size;
             color: $field-placeholder-fg;
         }
         
@@ -90,12 +94,13 @@ $contact-submit-hover-bg: $accent;
     }
 
     #contact-message {
-        min-height: 150px;
+        min-height: $contact-msg-min-height;
         resize: none;
     }
 
     #contact-submit {
         @include color($contact-submit-fg, $contact-submit-bg, $contact-submit-border);
+        font-size: $contact-submit-font-size;
 
         align-self: flex-end;
         margin-top: 0.5rem;
@@ -106,3 +111,44 @@ $contact-submit-hover-bg: $accent;
         }
     }
 }
+
+$px450: (
+    form-max-width: $form-max-width + 60px,
+    legend-size: $contact-legend-font-size + 0.25em,
+    input-size: $input-font-size + 0.05em,
+    msg-min-height: $contact-msg-min-height,
+
+    btn-size: $contact-submit-font-size + 0.1em,
+);
+
+$px600: (
+    form-max-width: $form-max-width + 120px,
+    legend-size: $contact-legend-font-size + 0.5em,
+    input-size: $input-font-size + 0.075em,
+    msg-min-height: $contact-msg-min-height + 20px,
+
+    btn-size: $contact-submit-font-size + 0.15em,
+);
+
+$px800: (
+    form-max-width: $form-max-width + 180px,
+    legend-size: $contact-legend-font-size + 0.6em,
+    input-size: $input-font-size + 0.075em,
+    msg-min-height: $contact-msg-min-height + 20px,
+
+    btn-size: $contact-submit-font-size + 0.3em,
+);
+
+$px1000: (
+    form-max-width: $form-max-width + 220px,
+    legend-size: $contact-legend-font-size + 0.6em,
+    input-size: $input-font-size + 0.1em,
+    msg-min-height: $contact-msg-min-height + 20px,
+    
+    btn-size: $contact-submit-font-size + 0.45em,
+);
+
+@include contactFormMediaQuery(450px, $px450);
+@include contactFormMediaQuery(600px, $px600);
+@include contactFormMediaQuery(800px, $px800);
+@include contactFormMediaQuery(1000px, $px1000);

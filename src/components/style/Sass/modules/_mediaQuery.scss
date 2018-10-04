@@ -127,6 +127,30 @@
     }
 }
 
+@mixin contactFormMediaQuery($minWidth, $query) {
+    @media only screen and (min-width: $minWidth) {
+        .form-container {
+            max-width: map-get($query, form-max-width);
+    
+            legend {
+                font-size: map-get($query, legend-size);
+            }
+    
+            .contact-inputfield, #contact-message {
+                font-size: map-get($query, input-size);
+            }
+    
+            #contact-message {
+                min-height: map-get($query, msg-min-height);
+            }
+    
+            #contact-submit {
+                font-size: map-get($query, btn-size);
+            }
+        }
+    }
+}
+
 @mixin navbarMediaQuery($minWidth, $menu-btn-size, $menu-item-size, $item-description-font-size,
                         $total-menu-items, $menu-items, $menu-item-transform-offset,
                         $menu-icon-height, $menu-icon-spacing) {
