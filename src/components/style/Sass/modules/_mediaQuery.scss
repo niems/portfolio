@@ -160,3 +160,12 @@
         
     }
 }
+
+@mixin pageDescriptionMediaQuery($minWidth, $font-size, $line-height) {
+    @media only screen and (min-width: $minWidth) {
+        .section-description {
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }
+}
