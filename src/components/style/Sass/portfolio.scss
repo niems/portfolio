@@ -29,12 +29,12 @@ $project-name-fg: $light-main;
 $project-tech-fg: $lightest;
 $project-tech-bg: $darkest-fade;
 
-$project-header-font-size: 1.8em;
-$project-tech-font-size: 1em;
+$project-header-font-size: 1.6em;
+$project-tech-font-size: 0.9em;
 
 $project-btn-font-size: 1em;
-$project-btn-width: 8.5rem;
-$project-btn-height: 2.7rem;
+//$project-btn-width: 8.5rem;
+//$project-btn-height: 2.7rem;
 
 $project-btn-fg: $light-main;
 $project-btn-bg: inherit;
@@ -212,12 +212,13 @@ $project-btn-hover-bg: $light-main;
     .portfolio-project-header {
         box-sizing: border-box;
         display: inline-block;
+        max-width: 100%;
         width: max-content;
         height: max-content;
-
+        
         margin: 0;
         padding: 0;
-    
+        
         transform: translateY(-200%);
         transition: all 0.5s;
     }
@@ -227,10 +228,11 @@ $project-btn-hover-bg: $light-main;
 .portfolio-project-name, .portfolio-project-tech {
     box-sizing: border-box;
     display: block;
-
+    
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow-wrap: break-word;
 }
 
 .portfolio-project-name {
@@ -250,39 +252,22 @@ $project-btn-hover-bg: $light-main;
 
 
 $px450: (
-    project-header-size: $project-header-font-size,
+    project-width: 400px,
+    project-height: 300px,
+    project-container-margin: 1rem,
+    project-header-size: $project-header-font-size + 0.5em,
+    project-tech-size: $project-tech-font-size + 0.25em,
+    project-btn-size: $project-btn-font-size + 0.25em,
 );
 
-//@include portfolioMediaQuery(450px, px450);
+$px650: (
+    project-width: 600px,
+    project-height: 450px,
+    project-container-margin: 1.5rem,
+    project-header-size: $project-header-font-size + 1.2em,
+    project-tech-size: $project-tech-font-size + 0.5em,
+    project-btn-size: $project-btn-font-size + 0.5em,
+);
 
-@media only screen and (min-width: 850px) {
-    .portfolio-project-container {
-        width: 600px;
-        height: 450px;
-
-        margin: 1rem 2rem;
-
-
-        #learn-more {
-            font-size: $project-btn-font-size * 1.3;
-            width: $project-btn-width * 1.25;
-            height: $project-btn-height * 1.25;
-        }
-
-        &:hover {
-            #learn-more {
-                transform: translateY(50%);
-            }
-        }
-    }
-
-    
-    .portfolio-project-name {
-        font-size: $project-header-font-size * 1.45;
-        margin-bottom: 1.5rem;
-    }
-
-    .portfolio-project-tech {
-        font-size: $project-tech-font-size * 1.35;
-    }    
-}
+@include portfolioMediaQuery(450px, $px450);
+@include portfolioMediaQuery(650px, $px650);

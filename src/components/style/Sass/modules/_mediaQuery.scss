@@ -29,24 +29,24 @@
     }
 }
 
-@mixin portfolioMediaQuery($minWidth, $project-width, $project-height, $project-name-font-size,
-                           $project-tech-font-size, $btn-font-size) {
+@mixin portfolioMediaQuery($minWidth, $newQuery) {
                                
     @media only screen and (min-width: $minWidth) {
         .portfolio-project-container {
-            width: $project-width;
-            height: $project-height;
+            width: map-get($newQuery, project-width);
+            height: map-get($newQuery, project-height);
+            margin: map-get($newQuery, project-container-margin);
 
             .portfolio-project-name {
-                font-size: $project-name-font-size;
+                font-size: map-get($newQuery, project-header-size);
             }
 
             .portfolio-project-tech {
-                font-size: $project-tech-font-size;
+                font-size: map-get($newQuery, project-tech-size);
             }
 
             #learn-more {
-                font-size: $btn-font-size;
+                font-size: map-get($newQuery, project-btn-size);
             }
         }
     }
