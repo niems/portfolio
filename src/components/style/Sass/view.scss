@@ -55,6 +55,9 @@
     @extend %section-subheader;   
 }
 
+.section-description {
+    @extend %section-description;
+}
 
 .btn {
     @extend %button;
