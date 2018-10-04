@@ -3,10 +3,8 @@ import Nav from './nav';
 import HomePage from './homePage';
 import Experiments from './experiments';
 import Portfolio from './portfolio';
-import Menu from './menu';
 import AboutMe from './aboutMe';
 import Contact from './contact';
-//import Footer from './footer';
 
 import './style/view.css';
 
@@ -64,7 +62,6 @@ class View extends Component {
         this.contactRef = null;
         this.navbarRef = null;
 
-        this.onMenuToggle = this.onMenuToggle.bind(this); //toggles the menu on/off
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
         this.getSectionHeights = this.getSectionHeights.bind(this); //gets the start/end scroll height for each section
 
@@ -80,14 +77,6 @@ class View extends Component {
 
     onResize() {
         this.getSectionHeights();
-    }
-
-    onMenuToggle(e) {
-        e.preventDefault();
-
-        this.setState({
-            displayMenu: this.state.displayMenu === null ? (<Menu onSelect={this.updateDisplayedPage} onClose={this.onMenuToggle} />) : null
-        });
     }
 
     updateDisplayedPage(id) {
@@ -178,7 +167,7 @@ class View extends Component {
                 <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>    
                     <Nav setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
 
-                    <HomePage setRef={el => this.homeRef = el} selection={this.updateDisplayedPage} />
+                    <HomePage setRef={el => this.homeRef = el} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
                     <AboutMe setRef={el => this.aboutRef = el} />
@@ -190,5 +179,3 @@ class View extends Component {
 }
 
 export default View;
-
-//<Navbar setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} onMenu={this.onMenuToggle} />
