@@ -1,9 +1,16 @@
 @import './modules/colors';
 @import './modules/fonts';
 @import './modules/general';
+@import './modules/mediaQuery';
 @import './partials/textEffects';
 @import './partials/header';
 @import './partials/button';
+
+$general-header-font-size: 1.7em;
+$general-header-line-height: 1em;
+
+$general-description-font-size: 0.9em;
+$general-description-line-height: 1.35em;
 
 #view-container {
     box-sizing: border-box;
@@ -52,6 +59,10 @@
     transition: all 0.5s;
 }
 
+@include headerMediaQuery(600px, $general-header-font-size + 0.75em, $general-header-line-height);
+@include headerMediaQuery(800px, $general-header-font-size + 1.3em, $general-header-line-height + 0.5em);
+@include headerMediaQuery(1000px, $general-header-font-size + 1.6em, $general-header-line-height + 1em);
+
 .section-subheader {
     @extend %section-subheader;   
 }
@@ -60,6 +71,15 @@
     @extend %section-description;
     transition: all 0.5s;
 }
+
+@include pageDescriptionMediaQuery(600px, $general-description-font-size + 0.15em,
+                                          $general-description-line-height + 0.2em);
+
+@include pageDescriptionMediaQuery(800px, $general-description-font-size + 0.3em,
+                                          $general-description-line-height + 0.25em);
+
+@include pageDescriptionMediaQuery(1000px, $general-description-font-size + 0.5em,
+                                           $general-description-line-height + 0.3em);
 
 .btn {
     @extend %button;
