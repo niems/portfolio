@@ -232,24 +232,7 @@ $project-btn-hover-bg: $accent;
     color: $project-tech-fg;
     font-weight: normal;
     font-style: italic;
-}
-
-
-
-@include headerMediaQuery(600px, $portfolio-header-font-size + 0.75em, $portfolio-header-line-height);
-@include headerMediaQuery(800px, $portfolio-header-font-size + 1.3em, $portfolio-header-line-height + 0.5em);
-@include headerMediaQuery(1000px, $portfolio-header-font-size + 1.6em, $portfolio-header-line-height + 1em);
-
-
-@include pageDescriptionMediaQuery(600px, $portfolio-description-font-size + 0.15em,
-                                          $portfolio-description-line-height + 0.2em);
-
-@include pageDescriptionMediaQuery(800px, $portfolio-description-font-size + 0.3em,
-                                          $portfolio-description-line-height + 0.25em);
-
-@include pageDescriptionMediaQuery(1000px, $portfolio-description-font-size + 0.5em,
-                                           $portfolio-description-line-height + 0.3em);
-                                           
+}                                           
 
 @media only screen and (min-width: 850px) {
     .portfolio-project-container {
