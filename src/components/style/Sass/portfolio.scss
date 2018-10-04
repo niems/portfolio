@@ -5,8 +5,8 @@
 @import './partials/containers';
 
 //styling for main page
-$portfolio-bg: $dark-mid;
-$portfolio-header-fg: $lightest;
+$portfolio-bg: $dark-main;
+$portfolio-header-fg: $accent;
 $portfolio-header-font-size: 1.7em;
 $portfolio-header-line-height: 1em;
 
@@ -15,7 +15,7 @@ $portfolio-description-font-size: 0.9em;
 $portfolio-description-line-height: 1.35em;
 
 //styling tech links
-$portfolio-link-fg: $lightest;
+$portfolio-link-fg: $accent;
 $portfolio-link-hover-fg: $darkest;
 
 //styling for single project
