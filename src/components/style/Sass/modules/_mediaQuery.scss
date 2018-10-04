@@ -50,6 +50,19 @@
             }
         }
     }
+} 
+
+@mixin experimentsMediaQuery($minWidth, $query) {
+    @media only screen and (min-width: $minWidth) {
+        .single-experiment-container {
+            max-width: map-get($query, container-max-width);
+            height: map-get($query, container-height);
+
+            .experiment-description {
+                font-size: map-get($query, description-size);
+            }
+        }
+    }
 }
 
 @mixin aboutMeMediaQuery($minWidth, $btn-font-size) {
@@ -59,24 +72,6 @@
                 button {
                     font-size: $btn-font-size;
                 }
-            }
-        }
-    }
-}
-
-@mixin contactMediaQuery($minWidth, $desc-size, $icon-size) {
-    @media only screen and (min-width: $minWidth) {
-        #contact-social-links {
-            .contact-link {
-                img {
-                    width: $icon-size;
-                }
-            }
-        }
-
-        #contact-description {
-            span {
-                font-size: $desc-size;
             }
         }
     }
@@ -109,6 +104,24 @@
                 
                 max-height: $icon-width;
                 height: auto;
+            }
+        }
+    }
+}
+
+@mixin contactMediaQuery($minWidth, $desc-size, $icon-size) {
+    @media only screen and (min-width: $minWidth) {
+        #contact-social-links {
+            .contact-link {
+                img {
+                    width: $icon-size;
+                }
+            }
+        }
+
+        #contact-description {
+            span {
+                font-size: $desc-size;
             }
         }
     }
@@ -178,6 +191,7 @@
 }
 
 
+//general media queries
 @mixin headerMediaQuery($minWidth, $font-size, $line-height) {
     @media only screen and (min-width: $minWidth) {
         .section-header {

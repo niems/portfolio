@@ -1,5 +1,7 @@
 @import './modules/colors';
 @import './modules/fonts';
+@import './modules/mediaQuery';  
+@import './partials/containers';
 @import './partials/button';
 
 $experiments-bg: $darkest;
@@ -8,25 +10,15 @@ $experiments-description-fg: $lightest;
 
 $experiment-container-border: $darkest;
 $experiment-description-fg: $accent-dark;
+$experiment-description-font-size: 1.1em;
 $experiment-container-bg: $darkest;
 $experiment-description-border: $accent;
 $experiment-shadow: $accent-dark;
 
 #experiments-container {
-    box-sizing: border-box;
-    min-height: 100vh;
-    width: 100%;
-    height: max-content;
+    @extend %section-container;
+    justify-content: space-between;
 
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-
-    padding: 0;
-    margin: 0;
-    
-    text-align: center;
     background: $experiments-bg;
 }
 
@@ -64,16 +56,17 @@ $experiment-shadow: $accent-dark;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    flex: 1 auto;
 }
 
 .single-experiment-container {
     box-sizing: border-box;
-    max-width: 100%;
-    width: 300px;
-    height: 400px;
+    max-width: 225px;
+    width: max-content;
+    height: 300px;
 
-    padding: 1rem 0.5rem;
-    margin: 1rem 2rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0.5rem;
     border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
     
     display: flex;
@@ -89,12 +82,13 @@ $experiment-shadow: $accent-dark;
     box-shadow: 1px 1px 5px $experiment-shadow;
     opacity: 0.8;
 
+    transition: all 0.5s;
+
     .experiment-video {
         max-width: 100%;
-        max-height: 300px;
-        
-        width: 100% !important;
-        height: auto !important;
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
     }
 
     .experiment-description {
@@ -103,7 +97,7 @@ $experiment-shadow: $accent-dark;
         width: 90%;
         height: max-content;
     
-        font-size: 1.5em;
+        font-size: $experiment-description-font-size;
         font-weight: bold;
         text-align: center;
         overflow-wrap: break-word;
@@ -115,4 +109,11 @@ $experiment-shadow: $accent-dark;
     }
 }
 
+$px600: (
+    container-max-width: 300px,
+    container-height: 400px,
+    description-size: $experiment-description-font-size + 0.25em,
+);
+
+@include experimentsMediaQuery(600px, $px600);
 
