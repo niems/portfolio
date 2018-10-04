@@ -3,14 +3,14 @@
 @import './partials/button';
 
 $experiments-bg: $darkest;
-$experiments-header-fg: $light-main;
-$experiments-description-fg: $light-mid;
+$experiments-header-fg: $accent;
+$experiments-description-fg: $lightest;
 
 $experiment-container-border: $darkest;
-$experiment-description-fg: $light-main;
+$experiment-description-fg: $accent-dark;
 $experiment-container-bg: $darkest;
-$experiment-description-border: $light-mid;
-$experiment-shadow: $light-main;
+$experiment-description-border: $accent;
+$experiment-shadow: $accent-dark;
 
 #experiments-container {
     box-sizing: border-box;
