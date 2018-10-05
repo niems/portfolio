@@ -1,4 +1,5 @@
 @import './modules/colors';
+@import './modules/typography';
 @import './modules/mediaQuery';
 @import './modules/general';
 @import './partials/containers';
@@ -131,8 +132,8 @@ $about-btn-hover-fg: $darkest;
 
 span[id='name'] {
     font-size: $name-font-size;
-    line-height: $name-line-height;
-    font-weight: bold;
+    font-family: $header-font-family;
+    line-height: $line-height;
 }
 
 #homepage-effect {
@@ -140,8 +141,10 @@ span[id='name'] {
     margin: 0;
     color: $home-text-effect-fg;
     font-size: $effect-font-size;
+    font-family: $header-font-family;
     font-style: italic;
-    line-height: $effect-line-height;
+    line-height: $line-height;
+
 }
 
 @include homepageMediaQuery(550px, 400px, 1.15);
