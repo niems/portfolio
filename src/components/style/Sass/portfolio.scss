@@ -1,5 +1,5 @@
 @import './modules/colors';
-@import './modules/fonts';
+@import './modules/typography';
 @import './modules/general';
 @import './modules/mediaQuery';
 @import './partials/containers';
@@ -8,11 +8,13 @@
 $portfolio-bg: $dark-main;
 $portfolio-header-fg: $light-main;
 $portfolio-header-font-size: 1.7em;
-$portfolio-header-line-height: 1em;
+$portfolio-header-font-family: $header-font-family;
+$portfolio-header-line-height: $line-height;
 
 $portfolio-description-fg: $lightest;
 $portfolio-description-font-size: 0.9em;
-$portfolio-description-line-height: 1.35em;
+$portfolio-description-font-family: $secondary-font-family;
+$portfolio-description-line-height: $line-height;
 
 //styling tech links
 $portfolio-link-fg: $light-main;
@@ -143,6 +145,7 @@ $project-btn-hover-bg: $light-main;
 }
 
 .section-header {
+    font-family: $portfolio-header-font-family;
     font-size: $portfolio-header-font-size;
     line-height: $portfolio-header-line-height;
     color: $portfolio-header-fg;
@@ -153,6 +156,7 @@ $project-btn-hover-bg: $light-main;
 }
 
 .section-description {
+    font-family: $portfolio-description-font-family;
     font-size: $portfolio-description-font-size;
     line-height: $portfolio-description-line-height;
     color: $portfolio-description-fg;
