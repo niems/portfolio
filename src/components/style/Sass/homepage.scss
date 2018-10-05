@@ -93,18 +93,19 @@ $about-btn-hover-fg: $darkest;
     position: relative;
     padding: 2rem 0;
     color: $home-text-fg;    
-
+    
     #home-background-img {
         display: inline-block;
         position: absolute;
         max-width: 100%;
         width: max-content;
         height: max-content;
-
+        
         svg {
             display: block;
             width: 300px;
             height: auto;
+            transition: all 0.5s;
         }
     }
 }
