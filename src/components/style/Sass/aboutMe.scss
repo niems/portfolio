@@ -1,4 +1,5 @@
 @import './modules/colors';
+@import './modules/typography';
 @import './modules/fonts';
 @import './modules/general';
 @import './modules/mediaQuery';
@@ -10,7 +11,10 @@ $about-bg: $accent;
 
 $about-fg: $darkest;
 $about-header-fg: $darkest;
+$about-header-font-family: $header-font-family;
+
 $about-description-fg: $darkest;
+$about-description-font-family: $secondary-font-family;
 $about-description-first-letter-color: $darkest;
 
 $resume-font-size: 0.95em;
@@ -42,6 +46,8 @@ $contact-bg: $darkest;
 
     #about-me-header {
         color: $about-header-fg;
+        font-family: $about-header-font-family;
+        line-height: $line-height;
 
         &::before, &::after {
             background-color: $about-header-fg;
@@ -54,6 +60,8 @@ $contact-bg: $darkest;
 
     .section-description {
         color: $about-description-fg;
+        font-family: $about-description-font-family;
+        line-height: $line-height;
     }
 
     #about-init-description {
