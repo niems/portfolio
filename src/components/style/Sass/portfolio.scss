@@ -31,14 +31,16 @@ $project-name-fg: $light-main;
 $project-tech-fg: $lightest;
 $project-tech-bg: $darkest-fade;
 
-$project-header-font-size: 1.6em;
-$project-tech-font-size: 0.9em;
+$project-header-font-size: 1.8em;
+$project-header-font-family: $secondary-font-family;
+$project-tech-font-size: 0.8em;
+$project-tech-font-family: $secondary-font-family;
 
-$project-btn-font-size: 1em;
+$project-btn-font-size: 0.95em;
 //$project-btn-width: 8.5rem;
 //$project-btn-height: 2.7rem;
 
-$project-btn-fg: $light-main;
+$project-btn-fg: $lightest;
 $project-btn-bg: inherit;
 $project-btn-border: $light-main;
 $project-btn-hover-fg: $darkest;
@@ -241,6 +243,8 @@ $project-btn-hover-bg: $light-main;
 
 .portfolio-project-name {
     font-size: $project-header-font-size;
+    font-family: $project-header-font-family;
+    font-weight: bold;
 
     margin-bottom: 1rem;
     color: $project-name-fg;
@@ -251,7 +255,6 @@ $project-btn-hover-bg: $light-main;
     font-size: $project-tech-font-size;
     color: $project-tech-fg;
     font-weight: normal;
-    font-style: italic;
 }
 
 

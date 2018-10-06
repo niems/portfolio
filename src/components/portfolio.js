@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ProjectView from './projectView';
-import AutoText from './autoText';
 import './style/portfolio.css';
 
 function DisplayProject({ name, tech, onClick }) {
@@ -13,13 +12,12 @@ function DisplayProject({ name, tech, onClick }) {
                     <h4 className='portfolio-project-tech'>{tech}</h4>
                 </span>
 
-                <button id='learn-more' className='btn slide-in halved' type='button' onClick={e => onClick(e, name)}>learn more</button>
+                <button id='learn-more' className='btn slide-in halved' type='button' onClick={e => onClick(e, name)}>more info</button>
             </div>
 
         </div>
     );
 }
-
 
 class Portfolio extends Component {
     constructor(props) {
@@ -83,9 +81,9 @@ class Portfolio extends Component {
                 </div>
 
                 <div id='portfolio-projects'>
-                    <DisplayProject name='Roulette' tech='Node.js + React + Socket.IO + WebRTC' onClick={this.onFullscreenProject} />
-                    <DisplayProject name='Whisper' tech='Electron + Node.js + React + Socket.IO' onClick={this.onFullscreenProject} />
-                    <DisplayProject name='Word-Connect' tech='Electron + Node + React + IndexedDB' onClick={this.onFullscreenProject} />
+                    <DisplayProject name='Roulette' tech='Node.js | React | Socket.IO | WebRTC' onClick={this.onFullscreenProject} />
+                    <DisplayProject name='Whisper' tech='Electron | Node.js | React | Socket.IO' onClick={this.onFullscreenProject} />
+                    <DisplayProject name='Word-Connect' tech='Electron | Node | React | IndexedDB' onClick={this.onFullscreenProject} />
 
                 </div>
             </div>
