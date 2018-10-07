@@ -6,7 +6,7 @@ import './style/homepage.css';
 function DisplayScrollDirection(props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" height='100%' width='100%' viewBox="0 0 100 100">
-            <path id='scroll-path'  d='M0 0 h100 v100 h-100 z' />
+            <path id='scroll-path'  d='M40 0 V100 H60 V0 z' />
         </svg>
     );
 }
@@ -82,12 +82,11 @@ class HomePage extends Component {
                 </div>
                 
                 <div className='vertical-pointer-container'>
-                    <DisplayScrollDirection />
+                    <span className='vertical-pointer'></span>
                 </div>
             </div>           
         );
     }
 }
 
-//<span className='vertical-pointer'></span>
 export default HomePage;
