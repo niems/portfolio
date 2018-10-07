@@ -79,7 +79,6 @@ $svg-stroke: black;
 
         #scroll-path {
             display: inline-block;
-            
             fill: red;
         }
     }
@@ -198,17 +197,20 @@ $svg-stroke: black;
 
 span[id='name'] {
     font-size: $name-font-size;
-    font-family: $header-font-family;
+    font-family: $secondary-font-family;
     line-height: $line-height;
+    font-weight: $secondary-normal;
 }
 
 #homepage-effect {
     padding: 0;
     margin: 0;
+    //font-variant: small-caps;
     color: $home-text-effect-fg;
+    font-weight: $header-heavy;
     font-size: $effect-font-size;
     font-family: $header-font-family;
-    font-style: italic;
+    //font-style: italic;
     line-height: $line-height;
 }
 

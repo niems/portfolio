@@ -20,21 +20,21 @@ function DisplayLogo(props) {
             <circle className='grid-node' r='0.8' cx='91.5' cy='10' />                 
 
             <path id='top-secondary' className='grid-secondary'  d='M20 12 L70 12' />
-            <circle className='grid-node-secondary' r='0.5' cx='19.2' cy='12' />
-            <circle className='grid-node-secondary' r='0.5' cx='70.8' cy='12' />
+            <circle className='grid-node-secondary' r='0.5' cx='18.8' cy='12' />
+            <circle className='grid-node-secondary' r='0.5' cx='71.2' cy='12' />
 
 
             <path id='mid-main' className='grid-main' d='M86 15 l-27 26' />
-            <circle className='grid-node' r='0.8' cx='86.8' cy='14.2' />
+            <circle className='grid-node' r='0.8' cx='87' cy='14' />
             <circle className='grid-node' r='0.8' cx='58' cy='42' />
 
             <path id='mid-main' className='grid-main' d='M14.8 83 l31 -30' />
             <circle className='grid-node' r='0.8' cx='46.6' cy='52.2' />
             <circle className='grid-node' r='0.8' cx='14' cy='84' />
 
-            <path id='mid-secondary' className='grid-secondary' d='M74 29 L32 69' />
-            <circle className='grid-node-secondary' r='0.5' cx='74.6' cy='28.4' />
-            <circle className='grid-node-secondary' r='0.5' cx='31.6' cy='69.6' />
+            <path id='mid-secondary' className='grid-secondary' d='M74.4 29 L23 78' />
+            <circle className='grid-node-secondary' r='0.5' cx='75.2' cy='28' />
+            <circle className='grid-node-secondary' r='0.5' cx='22.2' cy='78.8' />
 
 
             <path id='bottom-main' className='grid-main' d='M10 90 L90 90' />
@@ -42,12 +42,12 @@ function DisplayLogo(props) {
             <circle className='grid-node' r='0.8' cx='91.5' cy='90' />
 
             <path id='bottom-secondary' className='grid-secondary' d='M20 88 h15' />
-            <circle className='grid-node-secondary' r='0.5' cx='19.2' cy='88' />
-            <circle className='grid-node-secondary' r='0.5' cx='35.8' cy='88' />
+            <circle className='grid-node-secondary' r='0.5' cx='18.8' cy='88' />
+            <circle className='grid-node-secondary' r='0.5' cx='36.2' cy='88' />
 
             <path id='bottom-secondary' className='grid-secondary' d='M52 88 h32' />
-            <circle className='grid-node-secondary' r='0.5' cx='51.2' cy='88' />
-            <circle className='grid-node-secondary' r='0.5' cx='84.8' cy='88' />
+            <circle className='grid-node-secondary' r='0.5' cx='50.8' cy='88' />
+            <circle className='grid-node-secondary' r='0.5' cx='85.2' cy='88' />
         </svg>
     );
 }
