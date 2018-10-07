@@ -83,7 +83,7 @@ class Portfolio extends Component {
                 <div id='portfolio-projects'>
                     <DisplayProject name='Roulette' tech='Node.js | React | Socket.IO | WebRTC' onClick={this.onFullscreenProject} />
                     <DisplayProject name='Whisper' tech='Electron | Node.js | React | Socket.IO' onClick={this.onFullscreenProject} />
-                    <DisplayProject name='Word-Connect' tech='Electron | Node | React | IndexedDB' onClick={this.onFullscreenProject} />
+                    <DisplayProject name='Word-Connect' tech='Electron | Node.js | React | IndexedDB' onClick={this.onFullscreenProject} />
 
                 </div>
             </div>
