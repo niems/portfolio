@@ -4,22 +4,23 @@
 @import './modules/general';
 @import './partials/containers';
 
-$home-text-fg: $darkest;
 $home-text-bg: $light-main;
+$home-text-fg: $darkest;
 $home-text-effect-fg: $darkest;
+$effect-bg: rgba(0, 0, 0, 0.5);
 $vertical-pointer-bg: $darkest;
 
-$name-font-size: 2em;
-$name-line-height: 1.8em;
-
-$effect-font-size: 1.3em;
-$effect-line-height: 1.3em;
+$name-font-size: 1.9em;
+$effect-font-size: 1.2em;
 
 $about-btn-bg: $darkest;
 $about-btn-fg: $light-main;
 $about-btn-border: $darkest;
 $about-btn-hover-bg: $light-mid;
 $about-btn-hover-fg: $darkest;
+
+$svg-fill: black;
+$svg-stroke: black;
 
 #homepage {
     @extend %section-container;
@@ -40,8 +41,18 @@ $about-btn-hover-fg: $darkest;
     }
 }
 
+@keyframes dash-animation {
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
 .vertical-pointer-container {
-    width: 10px;
+    width: 50px;
     height: 150px;
     overflow: hidden;
 
@@ -55,7 +66,23 @@ $about-btn-hover-fg: $darkest;
     justify-content: center;
     align-items: center;
 
-    background: none;
+    background: blue;
+
+    svg {
+        display: block;
+        width: max-content;
+        height: max-content;
+
+        stroke-width: 1;
+        stroke-opacity: 1;
+        background: white;
+
+        #scroll-path {
+            display: inline-block;
+            
+            fill: red;
+        }
+    }
 }
 
 .vertical-pointer {
@@ -90,6 +117,7 @@ $about-btn-hover-fg: $darkest;
     justify-content: center;
     align-items: center;
     flex: 0 1 auto;
+    z-index: 0;
 
     position: relative;
     padding: 2rem 0;
@@ -101,21 +129,59 @@ $about-btn-hover-fg: $darkest;
         max-width: 100%;
         width: max-content;
         height: max-content;
+        //z-index: 0;
         
         svg {
+            fill: $svg-fill;
+            stroke: $svg-stroke;
+            stroke-width: 0.2;
+            stroke-opacity: 1;
+
             display: block;
-            width: 300px;
-            height: auto;
+            //width: 300px;
+            //height: auto;
             transition: all 0.5s;
+            opacity: 0.8;
+
+            .grid-test {
+                stroke: red;
+                stroke-opacity: 1;
+                stroke-width: 0.5;
+            }
+
+            .grid-node-test {
+                stroke: red;
+                stroke-width: 0.2;
+            }
+
+            .grid-main {
+                stroke-opacity: 1;
+                stroke-width: 0.25;
+            }
+
+            .grid-secondary {
+                stroke: $dark-main;
+                stroke-opacity: 1;
+                stroke-width: 0.25;
+                //stroke-dasharray: 2 25;
+
+                animation-name: dash-animation;
+                animation-duration: 0s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
         }
     }
 }
+
+
 
 #home-info-container {
     box-sizing: border-box;
     display: block;
     width: 100%;
     height: max-content;
+    z-index: 1;
 
     padding: 2rem 0;
 }
@@ -144,7 +210,6 @@ span[id='name'] {
     font-family: $header-font-family;
     font-style: italic;
     line-height: $line-height;
-
 }
 
 @include homepageMediaQuery(550px, 400px, 1.15);
