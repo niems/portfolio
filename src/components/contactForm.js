@@ -76,17 +76,30 @@ class ContactForm extends Component {
                 <fieldset>
                     <legend>Get in touch</legend>
 
-                    <input value={this.state.name} className='contact-inputfield' id='contact-name' name='name' type='text'
-                           autoComplete='false' required placeholder='Name' onChange={this.onChange} />
+                    <span className='input-container'>
+                        <input value={this.state.name} className='contact-inputfield' id='contact-name' name='name' type='text'
+                               autoComplete='false' required onChange={this.onChange} />
+                        
+                        <label className='input-placeholder'>Name</label>
+                    </span>
 
-                    <input value={this.state.email} className='contact-inputfield' id='contact-email' name='email'
-                           type='email' autoComplete='false' required placeholder='Email address' onChange={this.onChange} />
+                    <span className='input-container'>
+                        <input value={this.state.email} className='contact-inputfield' id='contact-email' name='email'
+                               type='email' autoComplete='false' required onChange={this.onChange} />
 
-                    <input value={this.state.subject} className='contact-inputfield' id='contact-subject' name='subject'
-                           type='text' autoComplete='false' required placeholder='Subject line' onChange={this.onChange} />
+                        <label className='input-placeholder'>Email address</label>
+                    </span>
+    
 
-                    <textarea value={this.state.message} id='contact-message' name='message' rows='5' cols='20' data-gramm_editor='false'
-                              autoComplete='false' placeholder='Enter your message here' required onChange={this.onChange}></textarea>
+                    <span className='input-container'>
+                        <input value={this.state.subject} className='contact-inputfield' id='contact-subject' name='subject' 
+                               type='text' autoComplete='false' required onChange={this.onChange} />
+
+                        <label className='input-placeholder'>Message subject</label>
+                    </span>
+
+                    <textarea value={this.state.message} id='contact-message' className='contact-inputfield' name='message' rows='5' cols='20' data-gramm_editor='false' 
+                                autoComplete='false' required placeholder='Enter your message' onChange={this.onChange}></textarea>
 
                 </fieldset>
 
