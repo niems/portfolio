@@ -1,5 +1,6 @@
 @import './modules/colors';
 @import './modules/fonts';
+@import './modules/typography';
 @import './modules/mediaQuery';
 @import './modules/general';
 
@@ -123,6 +124,8 @@ $footer-description-fg: $darkest;
     span {
         text-align: center;
         font-size: $footer-font-size;
+        font-family: $secondary-font-family;
+        font-weight: $secondary-normal;
         line-height: $footer-font-line-height;
     }
 }
