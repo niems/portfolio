@@ -51,6 +51,57 @@
     }
 } 
 
+@mixin projectViewMediaQuery($minWidth, $query) {
+    @media only screen and (min-width: $minWidth) {
+        @if $minWidth == 700px {
+            #portfolio-fullview-container {
+                max-width: map-get($query, fullview-container-width);
+            }
+        }
+    
+        @else if $minWidth == 850px {
+            #portfolio-fullview-container {
+                max-width: map-get($query, fullview-container-width);
+                max-height: map-get($query, fullview-container-height);
+                width: map-get($query, fullview-container-width);
+                height: map-get($query, fullview-container-height);
+            }
+    
+            #portfolio-fullview {
+                height: map-get($query, fullview-height);
+                justify-content: map-get($query, fullview-flex-main-axis);
+                border-radius: 0;
+            }
+        }
+    
+        .project-img {
+            width: map-get($query, img-width);
+            height: map-get($query, img-height);
+        }
+    
+        .project-img-arrow {
+            width: map-get($query, arrow-width);
+            height: map-get($query, arrow-height);
+        }
+    
+        #project-info-container {
+            width: map-get($query, info-container-width);
+        }
+    
+        #project-name-header {
+            font-size: map-get($query, name-font-size);
+        }
+    
+        #project-type-header {
+            font-size: map-get($query, type-font-size);
+        }
+    
+        .project-description {
+            font-size: map-get($query, description-font-size);
+        }
+    }
+}
+
 @mixin experimentsMediaQuery($minWidth, $query) {
     @media only screen and (min-width: $minWidth) {
         .single-experiment-container {
