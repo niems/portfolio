@@ -99,21 +99,6 @@ $contact-submit-hover-bg: $accent;
         transition: all 0.5s;
     }
 
-    #contact-message {
-        min-height: $contact-msg-min-height;
-        
-        resize: none;
-        border-color: $accent;
-
-        &::placeholder {
-            color: $lightest;
-        }
-
-        &focus:not([value='']):invalid {
-            border-color: red;
-        }
-    }
-
     .contact-inputfield {
         @include color($field-fg, $field-bg, $field-border);
 
@@ -136,6 +121,10 @@ $contact-submit-hover-bg: $accent;
             @include color($field-focus-fg, $field-focus-bg, $field-border);
             background: none;
         }
+
+        &:focus:not([value='']):invalid {
+            border-color: red;
+        }
         
         &:focus, &:not([value='']) {
             + .input-placeholder {
@@ -143,10 +132,31 @@ $contact-submit-hover-bg: $accent;
                 top: -0.25rem;
                 left: 0rem;
             }
+        }
+    }
 
-            &:not([value='']):invalid {
-                border-color: red;
+    #contact-message {
+        min-height: $contact-msg-min-height;
+        
+        resize: none;
+        border-color: $accent;
+
+        &:not(:focus), [value=''] {
+            + .input-placeholder {
+                transform: scale(1, 1) translate( 1rem, 100%);
+                top: 0rem;
+                left: 0rem;
             }
+        }
+
+        &:focus, &:valid {
+            + .input-placeholder {
+                transform: scale(0.60, 0.60) translateY(-50%);
+                top: -0.25rem;
+                left: 0rem;
+            }
+
+            
         }
     }
 
