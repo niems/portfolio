@@ -266,20 +266,18 @@
 
 
 //general media queries
-@mixin headerMediaQuery($minWidth, $font-size, $line-height) {
+@mixin headerMediaQuery($minWidth, $font-size) {
     @media only screen and (min-width: $minWidth) {
-        .section-header {
+        %section-header {
             font-size: $font-size;
-            line-height: $line-height;
         }
     }   
 }
 
-@mixin pageDescriptionMediaQuery($minWidth, $font-size, $line-height) {
+@mixin pageDescriptionMediaQuery($minWidth, $font-size) {
     @media only screen and (min-width: $minWidth) {
-        .section-description {
+        %section-description {
             font-size: $font-size;
-            line-height: $line-height;
         }
     }
 }

@@ -1,9 +1,9 @@
 $section-header-font-size: $large-font;
-$section-header-line-height: $large-font-line-height;
-
 $section-subheader-font-size: $small-font;
-$section-subheader-line-height: $small-font-line-height;
 
+$general-header-font-size: 2em;
+$general-description-font-size: 0.9em;
+$line-height: 150%;
 
 %section-pseudo-element {
     content: '';
@@ -13,7 +13,7 @@ $section-subheader-line-height: $small-font-line-height;
     width: 25px;
     height: 2px;
 }
-
+ 
 %section-header {
     box-sizing: border-box;
     display: block;
@@ -21,12 +21,11 @@ $section-subheader-line-height: $small-font-line-height;
     width: max-content;
     height: max-content;
     
-    margin: 2rem 0;
-
     position: relative;
-    //font-size: $section-header-font-size;
-    //line-height: $section-header-line-height;
+    margin: 2rem 0;
     
+    font-size: $general-header-font-size;
+    line-height: $line-height;
     border-style: none;
 
     &::before {
@@ -42,23 +41,10 @@ $section-subheader-line-height: $small-font-line-height;
     }
 }
 
+@include headerMediaQuery(600px, $general-header-font-size + 1em);
+@include headerMediaQuery(800px, $general-header-font-size + 1.5em);
+@include headerMediaQuery(1000px, $general-header-font-size + 2em);
 
-
-
-%section-subheader {
-    box-sizing: border-box;
-    max-width: 1000px;
-    width: 100%;
-    height: max-content;
-
-    padding: 0 0.5rem;
-    margin: 0;
-    overflow-wrap: break-word;
-    text-align: center;
-    
-    font-size: $section-subheader-font-size;
-    line-height: $section-subheader-line-height;
-}
 
 %section-description {
     box-sizing: border-box;
@@ -66,8 +52,15 @@ $section-subheader-line-height: $small-font-line-height;
     width: 98%;
     height: max-content;
 
+    font-size: $general-description-font-size;
+    line-height: $line-height;
+
     padding: 0 0.25rem;
     margin: 0;
     overflow-wrap: break-word;
     text-align: center;
 }
+
+@include pageDescriptionMediaQuery(600px, $general-description-font-size + 0.15em);
+@include pageDescriptionMediaQuery(800px, $general-description-font-size + 0.3em);
+@include pageDescriptionMediaQuery(1000px, $general-description-font-size + 0.5em);
