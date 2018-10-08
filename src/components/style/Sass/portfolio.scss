@@ -32,13 +32,15 @@ $project-tech-fg: $lightest;
 $project-tech-bg: $darkest-fade;
 
 $project-header-font-size: 1.8em;
-$project-header-font-family: $header-font-family;
-$project-header-font-weight: $header-normal;
+$project-header-font-family: $secondary-font-family;
+$project-header-font-weight: $secondary-heavy;
 $project-tech-font-size: 0.8em;
 $project-tech-font-family: $secondary-font-family;
 $project-tech-font-weight: $secondary-normal;
 
-$project-btn-font-size: 0.95em;
+$project-btn-font-size: 0.7em;
+$project-btn-font-family: $secondary-font-family;
+$project-btn-font-weight: $secondary-heavy;
 //$project-btn-width: 8.5rem;
 //$project-btn-height: 2.7rem;
 
@@ -71,6 +73,8 @@ $project-btn-hover-bg: $light-main;
     #learn-more {
         @include color($project-btn-fg, $project-btn-bg, $project-btn-border);
         font-size: $project-btn-font-size;
+        font-family: $project-btn-font-family;
+        font-weight: $project-btn-font-weight;
         //width: $project-btn-width;
         //height:$project-btn-height;
     

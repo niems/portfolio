@@ -1,4 +1,4 @@
-$btn-font-size: 1.3em;
+$btn-font-size: 1.1em;
 
 //main button styling - color
 %button {
@@ -6,9 +6,11 @@ $btn-font-size: 1.3em;
     display: inline-block;
 
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     font-size: $btn-font-size;
-    font-variant: small-caps;
+    font-family: $secondary-font-family;
+    font-weight: $secondary-heavy;
+    text-transform: uppercase;
     text-decoration: none;
 
     outline: none;
