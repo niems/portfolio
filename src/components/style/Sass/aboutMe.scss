@@ -3,11 +3,13 @@
 @import './modules/fonts';
 @import './modules/general';
 @import './modules/mediaQuery';
+@import './partials/containers';
 @import './partials/header';
 
 
 //style about me section
-$about-bg: $accent;
+$about-bg: $accent-fade;
+$content-bg: $accent;
 
 $about-fg: $darkest;
 $about-header-fg: $darkest;
@@ -17,23 +19,21 @@ $about-description-fg: $darkest;
 $about-description-font-family: $secondary-font-family;
 $about-description-first-letter-color: $darkest;
 
-$resume-font-size: 0.95em;
-
 //style contact section
 $contact-bg: $darkest;
 
 %section-setup {
     box-sizing: border-box;
     max-width: 100%;
+    min-height: max-content;
     width: 100%;
     height: max-content;
  
     margin: 0;
-    padding: 2rem 0;
+    padding: 0;
     text-align: center;
 
     display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 }
@@ -44,44 +44,55 @@ $contact-bg: $darkest;
     color: $about-fg;
     background: $about-bg;
 
+}
+/*
+border-radius: 0.5rem;
+    box-shadow: 1px 1px 2px black;
+    */
+.about-me-container {
+    @extend %subsection-container;
+    
+
+    background: $content-bg;
+    
     #about-me-header {
         color: $about-header-fg;
         font-family: $about-header-font-family;
         line-height: $line-height;
-
+    
         &::before, &::after {
             background-color: $about-header-fg;
         }
     }
-
+    
     .section-description {
         margin: 0 0 1rem 0;
     }
-
+    
     .section-description {
         color: $about-description-fg;
         font-family: $about-description-font-family;
         line-height: $line-height;
     }
-
+    
     #about-init-description {
         &:first-letter {
             color: $about-description-first-letter-color;
             font-size: 150%;
         }
     }
-
+    
     #resume-link {
         align-self: flex-end;
-
-        margin: 3rem 1rem 0 0;
+    
+        margin: 3rem 0 0 0;
         border-radius: 0.25rem;
         background: none;
         
         button {
             @include color($darkest, none, $darkest);
-            font-size: $resume-font-size;
-
+            //font-size: $resume-font-size;
+    
             &::before {
                 @include color(none, $darkest, none);
             }
@@ -93,7 +104,8 @@ $contact-bg: $darkest;
     }
 }
 
-@include aboutMeMediaQuery(600px, $resume-font-size + 0.15em);
-@include aboutMeMediaQuery(800px, $resume-font-size + 0.3em);
-@include aboutMeMediaQuery(1000px, $resume-font-size + 0.45em);
-
+@media only screen and (min-width: 800px) {
+    %section-setup {
+        height: 100%;
+    }
+}

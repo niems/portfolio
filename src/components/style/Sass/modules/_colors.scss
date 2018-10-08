@@ -6,11 +6,13 @@ $light-main: #58D9FA;
 $lightest: #d0e1f9; 
 $white: #EFFFFF;
 
+$accent-green: #00FFC6;
 $accent: #8EA6FC;
 $accent-light: #BAC9FE;
 $accent-dark: #6887F8;
 
-$accent-green: #00FFC6;
+$accent-fade: linear-gradient(-45deg, $accent, $accent-light);
+
 
 $fade: linear-gradient(45deg, $dark-mid, $darkest);
 $darkest-fade: rgba(37, 40, 46, 0.6);

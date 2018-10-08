@@ -1,4 +1,4 @@
-$btn-font-size: 1.1em;
+$btn-font-size: 0.8em;
 
 //main button styling - color
 %button {
@@ -6,7 +6,7 @@ $btn-font-size: 1.1em;
     display: inline-block;
 
     margin: 0;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.85rem;
     font-size: $btn-font-size;
     font-family: $secondary-font-family;
     font-weight: $secondary-heavy;
@@ -21,6 +21,10 @@ $btn-font-size: 1.1em;
 
     transition: background 0.4s;
 }
+
+@include buttonMediaQuery(600px, $btn-font-size + 0.2em);
+@include buttonMediaQuery(800px, $btn-font-size + 0.25em);
+@include buttonMediaQuery(1000px, $btn-font-size + 0.3em);
 
 %button-slide {
     @extend %button;

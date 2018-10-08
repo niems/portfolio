@@ -115,18 +115,6 @@
     }
 }
 
-@mixin aboutMeMediaQuery($minWidth, $btn-font-size) {
-    @media only screen and (min-width: $minWidth) {
-        #about-me-section {
-            #resume-link {
-                button {
-                    font-size: $btn-font-size;
-                }
-            }
-        }
-    }
-}
-
 @mixin progressbarMediaQuery($minWidth, $desc-size, $wrapper-size, $skill-size, $img-container-size, $icon-width) {
 
     @media only screen and (min-width: $minWidth) {
@@ -278,6 +266,27 @@
     @media only screen and (min-width: $minWidth) {
         %section-description {
             font-size: $font-size;
+        }
+    }
+}
+
+@mixin buttonMediaQuery($minWidth, $btn-font-size) {
+    @media only screen and (min-width: $minWidth) {
+        %button {
+            font-size: $btn-font-size;
+        }
+    }
+}
+
+@mixin subsectionMediaQuery($minWidth) {
+    @media only screen and (min-width: $minWidth) {
+        %subsection-container {
+            width: 95%;
+            height: max-content;
+            
+            margin: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 1px 1px 2px black;
         }
     }
 }
