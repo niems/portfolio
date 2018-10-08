@@ -1,20 +1,22 @@
-/*
-@import "https://fonts.googleapis.com/css?family=Rubik:300|Space+Mono:400,700";
-$header-font-family: 'Space Mono', monospace;
-$header-heavy: 700; //bold font weight
-$header-normal: 400; //regular font weight
-
-$secondary-font-family: 'Rubik', sans-serif;
-$secondary-normal: 300; //regular font weight
-$line-height: 150%;
 //Recommended Font Sizes: 8, 16, 24, 32, 48, 64, 95
-*/
 
+/*
 @import "https://fonts.googleapis.com/css?family=Montserrat|Space+Mono:400,700";
 $header-font-family: 'Space Mono', monospace;
 $header-heavy: 700; //bold font weight
 $header-normal: 400; //regular font weight
 
 $secondary-font-family: 'Montserrat', sans-serif;
+$secondary-normal: 400; //regular font weight
+$line-height: 150%;
+*/
+
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,700|Space+Mono:400,700";
+$header-font-family: 'Space Mono', monospace;
+$header-heavy: 700; //bold font weight
+$header-normal: 400; //regular font weight
+
+$secondary-font-family: 'Open Sans', sans-serif;
+$secondary-heavy: 700; //bold font weight
 $secondary-normal: 400; //regular font weight
 $line-height: 150%;
