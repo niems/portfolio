@@ -67,7 +67,7 @@ $contact-bg: $darkest;
     #about-init-description {
         &:first-letter {
             color: $about-description-first-letter-color;
-            font-weight: bold;
+            font-size: 150%;
         }
     }
 
