@@ -4,12 +4,11 @@
 @import './modules/mediaQuery';
 
 $contact-legend-font-size: 1.1em;
-$input-font-size: 0.95em;
-$contact-msg-min-height: 150px;
+$input-font-size: 0.8em;
+$contact-msg-min-height: 100px;
 
-$form-max-width: 300px;
+$form-max-width: 520px;
 
-//$field-select-outline: $accent;
 $field-fg: $lightest;
 $field-bg: $darkest;
 $field-border: $accent;
@@ -25,7 +24,6 @@ $contact-fieldset-bg: $dark-main;
 $contact-legend-bg: $accent;
 $contact-legend-fg: $darkest;
 
-$contact-submit-font-size: 0.95em;
 $contact-submit-bg: inherit;
 $contact-submit-fg: $lightest;
 $contact-submit-border: $accent;
@@ -36,7 +34,7 @@ $contact-submit-hover-bg: $accent;
     box-sizing: border-box;
     max-width: $form-max-width;
     min-height: max-content;
-    width: 95%;
+    width: 90%;
     height: max-content;
     
     display: flex;
@@ -162,7 +160,6 @@ $contact-submit-hover-bg: $accent;
 
     #contact-submit {
         @include color($contact-submit-fg, $contact-submit-bg, $contact-submit-border);
-        font-size: $contact-submit-font-size;
 
         align-self: flex-end;
         margin-top: 0.5rem;
@@ -175,39 +172,27 @@ $contact-submit-hover-bg: $accent;
 }
 
 $px450: (
-    form-max-width: $form-max-width + 60px,
     legend-size: $contact-legend-font-size + 0.25em,
-    input-size: $input-font-size + 0.05em,
+    input-size: $input-font-size + 0.1em,
     msg-min-height: $contact-msg-min-height,
-
-    btn-size: $contact-submit-font-size + 0.1em,
 );
 
 $px600: (
-    form-max-width: $form-max-width + 120px,
     legend-size: $contact-legend-font-size + 0.5em,
-    input-size: $input-font-size + 0.075em,
+    input-size: $input-font-size + 0.125em,
     msg-min-height: $contact-msg-min-height + 20px,
-
-    btn-size: $contact-submit-font-size + 0.15em,
 );
 
 $px800: (
-    form-max-width: $form-max-width + 180px,
     legend-size: $contact-legend-font-size + 0.6em,
-    input-size: $input-font-size + 0.075em,
+    input-size: $input-font-size + 0.15em,
     msg-min-height: $contact-msg-min-height + 20px,
-
-    btn-size: $contact-submit-font-size + 0.3em,
 );
 
 $px1000: (
-    form-max-width: $form-max-width + 220px,
     legend-size: $contact-legend-font-size + 0.6em,
-    input-size: $input-font-size + 0.1em,
+    input-size: $input-font-size + 0.175em,
     msg-min-height: $contact-msg-min-height + 20px,
-    
-    btn-size: $contact-submit-font-size + 0.45em,
 );
 
 @include contactFormMediaQuery(450px, $px450);

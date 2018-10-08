@@ -168,10 +168,14 @@
 @mixin contactFormMediaQuery($minWidth, $query) {
     @media only screen and (min-width: $minWidth) {
         .form-container {
-            max-width: map-get($query, form-max-width);
+            //max-width: map-get($query, form-max-width);
     
             legend {
                 font-size: map-get($query, legend-size);
+            }
+
+            .input-placeholder {
+                font-size: map-get($query, input-size);
             }
     
             .contact-inputfield, #contact-message {
@@ -180,10 +184,6 @@
     
             #contact-message {
                 min-height: map-get($query, msg-min-height);
-            }
-    
-            #contact-submit {
-                font-size: map-get($query, btn-size);
             }
         }
     }
