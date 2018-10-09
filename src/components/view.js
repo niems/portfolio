@@ -167,7 +167,7 @@ class View extends Component {
                 <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>    
                     <Nav setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
 
-                    <HomePage setRef={el => this.homeRef = el} />
+                    <HomePage setRef={el => this.homeRef = el} section={this.state.currentSection} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
                     <AboutMe setRef={el => this.aboutRef = el} />
