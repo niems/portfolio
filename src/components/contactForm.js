@@ -78,14 +78,14 @@ class ContactForm extends Component {
 
                     <span className='input-container'>
                         <input value={this.state.name} className='contact-inputfield' id='contact-name' name='name' type='text'
-                               autoComplete={false} required onChange={this.onChange} />
+                               autoComplete='false' required onChange={this.onChange} />
                         
                         <label className='input-placeholder'>Name</label>
                     </span>
 
                     <span className='input-container'>
                         <input value={this.state.email} className='contact-inputfield' id='contact-email' name='email'
-                               type='email' autoComplete={false} required onChange={this.onChange} />
+                               type='email' autoComplete='false' required onChange={this.onChange} />
 
                         <label className='input-placeholder'>Email address</label>
                     </span>
@@ -93,14 +93,14 @@ class ContactForm extends Component {
 
                     <span className='input-container'>
                         <input value={this.state.subject} className='contact-inputfield' id='contact-subject' name='subject' 
-                               type='text' autoComplete={false} required onChange={this.onChange} />
+                               type='text' autoComplete='false' required onChange={this.onChange} />
 
                         <label className='input-placeholder'>Message subject</label>
                     </span>
 
                     <span className='input-container'>
                         <textarea value={this.state.message} id='contact-message' className='contact-inputfield' name='message' rows='5'
-                                  cols='20' data-gramm_editor='false' autoComplete={false} required onChange={this.onChange} />
+                                  cols='20' data-gramm_editor='false' autoComplete='false' required onChange={this.onChange} />
 
                         <label className='input-placeholder'>Write your message :)</label>
                     </span>
