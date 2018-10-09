@@ -66,8 +66,8 @@ class HomePage extends Component {
     render() {
         return (
             <div id='homepage' ref={this.props.setRef}>
-                <ParticleLayer />
-                
+                { (this.props.section === 'home' ) ? <ParticleLayer /> : null }
+
                 <div id='home-container'>
                     <span id='home-background-img' >
                         <DisplayLogo />
