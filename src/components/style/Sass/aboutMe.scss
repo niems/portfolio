@@ -65,9 +65,14 @@ $about-description-highlight:#32C8EB;
         margin: 0 0 1rem 0;
 
         .highlight {
-            padding: 2px;
-            background: $about-description-highlight;
-            box-shadow: 2px 0 0 $about-description-highlight, -2px 0 0 $about-description-highlight;            
+            padding: 2px 0;
+            //background: $about-description-highlight;
+            color: $about-description-highlight;
+            box-shadow: 2px 0 0 rgba(0, 0, 0, 0.2), -2px 0 0 rgba(0, 0, 0, 0.2);            
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+            font-weight: $secondary-heavy;
+            text-shadow: 1px 1px 3px $darkest;            
         }
     }
     
@@ -81,7 +86,8 @@ $about-description-highlight:#32C8EB;
         .standout {
             color: $about-description-highlight;
             text-shadow: 1px 1px 2px $darkest;
-            font-size: 150%;
+            
+            font-size: 160%;
             font-weight: $secondary-heavy;
         }
     }
