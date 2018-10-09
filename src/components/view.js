@@ -179,8 +179,7 @@ class View extends Component {
 
         //currentHeight += this.contactRef.scrollHeight;
         //this.pageHeight['contact'] = currentHeight;
-
-        console.log(this.pageHeight);
+        //console.log(this.pageHeight);
     }
 
     render() {
