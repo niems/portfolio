@@ -245,18 +245,20 @@ button {
     @include button-pseudo(true, true);
     background: transparent;  
     transition: all 0.75s;
-    
+    color: $darkest;
+
     &::before, &::after {
-        @include color(initial, $accent, initial);   
+        @include color(initial, inherit, initial);   
         transition: transform 1s;
         width: 50%;
         //height: 50%;
     }
 
     &::before {
+        background: $darkest;
         transform: translateX(-201%);
     }
-
+    
     &::after {
         transform: translateX(201%);
     }
@@ -272,7 +274,7 @@ button {
             transform: translateX(201%);
             
         }
-
+        
         &::after {
             transform: translateX(-201%);
         }
