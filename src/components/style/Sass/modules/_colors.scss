@@ -1,18 +1,22 @@
 $darkest: #25282E;
 $dark-main: #2C3037;
 $dark-mid: #363A40;
+$light-darkest: #07BFEA;
 $light-mid: #82E5FC;
 $light-main: #58D9FA;
 $lightest: #d0e1f9; 
 $white: #EFFFFF;
 
 $accent-green: #00FFC6;
+$accent-green-light: #60FDDA;
 $accent: #8EA6FC;
 $accent-light: #BAC9FE;
 $accent-dark: #6887F8;
 
 $accent-fade: linear-gradient(-45deg, $accent, $accent-light);
+$accent-green-fade: linear-gradient(90deg, $light-main, $light-main, $accent-green);
 
+$accent-blue-highlight: #59D9F7;
 
 $fade: linear-gradient(45deg, $dark-mid, $darkest);
 $darkest-fade: rgba(37, 40, 46, 0.6);

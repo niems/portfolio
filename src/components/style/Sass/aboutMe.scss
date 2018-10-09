@@ -18,9 +18,8 @@ $about-header-font-family: $header-font-family;
 $about-description-fg: $darkest;
 $about-description-font-family: $secondary-font-family;
 $about-description-first-letter-color: $darkest;
+$about-description-highlight:#32C8EB;
 
-//style contact section
-$contact-bg: $darkest;
 
 %section-setup {
     box-sizing: border-box;
@@ -45,10 +44,7 @@ $contact-bg: $darkest;
     background: $about-bg;
 
 }
-/*
-border-radius: 0.5rem;
-    box-shadow: 1px 1px 2px black;
-    */
+
 .about-me-container {
     @extend %subsection-container;
     
@@ -67,18 +63,26 @@ border-radius: 0.5rem;
     
     .section-description {
         margin: 0 0 1rem 0;
+
+        .highlight {
+            padding: 2px;
+            background: $about-description-highlight;
+            box-shadow: 2px 0 0 $about-description-highlight, -2px 0 0 $about-description-highlight;            
+        }
     }
     
     .section-description {
         color: $about-description-fg;
         font-family: $about-description-font-family;
-        line-height: $line-height;
+        line-height: 160%;
     }
     
     #about-init-description {
-        &:first-letter {
-            color: $about-description-first-letter-color;
+        .standout {
+            color: $about-description-highlight;
+            text-shadow: 1px 1px 2px $darkest;
             font-size: 150%;
+            font-weight: $secondary-heavy;
         }
     }
     
