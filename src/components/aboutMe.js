@@ -20,7 +20,7 @@ class AboutMe extends Component {
                     <ProgressBar />
 
                     <a id='resume-link' href='./resume - Zach Niemann.pdf' download>
-                        <button className='btn slide-in mid-expand'>resume</button>
+                        <button className='btn slide-in ltr'>resume</button>
                     </a>
                 </div>
             </article>
