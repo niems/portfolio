@@ -13,6 +13,24 @@ import './style/view.css';
 function updateViewSelection( scrollTop, data ) {
     const midpoint = scrollTop + data['view'];
     let section = ''; //section in the middle of the viewport - what will be selected in the navbar
+    let topSection = 'home'; //section visible at the very top of the screen - used for lazy loading
+
+    if (scrollTop > data['home']) {
+        topSection = 'portfolio';
+    }
+    
+    else if (scrollTop > data['portfolio']) {
+        topSection = 'experiments';
+    }
+
+    else if (scrollTop > data['experiments']) {
+        topSection = 'about';
+    }
+
+    else if (scrollTop > data['about']) {
+        topSection = 'contact';
+    }
+
 
     if ( midpoint <= data['home'] ) {
         section = 'home';
@@ -34,7 +52,7 @@ function updateViewSelection( scrollTop, data ) {
         section = 'contact';
     }
 
-    return section;
+    return {currentSection: section, topSection: topSection};
 }
 
 class View extends Component {
@@ -43,6 +61,7 @@ class View extends Component {
         
         this.state = {
             currentSection: 'home', //section on the majority of the screen
+            topSection: 'home', //section visible at the very top of the screen - used for lazy loading
             displayMenu: null
         };
 
@@ -121,19 +140,25 @@ class View extends Component {
         const scrollTop = this.viewRef.scrollTop;
 
         //returns the current section the user is viewing
-        let currentSection = updateViewSelection( scrollTop, this.pageHeight );
-
+        let {currentSection, topSection} = updateViewSelection( scrollTop, this.pageHeight );
 
        if ( scrollTop >= this.pageHeight['home'] ) {
             this.navbarRef.classList.add('sticky');
-    }
+        }
 
         else {
             this.navbarRef.classList.remove('sticky');                
         }
 
         if ( currentSection !== this.state.currentSection ) { 
-            this.setState({ currentSection });
+            this.setState({ 
+                currentSection: currentSection,
+                topSection: topSection
+            });
+        }
+
+        else {
+            this.setState({ topSection });
         }
     }
 
@@ -154,8 +179,7 @@ class View extends Component {
 
         //currentHeight += this.contactRef.scrollHeight;
         //this.pageHeight['contact'] = currentHeight;
-
-        console.log(this.pageHeight);
+        //console.log(this.pageHeight);
     }
 
     render() {
@@ -167,7 +191,7 @@ class View extends Component {
                 <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>    
                     <Nav setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
 
-                    <HomePage setRef={el => this.homeRef = el} section={this.state.currentSection} />
+                    <HomePage setRef={el => this.homeRef = el} section={this.state.topSection} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
                     <Experiments setRef={el => this.experimentsRef = el} />
                     <AboutMe setRef={el => this.aboutRef = el} />
