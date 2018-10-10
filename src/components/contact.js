@@ -1,6 +1,7 @@
 import React from 'react';
-import './style/contact.css';
+import PageIcon from './pageIcon';
 import ContactForm from './contactForm';
+import './style/contact.css';
 
 function DisplaySocialLinks(props) {
     return (
@@ -23,6 +24,8 @@ function DisplaySocialLinks(props) {
 const Contact = ({ setRef }) => {
     return (
         <article id='contact-container' ref={setRef}>
+            <PageIcon setup='contact' />
+            
             <ContactForm />
             <DisplaySocialLinks />
             <div id='contact-description'>
