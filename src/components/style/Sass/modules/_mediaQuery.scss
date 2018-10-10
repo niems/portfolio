@@ -183,7 +183,7 @@
             }
     
             #contact-message {
-                min-height: map-get($query, msg-min-height);
+                height: map-get($query, msg-min-height);
             }
         }
     }

@@ -31,7 +31,6 @@ $contact-submit-hover-fg: $darkest;
 $contact-submit-hover-bg: $accent;
 
 .form-container {
-    box-sizing: border-box;
     max-width: $form-max-width;
     min-height: max-content;
     width: 90%;
@@ -41,7 +40,6 @@ $contact-submit-hover-bg: $accent;
     flex-direction: column;
     align-items: center;
 
-    margin: 2rem 0;
     transition: all 0.5s;
 
     fieldset, legend {
@@ -134,7 +132,7 @@ $contact-submit-hover-bg: $accent;
     }
 
     #contact-message {
-        min-height: $contact-msg-min-height;
+        height: $contact-msg-min-height;
         
         resize: none;
         border-color: $accent;
