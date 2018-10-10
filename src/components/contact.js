@@ -25,12 +25,15 @@ const Contact = ({ setRef }) => {
     return (
         <article id='contact-container' ref={setRef}>
             <PageIcon setup='contact' />
-            
             <ContactForm />
-            <DisplaySocialLinks />
-            <div id='contact-description'>
-                <span>Designed & Coded by Zach Niemann</span>
+            
+            <div id='contact-info'>
+                <DisplaySocialLinks />
+                <div id='contact-description'>
+                    <span>Designed & Coded by Zach Niemann</span>
+                </div>
             </div>
+
         </article>
     );
 };
