@@ -8,7 +8,7 @@
 
 
 //style about me section
-$about-bg: $accent-fade;
+$about-bg: $accent;
 $content-bg: $accent;
 
 $about-fg: $darkest;
@@ -117,5 +117,6 @@ $about-description-highlight:#32C8EB;
 @media only screen and (min-width: 800px) {
     %section-setup {
         height: 100%;
+        padding: 3rem 0;
     }
 }
