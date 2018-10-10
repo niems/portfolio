@@ -2,17 +2,26 @@
 @import './modules/typography';
 @import './modules/mediaQuery';
 
-$portfolio-bg-stroke: $light-main;
-$portfolio-icon-filter: invert(1);
+
+$portfolio-bg-stroke: $darkest;
+$portfolio-bg-fill: $light-main;
+$portfolio-icon-filter: $filter-darkest;
+$portfolio-icon-width: 32%;
 
 $experiments-bg-stroke: $accent;
-$experiments-icon-filter: invert(1);
+$experiments-bg-fill: $dark-main;
+$experiments-icon-filter: $filter-accent;
+$experiments-icon-width: 25%;
 
-$about-bg-stroke: $accent-green;
-$about-icon-filter: invert(1);
+$about-bg-stroke: $darkest;
+$about-bg-fill: $darkest;
+$about-icon-filter: $filter-accent;
+$about-icon-width: 25%;
 
-$contact-bg-stroke: $lightest;
-$contact-icon-filter: invert(1);
+$contact-bg-stroke: $accent;
+$contact-bg-fill: $accent;
+$contact-icon-filter: $filter-darkest;
+$contact-icon-width: 28%;
 
 %bg-img {
     display: inline-block;
@@ -20,13 +29,12 @@ $contact-icon-filter: invert(1);
     height: auto; 
 
     stroke-width: 2;
-    fill: none;
     stroke-linecap: round;
 }
 
-%icon-img {
+@mixin icon-img($width) {
     display: inline-block;
-    width: 35%;
+    width: $width;
     height: auto;
 
     position: absolute;
@@ -38,18 +46,17 @@ $contact-icon-filter: invert(1);
 .page-icon-container {
     box-sizing: border-box;
     display: inline-block;
-    width: 160px;
-    height: 80px;
+    width: 180px;
+    height: 90px;
+
+    margin: 0;
+    padding: 0;
 
     position: relative;
     background: none;
 
     .page-bg-img {
         @extend %bg-img;
-    }
-
-    .page-icon-img {
-        @extend %icon-img;
     }
 }
 
@@ -58,39 +65,51 @@ $contact-icon-filter: invert(1);
 .page-icon-container.portfolio {
     .page-bg-img {
         stroke: $portfolio-bg-stroke;
+        fill: $portfolio-bg-fill;
     }
 
     .page-icon-img {
+        @include icon-img($portfolio-icon-width);
         filter: $portfolio-icon-filter;
+        transform: translate(-50%, 25%);
     }
 }
 
 .page-icon-container.experiments {
     .page-bg-img {
         stroke: $experiments-bg-stroke;
+        fill: $experiments-bg-fill;
     }
 
     .page-icon-img {
+        @include icon-img($experiments-icon-width);
         filter: $experiments-icon-filter;
+        transform: translate(-50%, 10%);
     }
 }
 
 .page-icon-container.about {
     .page-bg-img {
         stroke: $about-bg-stroke;
+        fill: $about-bg-fill;
     }
 
     .page-icon-img {
+        @include icon-img($about-icon-width);
         filter: $about-icon-filter;
+        transform: translate(-50%, 10%);
     }
 }
 
 .page-icon-container.contact {
     .page-bg-img {
         stroke: $contact-bg-stroke;
+        fill: $contact-bg-fill;
     }
 
     .page-icon-img {
+        @include icon-img($contact-icon-width);
         filter: $contact-icon-filter;
+        transform: translate(-50%, 25%);
     }
 }
