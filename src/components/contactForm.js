@@ -105,9 +105,9 @@ class ContactForm extends Component {
                         <label className='input-placeholder'>Write your message :)</label>
                     </span>
 
+                    <button id='contact-submit' className='btn' type='submit'>submit</button>
                 </fieldset>
 
-                <button id='contact-submit' className='btn' type='submit'>submit</button>
             </form>
         );
     }
