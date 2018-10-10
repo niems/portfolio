@@ -1,0 +1,96 @@
+@import './modules/colors';
+@import './modules/typography';
+@import './modules/mediaQuery';
+
+$portfolio-bg-stroke: $light-main;
+$portfolio-icon-filter: invert(1);
+
+$experiments-bg-stroke: $accent;
+$experiments-icon-filter: invert(1);
+
+$about-bg-stroke: $accent-green;
+$about-icon-filter: invert(1);
+
+$contact-bg-stroke: $lightest;
+$contact-icon-filter: invert(1);
+
+%bg-img {
+    display: inline-block;
+    width: 100%;
+    height: auto; 
+
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+}
+
+%icon-img {
+    display: inline-block;
+    width: 35%;
+    height: auto;
+
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-icon-container {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 160px;
+    height: 80px;
+
+    position: relative;
+    background: none;
+
+    .page-bg-img {
+        @extend %bg-img;
+    }
+
+    .page-icon-img {
+        @extend %icon-img;
+    }
+}
+
+
+
+.page-icon-container.portfolio {
+    .page-bg-img {
+        stroke: $portfolio-bg-stroke;
+    }
+
+    .page-icon-img {
+        filter: $portfolio-icon-filter;
+    }
+}
+
+.page-icon-container.experiments {
+    .page-bg-img {
+        stroke: $experiments-bg-stroke;
+    }
+
+    .page-icon-img {
+        filter: $experiments-icon-filter;
+    }
+}
+
+.page-icon-container.about {
+    .page-bg-img {
+        stroke: $about-bg-stroke;
+    }
+
+    .page-icon-img {
+        filter: $about-icon-filter;
+    }
+}
+
+.page-icon-container.contact {
+    .page-bg-img {
+        stroke: $contact-bg-stroke;
+    }
+
+    .page-icon-img {
+        filter: $contact-icon-filter;
+    }
+}

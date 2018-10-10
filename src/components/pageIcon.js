@@ -1,10 +1,27 @@
 import React from 'react';
 import './style/pageIcon.css';
 
-const PageIcon = (props) => {
+function PageBackground(props) {
     return (
-        <span className='page-icon-container'>
-            <img className='page-icon-img' src='./images/page-icon-container.svg' alt='displays icon of the current page' />
+        <svg className='page-bg-img' viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 L100 100 L200 0" />
+        </svg>
+    )
+}
+
+const PageIcon = ({ setup }) => {
+    const pageIcons = {
+        'portfolio': './images/code-icon.svg',
+        'experiments': './images/flask.svg',
+        'about': './images/user.svg',
+        'contact': './images/chat-icon.svg'
+    };
+
+    return (
+        <span className={`page-icon-container ${setup}`}>
+            <PageBackground />
+
+            <img className='page-icon-img' src={pageIcons[setup]} alt='displays icon of the current page'/>
         </span>
     );
 };
