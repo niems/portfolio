@@ -20,7 +20,7 @@ $footer-description-fg: $darkest;
 
 #contact-container {
     @extend %section-container;
-    min-height: max-content;
+    justify-content: flex-start;
     padding: 0;
     background: $footer-bg;
 }
@@ -30,7 +30,7 @@ $footer-description-fg: $darkest;
     box-sizing: border-box;
     width: 100%;
     height: max-content;
-
+    margin-top: auto;
     position: relative;
 
     display: flex;
