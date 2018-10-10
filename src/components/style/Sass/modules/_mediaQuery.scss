@@ -252,6 +252,14 @@
     }
 }
 
+@mixin pageIconMediaQuery($minWidth, $query) {
+    @media only screen and (min-width: $minWidth) {
+        .page-icon-container {
+            width: map-get($query, container-width);
+            height: map-get($query, container-height);    
+        } 
+    }
+}
 
 //general media queries
 @mixin headerMediaQuery($minWidth, $font-size) {

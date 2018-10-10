@@ -3,15 +3,15 @@
 @import './modules/mediaQuery';
 
 
-$portfolio-bg-stroke: $darkest;
+$portfolio-bg-stroke: $light-main;
 $portfolio-bg-fill: $light-main;
-$portfolio-icon-filter: $filter-darkest;
-$portfolio-icon-width: 32%;
+$portfolio-icon-filter: $filter-dark-main;
+$portfolio-icon-width: 35%;
 
 $experiments-bg-stroke: $accent;
 $experiments-bg-fill: $dark-main;
 $experiments-icon-filter: $filter-accent;
-$experiments-icon-width: 25%;
+$experiments-icon-width: 26%;
 
 $about-bg-stroke: $darkest;
 $about-bg-fill: $darkest;
@@ -20,8 +20,8 @@ $about-icon-width: 25%;
 
 $contact-bg-stroke: $accent;
 $contact-bg-fill: $accent;
-$contact-icon-filter: $filter-darkest;
-$contact-icon-width: 28%;
+$contact-icon-filter: $filter-dark-main;
+$contact-icon-width: 29%;
 
 %bg-img {
     display: inline-block;
@@ -32,7 +32,7 @@ $contact-icon-width: 28%;
     stroke-linecap: round;
 }
 
-@mixin icon-img($width) {
+@mixin icon-img($width, $filter) {
     display: inline-block;
     width: $width;
     height: auto;
@@ -40,7 +40,9 @@ $contact-icon-width: 28%;
     position: absolute;
     top: 0%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 10%);
+
+    filter: $filter;
 }
 
 .page-icon-container {
@@ -60,8 +62,6 @@ $contact-icon-width: 28%;
     }
 }
 
-
-
 .page-icon-container.portfolio {
     .page-bg-img {
         stroke: $portfolio-bg-stroke;
@@ -69,9 +69,8 @@ $contact-icon-width: 28%;
     }
 
     .page-icon-img {
-        @include icon-img($portfolio-icon-width);
-        filter: $portfolio-icon-filter;
-        transform: translate(-50%, 25%);
+        @include icon-img($portfolio-icon-width, $portfolio-icon-filter);
+        transform: translate(-50%, 20%);
     }
 }
 
@@ -82,9 +81,7 @@ $contact-icon-width: 28%;
     }
 
     .page-icon-img {
-        @include icon-img($experiments-icon-width);
-        filter: $experiments-icon-filter;
-        transform: translate(-50%, 10%);
+        @include icon-img($experiments-icon-width, $experiments-icon-filter);
     }
 }
 
@@ -95,9 +92,7 @@ $contact-icon-width: 28%;
     }
 
     .page-icon-img {
-        @include icon-img($about-icon-width);
-        filter: $about-icon-filter;
-        transform: translate(-50%, 10%);
+        @include icon-img($about-icon-width, $about-icon-filter);
     }
 }
 
@@ -108,8 +103,13 @@ $contact-icon-width: 28%;
     }
 
     .page-icon-img {
-        @include icon-img($contact-icon-width);
-        filter: $contact-icon-filter;
-        transform: translate(-50%, 25%);
+        @include icon-img($contact-icon-width, $contact-icon-filter);
     }
 }
+
+$px850: (
+    container-width: 260px,
+    container-height: 130px,
+);
+
+@include pageIconMediaQuery(772px, $px850);
