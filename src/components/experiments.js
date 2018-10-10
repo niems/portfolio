@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import DistortText from './distortText';
+import PageIcon from './pageIcon';
 import './style/experiments.css';
 
 class DisplayExperiment extends Component {
@@ -88,6 +89,7 @@ class Experiments extends Component {
     render() {
         return (
             <div id='experiments-container' ref={this.props.setRef}>
+                <PageIcon setup='experiments' />
                 <div id='experiments-header-container'>
                     <h2 className='effect-container section-header' id='experiments-header'>
                         <DistortText setup={this.distortTextSetup} />
