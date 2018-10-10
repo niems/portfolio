@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProjectView from './projectView';
+import PageIcon from './pageIcon';
 import './style/portfolio.css';
 
 function DisplayProject({ name, tech, onClick }) {
@@ -62,6 +63,7 @@ class Portfolio extends Component {
         return (
             <div className={`page-container`} id='portfolio-container' ref={this.props.setRef}>
                 {this.state.projectFullView}
+                <PageIcon setup={'portfolio'} />
 
                 <div id='portfolio-header-container'>
                     <h2 id='portfolio-header' className='section-header'>Projects</h2>
