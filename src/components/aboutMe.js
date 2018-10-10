@@ -8,8 +8,8 @@ class AboutMe extends Component {
         return (
             <article id='about-me-section' ref={this.props.setRef}>
                 
-                <div className='about-me-container'>
                     <PageIcon setup='about' />
+                <div className='about-me-container'>
                     
                     <h1 id='about-me-header' className='section-header'>About me</h1>
                     <p className='section-description' id='about-init-description'>

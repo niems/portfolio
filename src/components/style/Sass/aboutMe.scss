@@ -38,7 +38,9 @@ $about-description-highlight:#32C8EB;
 }
 
 #about-me-section {
-    @extend %section-setup;
+    @extend %section-container;
+    justify-content: flex-start;
+    padding: 0;
 
     color: $about-fg;
     background: $about-bg;
@@ -48,7 +50,6 @@ $about-description-highlight:#32C8EB;
 .about-me-container {
     @extend %subsection-container;
     
-
     background: $content-bg;
     
     #about-me-header {
@@ -111,12 +112,5 @@ $about-description-highlight:#32C8EB;
                 color: $accent;
             }
         }
-    }
-}
-
-@media only screen and (min-width: 800px) {
-    %section-setup {
-        height: 100%;
-        padding: 3rem 0;
     }
 }
