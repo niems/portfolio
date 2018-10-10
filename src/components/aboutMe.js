@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import ProgressBar from './progressbar';
+import PageIcon from './pageIcon';
 import './style/aboutMe.css';
 
 class AboutMe extends Component {
     render() {
         return (
             <article id='about-me-section' ref={this.props.setRef}>
-
+                
                 <div className='about-me-container'>
+                    <PageIcon setup='about' />
+                    
                     <h1 id='about-me-header' className='section-header'>About me</h1>
                     <p className='section-description' id='about-init-description'>
                         <span className='standout'>Hi!</span> I'm Zach, a versatile Web Developer with <span className='highlight'>experience in both the front-end and back-end</span> of the development process.
