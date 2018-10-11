@@ -13,8 +13,7 @@ $contact-link-border: $accent;
 $contact-link-hover-bg: $accent;
 
 //description setup
-$footer-font-size: 0.9em;
-$footer-font-line-height: 1.5em;
+$footer-font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
 $footer-description-bg: $accent;
 $footer-description-fg: $darkest;
 
@@ -119,7 +118,7 @@ $footer-description-fg: $darkest;
     justify-content: center;
     align-items: center;
     
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
     margin: 0;
 
     color: $footer-description-fg;
@@ -130,8 +129,8 @@ $footer-description-fg: $darkest;
         font-size: $footer-font-size;
         font-family: $secondary-font-family;
         font-weight: $secondary-normal;
-        line-height: $footer-font-line-height;
+        line-height: $line-height;
     }
 }
 
-@include contactMediaQuery(800px, $footer-font-size * 1.2, $social-icon-size * 1.2);
+@include contactMediaQuery(800px, $footer-font-size, $social-icon-size * 1.3);
