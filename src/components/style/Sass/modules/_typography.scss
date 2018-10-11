@@ -1,15 +1,8 @@
 /*
-@import "https://fonts.googleapis.com/css?family=Montserrat|Space+Mono:400,700";
-$header-font-family: 'Space Mono', monospace;
-$header-heavy: 700; //bold font weight
-$header-normal: 400; //regular font weight
-
-$secondary-font-family: 'Montserrat', sans-serif;
-$secondary-normal: 400; //regular font weight
-$line-height: 150%;
+calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+Recommended Font Sizes: 8, 16, 24, 32, 48, 64, 95
 */
 
-//Recommended Font Sizes: 8, 16, 24, 32, 48, 64, 95
 
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,700|Space+Mono:400,700";
 $header-font-family: 'Space Mono', monospace;

@@ -20,26 +20,9 @@ $about-description-font-family: $secondary-font-family;
 $about-description-first-letter-color: $darkest;
 $about-description-highlight:#32C8EB;
 
-
-%section-setup {
-    box-sizing: border-box;
-    max-width: 100%;
-    min-height: max-content;
-    width: 100%;
-    height: max-content;
- 
-    margin: 0;
-    padding: 0;
-    text-align: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #about-me-section {
     @extend %section-container;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 0;
 
     color: $about-fg;
@@ -49,7 +32,7 @@ $about-description-highlight:#32C8EB;
 
 .about-me-container {
     @extend %subsection-container;
-    
+    margin: auto 0;
     background: $content-bg;
     
     #about-me-header {
