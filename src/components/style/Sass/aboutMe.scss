@@ -48,15 +48,29 @@ $about-description-highlight:#32C8EB;
     .section-description {
         margin: 0 0 1rem 0;
 
-        .highlight {
-            padding: 2px 0;
-            //background: $about-description-highlight;
-            color: $about-description-highlight;
-            box-shadow: 2px 0 0 rgba(0, 0, 0, 0.1), -2px 0 0 rgba(0, 0, 0, 0.1);            
-            background: rgba(0, 0, 0, 0.1);
+        .highlight-wrap {
+            box-sizing: border-box;
+            display: inline-block;
+            
+            margin: 0 0 0px 0;
+            padding: 0 1px;
             border-radius: 3px;
-            font-weight: $secondary-heavy;
-            text-shadow: 1px 1px 3px $darkest;            
+
+            background: $accent-highlight2;     
+            box-shadow: 2px 0 0 $accent-highlight2, -2px 0 0 $accent-highlight2;            
+            transform: skew(15deg);
+            
+            .highlight {
+                box-sizing: border-box;
+                display: inline-block;
+                color: $about-description-highlight;
+                font-weight: $secondary-heavy;
+                text-shadow: 1px 1px 3px $darkest;      
+                padding: 0 0.15rem;
+                
+                transform: skew(-15deg);
+                background: none;
+            }
         }
     }
     

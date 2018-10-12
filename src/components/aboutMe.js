@@ -3,6 +3,17 @@ import ProgressBar from './progressbar';
 import PageIcon from './pageIcon';
 import './style/aboutMe.css';
 
+function Highlighted({ text }) {
+    
+    const highlighted = text.split(' ').map(word => (
+        <span className='highlight-wrap'>
+            <span className='highlight'>{word}</span>
+        </span>
+    ));
+
+    return highlighted;
+}
+
 class AboutMe extends Component {
     render() {
         return (
@@ -12,11 +23,11 @@ class AboutMe extends Component {
                 <div className='about-me-container'>
                     <h1 id='about-me-header' className='section-header'>About me</h1>
                     <p className='section-description' id='about-init-description'>
-                        <span className='standout'>Hi!</span> I'm Zach, a versatile Web Developer with <span className='highlight'>experience in both the front-end and back-end</span> of the development process.
+                        <span className='standout'>Hi!</span> I'm Zach, a versatile Web Developer with <Highlighted text='experience in both the front-end and back-end' /> of the development process.
                     </p>
 
                     <p className='section-description'>
-                        I'm always looking to grow my skill set, <span className='highlight'>specializing in React and mobile-first responsive design.</span>
+                        I'm always looking to grow my skill set, <Highlighted text='specializing in React and mobile-first responsive design.' />
                     </p>
 
                     <ProgressBar />
