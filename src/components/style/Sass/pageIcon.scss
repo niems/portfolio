@@ -2,6 +2,9 @@
 @import './modules/typography';
 @import './modules/mediaQuery';
 
+$container-max-width: 300px;
+$container-width: 75%;
+$container-height: auto;
 
 $portfolio-bg-stroke: $light-main;
 $portfolio-bg-fill: $light-main;
@@ -48,8 +51,9 @@ $contact-icon-width: 29%;
 .page-icon-container {
     box-sizing: border-box;
     display: inline-block;
-    width: 180px;
-    height: 90px;
+    max-width: $container-max-width;
+    width: $container-width;
+    height: $container-height;
 
     margin: 0;
     padding: 0;
