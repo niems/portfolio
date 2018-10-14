@@ -30,8 +30,7 @@ const Contact = ({ setRef }) => {
             <div id='contact-info'>
                 <DisplaySocialLinks />
                 <div id='contact-description'>
-                    <span>Hand-crafted, artisan HTML, Sass, & React.</span>
-                    <span>Free-range & GMO free.</span>
+                    <span>Hand-crafted, artisan HTML, Sass, & React</span>
                     <span>Coded by Zach Niemann</span>
                 </div>
             </div>

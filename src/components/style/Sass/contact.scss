@@ -14,7 +14,7 @@ $contact-link-hover-bg: $accent;
 
 //description setup
 $footer-font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
-$footer-description-bg: $accent;
+$footer-description-bg: $accent-highlight2;
 $footer-description-fg: $darkest;
 
 #contact-container {
