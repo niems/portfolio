@@ -111,6 +111,46 @@ $contact-icon-width: 29%;
     }
 }
 
+
+
+//general icon setup
+.menu-icons {
+    stroke: black;
+    fill: none;
+    stroke-width: 3;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+//chat icon setup
+.chat-icon.text {
+    stroke-width: 3.5;
+}
+
+//flask icon setup
+.flask-icon.measure {
+    stroke-width: 1;
+}
+
+.flask-icon.bottom {
+    fill: $light-main;
+}
+
+.flask-icon.solution-top {
+    stroke-width: 3;
+    stroke: $light-mid;
+}
+
+.flask-icon.bubble {
+    stroke-width: 0.9;
+    stroke: $darkest;
+}
+
+//home icon setup
+.home-icon.roof {
+    stroke-width: 5;
+}
+
 $px850: (
     container-width: 260px,
     container-height: 130px,
