@@ -67,7 +67,7 @@ $bg-img-stroke-width: 2;
     }
 
     .code-icon {
-        @include svg-color(black, 3, $light-darkest);
+        @include svg-color(black, 3, none);
     }
 }
 
@@ -78,11 +78,15 @@ $bg-img-stroke-width: 2;
 
     .flask-icon {
         //@include icon-img($experiments-icon-width, $experiments-icon-filter);
-        @include svg-color(black, 3, $dark-main);       
+        @include svg-color(black, 3, none);       
     }
 
     .flask-icon.measure {
-        stroke-width: 1;
+        @include svg-color(black, 1, none);        
+    }
+
+    .flask-icon.solution-top {
+        @include svg-color($accent, 3, $accent);        
     }
 
     .flask-icon.bottom {
@@ -111,7 +115,7 @@ $bg-img-stroke-width: 2;
     }
 
     .chat-icon {
-        @include svg-color($darkest, 3, none);                
+        @include svg-color($darkest, 3, $accent-highlight2);                
         transform: scale(0.8) translateX(40%);        
     }
 
