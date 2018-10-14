@@ -26,26 +26,21 @@ $contact-bg-fill: $accent;
 $contact-icon-filter: $filter-dark-main;
 $contact-icon-width: 29%;
 
+$bg-img-stroke-width: 2;
+
 %bg-img {
     display: inline-block;
     width: 100%;
     height: auto; 
-
-    stroke-width: 2;
     stroke-linecap: round;
 }
 
-@mixin icon-img($width, $filter) {
-    display: inline-block;
-    width: $width;
-    height: auto;
 
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 10%);
-
-    filter: $filter;
+//remove after svg setup is finished
+@mixin svg-color($stroke, $stroke-width, $fill) {
+    stroke: $stroke;
+    stroke-width: $stroke-width;
+    fill: $fill;
 }
 
 .page-icon-container {
@@ -68,83 +63,72 @@ $contact-icon-width: 29%;
 
 .page-icon-container.portfolio {
     .page-bg-img {
-        stroke: $portfolio-bg-stroke;
-        fill: $portfolio-bg-fill;
+        @include svg-color($portfolio-bg-stroke, $bg-img-stroke-width, $portfolio-bg-fill);
     }
 
-    .page-icon-img {
-        @include icon-img($portfolio-icon-width, $portfolio-icon-filter);
-        transform: translate(-50%, 20%);
+    .code-icon {
+        @include svg-color(black, 3, $light-darkest);
     }
 }
 
 .page-icon-container.experiments {
     .page-bg-img {
-        stroke: $experiments-bg-stroke;
-        fill: $experiments-bg-fill;
+        @include svg-color($experiments-bg-stroke, $bg-img-stroke-width, $experiments-bg-fill);
     }
 
-    .page-icon-img {
-        @include icon-img($experiments-icon-width, $experiments-icon-filter);
+    .flask-icon {
+        //@include icon-img($experiments-icon-width, $experiments-icon-filter);
+        @include svg-color(black, 3, $dark-main);       
+    }
+
+    .flask-icon.measure {
+        stroke-width: 1;
+    }
+
+    .flask-icon.bottom {
+        @include svg-color(black, 3, $accent-highlight2);        
+    }
+
+    .flask-icon.bubble {
+        @include svg-color($darkest, 0.9, $accent);        
     }
 }
 
 .page-icon-container.about {
     .page-bg-img {
-        stroke: $about-bg-stroke;
-        fill: $about-bg-fill;
+        @include svg-color($about-bg-stroke, $bg-img-stroke-width, $about-bg-fill);
     }
 
-    .page-icon-img {
-        @include icon-img($about-icon-width, $about-icon-filter);
+    .user-icon {
+        @include svg-color(black, 3, $accent);        
+        transform: scale(0.75) translate(42%, -1%);
     }
 }
 
 .page-icon-container.contact {
     .page-bg-img {
-        stroke: $contact-bg-stroke;
-        fill: $contact-bg-fill;
+        @include svg-color($contact-bg-stroke, $bg-img-stroke-width, $contact-bg-fill);
     }
 
-    .page-icon-img {
-        @include icon-img($contact-icon-width, $contact-icon-filter);
+    .chat-icon {
+        @include svg-color($darkest, 3, none);                
+        transform: scale(0.8) translateX(40%);        
+    }
+
+    .chat-icon.text {
+        stroke-width: 3.5;
     }
 }
 
 
 
 //general icon setup
-.menu-icons {
-    stroke: black;
-    fill: none;
-    stroke-width: 3;
+.icons {
     stroke-linejoin: round;
     stroke-linecap: round;
+    transform: scale(0.8) translateX(38%);    
 }
 
-//chat icon setup
-.chat-icon.text {
-    stroke-width: 3.5;
-}
-
-//flask icon setup
-.flask-icon.measure {
-    stroke-width: 1;
-}
-
-.flask-icon.bottom {
-    fill: $light-main;
-}
-
-.flask-icon.solution-top {
-    stroke-width: 3;
-    stroke: $light-mid;
-}
-
-.flask-icon.bubble {
-    stroke-width: 0.9;
-    stroke: $darkest;
-}
 
 //home icon setup
 .home-icon.roof {
@@ -156,4 +140,4 @@ $px850: (
     container-height: 130px,
 );
 
-@include pageIconMediaQuery(772px, $px850);
+//@include pageIconMediaQuery(772px, $px850);
