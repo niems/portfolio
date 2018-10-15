@@ -252,9 +252,12 @@
 
 @mixin pageIconMediaQuery($minWidth, $query) {
     @media only screen and (min-width: $minWidth) {
-        .page-icon-container {
-            width: map-get($query, container-width);
-            height: map-get($query, container-height);    
+        .page-icon-container, .page-icon-container.experiments {
+            max-width: map-get($query, container-max-width);
+
+            .page-icon, .page-icon.experiments {
+                max-height: map-get($query, icon-max-height);
+            }
         } 
     }
 }

@@ -34,6 +34,7 @@ $bg-img-stroke-width: 2;
     width: 100%;
     height: auto; 
     stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .page-icon-container {
@@ -48,32 +49,31 @@ $bg-img-stroke-width: 2;
 
     position: relative;
     background: none;
+    transition: all 0.5s;
 
     .page-bg-img {
         @extend %bg-img;
     }
-}
 
-.page-icon {
-    box-sizing: border-box;
-    display: block;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    max-width: 100%;
-    max-height: 100%;
+    .page-icon {
+        box-sizing: border-box;
+        display: block;
     
-    background: gray;
-    
-    svg {
-        width: max-content;
-        height: max-content;
-
+        position: absolute;
+        top: 0;
+        left: 50%;
         transform: translateX(-50%);
+    
+        max-width: 100%;
+        max-height: 70%;
+        width: max-content;
+        height: auto;
+        
+        background: none;
+        transition: all 0.5s;
     }
 }
+
 
 .page-icon-container.portfolio {
     .page-bg-img {
@@ -85,11 +85,19 @@ $bg-img-stroke-width: 2;
     .page-bg-img {
         @include svg-color($experiments-bg-stroke, $bg-img-stroke-width, $experiments-bg-fill);
     }
+
+    .page-icon {
+        max-height: 75%;
+    }
 }
 
 .page-icon-container.about {
     .page-bg-img {
         @include svg-color($about-bg-stroke, $bg-img-stroke-width, $about-bg-fill);
+    }
+
+    .page-icon {
+        filter: $filter-accent;
     }
 }
 
@@ -100,8 +108,13 @@ $bg-img-stroke-width: 2;
 }
 
 $px850: (
-    container-width: 260px,
-    container-height: 130px,
+    container-max-width: 400px,
+    
+    portfolio-icon-max-height: 65%,
+
+    icon-max-height: 75%,
+    icon-translate: (-50%, 0%),
+
 );
 
-//@include pageIconMediaQuery(772px, $px850);
+@include pageIconMediaQuery(850px, $px850);
