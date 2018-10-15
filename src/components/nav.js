@@ -9,6 +9,10 @@ class Nav extends Component {
         this.updateSelection = this.updateSelection.bind(this);
     }
 
+    componentDidMount() {
+        this.inputRef.current.click();
+    }
+
     updateSelection(e) {
         e.preventDefault();
         this.props.selection( e.currentTarget.id.replace('-link', '') );

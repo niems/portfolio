@@ -29,17 +29,7 @@
 
 //main button setup
 
-/*
-$menu-btn-size: 45px;
-$menu-item-size: 42px;
-$menu-item-description-font-size: 1em;
-
-$menu-icon-width: $menu-btn-size * 0.5;
-$menu-icon-height: 2px;
-$menu-icon-spacing: 4px;
-*/
-
-$menu-btn-size: 45px;
+$menu-btn-size: 48px;
 $menu-btn-bg: $darkest;
 $menu-btn-shadow: light-main;
 $menu-icon-bg: $light-main; //color of "hamburger" - menu lines
@@ -53,7 +43,7 @@ $menu-icon-height: 2px;
 $menu-icon-spacing: 4px;
 
 $total-menu-items: 5;
-$menu-item-size: 42px;
+$menu-item-size: 45px;
 
 $menu-item-duration: 0.5s;
 $menu-item-delay: 0.25s; //starting menu item delay
@@ -118,7 +108,7 @@ $menu-items: (
     padding: 0;
 
     background: $menu-item-bg;
-    color: $menu-item-text-fg;
+    //color: $menu-item-text-fg;
 }
 
 %menu-item-description {
@@ -165,24 +155,6 @@ $menu-items: (
     top: 1rem;
     right: 0rem;
     transform: translateX(-50%);
-}
-
-#gooey-menu-container:not(.sticky) {
-    ~ .menu-item {
-        opacity: 1;
-        box-shadow: 2px 3px 5px black;
-    }
-
-    @for $i from 1 through $total-menu-items {
-        ~ ##{ map-get( nth($menu-items, $i), id)} {
-            @include itemTransition($menu-item-duration, $menu-item-delay + ( $menu-item-delay-offset * ($i - 1) ) );
-            @include itemTransform(0, ($menu-item-transform-offset * $i), 0, 0deg);
-
-            &::after {
-                content: map-get( nth($menu-items, $i),  text);
-            }
-        }
-    }
 }
 
 .menu-open { //doesn't display checkbox
@@ -396,7 +368,7 @@ $menu-items: (
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 45%;
+        width: 62%;
         height: auto;
     }
 
