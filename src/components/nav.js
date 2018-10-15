@@ -31,23 +31,23 @@ class Nav extends Component {
                 </div>
                 
                 <a className='menu-item' id='home-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/home-icon.svg' alt='home icon link' />
+                    <img className='menu-item-icon' src='./images/homeIcon.svg' alt='home icon link' />
                     <span className='menu-item-description'>Home</span>
                 </a>
                 <a className='menu-item' id='portfolio-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/code-icon.svg' alt='portfolio icon link' />
+                    <img className='menu-item-icon' src='./images/codeIcon.svg' alt='portfolio icon link' />
                     <span className='menu-item-description'>Portfolio</span>
                 </a>
                 <a className='menu-item' id='experiments-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/flask.svg' alt='experiments icon link' />
+                    <img className='menu-item-icon' src='./images/flaskIcon.svg' alt='experiments icon link' />
                     <span className='menu-item-description'>Experiments</span>
                 </a>
                 <a className='menu-item' id='about-me-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/user.svg' alt='about me icon link' />
+                    <img className='menu-item-icon' src='./images/userIcon.svg' alt='about me icon link' />
                     <span className='menu-item-description'>About</span>
                 </a>
                 <a className='menu-item' id='contact-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/chat-icon.svg' alt='contact icon link' />
+                    <img className='menu-item-icon' src='./images/chatIcon.svg' alt='contact icon link' />
                     <span className='menu-item-description'>Contact</span>
                 </a>
             </nav>
