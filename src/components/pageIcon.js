@@ -26,7 +26,7 @@ function ChatIcon(props) {
 function UserIcon(props) {
     return (
         <React.Fragment>
-            <circle className='icons user-icon head' r='23' cx='50' cy='25' />
+            <circle className='icons user-icon head' r='23' cx='50' cy='30' />
             <path className='icons user-icon body' d='M35 55 Q50 60, 65 55 Q85 58, 90 90 Q90 95, 82 95 L18 95 Q10 95, 10 90 Q15 58, 35 55' />
         </React.Fragment>
     );
@@ -64,17 +64,27 @@ function HomeIcon(props) {
     );
 }
 
-function PageBackground({ icon }) {
-    return (
-        <svg className='page-bg-img' viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0 L100 100 L200 0" />
+function PageBackground({ icon, background }) {
 
+    //adds background for page icons by default
+    if (background) {
+        return (
+            <svg className='page-bg-img' viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L100 100 L200 0" />
+    
+                {icon}
+            </svg>
+        );
+    }
+
+    return (
+        <svg className='page-bg-img' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             {icon}
         </svg>
-    )
+    );
 }
 
-const PageIcon = ({ setup }) => {
+const PageIcon = ({ setup, background }) => {
     const pageIcons = {
         'portfolio': (<CodeIcon />),
         'experiments': (<FlaskIcon />),
@@ -84,7 +94,7 @@ const PageIcon = ({ setup }) => {
 
     return (
         <span className={`page-icon-container ${setup}`}>
-            <PageBackground icon={pageIcons[setup]} />
+            <PageBackground icon={pageIcons[setup]} background={background || true} />
         </span>
     );
 
