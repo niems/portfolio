@@ -1,5 +1,6 @@
 @import './modules/colors';
 @import './modules/typography';
+@import './modules/general';
 @import './modules/mediaQuery';
 
 $container-max-width: 300px;
@@ -35,14 +36,6 @@ $bg-img-stroke-width: 2;
     stroke-linecap: round;
 }
 
-
-//remove after svg setup is finished
-@mixin svg-color($stroke, $stroke-width, $fill) {
-    stroke: $stroke;
-    stroke-width: $stroke-width;
-    fill: $fill;
-}
-
 .page-icon-container {
     box-sizing: border-box;
     display: inline-block;
@@ -61,13 +54,30 @@ $bg-img-stroke-width: 2;
     }
 }
 
+.page-icon {
+    box-sizing: border-box;
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    max-width: 100%;
+    max-height: 100%;
+    
+    background: gray;
+    
+    svg {
+        width: max-content;
+        height: max-content;
+
+        transform: translateX(-50%);
+    }
+}
+
 .page-icon-container.portfolio {
     .page-bg-img {
         @include svg-color($portfolio-bg-stroke, $bg-img-stroke-width, $portfolio-bg-fill);
-    }
-
-    .code-icon {
-        @include svg-color(black, 3, none);
     }
 }
 
@@ -75,37 +85,11 @@ $bg-img-stroke-width: 2;
     .page-bg-img {
         @include svg-color($experiments-bg-stroke, $bg-img-stroke-width, $experiments-bg-fill);
     }
-
-    .flask-icon {
-        //@include icon-img($experiments-icon-width, $experiments-icon-filter);
-        @include svg-color(black, 3, none);       
-    }
-
-    .flask-icon.measure {
-        @include svg-color(black, 1, none);        
-    }
-
-    .flask-icon.solution-top {
-        @include svg-color($accent, 3, $accent);        
-    }
-
-    .flask-icon.bottom {
-        @include svg-color(black, 3, $accent-highlight2);        
-    }
-
-    .flask-icon.bubble {
-        @include svg-color($darkest, 0.9, $accent);        
-    }
 }
 
 .page-icon-container.about {
     .page-bg-img {
         @include svg-color($about-bg-stroke, $bg-img-stroke-width, $about-bg-fill);
-    }
-
-    .user-icon {
-        @include svg-color(black, 3, $accent);        
-        transform: scale(0.75) translate(42%, -1%);
     }
 }
 
@@ -113,30 +97,6 @@ $bg-img-stroke-width: 2;
     .page-bg-img {
         @include svg-color($contact-bg-stroke, $bg-img-stroke-width, $contact-bg-fill);
     }
-
-    .chat-icon {
-        @include svg-color($darkest, 3, $accent-highlight2);                
-        transform: scale(0.8) translateX(40%);        
-    }
-
-    .chat-icon.text {
-        stroke-width: 3.5;
-    }
-}
-
-
-
-//general icon setup
-.icons {
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    transform: scale(0.8) translateX(38%);    
-}
-
-
-//home icon setup
-.home-icon.roof {
-    stroke-width: 5;
 }
 
 $px850: (

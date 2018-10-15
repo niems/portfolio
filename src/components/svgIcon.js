@@ -1,6 +1,5 @@
 import React from 'react';
-import SvgIcon from './svgIcon';
-import './style/pageIcon.css';
+import './style/svgIcon.css';
 
 function CodeIcon(props) {
     return (
@@ -21,8 +20,6 @@ function ChatIcon(props) {
         </React.Fragment>
     );
 }
-
-
 
 function UserIcon(props) {
     return (
@@ -65,32 +62,20 @@ function HomeIcon(props) {
     );
 }
 
-function PageBackground(props) {
+const iconRef = {
+    'home': (<HomeIcon />),
+    'portfolio': (<CodeIcon />),
+    'experiments': (<FlaskIcon />),
+    'about': (<UserIcon />),
+    'contact': (<ChatIcon />)
+};
+
+const SvgIcon = ({ icon }) => {
     return (
-        <svg className='page-bg-img' viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0 L100 100 L200 0" />
+        <svg className='svg-icon-container' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            {iconRef[icon]}
         </svg>
-    );
-}
-
-const PageIcon = ({ setup }) => {
-    /*
-    const pageIcons = {
-        'portfolio': (<CodeIcon />),
-        'experiments': (<FlaskIcon />),
-        'about': (<UserIcon />),
-        'contact': (<ChatIcon />)
-    };
-    */
-
-    return (
-        <span className={`page-icon-container ${setup}`}>
-            <PageBackground />
-            <span className='page-icon'>
-                <SvgIcon icon={setup} />
-            </span>
-        </span>
     );
 };
 
-export default PageIcon;
+export default SvgIcon;

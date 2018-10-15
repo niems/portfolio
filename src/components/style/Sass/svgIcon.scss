@@ -1,0 +1,76 @@
+@import './modules/colors';
+@import './modules/general';
+@import './modules/mediaQuery';
+
+.svg-icon-container {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 100%;
+    width: max-content;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    background: green;
+}
+
+
+//general icon setup
+.icons {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    transform: scale(0.8) translateX(38%);    
+}
+
+//code icon setup
+.code-icon {
+    @include svg-color(black, 3, none);
+}
+
+
+//flask icon setup
+.flask-icon {
+    //@include icon-img($experiments-icon-width, $experiments-icon-filter);
+    @include svg-color(black, 3, none);       
+}
+
+.flask-icon.measure {
+    @include svg-color(black, 1, none);        
+}
+
+.flask-icon.solution-top {
+    @include svg-color($accent, 3, $accent);        
+}
+
+.flask-icon.bottom {
+    @include svg-color(black, 3, $accent-highlight2);        
+}
+
+.flask-icon.bubble {
+    @include svg-color($darkest, 0.9, $accent);        
+}
+
+
+//user icon setup
+.user-icon {
+    @include svg-color(black, 3, $accent);        
+    transform: scale(0.75) translate(42%, -1%);
+}
+
+
+//chat icon setup
+.chat-icon {
+    @include svg-color($darkest, 3, $accent-highlight2);                
+    transform: scale(0.8) translateX(40%);        
+}
+
+.chat-icon.text {
+    stroke-width: 3.5;
+}
+
+
+//home icon setup
+.home-icon.roof {
+    stroke-width: 5;
+}

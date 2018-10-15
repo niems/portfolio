@@ -11,3 +11,9 @@
     background: $bg;
     border-color: $border;
 }
+
+@mixin svg-color($stroke, $stroke-width, $fill) {
+    stroke: $stroke;
+    stroke-width: $stroke-width;
+    fill: $fill;
+}
