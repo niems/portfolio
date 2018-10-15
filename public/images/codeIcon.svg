@@ -1,0 +1,5 @@
+<svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill='#111111' stroke='#000000' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'> 
+    <path id='less-than' className='icons code-icon' d='M0 50 l25 -25 l5 13 l-12 12 l12 12 l-5 13z' />
+    <path id='greater-than' className='icons code-icon' d='M100 50 l-25 -25 l-5 13 l12 12 l-12 12 l5 13z' />
+    <path id='forward-slash' className='icons code-icon' d='M61.5 12.5 l-35 70 l12 5 l35 -70z' />        
+</svg>

@@ -1,0 +1,5 @@
+<svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill='#000000' stroke='#000000' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'>
+    <path className='icons home-icon roof' d='M13 50 L50 19 L87 50' />
+    <path className='icons home-icon chimney' d='M65 30 v-10 h10 v18z'/>
+    <path className='icons home-icon main' d='M20 50 L50 25 L80 50 L80 85 L59 85 L59 60 L41 60 L41 85 L20 85z' />     
+</svg>
