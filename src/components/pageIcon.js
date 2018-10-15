@@ -13,10 +13,10 @@ function PageBackground(props) {
 const PageIcon = ({ setup }) => {
     
     const pageIcons = {
-        'portfolio': './images/code-icon.svg',
-        'experiments': './images/flask.svg',
-        'about': './images/user.svg',
-        'contact': './images/chat-icon.svg'
+        'portfolio': './images/codeIcon.svg',
+        'experiments': './images/flaskIcon.svg',
+        'about': './images/userIcon.svg',
+        'contact': './images/chatIcon.svg'
     };
     
 
