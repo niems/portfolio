@@ -90,6 +90,7 @@ class Experiments extends Component {
         return (
             <div id='experiments-container' ref={this.props.setRef}>
                 <PageIcon setup='experiments' />
+                
                 <div id='experiments-header-container'>
                     <h2 className='effect-container section-header' id='experiments-header'>
                         <DistortText setup={this.distortTextSetup} />
