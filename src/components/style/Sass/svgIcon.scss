@@ -12,9 +12,8 @@
     margin: 0;
     padding: 0;
 
-    background: gray;
+    
 }
-
 
 //general icon setup
 .icons {
@@ -22,6 +21,19 @@
     stroke-linecap: round;
     transform: scale(0.8) translateX(38%);    
 }
+
+//currently only used with the flask icon
+.svg-icon-container.absolute-pos {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .flask-icon {
+        transform: scale(0.8) translateX(12%);    
+    }
+}
+
+
 
 //code icon setup
 .code-icon {

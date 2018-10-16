@@ -2,7 +2,16 @@ import React from 'react';
 import SvgIcon from './svgIcon';
 import './style/pageIcon.css';
 
-function PageBackground(props) {
+function PageBackground({ inlineSvg }) {
+    if (inlineSvg) {
+        return (
+            <svg className='page-bg-img' viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L100 100 L200 0" />
+                {inlineSvg}
+            </svg>
+        );
+    }
+
     return (
         <svg className='page-bg-img' viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0 L100 100 L200 0" />
@@ -24,8 +33,7 @@ const PageIcon = ({ setup }) => {
     if (setup === 'experiments') {
         return (
             <span className={`page-icon-container ${setup}`}>
-                <PageBackground />
-                <SvgIcon icon={setup} isPageIcon={true} />
+                <PageBackground inlineSvg={ (<SvgIcon icon={setup} isPageIcon={true} />) } />
             </span>
         );
     }
