@@ -70,9 +70,13 @@ const iconRef = {
     'contact': (<ChatIcon />)
 };
 
-const SvgIcon = ({ icon }) => {
+//isPageIcon: determines if the svg is being used as a page icon - only the experiments page does this currently,
+//all other pages use an image of the svg
+const SvgIcon = ({ icon, isPageIcon }) => {
+    const svgClass = isPageIcon ? 'svg-icon-container absolute-pos' : 'svg-icon-container';    
+
     return (
-        <svg className='svg-icon-container' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <svg className={svgClass} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             {iconRef[icon]}
         </svg>
     );

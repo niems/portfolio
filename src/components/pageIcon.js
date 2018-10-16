@@ -14,11 +14,21 @@ const PageIcon = ({ setup }) => {
     
     const pageIcons = {
         'portfolio': './images/codeIcon.svg',
-        'experiments': './images/flaskIcon.svg',
+        //'experiments': './images/flaskIcon.svg',
         'about': './images/userIcon.svg',
         'contact': './images/chatIcon.svg'
     };
     
+    //displays the svg so it can be animated for the experiments page
+    //all other pages use an image of the svg so they can be cached
+    if (setup === 'experiments') {
+        return (
+            <span className={`page-icon-container ${setup}`}>
+                <PageBackground />
+                <SvgIcon icon={setup} isPageIcon={true} />
+            </span>
+        );
+    }
 
     return (
         <span className={`page-icon-container ${setup}`}>

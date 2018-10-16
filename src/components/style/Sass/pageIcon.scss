@@ -86,8 +86,14 @@ $bg-img-stroke-width: 2;
         @include svg-color($experiments-bg-stroke, $bg-img-stroke-width, $experiments-bg-fill);
     }
 
+    /*
     .page-icon {
         max-height: 75%;
+    }
+    */
+
+    #experiments-svg-container {
+        position: absolute;
     }
 }
 
