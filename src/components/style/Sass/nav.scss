@@ -58,6 +58,7 @@ $menu-item-text-bg: $light-mid;
 $menu-item-text-fg: $darkest;
 
 
+
 $menu-items: (
     (
         id: 'home-link',
@@ -81,6 +82,7 @@ $menu-items: (
     )
 );
 
+
 %menuIconLine {
     display: inline-block;
 
@@ -101,6 +103,7 @@ $menu-items: (
 
     position: absolute; //if changing the description output, the position can be removed here
     bottom: 0;
+    z-index: 0;
     
     cursor: pointer;    
     opacity: 0;
@@ -117,17 +120,19 @@ $menu-items: (
     width: max-content;
     height: max-content;
     position: relative;
-    top: 50%;
-    left: -50%;
+    top: -25%;
+    left: 0;
+    z-index: -1;
+    //left: -50%;
 
-    //font-size: $menu-item-description-font-size;
     font-weight: bold;
     margin: 0;
     padding: 0;
     opacity: 0;
 
     background: none;
-    transform: translate(-100%, -50%);
+    //transform: translate(-100%, -100%);
+    transform: translateY(-100%);
     transition: all 0.6s;     
 }
 
@@ -224,12 +229,8 @@ $menu-items: (
 }
 
 .menu-open:checked {
-    +.menu-open-button {
-        //width: $menu-btn-size;
-        //height: $menu-btn-size;
-        
+    +.menu-open-button {        
         transform: rotateZ(135deg);
-        //box-shadow: 1px -2px 4px $light-main;
         transition: all 0.5s 0.15s, background 0.25s;
         
         #hamburger1{
@@ -250,16 +251,14 @@ $menu-items: (
         box-shadow: 2px 3px 5px black;
     }
 
+    
     @for $i from 1 through $total-menu-items {
         ~ ##{ map-get( nth($menu-items, $i), id)} {
             @include itemTransition($menu-item-duration, $menu-item-delay + ( $menu-item-delay-offset * ($i - 1) ) );
             @include itemTransform(0, ($menu-item-transform-offset * $i), 0, 0deg);
-
-            &::after {
-                content: map-get( nth($menu-items, $i),  text);
-            }
         }
     }
+    
 
     &:hover {
         +.menu-open-button {
@@ -284,48 +283,12 @@ $menu-items: (
     @extend %menu-item;
     width: $menu-item-size;
     height: $menu-item-size;
-
-    &::before {
-        content: '';
-        display: inline-block;
-        width: 0%;
-        height: 1.4rem;
-        overflow: hidden;
-
-        position: absolute;
-        top: 50%;
-        //transform: translate(-130%, -50%);
-        transform: translate(0%, 50%);
-
-        opacity: 0;
-        font-size: 1.3em;
-
-        transition: all 0.5s;
-    }
-
-    &::after {
-        content: '';
-        display: inline-block;
-        width: max-content;
-        height: 1.4rem;
-        overflow: hidden;
-
-        position: absolute;
-        top: 50%;
-        transform: translate(-130%, -50%);
-
-        opacity: 0;
-        font-size: 1.3em;
-        background: none;
-
-        transition: all 0.5s;
-    }
     
     .menu-item-description {
         @extend %menu-item-description;
         padding: 0.2rem 0.5rem;
         font-size: $menu-item-description-font-size;
-    
+        
         &::before {
             content: '';
             box-sizing: border-box;
@@ -347,17 +310,31 @@ $menu-items: (
         }
     }
 
-    &:hover {
-        background-color: $menu-item-hover-bg;
+    .item-icon-container {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
 
-        .menu-item-description {
-            opacity: 1;
-        }
+        background: none;
+        border-radius: 50%;
 
-        .menu-item-description::before {
-            width: 100%;
-            opacity: 1;
-            transition: width 0.6s; 
+        &:hover {
+            background-color: $menu-item-hover-bg;
+    
+            +.menu-item-description {
+                opacity: 1;
+                transition: all 0.6s;
+                top: -25%;
+                left: 0;
+                transform: translate(-110%, -100%);
+
+                &::before {
+                    width: 100%;
+                    opacity: 1;
+                    transition: width 0.6s; 
+                }
+            }
         }
     }
 

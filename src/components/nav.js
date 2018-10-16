@@ -15,7 +15,7 @@ class Nav extends Component {
 
     updateSelection(e) {
         e.preventDefault();
-        this.props.selection( e.currentTarget.id.replace('-link', '') );
+        this.props.selection( e.currentTarget.parentNode.id.replace('-link', '') );
         this.inputRef.current.click();
     }
     
@@ -30,24 +30,39 @@ class Nav extends Component {
                     <span className='hamburger' id='hamburger3'></span>
                 </div>
                 
-                <a className='menu-item' id='home-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/homeIcon.svg' alt='home icon link' />
+                <a className='menu-item' id='home-link'>
+                    <span className='item-icon-container' onClick={this.updateSelection}>
+                        <img className='menu-item-icon' src='./images/homeIcon.svg' alt='home icon link' />
+                    </span>
+
                     <span className='menu-item-description'>Home</span>
                 </a>
-                <a className='menu-item' id='portfolio-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/codeIcon.svg' alt='portfolio icon link' />
+                <a className='menu-item' id='portfolio-link'>
+                    <span className='item-icon-container' onClick={this.updateSelection}>
+                        <img className='menu-item-icon' src='./images/codeIcon.svg' alt='portfolio icon link' />
+                    </span>
+
                     <span className='menu-item-description'>Portfolio</span>
                 </a>
-                <a className='menu-item' id='experiments-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/flaskIcon.svg' alt='experiments icon link' />
+                <a className='menu-item' id='experiments-link'>
+                    <span className='item-icon-container' onClick={this.updateSelection}>                
+                        <img className='menu-item-icon' src='./images/flaskIcon.svg' alt='experiments icon link' />
+                    </span>
+
                     <span className='menu-item-description'>Experiments</span>
                 </a>
-                <a className='menu-item' id='about-me-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/userIcon.svg' alt='about me icon link' />
+                <a className='menu-item' id='about-me-link'>
+                    <span className='item-icon-container' onClick={this.updateSelection}>                
+                        <img className='menu-item-icon' src='./images/userIcon.svg' alt='about me icon link' />
+                    </span>
+
                     <span className='menu-item-description'>About</span>
                 </a>
-                <a className='menu-item' id='contact-link' onClick={this.updateSelection}>
-                    <img className='menu-item-icon' src='./images/chatIcon.svg' alt='contact icon link' />
+                <a className='menu-item' id='contact-link'>
+                    <span className='item-icon-container' onClick={this.updateSelection}>                
+                        <img className='menu-item-icon' src='./images/chatIcon.svg' alt='contact icon link' />
+                    </span>
+                    
                     <span className='menu-item-description'>Contact</span>
                 </a>
             </nav>
