@@ -79,7 +79,9 @@ class View extends Component {
         this.experimentsRef = null;
         this.aboutRef = null;
         this.contactRef = null;
+
         this.navbarRef = null;
+        this.toggleNavRef = null;
 
         this.updateDisplayedPage = this.updateDisplayedPage.bind(this); 
         this.getSectionHeights = this.getSectionHeights.bind(this); //gets the start/end scroll height for each section
@@ -189,7 +191,7 @@ class View extends Component {
                 {this.state.displayMenu}
 
                 <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>    
-                    <Nav setRef={el => this.navbarRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
+                    <Nav setRef={el => this.navbarRef = el} setToggleRef={el => this.toggleNavRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
 
                     <HomePage setRef={el => this.homeRef = el} section={this.state.topSection} />
                     <Portfolio setRef={el => this.portfolioRef = el} />
