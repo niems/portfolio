@@ -1,6 +1,9 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "author": "Zach Niemann",
+  "description": "Portfolio website",
+  "keywords": ["portfolio", "programmer", "front-end", "back-end", "full-stack"],
+  "version": "1.0",
   "private": true,
   "homepage": "https://niems.github.io/portfolio/",
   "dependencies": {

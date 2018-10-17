@@ -49,7 +49,6 @@ $menu-item-duration: 0.5s;
 $menu-item-delay: 0.25s; //starting menu item delay
 $menu-item-delay-offset: 0.04; //delays this much longer for each additional item
 $menu-item-transform-offset: $menu-item-size + 15px; //adds another offset for each additional item
-//$menu-item-transform-offset: 15px; //adds another offset for each additional item
 $menu-item-bg: $light-main;
 $menu-item-hover-bg: $light-mid;
 
@@ -111,8 +110,10 @@ $menu-items: (
     padding: 0;
 
     background: $menu-item-bg;
-    //color: $menu-item-text-fg;
 }
+
+$menu-item-description-timing: ease-out; //cubic-bezier(0.25, 0.2, 0.65, 0.94);
+$menu-item-description-transition: all 0.5s;
 
 %menu-item-description {
     box-sizing: border-box;
@@ -123,17 +124,17 @@ $menu-items: (
     top: -25%;
     left: 0;
     z-index: -1;
-    //left: -50%;
 
     font-weight: bold;
     margin: 0;
     padding: 0;
     opacity: 0;
 
-    background: none;
-    //transform: translate(-100%, -100%);
-    transform: translateY(-100%);
-    transition: all 0.6s;     
+    background: $menu-item-text-bg;
+    border-radius: 4px;
+    transform: translate(-110%, -100%) rotateX(-90deg);
+    transition: $menu-item-description-transition;     
+    transition-timing-function: $menu-item-description-timing;
 }
 
 #gooey-menu-container {
@@ -288,26 +289,6 @@ $menu-items: (
         @extend %menu-item-description;
         padding: 0.2rem 0.5rem;
         font-size: $menu-item-description-font-size;
-        
-        &::before {
-            content: '';
-            box-sizing: border-box;
-            display: inline-block;
-            width: 0%;
-            height: 100%;
-            opacity: 0;
-    
-            border-radius: 3px;
-    
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: -1;
-    
-            background: $menu-item-text-bg;
-            transform: translate(-50%, -50%);
-            transition: all 0.6s;     
-        }
     }
 
     .item-icon-container {
@@ -324,16 +305,9 @@ $menu-items: (
     
             +.menu-item-description {
                 opacity: 1;
+                transform: translate(-110%, -100%) rotateX(0deg);
                 transition: all 0.6s;
-                top: -25%;
-                left: 0;
-                transform: translate(-110%, -100%);
-
-                &::before {
-                    width: 100%;
-                    opacity: 1;
-                    transition: width 0.6s; 
-                }
+                transition-timing-function: $menu-item-description-timing;
             }
         }
     }
