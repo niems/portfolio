@@ -62,7 +62,6 @@ class View extends Component {
         this.state = {
             currentSection: 'home', //section on the majority of the screen
             topSection: 'home', //section visible at the very top of the screen - used for lazy loading
-            displayMenu: null
         };
 
         this.pageHeight = {
@@ -93,6 +92,7 @@ class View extends Component {
 
     componentDidMount() {
         this.getSectionHeights();
+        //this.toggleNavRef.click(); //menu is open initially
         window.addEventListener('resize', this.onResize);
     }
 
@@ -130,11 +130,7 @@ class View extends Component {
         }
         
         //closes menu since a page was selected
-        if ( this.state.displayMenu !== null ) {
-            this.setState ({
-                displayMenu: null
-            });
-        }
+        this.toggleNavRef.click();
     }   
 
     onScroll(e) {
@@ -188,8 +184,6 @@ class View extends Component {
         //
         return (
             <div id='view-container' onScroll={this.onScroll}>
-                {this.state.displayMenu}
-
                 <div className='scrollbar' id='sections-container' ref={el => this.viewRef = el}>    
                     <Nav setRef={el => this.navbarRef = el} setToggleRef={el => this.toggleNavRef = el} section={this.state.currentSection} selection={this.updateDisplayedPage} />                
 
