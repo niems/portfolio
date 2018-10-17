@@ -5,24 +5,24 @@ class Nav extends Component {
     constructor(props) {
         super(props);
 
-        this.inputRef = React.createRef();
+        //this.inputRef = React.createRef();
         this.updateSelection = this.updateSelection.bind(this);
     }
 
     componentDidMount() {
-        this.inputRef.current.click();
+        //this.inputRef.current.click();
     }
 
     updateSelection(e) {
         e.preventDefault();
         this.props.selection( e.currentTarget.parentNode.id.replace('-link', '') );
-        this.inputRef.current.click();
+        //this.inputRef.current.click();
     }
     
     render() {
         return (
             <nav id='gooey-menu-container' ref={this.props.setRef}>
-                <input type='checkbox' href='#' className='menu-open' ref={this.inputRef} />
+                <input type='checkbox' href='#' className='menu-open' ref={this.props.setToggleRef} />
     
                 <div className='menu-open-button'>
                     <span className='hamburger' id='hamburger1'></span>
