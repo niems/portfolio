@@ -22,7 +22,7 @@ class Nav extends Component {
     render() {
         return (
             <nav id='gooey-menu-container' ref={this.props.setRef}>
-                <input type='checkbox' href='#' className='menu-open' ref={this.props.setToggleRef} />
+                <input type='checkbox' href='#' className='menu-open' ref={this.props.setToggleRef} checked/>
     
                 <div className='menu-open-button'>
                     <span className='hamburger' id='hamburger1'></span>
