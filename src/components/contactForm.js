@@ -8,16 +8,19 @@ function postData(url = '', data = {}) {
 
     return fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         credentials: 'omit',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
         referrer:'no-referrer',
+        referrerPolicy:"no-referrer-when-downgrade",
         body: encoded,
     })
-    .then(response => console.log(`Success: ${JSON.stringify(response)}`))
-    .catch(error => console.error(`Error: ${error}`));
+    .then(res => {
+        return res.json().then(text => console.log(`json res: ${JSON.stringify(text)}\n`));
+    }) 
+    .catch(err => console.error(`server error: ${err.message}\n`));
 }
 
 class ContactForm extends Component {
@@ -26,9 +29,9 @@ class ContactForm extends Component {
 
         this.state = {
             name: '',
-            email: '',
             subject: '',
             message: '',
+            email: '',
         };
 
         this.onChange = this.onChange.bind(this);
