@@ -5,8 +5,8 @@ import './style/aboutMe.css';
 
 function Highlighted({ text }) {
     
-    const highlighted = text.split(' ').map(word => (
-        <span className='highlight-wrap'>
+    const highlighted = text.split(' ').map((word, index) => (
+        <span key={index} className='highlight-wrap'>
             <span className='highlight'>{word}</span>
         </span>
     ));
