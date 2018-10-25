@@ -12,6 +12,11 @@ $progressbar-border: $accent;
 $progressbar-img-container-width: $progressbar-height;
 $progressbar-icon-width: $progressbar-height * 0.8;
 
+//mongodb icon - special case as per their guidelines
+$mongo-progressbar-width: 100px;
+$mongo-progressbar-height: auto;
+
+
 //skill section setup
 $progressbar-section-desc-font-size: 1.2em;
 
@@ -79,6 +84,7 @@ $progressbar-name-font-size: 0.75em; //* ($progressbar-height / 70px);
     box-sizing: border-box;
     width: $progressbar-width;
     height: $progressbar-height;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -87,6 +93,33 @@ $progressbar-name-font-size: 0.75em; //* ($progressbar-height / 70px);
 
     text-decoration: none;
     margin: $progressbar-margin-gap 1rem;  
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltiptext {
+    box-sizing: border-box;
+    visibility: hidden;
+    width: max-content;
+    background: $darkest;
+    color: $accent;
+
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 .progress-bar-text {

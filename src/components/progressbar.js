@@ -3,9 +3,10 @@ import './style/progressbar.css';
 
 function ProgressBarIcon({ name, img, link }) {
     return (
-        <a className='progress-bar-wrapper' href={link} target='_blank' alt={`Link to ${name} for more info`}>
+        <a className='progress-bar-wrapper tooltip' id={`${name}-code-icon`} href={link} target='_blank' alt={`Link to ${name} for more info`}>
+            <span className='tooltiptext'>{link}</span>
             <span className='progress-bar-img-container'>
-                <img className='progress-bar-img' src={img} alt={`${name} logo`} />
+                <img  className='progress-bar-img' src={img} alt={`${name} logo`} />
             </span>
 
             <span className='progress-bar-text'>{name}</span>
@@ -63,6 +64,11 @@ export default function Progressbar(props) {
             link: 'https://nodejs.org/en/about/',
         },
         {
+            name: 'Express.js',
+            imgPath: './images/codeIcon.svg',
+            link: 'https://expressjs.com/'
+        },
+        {
             name: 'Socket.IO',
             imgPath: `${path}socket.io.svg`,
             link: 'https://socket.io/',
@@ -71,7 +77,7 @@ export default function Progressbar(props) {
             name: 'WebRTC',
             imgPath: `${path}webrtc.svg`,
             link: 'https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API',
-        },
+        }
     ];
 
     return (
